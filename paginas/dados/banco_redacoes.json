@@ -1,0 +1,98 @@
+[
+    {
+        "id": "redacao-001",
+        "titulo": "Democratização do acesso ao cinema no Brasil",
+        "ano_enem": 2019,
+        "eixo_tematico": "Cultura",
+        "resumo": "Aristóteles, em sua obra 'Ética a Nicômaco', afirma que a finalidade da política é a felicidade dos cidadãos...",
+        "texto_completo": [
+            "Aristóteles, em sua obra 'Ética a Nicômaco', afirma que a finalidade da política é a felicidade dos cidadãos. No entanto, o atual cenário de desigualdade no acesso ao cinema no Brasil contradiz essa premissa. Nesse contexto, a falta de democratização desse bem cultural evidencia um grave problema social, movido não apenas pela negligência estatal, mas também pela elitização dos espaços de lazer.",
+            "Em primeiro lugar, cabe destacar a omissão do poder público como impulsionadora do déficit na democratização cultural. Sob a ótica do sociólogo Zygmunt Bauman, as 'instituições zumbis' contemporâneas perderam sua função social, voltando-se predominantemente para os interesses mercadológicos. Assim, a escassez de salas de cinema em áreas de vulnerabilidade, aliada à ausência de políticas públicas eficazes, escancara a marginalização das parcelas menos favorecidas da população, privando-as do direito constitucional ao lazer e à cultura.",
+            "Ademais, a mercantilização da cultura emerge como um forte empecilho à democratização do cinema. De acordo com o pensamento da Escola de Frankfurt, a cultura transformou-se em uma mercadoria regida pelas lógicas do capitalismo, o que favorece, sobretudo, as elites econômicas. Dessa forma, o alto custo dos ingressos, com a elitização das salas cinematográficas—muitas vezes em shopping centers—configuram barreiras financeiras e simbólicas para o acesso universal, aprofundando a desigualdade sociocultural do país.",
+            "Portanto, medidas são urgentes para mitigar os impactos desse embaraço. O Ministério da Cultura (Agente), em parceria com os governos estaduais, deve promover a inserção do cinema em zonas periféricas e escolas públicas (Ação). Isso ocorrerá por meio da criação de salas populares itinerantes subsidiadas e da facilitação de transporte para a população de baixa renda (Meio), com o objetivo de garantir o acesso universal a esse artefato cultural (Efeito), construindo, assim, uma sociedade mais igualitária, na qual a felicidade preconizada por Aristóteles seja um direito universal."
+        ],
+        "competencias_destaque": ["C1", "C2", "C5"],
+        "visualizacoes": 15420,
+        "data_publicacao": "2020-01-15T12:00:00Z"
+    },
+    {
+        "id": "redacao-002",
+        "titulo": "Invisibilidade e registro civil: garantia de acesso à cidadania no Brasil",
+        "ano_enem": 2021,
+        "eixo_tematico": "Cidadania",
+        "resumo": "A obra 'Vidas Secas', de Graciliano Ramos, retrata a precariedade da vida de sertanejos que, desprovidos de documentos básicos...",
+        "texto_completo": [
+            "A obra 'Vidas Secas', de Graciliano Ramos, retrata a precariedade da vida de sertanejos que, desprovidos de documentos básicos, quase não detém registro formal de sua existência, vivendo à margem dos direitos sociais. Paralelamente à teia ficcional, a invisibilidade decorrente da ausência do registro civil no Brasil representa um obstáculo central à garantia da cidadania plena. Nesse viés, a perpetuação desse cenário infeliz é agravada pela ineficácia administrativa e pelo silenciamento institucional das populações mais vulneráveis.",
+            "Em primeira análise, o entrave burocrático e a falha de amparo do Estado figuram como as principais causas do sub-registro no país. Segundo o pensador Thomas Hobbes, em 'O Leviatã', o Estado foi criado para garantir o bem-estar social; entretanto, a dificuldade de acesso a cartórios—especialmente em regiões afastadas e periféricas—somada à desinformação de muitas famílias sobre a gratuidade do documento, ilustra o descumprimento do pacto hobbesiano. Logo, sem a certidão de nascimento, milhares de brasileiros são privados de direitos fundamentais, como saúde, educação e programas sociais, consubstanciando-se como indivíduos 'invisíveis' para a administração pública.",
+            "Outrossim, a desigualdade socioeconômica sedimenta essa invisibilidade identitária e social. De acordo com o geógrafo Milton Santos, o Brasil possui 'cidadanias mutiladas', nas quais a condição financeira dita o grau de dignidade usufruído. Dessa forma, a população indigente, por enfrentar extrema penúria, não prioriza o registro oficial imediato de seus filhos, o que perpetua um ciclo intergeracional de exclusão. A falta desse documento não é apenas uma ausência legal, mas um atestado contínuo de abandono por parte do tecido social.",
+            "Em suma, faz-se imperiosa a mobilização do Poder Público e da sociedade para reverter essa chaga civilizatória. O Ministério da Mulher, da Família e dos Direitos Humanos (Agente) necessita implementar mutirões de documentação itinerante em áreas de risco e de difícil acesso (Ação). Essa iniciativa será executada mediante a parceria com prefeituras e a alocação de unidades móveis padronizadas (Meio/Modo), com a finalidade de erradicar o sub-registro civil e integrar as populações marginalizadas ao gozo de seus direitos legais (Efeito), superando de vez o triste enredo dos personagens de Graciliano Ramos (Detalhamento)."
+        ],
+        "competencias_destaque": ["C1", "C3"],
+        "visualizacoes": 22100,
+        "data_publicacao": "2022-02-10T09:30:00Z"
+    },
+    {
+        "id": "redacao-003",
+        "titulo": "Manipulação do comportamento do usuário pelo controle de dados na internet",
+        "ano_enem": 2018,
+        "eixo_tematico": "Tecnologia",
+        "resumo": "O advento da tecnologia informacional trouxe consigo a ilusão de liberdade plena. No entanto, o algoritmo tem...",
+        "texto_completo": [
+            "No filme britânico 'Matrix', a realidade humana não passava de uma complexa simulação controlada por máquinas; as mentes eram cativas de um sistema que manipulava o que deveriam vivenciar. Fora das telas, na conjuntura brasileira, os algoritmos e o controle massivo de dados desempenham um papel análogo, moldando a perspectiva das pessoas sem que isso seja explícito. Nesse panorama, a falta de criticidade nas redes sociais e a mercantilização da navegação configuram barreiras expressivas para o desenvolvimento do pensamento independente.",
+            "Primeiramente, a ausência de uma verdadeira autonomia intelectual diante das plataformas digitais se destaca como efeito prejudicial. Sob o prisma de Michel Foucault, existe um 'panóptico digital' na modernidade líquida, em que os indivíduos são sistematicamente vigiados em seu ciberespaço. Assim, os algoritmos criam as chamadas 'bolhas sociais', filtrando e direcionando o conteúdo a ser consumido. Como consequência direta, isso afasta os usuários do contraditório, inibindo o pensamento crítico e moldando insidiosamente gostos e posicionamentos ideológicos baseados no reforço constante.",
+            "Por conseguinte, a apropriação dos dados para finalidades lucrativas e eleitorais agrava a violação à privacidade e ao livre-arbítrio. Consoante às ideias expostas no livro 1984 de George Orwell, a imposição de informações padronizadas pela 'Teletela' manipula o conhecimento populacional. Atualmente, os dados capturados durante a navegação formam um valioso banco de perfis psicológicos, vendido a corporações para a publicidade direcionada e até para o controle sociopolítico subliminar. Desprovido de uma regulamentação robusta, o internauta torna-se o verdadeiro produto comercial desse século.",
+            "Depreende-se, destarte, a necessidade inadiável de medidas regulatórias e educativas no ambiente cibernético. O Governo Federal (Agente), em sintonia com o Ministério da Ciência, Tecnologia e Inovações, deve criar uma ampla campanha de letramento digital (Ação), via mídias públicas e currículos escolares reformulados (Meio). Esse projeto buscará ensinar as pessoas a discernir mecanismos de manipulação e o funcionamento dos algoritmos nas redes sociais (Detalhamento), mitigando, portanto, os malefícios do controle subversivo dos dados (Efeito), para que as plataformas não passem de instrumentos, devolvendo a plena liberdade cognocitiva aos moldes da emancipação ideal das teias de Matrix."
+        ],
+        "competencias_destaque": ["C2", "C4"],
+        "visualizacoes": 18500,
+        "data_publicacao": "2019-03-05T08:00:00Z"
+    },
+    {
+        "id": "redacao-004",
+        "titulo": "Desafios para a valorização de comunidades e povos tradicionais no Brasil",
+        "ano_enem": 2022,
+        "eixo_tematico": "Sociedade",
+        "resumo": "A Constituição Federal de 1988 assegura o direito à preservação da cultura e do território. Todavia, a prática distante da teoria...",
+        "texto_completo": [
+            "A Constituição Cidadã de 1988 garante a todos o direito à diversidade cultural e à proteção de suas terras tradicionais. No revés desse ideal democrático, contudo, a efetiva valorização e proteção das comunidades e povos tradicionais—como indígenas, quilombolas e ribeirinhos—tem encontrado entraves constantes no Brasil contemporâneo. Diante desse cenário adverso, sobressaem a inércia punitiva frente às invasões de terras motivadas pela ganância comercial e a naturalização do silenciamento cultural de ricas tradições.",
+            "Em um primeiro plano, a disputa de terras orquestrada pelo agronegócio predatório e pelo garimpo ilícito afetam diretamente a perpetuidade dessas comunidades. O filósofo John Locke postula o 'direito natural' à sobrevivência e ao trabalho em sua propriedade, condição que é ineficazmente garantida às populações nativas. Com frequentes demarcações em suspenso, esses grupos sofrem sistemáticas invasões territoriais que degradam seu meio ambiente vital. Dessa maneira, a omissão do Estado em fazer cumprir a proteção fundiária endossa a violência impune no interior e nas florestas brasileiras.",
+            "Adicionalmente, além da ameaça física, vigora um violento processo de epistemicídio—a morte estrutural dos conhecimentos das minorias, em prol da ideologia hegemônica ocidental e urbana. Conforme aponta a escritora nigeriana Chimamanda Adichie em seu conceito sobre 'O perigo da história única', ignorar multiplicidade de narrativas constrói estereótipos rasos e perigosos. Nesse diapasão histórico, ao diminuírem o impacto e a legitimidade dos costumes da medicina, agricultura e espiritualidade tradicionais, a sociedade perde parte irrecuperável do seu tecido histórico, mergulhando essas comunidades na invisibilidade no âmbito escolar e social.",
+            "Infere-se, portanto, a urgência em reverter a sistemática desproteção histórica dos povos e comunidades tradicionais. O Ministério da Justiça e Segurança Pública (Agente), atuando em concórdia com a Fundação Nacional dos Povos Indígenas (FUNAI), deve acelerar processos de demarcação de terras e criar bases de patrulhamento ambiental ininterrupto nas áreas adjacentes. (Ação). Essa iniciativa far-se-á por meio de uso de tecnologias por satélite aplicadas à segurança nacional em biomas (Meio), com a meta inabalável de assegurar a integridade física, ambiental e cultural desses sujeitos de direito (Efeito), construindo, finalmente, uma nação onde os preceitos celebrados em 1988 sejam, de fato, a tônica (Detalhamento)."
+        ],
+        "competencias_destaque": ["C1", "C5"],
+        "visualizacoes": 25700,
+        "data_publicacao": "2023-01-20T14:45:00Z"
+    },
+    {
+        "id": "redacao-005",
+        "titulo": "O estigma associado às doenças mentais na sociedade brasileira",
+        "ano_enem": 2020,
+        "eixo_tematico": "Saúde",
+        "resumo": "No filme 'Coringa', o protagonista Arthur Fleck sofre com a negligência estatal e o preconceito social devido ao seu transtorno...",
+        "texto_completo": [
+            "No premiado filme 'Coringa', o protagonista Arthur Fleck sofre com o descaso estatal e com o deboche contínuo da sociedade em relação ao seu transtorno neurológico, sendo levado a atitudes extremas. Fora da ficção hollywoodiana, o estigma associado às enfermidades mentais no Brasil apresenta uma gravidade não muito distante dessa, marcando vidas com intenso preconceito silencioso. Desse modo, a perpetuação desse cenário decorre de forte deficiência informacional coletiva aliada à falha na infraestrutura de acompanhamento psiquiátrico.",
+            "A priori, a superficialidade com que a educação aborda o tema contribui substancialmente para o enraizamento da intolerância coletiva e dos preconceitos. Guiados pelo conceito de 'Banalidade do Mal' de Hannah Arendt, comportamentos preconceituosos tornam-se rotineiros e tolerados pelo senso comum devido à falta de reflexão profunda. Consequentemente, as doenças psiquiátricas são, infelizmente, equiparadas a reações de 'fraqueza' ou 'falta do que fazer'. Destituído de empatia, esse imaginário excludente coage o portador da doença a omitir seu diagnóstico por vergonha, afastando-o da busca primária pelo suporte necessário.",
+            "De maneira simultânea e gravíssima, a insuficiência do suporte clínico ofertado pelo sistema público fortalece a invisibilidade dessa patologia e exacerba os seus efeitos sociais. Embora o engajamento da luta antimanicomial tenha obtido avanços estruturais na assistência, de acordo com o Instituto Brasileiro de Geografia e Estatística (IBGE), o país ainda carece de políticas de larga escala de saúde preventiva focada na mente. Devido à carência de postos do Centro de Atenção Psicossocial (CAPS) nos grandes centros populacionais periféricos, grande parte dos pacientes torna-se abandonada à própria sorte emocional, sobrecarregando ainda mais os núcleos familiares que não detêm conhecimento técnico de auxílio.",
+            "É evidente, logo, a imperiosa necessidade de romper com esse tabu social e estatal atávico. Cabe ao Ministério da Saúde (Agente) ampliar radicalmente a oferta estrutural de Centros de Atenção Psicossocial e contratar turmas rotativas de psiquiatras focados em bairros vulneráveis (Ação). Conjuntamente a isso será impulsionada uma grandiosa operação de utilidade pública nos horários nobres das mídias digitais e televisivas visando ao ensino desmistificatório (Meio/Modo). Tais diretrizes atuarão a fim de normalizar a busca por auxílio mental e garantir o livre convívio digno do paciente na conjuntura brasileira (Efeito)."
+        ],
+        "competencias_destaque": ["C3", "C4"],
+        "visualizacoes": 21000,
+        "data_publicacao": "2021-02-18T16:20:00Z"
+    },
+    {
+        "id": "redacao-006",
+        "titulo": "Desafios para a formação educacional de surdos no Brasil",
+        "ano_enem": 2017,
+        "eixo_tematico": "Educação",
+        "resumo": "Sob a ótica de Immanuel Kant, 'o homem é aquilo que a educação faz dele'. No contexto brasileiro, entretanto, a barreira do preconceito...",
+        "texto_completo": [
+            "Sob a ótica do iluminista Immanuel Kant, 'o homem não é nada além daquilo que a educação faz dele'. Transpondo-se tal premissa para a realidade formativa do Brasil, entretanto, é perceptível que nem todos possuem as ferramentas idênticas para a concretização de suas humanidades, com destaque dramático aos surdos contemporâneos. Destarte, a efetiva e sadia formação educacional dos surdos encontra formidáveis obstáculos, fomentados não apenas pela carência na instrução técnica dos docentes, como pelo forte preconceito da estrutura social tradicional.",
+            "A princípio, a negligência em relação ao preparo acadêmico continuado do professor reflete profundamente no atraso pedagógico das crianças com surdez, ferindo frontalmente os preceitos de Paulo Freire de que 'não existe ensino sem afeto' e, muito menos, sem comunicação direta. No ambiente letivo comum, a ausência acentuada de intérpretes dominantes de LIBRAS—Língua Brasileira de Sinais—torna as salas aulas hostis à assimilação da matéria por esse grupo inclusivo, limitando o potencial intelectivo do jovem a apenas reproduzir superficialmente a rotina metodológica, distanciando-o consideravelmente da concorrência pelas vagas universitárias federais futuras.",
+            "Não obstante ao desamparo governamental, a visão prejuricada que paira sobre as massas em lidar com o que difere do padrão físico e auditivo estabelecido retroalimenta a falta de integração harmoniosa. Para Émile Durkheim, o indivíduo constrói seu caráter embasado no todo em que habita. Se o coletivo subestima ou rotula o deficiente auditivo com tons capacitistas—presumindo sua incapacidade atrelada—gera-se um afastamento gradativo que induz à desmotivação crônica desses estudantes perante os estudos, perpetuando o ciclo impiedoso do desemprego e do subemprego limitantes, agravando severamente essa falha educacional crônica intrínseca ao meio tupiniquim.",
+            "É irrecorrível a demanda por ações ativas capazes de findar a segregação comunicacional em ambiente acadêmico. Por essa razão, o Ministério da Educação (Agente), que detém forte viabilidade orçamentária neste quesito de verbas federais constitucionais, deve tornar a capacitação contínua em LIBRAS obrigatória a todo e qualquer licenciado (Ação) nos moldes propostos pelas diretrizes mais atuais do Conselho, viabilizada pela injeção forte de recursos financeiros por intermédio das Universidades de base e com auxílio e tutela dos mais renomados fonoaudiólogos (Meio), objetivando a total interatividade comunicacional nos recintos (Efeito), mitigando, decerto, esse passivo educacional aviltante para a nação."
+        ],
+        "competencias_destaque": ["C1", "C2", "C5"],
+        "visualizacoes": 19300,
+        "data_publicacao": "2018-03-25T11:15:00Z"
+    }
+]

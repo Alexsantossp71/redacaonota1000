@@ -1,0 +1,44 @@
+[
+    {
+        "id": "tema-001",
+        "titulo": "Democratização do acesso ao cinema no Brasil",
+        "eixo_tematico": "Cultura",
+        "ano_aplicacao": 2019,
+        "descricao": "Neste tema, discute-se o cinema como fator de enriquecimento cultural e os obstáculos - sejam eles geográficos, financeiros ou sociais - que impedem que parte significativa da população frequente as salas de exibição."
+    },
+    {
+        "id": "tema-002",
+        "titulo": "Invisibilidade e registro civil: garantia de acesso à cidadania no Brasil",
+        "eixo_tematico": "Cidadania",
+        "ano_aplicacao": 2021,
+        "descricao": "O sub-registro de nascimento como barreira invisível para a conquista de direitos fundamentais da população mais vulnerável."
+    },
+    {
+        "id": "tema-003",
+        "titulo": "Manipulação do comportamento do usuário pelo controle de dados na internet",
+        "eixo_tematico": "Tecnologia",
+        "ano_aplicacao": 2018,
+        "descricao": "O impacto dos algoritmos na liberdade de escolha e a criação de bolhas sociais no ecossistema das redes."
+    },
+    {
+        "id": "tema-004",
+        "titulo": "Desafios para a valorização de comunidades e povos tradicionais no Brasil",
+        "eixo_tematico": "Meio Ambiente",
+        "ano_aplicacao": 2022,
+        "descricao": "A importância de indígenas, quilombolas e ribeirinhos para a proteção ambiental e a luta por reconhecimento identitário."
+    },
+    {
+        "id": "tema-005",
+        "titulo": "O estigma associado às doenças mentais na sociedade brasileira",
+        "eixo_tematico": "Saúde",
+        "ano_aplicacao": 2020,
+        "descricao": "O preconceito, a falta de informação e as deficiências no sistema público que dificultam o tratamento psiquiátrico no país."
+    },
+    {
+        "id": "tema-006",
+        "titulo": "Desafios para a formação educacional de surdos no Brasil",
+        "eixo_tematico": "Educação",
+        "ano_aplicacao": 2017,
+        "descricao": "A inclusão de PcD (Pessoas com Deficiência) no ambiente escolar, a falta de intérpretes de LIBRAS e o capacitismo estrutural."
+    }
+]
