@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
+    <script src="../dados/banco_redacoes.js"></script>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -81,20 +82,29 @@
                 return;
             }
 
-            fetch('../dados/banco_redacoes.json?v=' + Date.now())
-                .then(res => res.json())
-                .then(data => {
-                    const reda = data.find(r => r.id === id);
-                    if (reda) {
-                        renderRedacao(reda);
-                    } else {
-                        renderError("Redação não encontrada na base de dados.");
-                    }
-                })
-                .catch(err => {
-                    console.error(err);
-                    renderError("Falha ao se conectar com o servidor.");
-                });
+            if (window.BANCO_REDACOES) {
+                const reda = window.BANCO_REDACOES.find(r => r.id === id);
+                if (reda) {
+                    renderRedacao(reda);
+                } else {
+                    renderError("Redação não encontrada na base de dados local.");
+                }
+            } else {
+                fetch('../dados/banco_redacoes.json')
+                    .then(res => res.json())
+                    .then(data => {
+                        const reda = data.find(r => r.id === id);
+                        if (reda) {
+                            renderRedacao(reda);
+                        } else {
+                            renderError("Redação não encontrada na base de dados.");
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        renderError("Falha ao se conectar com o servidor.");
+                    });
+            }
 
             function renderError(msg) {
                 mainContent.innerHTML = `

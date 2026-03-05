@@ -15,9 +15,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <script src="../dados/banco_temas.js"></script>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -332,8 +330,13 @@
             if (!temaId) return;
 
             try {
-                const response = await fetch('../dados/banco_temas.json');
-                const temas = await response.json();
+                let temas = [];
+                if (window.BANCO_TEMAS) {
+                    temas = window.BANCO_TEMAS;
+                } else {
+                    const response = await fetch('../dados/banco_temas.json');
+                    temas = await response.json();
+                }
                 const tema = temas.find(t => t.id === temaId);
 
                 if (tema) {

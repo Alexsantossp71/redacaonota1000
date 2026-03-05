@@ -10,6 +10,7 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
+    <script src="../dados/banco_temas.js"></script>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -151,8 +152,12 @@
 
         async function init() {
             try {
-                const response = await fetch('../dados/banco_temas.json');
-                themes = await response.json();
+                if (window.BANCO_TEMAS) {
+                    themes = window.BANCO_TEMAS;
+                } else {
+                    const response = await fetch('../dados/banco_temas.json');
+                    themes = await response.json();
+                }
 
                 // Adicionar campos extras para "prováveis" se não existirem
                 themes = themes.map(t => ({
@@ -162,7 +167,7 @@
 
                 renderThemes(themes);
             } catch (error) {
-                grid.innerHTML = `<div class="col-span-full py-10 text-center text-red-500">Erro ao carregar os temas. Por favor, recarregue a página.</div>`;
+                grid.innerHTML = `<div class="col-span-full py-10 text-center text-red-500">Erro crítico ao carregar os temas. Por favor, recarregue a página.</div>`;
             }
         }
 

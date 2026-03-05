@@ -12,9 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <script src="../dados/banco_redacoes.js"></script>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -330,17 +328,23 @@
         const searchInput = document.getElementById('search-input');
         const checkboxesComp = document.querySelectorAll('.comp-check');
 
-        // Buscar dados (com cache-buster)
-        fetch('../dados/banco_redacoes.json?v=' + Date.now())
-            .then(res => res.json())
-            .then(data => {
-                todasRedacoes = data;
-                aplicarFiltros();
-            })
-            .catch(err => {
-                grid.innerHTML = '<p class="text-red-500">Erro ao carregar o banco de redações.</p>';
-                console.error("Erro no fetch: ", err);
-            });
+        // Carregamento via Variável Global (Evita Erro de CORS no file://)
+        if (window.BANCO_REDACOES) {
+            todasRedacoes = window.BANCO_REDACOES;
+            aplicarFiltros();
+        } else {
+            console.error("Banco de redações não encontrado. Tentando fetch como fallback...");
+            fetch('../dados/banco_redacoes.json')
+                .then(res => res.json())
+                .then(data => {
+                    todasRedacoes = data;
+                    aplicarFiltros();
+                })
+                .catch(err => {
+                    grid.innerHTML = '<p class="text-red-500">Erro crítico ao carregar o banco de redações.</p>';
+                    console.error("Erro no fetch: ", err);
+                });
+        }
 
         // Função para normalizar strings (remover acentos e lowercase)
         const normalizar = (str) => str ? str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim() : "";
