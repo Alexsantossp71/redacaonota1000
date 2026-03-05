@@ -81,7 +81,7 @@
                 return;
             }
 
-            fetch('../dados/banco_redacoes.json')
+            fetch('../dados/banco_redacoes.json?v=' + Date.now())
                 .then(res => res.json())
                 .then(data => {
                     const reda = data.find(r => r.id === id);

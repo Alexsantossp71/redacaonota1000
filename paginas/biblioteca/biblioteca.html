@@ -74,7 +74,7 @@
                 <div class="relative w-full max-w-xs group">
                     <span
                         class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
-                    <input
+                    <input id="search-input"
                         class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/50 placeholder:text-slate-500"
                         placeholder="Buscar tema ou ano..." type="text" />
                 </div>
@@ -103,27 +103,37 @@
                     <div class="flex flex-col gap-2">
                         <label
                             class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
-                            <input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox" />
+                            <input id="comp-c1"
+                                class="comp-check rounded border-slate-300 text-primary focus:ring-primary"
+                                type="checkbox" />
                             <span class="text-sm font-medium group-hover:text-primary">C1: Gramática</span>
                         </label>
                         <label
                             class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
-                            <input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox" />
+                            <input id="comp-c2"
+                                class="comp-check rounded border-slate-300 text-primary focus:ring-primary"
+                                type="checkbox" />
                             <span class="text-sm font-medium group-hover:text-primary">C2: Estrutura</span>
                         </label>
                         <label
                             class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
-                            <input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox" />
+                            <input id="comp-c3"
+                                class="comp-check rounded border-slate-300 text-primary focus:ring-primary"
+                                type="checkbox" />
                             <span class="text-sm font-medium group-hover:text-primary">C3: Argumentação</span>
                         </label>
                         <label
                             class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
-                            <input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox" />
+                            <input id="comp-c4"
+                                class="comp-check rounded border-slate-300 text-primary focus:ring-primary"
+                                type="checkbox" />
                             <span class="text-sm font-medium group-hover:text-primary">C4: Coesão</span>
                         </label>
                         <label
                             class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
-                            <input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox" />
+                            <input id="comp-c5"
+                                class="comp-check rounded border-slate-300 text-primary focus:ring-primary"
+                                type="checkbox" />
                             <span class="text-sm font-medium group-hover:text-primary">C5: Proposta</span>
                         </label>
                     </div>
@@ -317,12 +327,15 @@
         let todasRedacoes = [];
         let filtroAtual = 'Todos';
 
+        const searchInput = document.getElementById('search-input');
+        const checkboxesComp = document.querySelectorAll('.comp-check');
+
         // Buscar dados (com cache-buster)
         fetch('../dados/banco_redacoes.json?v=' + Date.now())
             .then(res => res.json())
             .then(data => {
                 todasRedacoes = data;
-                renderizarGrid(todasRedacoes);
+                aplicarFiltros();
             })
             .catch(err => {
                 grid.innerHTML = '<p class="text-red-500">Erro ao carregar o banco de redações.</p>';
@@ -330,7 +343,33 @@
             });
 
         // Função para normalizar strings (remover acentos e lowercase)
-        const normalizar = (str) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+        const normalizar = (str) => str ? str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim() : "";
+
+        // Função Central de Filtros
+        function aplicarFiltros() {
+            const termoBusca = normalizar(searchInput.value);
+            const compsSelecionadas = Array.from(checkboxesComp)
+                .filter(cb => cb.checked)
+                .map(cb => cb.id.replace('comp-', '').toUpperCase());
+
+            const filtradas = todasRedacoes.filter(r => {
+                // Filtro de Eixo
+                const matchEixo = filtroAtual === 'Todos' || normalizar(r.eixo_tematico) === normalizar(filtroAtual);
+
+                // Filtro de Busca (Título ou Ano)
+                const matchBusca = !termoBusca ||
+                    normalizar(r.titulo).includes(termoBusca) ||
+                    r.ano_enem.toString().includes(termoBusca);
+
+                // Filtro de Competências (deve ter todas as selecionadas)
+                const matchComp = compsSelecionadas.length === 0 ||
+                    compsSelecionadas.every(c => r.competencias_destaque.includes(c));
+
+                return matchEixo && matchBusca && matchComp;
+            });
+
+            renderizarGrid(filtradas);
+        }
 
         // Lógica de Renderização Baseada nos Dados
         function renderizarGrid(dados) {
@@ -376,7 +415,7 @@
             });
         }
 
-        // Filtro por Eixo Temático
+        // Event Listeners
         botoesEixo.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 botoesEixo.forEach(b => {
@@ -389,15 +428,12 @@
                 el.classList.remove('text-slate-600', 'hover:bg-slate-100');
 
                 filtroAtual = el.dataset.eixo;
-
-                if (filtroAtual === 'Todos') {
-                    renderizarGrid(todasRedacoes);
-                } else {
-                    const filtradas = todasRedacoes.filter(r => normalizar(r.eixo_tematico) === normalizar(filtroAtual));
-                    renderizarGrid(filtradas);
-                }
+                aplicarFiltros();
             });
         });
+
+        searchInput.addEventListener('input', aplicarFiltros);
+        checkboxesComp.forEach(cb => cb.addEventListener('change', aplicarFiltros));
     });
 </script>
 
