@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 
-<html lang="pt-BR"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Home - Portal Redação Nota 1000</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Home - Portal Redação Nota 1000</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -32,289 +39,365 @@
             },
         }
     </script>
-<style>
+    <style>
         body {
             font-family: 'Lexend', sans-serif;
         }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
-<!-- Top Navigation Bar -->
-<header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-16">
-<div class="flex items-center gap-8">
-<div class="flex items-center gap-2 text-primary">
-<span class="material-symbols-outlined text-3xl font-bold">menu_book</span>
-<h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Redação<span class="text-primary">1000</span></h1>
-</div>
-<nav class="hidden md:flex items-center gap-6">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Aulas</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Biblioteca</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Prática</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Planos</a>
-</nav>
-</div>
-<div class="flex items-center gap-4">
-<div class="relative hidden lg:block">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
-<input class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary w-64" placeholder="Buscar temas ou aulas..." type="text"/>
-</div>
-<button class="bg-primary text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-blue-700 transition-all">
-                        Começar Agora
-                    </button>
-<div class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden border-2 border-primary/20">
-<img alt="Avatar" data-alt="Foto de perfil do estudante usuário" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-FMshl0wSnlFfksKskGfMzhZm2qlfhKSceIkrrIalYrlUkglkq-iH-MTRtLHbrBaJIyeYAEwRTWK-LL-jH7CIuGUaoBZ5OE2n08pJ6vVM-whANuQEHlaPgEkRVYOvgZDU_6rz3_L1qxPppAedalUK2HYXbTY5ZS25UeVA6K_SN63pOnabeTbsyWLq3uOtiyogIi-kX9eokjiotUrDUcbSdZBxo6ZyEXA2O7sdmbTmBwgkU5LBgLYO3_0oWAkecB4vE_zl0OZ0VRwe"/>
-</div>
-</div>
-</div>
-</div>
-</header>
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
-<!-- Hero Section -->
-<section class="relative overflow-hidden rounded-3xl bg-white dark:bg-slate-900 shadow-xl border border-slate-100 dark:border-slate-800">
-<div class="flex flex-col lg:flex-row items-center">
-<div class="p-8 lg:p-16 lg:w-1/2 space-y-6">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-success/10 text-success text-xs font-bold uppercase tracking-wider">
-<span class="material-symbols-outlined text-sm">verified</span>
+    <!-- Top Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-8">
+                        <a href="../index_original.html"
+                            class="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
+                            <span class="material-symbols-outlined text-3xl font-bold">menu_book</span>
+                            <h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+                                Redação<span class="text-primary">1000</span></h1>
+                        </a>
+                        <nav class="hidden md:flex items-center gap-6">
+                            <a class="text-sm font-medium hover:text-primary transition-colors font-bold text-primary"
+                                href="../index_original.html">Início</a>
+                            <a class="text-sm font-medium hover:text-primary transition-colors"
+                                href="aulas/aulas.html">Aulas</a>
+                            <a class="text-sm font-medium hover:text-primary transition-colors"
+                                href="biblioteca/biblioteca.html">Biblioteca</a>
+                            <a class="text-sm font-medium hover:text-primary transition-colors"
+                                href="pratica/pratica.html">Prática</a>
+                        </nav>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="relative hidden lg:block">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+                            <input
+                                class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary w-64"
+                                placeholder="Buscar temas ou aulas..." type="text" />
+                        </div>
+                        <button
+                            class="bg-primary text-white px-5 py-2 rounded-lg font-bold text-sm hover:bg-blue-700 transition-all">
+                            Começar Agora
+                        </button>
+                        <div
+                            class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden border-2 border-primary/20">
+                            <img alt="Avatar" data-alt="Foto de perfil do estudante usuário"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-FMshl0wSnlFfksKskGfMzhZm2qlfhKSceIkrrIalYrlUkglkq-iH-MTRtLHbrBaJIyeYAEwRTWK-LL-jH7CIuGUaoBZ5OE2n08pJ6vVM-whANuQEHlaPgEkRVYOvgZDU_6rz3_L1qxPppAedalUK2HYXbTY5ZS25UeVA6K_SN63pOnabeTbsyWLq3uOtiyogIi-kX9eokjiotUrDUcbSdZBxo6ZyEXA2O7sdmbTmBwgkU5LBgLYO3_0oWAkecB4vE_zl0OZ0VRwe" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+        <!-- Hero Section -->
+        <section
+            class="relative overflow-hidden rounded-3xl bg-white dark:bg-slate-900 shadow-xl border border-slate-100 dark:border-slate-800">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="p-8 lg:p-16 lg:w-1/2 space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-success/10 text-success text-xs font-bold uppercase tracking-wider">
+                        <span class="material-symbols-outlined text-sm">verified</span>
                         Metodologia Aprovada
                     </div>
-<h1 class="text-4xl lg:text-6xl font-black leading-tight text-slate-900 dark:text-white">
-                        Conquiste sua <span class="text-primary underline decoration-success/30 decoration-8 underline-offset-4">Nota 1000</span> no ENEM
+                    <h1 class="text-4xl lg:text-6xl font-black leading-tight text-slate-900 dark:text-white">
+                        Conquiste sua <span
+                            class="text-primary underline decoration-success/30 decoration-8 underline-offset-4">Nota
+                            1000</span> no ENEM
                     </h1>
-<p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg">
-                        A plataforma completa com correções detalhadas, temas exclusivos e aulas focadas no que realmente importa para a sua aprovação.
+                    <p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg">
+                        A plataforma completa com correções detalhadas, temas exclusivos e aulas focadas no que
+                        realmente importa para a sua aprovação.
                     </p>
-<div class="flex flex-wrap gap-4 pt-4">
-<button class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary/30 hover:scale-105 transition-transform">
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <button
+                            class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary/30 hover:scale-105 transition-transform">
                             Quero o 1000 agora
                         </button>
-<button class="flex items-center gap-2 text-slate-700 dark:text-slate-300 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-<span class="material-symbols-outlined">play_circle</span>
+                        <button
+                            class="flex items-center gap-2 text-slate-700 dark:text-slate-300 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                            <span class="material-symbols-outlined">play_circle</span>
                             Ver como funciona
                         </button>
-</div>
-</div>
-<div class="lg:w-1/2 h-64 lg:h-[500px] w-full relative">
-<img alt="Estudante Comemorando" class="absolute inset-0 w-full h-full object-cover" data-alt="Estudante universitário comemorando com braços abertos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSluwUP4d8ynNSoRklQuEWCCjcBRVpnyinu_9YA5ojhjUiF2GtobqWH0ra-3S_aESFIpTyn7i3MIROCQSOU9DFf2FyImdQcXORRSsOEGmB2QjqjE9SfxHYngbd7YzGI5aHyouDGp7kmLyHa_3g9b7ZM9D--IIsWgN3GoSJqcfsbzPb4w-Vd5VG56H4qgOFBIcSNDuXXS4ASm4JHkYdKjn7TFqPj6CY1m15N5z4ukSkJg3yPCLHeakQqS7FCo49N5Odcv4l0egrCHd3"/>
-<div class="absolute inset-0 bg-gradient-to-r from-white dark:from-slate-900 via-transparent to-transparent lg:block hidden"></div>
-</div>
-</div>
-</section>
-<!-- Por onde começar -->
-<section class="space-y-8">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-<div class="space-y-2">
-<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Por onde começar?</h2>
-<p class="text-slate-500">Siga nossa trilha de sucesso personalizada para você.</p>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Step 1 -->
-<div class="group p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/50 transition-all shadow-sm hover:shadow-xl">
-<div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-3xl">menu_book</span>
-</div>
-<h3 class="text-xl font-bold mb-3">Explore a Biblioteca</h3>
-<p class="text-slate-600 dark:text-slate-400">Acesse centenas de aulas e redações nota 1000 para se inspirar e aprender as melhores estruturas.</p>
-</div>
-<!-- Step 2 -->
-<div class="group p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/50 transition-all shadow-sm hover:shadow-xl">
-<div class="w-14 h-14 bg-success/10 text-success rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-3xl">edit_square</span>
-</div>
-<h3 class="text-xl font-bold mb-3">Pratique Temas Quentes</h3>
-<p class="text-slate-600 dark:text-slate-400">Treine com os temas mais prováveis de cair no próximo ENEM, selecionados por nossos especialistas.</p>
-</div>
-<!-- Step 3 -->
-<div class="group p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/50 transition-all shadow-sm hover:shadow-xl">
-<div class="w-14 h-14 bg-primary text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-3xl">task_alt</span>
-</div>
-<h3 class="text-xl font-bold mb-3">Receba Feedback</h3>
-<p class="text-slate-600 dark:text-slate-400">Correções detalhadas feitas por especialistas seguindo rigorosamente os critérios oficiais do INEP.</p>
-</div>
-</div>
-</section>
-<!-- Redações Exemplares -->
-<section class="space-y-8">
-<div class="flex items-center justify-between">
-<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Redações Exemplares</h2>
-<a class="text-primary font-bold flex items-center gap-1 hover:underline" href="#">
+                    </div>
+                </div>
+                <div class="lg:w-1/2 h-64 lg:h-[500px] w-full relative">
+                    <img alt="Estudante Comemorando" class="absolute inset-0 w-full h-full object-cover"
+                        data-alt="Estudante universitário comemorando com braços abertos"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSluwUP4d8ynNSoRklQuEWCCjcBRVpnyinu_9YA5ojhjUiF2GtobqWH0ra-3S_aESFIpTyn7i3MIROCQSOU9DFf2FyImdQcXORRSsOEGmB2QjqjE9SfxHYngbd7YzGI5aHyouDGp7kmLyHa_3g9b7ZM9D--IIsWgN3GoSJqcfsbzPb4w-Vd5VG56H4qgOFBIcSNDuXXS4ASm4JHkYdKjn7TFqPj6CY1m15N5z4ukSkJg3yPCLHeakQqS7FCo49N5Odcv4l0egrCHd3" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-white dark:from-slate-900 via-transparent to-transparent lg:block hidden">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Por onde começar -->
+        <section class="space-y-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div class="space-y-2">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Por onde começar?</h2>
+                    <p class="text-slate-500">Siga nossa trilha de sucesso personalizada para você.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Step 1 -->
+                <div
+                    class="group p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/50 transition-all shadow-sm hover:shadow-xl">
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">menu_book</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Explore a Biblioteca</h3>
+                    <p class="text-slate-600 dark:text-slate-400">Acesse centenas de aulas e redações nota 1000 para se
+                        inspirar e aprender as melhores estruturas.</p>
+                </div>
+                <!-- Step 2 -->
+                <div
+                    class="group p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/50 transition-all shadow-sm hover:shadow-xl">
+                    <div
+                        class="w-14 h-14 bg-success/10 text-success rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">edit_square</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Pratique Temas Quentes</h3>
+                    <p class="text-slate-600 dark:text-slate-400">Treine com os temas mais prováveis de cair no próximo
+                        ENEM, selecionados por nossos especialistas.</p>
+                </div>
+                <!-- Step 3 -->
+                <div
+                    class="group p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:border-primary/50 transition-all shadow-sm hover:shadow-xl">
+                    <div
+                        class="w-14 h-14 bg-primary text-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-3xl">task_alt</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Receba Feedback</h3>
+                    <p class="text-slate-600 dark:text-slate-400">Correções detalhadas feitas por especialistas seguindo
+                        rigorosamente os critérios oficiais do INEP.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Redações Exemplares -->
+        <section class="space-y-8">
+            <div class="flex items-center justify-between">
+                <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Redações Exemplares</h2>
+                <a class="text-primary font-bold flex items-center gap-1 hover:underline" href="#">
                     Ver todas <span class="material-symbols-outlined">arrow_forward</span>
-</a>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Essay Card 1 -->
-<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all group">
-<div class="h-40 bg-slate-200 dark:bg-slate-800 relative">
-<img alt="Redação Exemplo" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform" data-alt="Livro aberto com anotações em uma mesa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgYSp95RW8yfaXu7VU1I7nf34oSZxU-gJQ3g7KzuvBo7IZs7HfK4vARDIc5m2gAFxjXFTOZDF_VKwifqYHsmE17R07FXchz0Ldv-_tCFQtTphEB-DmNVTevwK5hcuGaCFCrnMWbLI42VaaCJ_PrmdaIls50IAwXeV19jhq_TuP94T9fF7xzXan9JZWTzGYmUwz0-V_7HWbcDQgvHCklgf9E5qBeltaJDJC4VRZ9vv199ThCmaSAiDG6Rwo7NpYBdAKRGDe-zcXmS_a"/>
-<div class="absolute top-3 right-3 bg-success text-white px-2 py-1 rounded font-bold text-xs">NOTA 1000</div>
-</div>
-<div class="p-5 space-y-3">
-<h4 class="font-bold text-lg line-clamp-2 leading-snug">Impactos da Inteligência Artificial na Educação Brasileira</h4>
-<div class="flex items-center gap-2 text-sm text-slate-500">
-<span class="material-symbols-outlined text-sm">person</span>
-<span>Marina Silva</span>
-</div>
-</div>
-</div>
-<!-- Essay Card 2 -->
-<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all group">
-<div class="h-40 bg-slate-200 dark:bg-slate-800 relative">
-<img alt="Redação Exemplo" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform" data-alt="Caderno aberto com caneta e óculos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTAald2hFN9hXTDhUjoJEnwKN7-KxZrPKwCJXiQ8F_egwe6jVO2w3dvsFw48nhOE93JA9iiQHfCDGOZKuwcDSM3fjUui6VNg76VSYWjtzaPN9f37757_Z8tQ5aB7rIJpRslgS3w64hIdwYlnppqyrtGdM--FfmeyowdAbeZFhpkh4DvAoD3LaZARcjGrOtLrItYMn2PpzE5t9vs2I9JEmuHhpHYZLqt4D2J-qbT8bRej16Y0DxNrFnXTxfv_B1Jw0O2XL198nm4bDK"/>
-<div class="absolute top-3 right-3 bg-success text-white px-2 py-1 rounded font-bold text-xs">NOTA 1000</div>
-</div>
-<div class="p-5 space-y-3">
-<h4 class="font-bold text-lg line-clamp-2 leading-snug">O estigma associado às doenças mentais na sociedade</h4>
-<div class="flex items-center gap-2 text-sm text-slate-500">
-<span class="material-symbols-outlined text-sm">person</span>
-<span>João Pereira</span>
-</div>
-</div>
-</div>
-<!-- Essay Card 3 -->
-<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all group">
-<div class="h-40 bg-slate-200 dark:bg-slate-800 relative">
-<img alt="Redação Exemplo" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform" data-alt="Pilhas de livros antigos em uma biblioteca" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_UAY-r8hSQFC8pjJQ_qkIpD3OadsqIoh4TqVgMYrAXklUEFUL2wYmuwG7WYlUsbhWIVrG5CnQ91dn-dYWUQUVbDowyfRiS3NKY2P4pBP7weKjg37aRRGYhJ_1MfTrrPATg1StdJ5dSbyA2muHV_hl02waFH8UcXbmIzFz35QcJsjkfsQlLQ1Jnv9Ig4ZTPOmlefHFMpyjXXMbj07onOFCmEtOVnIZb4iwQbP-IbAlUKGMWcbrkOxnE3aV3rkTWVO29W5TgHFJJT7U"/>
-<div class="absolute top-3 right-3 bg-success text-white px-2 py-1 rounded font-bold text-xs">NOTA 1000</div>
-</div>
-<div class="p-5 space-y-3">
-<h4 class="font-bold text-lg line-clamp-2 leading-snug">Caminhos para combater a intolerância religiosa no Brasil</h4>
-<div class="flex items-center gap-2 text-sm text-slate-500">
-<span class="material-symbols-outlined text-sm">person</span>
-<span>Beatriz Lima</span>
-</div>
-</div>
-</div>
-<!-- Essay Card 4 -->
-<div class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all group">
-<div class="h-40 bg-slate-200 dark:bg-slate-800 relative">
-<img alt="Redação Exemplo" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform" data-alt="Mão segurando uma caneta tinteiro escrevendo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWisjTRpTTqkWCR4QpZI2amUlEayM6lgSxOrRh4kUCVN16L60py0MqFo8Rh8ybuFjexR9u4qnzsLs17fE0Tm57yWJa2ZX1w1pAuFOnS9TZelsNjCMW8HqChUNL7VugNB40qDuZWjXAF98QOf33_cp_opDCTECl6MvgKFyy7u-iaCWi-ObFRDM4mq2B5uwXhSW6UPyZgg3nVbCSXEMtG8lFX3M090j6vHwOdzUcpKfKN7nDT1pAFKsmIhGoOvEUUdDxWHA5Ckk351Ks"/>
-<div class="absolute top-3 right-3 bg-success text-white px-2 py-1 rounded font-bold text-xs">NOTA 1000</div>
-</div>
-<div class="p-5 space-y-3">
-<h4 class="font-bold text-lg line-clamp-2 leading-snug">Invisibilidade e registro civil: garantia de acesso à cidadania</h4>
-<div class="flex items-center gap-2 text-sm text-slate-500">
-<span class="material-symbols-outlined text-sm">person</span>
-<span>Ricardo Gomes</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Temas Quentes -->
-<section class="bg-primary/5 rounded-3xl p-8 lg:p-12 border border-primary/10">
-<div class="flex flex-col lg:flex-row gap-12">
-<div class="lg:w-1/3 space-y-4">
-<div class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center">
-<span class="material-symbols-outlined">local_fire_department</span>
-</div>
-<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Temas Quentes</h2>
-<p class="text-slate-600 dark:text-slate-400">
-                        Nossa equipe de professores selecionou os temas com maior probabilidade de aparecerem no próximo ENEM. Pratique agora!
+                </a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Essay Card 1 -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all group">
+                    <div class="h-40 bg-slate-200 dark:bg-slate-800 relative">
+                        <img alt="Redação Exemplo"
+                            class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform"
+                            data-alt="Livro aberto com anotações em uma mesa"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgYSp95RW8yfaXu7VU1I7nf34oSZxU-gJQ3g7KzuvBo7IZs7HfK4vARDIc5m2gAFxjXFTOZDF_VKwifqYHsmE17R07FXchz0Ldv-_tCFQtTphEB-DmNVTevwK5hcuGaCFCrnMWbLI42VaaCJ_PrmdaIls50IAwXeV19jhq_TuP94T9fF7xzXan9JZWTzGYmUwz0-V_7HWbcDQgvHCklgf9E5qBeltaJDJC4VRZ9vv199ThCmaSAiDG6Rwo7NpYBdAKRGDe-zcXmS_a" />
+                        <div class="absolute top-3 right-3 bg-success text-white px-2 py-1 rounded font-bold text-xs">
+                            NOTA 1000</div>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <h4 class="font-bold text-lg line-clamp-2 leading-snug">Impactos da Inteligência Artificial na
+                            Educação Brasileira</h4>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <span class="material-symbols-outlined text-sm">person</span>
+                            <span>Marina Silva</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Essay Card 2 -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all group">
+                    <div class="h-40 bg-slate-200 dark:bg-slate-800 relative">
+                        <img alt="Redação Exemplo"
+                            class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform"
+                            data-alt="Caderno aberto com caneta e óculos"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTAald2hFN9hXTDhUjoJEnwKN7-KxZrPKwCJXiQ8F_egwe6jVO2w3dvsFw48nhOE93JA9iiQHfCDGOZKuwcDSM3fjUui6VNg76VSYWjtzaPN9f37757_Z8tQ5aB7rIJpRslgS3w64hIdwYlnppqyrtGdM--FfmeyowdAbeZFhpkh4DvAoD3LaZARcjGrOtLrItYMn2PpzE5t9vs2I9JEmuHhpHYZLqt4D2J-qbT8bRej16Y0DxNrFnXTxfv_B1Jw0O2XL198nm4bDK" />
+                        <div class="absolute top-3 right-3 bg-success text-white px-2 py-1 rounded font-bold text-xs">
+                            NOTA 1000</div>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <h4 class="font-bold text-lg line-clamp-2 leading-snug">O estigma associado às doenças mentais
+                            na sociedade</h4>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <span class="material-symbols-outlined text-sm">person</span>
+                            <span>João Pereira</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Essay Card 3 -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all group">
+                    <div class="h-40 bg-slate-200 dark:bg-slate-800 relative">
+                        <img alt="Redação Exemplo"
+                            class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform"
+                            data-alt="Pilhas de livros antigos em uma biblioteca"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_UAY-r8hSQFC8pjJQ_qkIpD3OadsqIoh4TqVgMYrAXklUEFUL2wYmuwG7WYlUsbhWIVrG5CnQ91dn-dYWUQUVbDowyfRiS3NKY2P4pBP7weKjg37aRRGYhJ_1MfTrrPATg1StdJ5dSbyA2muHV_hl02waFH8UcXbmIzFz35QcJsjkfsQlLQ1Jnv9Ig4ZTPOmlefHFMpyjXXMbj07onOFCmEtOVnIZb4iwQbP-IbAlUKGMWcbrkOxnE3aV3rkTWVO29W5TgHFJJT7U" />
+                        <div class="absolute top-3 right-3 bg-success text-white px-2 py-1 rounded font-bold text-xs">
+                            NOTA 1000</div>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <h4 class="font-bold text-lg line-clamp-2 leading-snug">Caminhos para combater a intolerância
+                            religiosa no Brasil</h4>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <span class="material-symbols-outlined text-sm">person</span>
+                            <span>Beatriz Lima</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Essay Card 4 -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all group">
+                    <div class="h-40 bg-slate-200 dark:bg-slate-800 relative">
+                        <img alt="Redação Exemplo"
+                            class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform"
+                            data-alt="Mão segurando uma caneta tinteiro escrevendo"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWisjTRpTTqkWCR4QpZI2amUlEayM6lgSxOrRh4kUCVN16L60py0MqFo8Rh8ybuFjexR9u4qnzsLs17fE0Tm57yWJa2ZX1w1pAuFOnS9TZelsNjCMW8HqChUNL7VugNB40qDuZWjXAF98QOf33_cp_opDCTECl6MvgKFyy7u-iaCWi-ObFRDM4mq2B5uwXhSW6UPyZgg3nVbCSXEMtG8lFX3M090j6vHwOdzUcpKfKN7nDT1pAFKsmIhGoOvEUUdDxWHA5Ckk351Ks" />
+                        <div class="absolute top-3 right-3 bg-success text-white px-2 py-1 rounded font-bold text-xs">
+                            NOTA 1000</div>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <h4 class="font-bold text-lg line-clamp-2 leading-snug">Invisibilidade e registro civil:
+                            garantia de acesso à cidadania</h4>
+                        <div class="flex items-center gap-2 text-sm text-slate-500">
+                            <span class="material-symbols-outlined text-sm">person</span>
+                            <span>Ricardo Gomes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Temas Quentes -->
+        <section class="bg-primary/5 rounded-3xl p-8 lg:p-12 border border-primary/10">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/3 space-y-4">
+                    <div class="w-12 h-12 bg-primary text-white rounded-xl flex items-center justify-center">
+                        <span class="material-symbols-outlined">local_fire_department</span>
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Temas Quentes</h2>
+                    <p class="text-slate-600 dark:text-slate-400">
+                        Nossa equipe de professores selecionou os temas com maior probabilidade de aparecerem no próximo
+                        ENEM. Pratique agora!
                     </p>
-<button class="bg-primary text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">
+                    <button
+                        class="bg-primary text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">
                         Ver todos os temas
                     </button>
-</div>
-<div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
-<!-- Hot Topic Card 1 -->
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 flex items-start gap-4 group cursor-pointer hover:shadow-md">
-<div class="text-primary font-bold text-xl">01</div>
-<div class="space-y-1">
-<div class="text-xs font-bold text-orange-500 uppercase flex items-center gap-1">
-<span class="material-symbols-outlined text-xs">trending_up</span> Em alta
+                </div>
+                <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Hot Topic Card 1 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 flex items-start gap-4 group cursor-pointer hover:shadow-md">
+                        <div class="text-primary font-bold text-xl">01</div>
+                        <div class="space-y-1">
+                            <div class="text-xs font-bold text-orange-500 uppercase flex items-center gap-1">
+                                <span class="material-symbols-outlined text-xs">trending_up</span> Em alta
                             </div>
-<h4 class="font-bold group-hover:text-primary transition-colors">A precariedade do sistema carcerário brasileiro</h4>
-</div>
-</div>
-<!-- Hot Topic Card 2 -->
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 flex items-start gap-4 group cursor-pointer hover:shadow-md">
-<div class="text-primary font-bold text-xl">02</div>
-<div class="space-y-1">
-<div class="text-xs font-bold text-blue-500 uppercase flex items-center gap-1">
-<span class="material-symbols-outlined text-xs">new_releases</span> Novo
+                            <h4 class="font-bold group-hover:text-primary transition-colors">A precariedade do sistema
+                                carcerário brasileiro</h4>
+                        </div>
+                    </div>
+                    <!-- Hot Topic Card 2 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 flex items-start gap-4 group cursor-pointer hover:shadow-md">
+                        <div class="text-primary font-bold text-xl">02</div>
+                        <div class="space-y-1">
+                            <div class="text-xs font-bold text-blue-500 uppercase flex items-center gap-1">
+                                <span class="material-symbols-outlined text-xs">new_releases</span> Novo
                             </div>
-<h4 class="font-bold group-hover:text-primary transition-colors">Os limites da liberdade de expressão no meio digital</h4>
-</div>
-</div>
-<!-- Hot Topic Card 3 -->
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 flex items-start gap-4 group cursor-pointer hover:shadow-md">
-<div class="text-primary font-bold text-xl">03</div>
-<div class="space-y-1">
-<div class="text-xs font-bold text-orange-500 uppercase flex items-center gap-1">
-<span class="material-symbols-outlined text-xs">trending_up</span> Em alta
+                            <h4 class="font-bold group-hover:text-primary transition-colors">Os limites da liberdade de
+                                expressão no meio digital</h4>
+                        </div>
+                    </div>
+                    <!-- Hot Topic Card 3 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 flex items-start gap-4 group cursor-pointer hover:shadow-md">
+                        <div class="text-primary font-bold text-xl">03</div>
+                        <div class="space-y-1">
+                            <div class="text-xs font-bold text-orange-500 uppercase flex items-center gap-1">
+                                <span class="material-symbols-outlined text-xs">trending_up</span> Em alta
                             </div>
-<h4 class="font-bold group-hover:text-primary transition-colors">A preservação dos biomas e o agronegócio sustentável</h4>
-</div>
-</div>
-<!-- Hot Topic Card 4 -->
-<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 flex items-start gap-4 group cursor-pointer hover:shadow-md">
-<div class="text-primary font-bold text-xl">04</div>
-<div class="space-y-1">
-<div class="text-xs font-bold text-orange-500 uppercase flex items-center gap-1">
-<span class="material-symbols-outlined text-xs">trending_up</span> Em alta
+                            <h4 class="font-bold group-hover:text-primary transition-colors">A preservação dos biomas e
+                                o agronegócio sustentável</h4>
+                        </div>
+                    </div>
+                    <!-- Hot Topic Card 4 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 flex items-start gap-4 group cursor-pointer hover:shadow-md">
+                        <div class="text-primary font-bold text-xl">04</div>
+                        <div class="space-y-1">
+                            <div class="text-xs font-bold text-orange-500 uppercase flex items-center gap-1">
+                                <span class="material-symbols-outlined text-xs">trending_up</span> Em alta
                             </div>
-<h4 class="font-bold group-hover:text-primary transition-colors">Desafios para a valorização de comunidades tradicionais</h4>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-20 py-12">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-<div class="space-y-4">
-<div class="flex items-center gap-2 text-primary">
-<span class="material-symbols-outlined text-3xl font-bold">menu_book</span>
-<h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Redação<span class="text-primary">1000</span></h1>
-</div>
-<p class="text-sm text-slate-500">
+                            <h4 class="font-bold group-hover:text-primary transition-colors">Desafios para a valorização
+                                de comunidades tradicionais</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2 text-primary">
+                        <span class="material-symbols-outlined text-3xl font-bold">menu_book</span>
+                        <h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Redação<span
+                                class="text-primary">1000</span></h1>
+                    </div>
+                    <p class="text-sm text-slate-500">
                         Transformando sonhos em aprovação através da excelência em redação para o ENEM.
                     </p>
-</div>
-<div>
-<h5 class="font-bold mb-4">Plataforma</h5>
-<ul class="space-y-2 text-sm text-slate-500">
-<li><a class="hover:text-primary" href="#">Temas de Redação</a></li>
-<li><a class="hover:text-primary" href="#">Correções Online</a></li>
-<li><a class="hover:text-primary" href="#">Vídeo Aulas</a></li>
-<li><a class="hover:text-primary" href="#">Biblioteca de Exemplos</a></li>
-</ul>
-</div>
-<div>
-<h5 class="font-bold mb-4">Suporte</h5>
-<ul class="space-y-2 text-sm text-slate-500">
-<li><a class="hover:text-primary" href="#">Central de Ajuda</a></li>
-<li><a class="hover:text-primary" href="#">Fale Conosco</a></li>
-<li><a class="hover:text-primary" href="#">Termos de Uso</a></li>
-<li><a class="hover:text-primary" href="#">Privacidade</a></li>
-</ul>
-</div>
-<div>
-<h5 class="font-bold mb-4">Fique por dentro</h5>
-<div class="flex gap-4">
-<a class="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-slate-600 hover:text-primary transition-colors" href="#">
-<span class="material-symbols-outlined text-xl">share</span>
-</a>
-<a class="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-slate-600 hover:text-primary transition-colors" href="#">
-<span class="material-symbols-outlined text-xl">mail</span>
-</a>
-<a class="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-slate-600 hover:text-primary transition-colors" href="#">
-<span class="material-symbols-outlined text-xl">notifications</span>
-</a>
-</div>
-</div>
-</div>
-<div class="border-t border-slate-200 dark:border-slate-800 mt-12 pt-8 text-center text-sm text-slate-500">
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Plataforma</h5>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a class="hover:text-primary" href="#">Temas de Redação</a></li>
+                        <li><a class="hover:text-primary" href="#">Correções Online</a></li>
+                        <li><a class="hover:text-primary" href="#">Vídeo Aulas</a></li>
+                        <li><a class="hover:text-primary" href="#">Biblioteca de Exemplos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Suporte</h5>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a class="hover:text-primary" href="#">Central de Ajuda</a></li>
+                        <li><a class="hover:text-primary" href="#">Fale Conosco</a></li>
+                        <li><a class="hover:text-primary" href="#">Termos de Uso</a></li>
+                        <li><a class="hover:text-primary" href="#">Privacidade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold mb-4">Fique por dentro</h5>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-slate-600 hover:text-primary transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">share</span>
+                        </a>
+                        <a class="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-slate-600 hover:text-primary transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">mail</span>
+                        </a>
+                        <a class="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-slate-600 hover:text-primary transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">notifications</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-200 dark:border-slate-800 mt-12 pt-8 text-center text-sm text-slate-500">
                 © 2024 Portal Redação Nota 1000. Todos os direitos reservados.
             </div>
-</div>
-</footer>
-</body></html>
+        </div>
+    </footer>
+</body>
+
+</html>
