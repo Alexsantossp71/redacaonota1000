@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ambiente de Escrita Simulado - Nota 1000</title>
+    <!-- Tailwind CSS with plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts: Lexend -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .writing-sheet {
+            background-image: linear-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 100% 2.5rem;
+            line-height: 2.5rem;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col overflow-hidden">
+    <!-- Header / Navigation Bar -->
+    <header
+        class="flex items-center justify-between px-6 py-3 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 z-10 shadow-sm">
+        <div class="flex items-center gap-6">
+            <a href="../../../redacaonota1000/index_original.html"
+                class="flex items-center gap-4 hover:opacity-80 transition-opacity">
+                <div class="bg-primary p-2 rounded-lg text-white">
+                    <span class="material-symbols-outlined block">edit_note</span>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold leading-tight">Nota 1000</h1>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-4 ml-6">
+                <a class="text-xs font-bold text-slate-500 hover:text-primary transition-colors"
+                    href="../../../redacaonota1000/index_original.html">Início</a>
+                <a class="text-xs font-bold text-slate-500 hover:text-primary transition-colors"
+                    href="../aulas/aulas.html">Aulas</a>
+                <a class="text-xs font-bold text-slate-500 hover:text-primary transition-colors"
+                    href="../biblioteca/biblioteca.html">Biblioteca</a>
+                <a class="text-xs font-bold text-primary border-b border-primary" href="pratica.html">Prática</a>
+            </nav>
+        </div>
+        <!-- Countdown Timer (Optional, kept for aesthetic but adding spacing) -->
+        <div
+            class="hidden lg:flex items-center gap-3 bg-slate-100 dark:bg-slate-800 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700">
+            <span class="material-symbols-outlined text-primary text-xl">timer</span>
+            <div class="flex gap-1 items-baseline">
+                <span class="text-xl font-bold tracking-tight">05</span>
+                <span class="text-[10px] font-bold uppercase text-slate-400">h</span>
+                <span class="text-xl font-bold tracking-tight">24</span>
+                <span class="text-[10px] font-bold uppercase text-slate-400">m</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-3">
+            <button
+                class="flex items-center gap-2 px-6 h-10 bg-primary hover:bg-blue-700 text-white rounded-lg text-sm font-bold shadow-lg shadow-primary/20 transition-all">
+                Finalizar Redação
+                <span class="material-symbols-outlined text-lg">send</span>
+            </button>
+        </div>
+    </header>
+    <!-- Main Content Layout -->
+    <main class="flex flex-1 overflow-hidden h-full">
+        <!-- Left Panel: Instructions and Texts -->
+        <aside
+            class="w-1/3 min-w-[400px] border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col overflow-hidden">
+            <div class="p-6 border-b border-slate-100 dark:border-slate-800">
+                <nav class="flex gap-2 mb-4">
+                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">PROPOSTA ATUAL</span>
+                    <span class="text-xs font-bold text-slate-400 px-2 py-1">2024.1</span>
+                </nav>
+                <h2 class="text-xl font-bold leading-snug">
+                    Caminhos para combater a intolerância religiosa no Brasil
+                </h2>
+            </div>
+            <div class="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-6">
+                <!-- Instructions Card -->
+                <div
+                    class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-xl border border-blue-100 dark:border-blue-800/50">
+                    <h3 class="flex items-center gap-2 text-primary font-bold text-sm mb-3">
+                        <span class="material-symbols-outlined text-lg">info</span>
+                        INSTRUÇÕES PARA A REDAÇÃO
+                    </h3>
+                    <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-2 list-disc pl-4">
+                        <li>O rascunho da redação deve ser feito no espaço apropriado.</li>
+                        <li>O texto definitivo deve ser escrito em até 30 linhas.</li>
+                        <li>A redação que tiver até 7 linhas será considerada "insuficiente".</li>
+                        <li>Evite cópias dos textos motivadores.</li>
+                    </ul>
+                </div>
+                <!-- Textos Motivadores -->
+                <div class="space-y-4">
+                    <div
+                        class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Texto I</span>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                            "A liberdade de consciência e de crença é inviolável, sendo assegurado o livre exercício dos
+                            cultos religiosos e garantida, na forma da lei, a proteção aos locais de culto e a suas
+                            liturgias."
+                        </p>
+                        <p class="mt-2 text-[10px] italic text-slate-400">Fonte: Constituição Federal de 1988, Art. 5º,
+                            VI.</p>
+                    </div>
+                    <div
+                        class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Texto II</span>
+                        <div
+                            class="mt-3 w-full aspect-video bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center overflow-hidden">
+                            <div
+                                class="w-full h-full bg-gradient-to-br from-blue-400 to-primary flex flex-col items-center justify-center p-4 text-white text-center">
+                                <span class="material-symbols-outlined text-4xl mb-2">bar_chart</span>
+                                <p class="text-xs font-bold uppercase">Casos de Intolerância por Região</p>
+                                <p class="text-[10px] opacity-80 mt-1">Dados do Disque 100 (2023)</p>
+                            </div>
+                        </div>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300 italic">
+                            O Brasil registrou um aumento de 45% nas denúncias de intolerância religiosa no último
+                            semestre, com maior incidência contra religiões de matriz africana.
+                        </p>
+                    </div>
+                    <div
+                        class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Texto III</span>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                            A educação é o pilar fundamental para a construção de uma sociedade pluralista. Respeitar o
+                            sagrado do outro é, antes de tudo, um exercício de cidadania e alteridade que deve ser
+                            cultivado desde o ensino básico.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Panel Footer -->
+            <div class="p-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800">
+                <button
+                    class="w-full flex items-center justify-center gap-2 py-2 text-xs font-bold text-slate-500 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-lg">lightbulb</span>
+                    Ver Competências Avaliadas
+                </button>
+            </div>
+        </aside>
+        <!-- Right Panel: Writing Editor -->
+        <section
+            class="flex-1 bg-background-light dark:bg-background-dark p-8 overflow-y-auto custom-scrollbar flex flex-col items-center">
+            <!-- Editor Container -->
+            <div
+                class="w-full max-w-[850px] bg-white dark:bg-slate-900 shadow-2xl rounded-lg min-h-[1100px] flex flex-col mb-20 relative border border-slate-200 dark:border-slate-800">
+                <!-- Page Top Margin / Header -->
+                <div
+                    class="h-16 border-b border-slate-100 dark:border-slate-800 flex items-center px-8 justify-between">
+                    <span class="text-[10px] font-black text-slate-300 tracking-[0.3em] uppercase">Folha de Redação
+                        Definitiva</span>
+                    <div class="flex gap-4">
+                        <button class="text-slate-400 hover:text-primary"><span
+                                class="material-symbols-outlined text-lg">format_bold</span></button>
+                        <button class="text-slate-400 hover:text-primary"><span
+                                class="material-symbols-outlined text-lg">format_italic</span></button>
+                        <div class="w-px h-4 bg-slate-200 dark:bg-slate-700 self-center mx-1"></div>
+                        <button class="text-slate-400 hover:text-primary"><span
+                                class="material-symbols-outlined text-lg">undo</span></button>
+                        <button class="text-slate-400 hover:text-primary"><span
+                                class="material-symbols-outlined text-lg">redo</span></button>
+                    </div>
+                </div>
+                <!-- The "Paper" -->
+                <div class="flex-1 flex px-2 py-4">
+                    <!-- Line Numbers -->
+                    <div class="w-12 flex flex-col text-right pr-4 text-slate-300 dark:text-slate-600 text-sm select-none"
+                        style="line-height: 2.5rem;">
+                        <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span>
+                        <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+                        <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
+                    </div>
+                    <!-- Writing Area -->
+                    <div class="flex-1 writing-sheet relative">
+                        <textarea
+                            class="w-full h-full bg-transparent border-none focus:ring-0 p-0 text-base resize-none text-slate-800 dark:text-slate-200 font-medium placeholder:text-slate-300 dark:placeholder:text-slate-700"
+                            placeholder="Comece sua redação aqui..." spellcheck="false"></textarea>
+                    </div>
+                </div>
+                <!-- Watermark -->
+                <div class="absolute bottom-10 right-10 pointer-events-none opacity-5 dark:opacity-10 select-none">
+                    <span class="text-6xl font-black rotate-[-15deg] block">ENEM 2024</span>
+                </div>
+            </div>
+            <!-- Floating Status Bar -->
+            <div class="fixed bottom-6 left-1/3 ml-12 right-12 max-w-[850px] mx-auto z-20">
+                <div
+                    class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl px-6 py-3 flex items-center justify-between">
+                    <div class="flex items-center gap-6">
+                        <div class="flex flex-col">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase">Linhas</span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-xl font-bold text-primary">12</span>
+                                <span class="text-sm font-medium text-slate-400">/ 30</span>
+                            </div>
+                        </div>
+                        <div class="w-px h-8 bg-slate-200 dark:bg-slate-700"></div>
+                        <div class="flex flex-col">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase">Palavras</span>
+                            <span class="text-xl font-bold">148</span>
+                        </div>
+                        <div class="w-px h-8 bg-slate-200 dark:bg-slate-700"></div>
+                        <div class="flex flex-col">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase">Status</span>
+                            <span class="text-xs font-bold text-green-500 flex items-center gap-1">
+                                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                Salvando automaticamente...
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="text-right mr-3 hidden lg:block">
+                            <p class="text-[10px] font-bold text-slate-400 uppercase">Próximo objetivo</p>
+                            <p class="text-xs font-medium italic">Faltam 8 linhas para o mínimo sugerido</p>
+                        </div>
+                        <button
+                            class="bg-slate-900 dark:bg-primary text-white p-2 rounded-lg hover:opacity-90 transition-all">
+                            <span class="material-symbols-outlined">help</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Right Sidebar: Shortcuts / Quick Tools -->
+        <aside
+            class="w-16 border-l border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center py-6 gap-6">
+            <button class="group relative text-slate-400 hover:text-primary">
+                <span class="material-symbols-outlined">menu_book</span>
+                <span
+                    class="absolute right-full mr-3 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity">Dicionário</span>
+            </button>
+            <button class="group relative text-slate-400 hover:text-primary">
+                <span class="material-symbols-outlined">format_quote</span>
+                <span
+                    class="absolute right-full mr-3 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity">Citações</span>
+            </button>
+            <button class="group relative text-slate-400 hover:text-primary">
+                <span class="material-symbols-outlined">history_edu</span>
+                <span
+                    class="absolute right-full mr-3 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity">Conectivos</span>
+            </button>
+            <div class="w-8 h-px bg-slate-100 dark:bg-slate-800"></div>
+            <button class="group relative text-slate-400 hover:text-primary">
+                <span class="material-symbols-outlined">dark_mode</span>
+                <span
+                    class="absolute right-full mr-3 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity">Tema
+                    Dark</span>
+            </button>
+            <button class="group relative text-slate-400 hover:text-primary">
+                <span class="material-symbols-outlined">settings</span>
+                <span
+                    class="absolute right-full mr-3 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity">Ajustes</span>
+            </button>
+        </aside>
+    </main>
+    <!-- Modal Background Overlay (Hidden by default) -->
+    <div class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center hidden">
+        <div
+            class="bg-white dark:bg-slate-900 rounded-2xl p-8 max-w-md w-full shadow-2xl border border-slate-200 dark:border-slate-800">
+            <h3 class="text-xl font-bold mb-4">Tem certeza que deseja finalizar?</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6">Sua redação possui 12 linhas. O recomendado para uma nota
+                excelente é entre 25 e 30 linhas.</p>
+            <div class="flex gap-4">
+                <button
+                    class="flex-1 py-3 border border-slate-200 dark:border-slate-700 rounded-xl font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Voltar</button>
+                <button
+                    class="flex-1 py-3 bg-primary text-white rounded-xl font-bold hover:bg-blue-700 transition-colors">Finalizar
+                    agora</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

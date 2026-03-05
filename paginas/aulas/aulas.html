@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Guia Prático da Estrutura Perfeita | ENEM 1000</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .active-step {
+            @apply border-primary bg-primary/10;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+    <!-- Top Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
+                    <a href="../../../redacaonota1000/index_original.html"
+                        class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                        <div class="bg-primary p-1.5 rounded-lg text-white">
+                            <span class="material-symbols-outlined block">auto_stories</span>
+                        </div>
+                        <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">ENEM 1000</h2>
+                    </a>
+                </div>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary"
+                        href="../../../redacaonota1000/index_original.html">Início</a>
+                    <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary border-b-2 border-primary py-5"
+                        href="aulas.html">Aulas</a>
+                    <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary"
+                        href="../biblioteca/biblioteca.html">Biblioteca</a>
+                    <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary"
+                        href="../pratica/pratica.html">Prática</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <div class="relative hidden sm:block">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400 text-sm">search</span>
+                        <input
+                            class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary w-64"
+                            placeholder="Buscar material..." type="text" />
+                    </div>
+                    <div
+                        class="h-10 w-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden">
+                        <img alt="Avatar do usuário" class="h-full w-full object-cover"
+                            data-alt="Avatar circular de um estudante sorridente"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuCGONrBPRp5Ofp77JWqLofKSVcFZoWPcAgWGrVGbJgQBuSyqxJvGONaegXn3boD7-taqksEebLDGjaSAIE91t7WzZseIiZBf-ShN3zTuZ-mUW2k4wHORMeDBuhd5U_goOvy-01oxBREPC3mjePihfHuxqwR2blSQNuFYb-SxyzhW2_4CZZ7A__LGzZPWGrgPH6KYgF7f9lCoVE0zu9u7uSgvbWVNk9R5Iao20UNj0WwRO5ngmfknkof9WzYJ8eb2RIOPkWxjPt6mX" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left Sidebar: Progress & Modules -->
+            <aside class="lg:col-span-3 space-y-6">
+                <div
+                    class="bg-white dark:bg-background-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4">Seu
+                        Progresso</h3>
+                    <div class="flex justify-between items-end mb-2">
+                        <span class="text-2xl font-black text-primary">35%</span>
+                        <span class="text-xs font-medium text-slate-500">Módulo 2 de 6</span>
+                    </div>
+                    <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-primary h-full rounded-full" style="width: 35%;"></div>
+                    </div>
+                    <p class="mt-4 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Você está na trilha da
+                        <b>Estrutura Nota 1000</b>.</p>
+                </div>
+                <nav class="space-y-1">
+                    <div class="p-3 bg-primary/10 text-primary rounded-lg flex items-center gap-3 font-semibold">
+                        <span class="material-symbols-outlined">view_quilt</span>
+                        <span>Visão Geral</span>
+                    </div>
+                    <div
+                        class="p-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg flex items-center gap-3 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined">edit_note</span>
+                        <span>Introdução</span>
+                    </div>
+                    <div
+                        class="p-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg flex items-center gap-3 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined">history_edu</span>
+                        <span>Desenvolvimento</span>
+                    </div>
+                    <div
+                        class="p-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg flex items-center gap-3 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined">task_alt</span>
+                        <span>Conclusão</span>
+                    </div>
+                </nav>
+            </aside>
+            <!-- Main Content: The Infographic Guide -->
+            <section class="lg:col-span-9 space-y-8">
+                <!-- Hero Header -->
+                <div
+                    class="bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+                    <div class="h-32 bg-gradient-to-r from-primary to-indigo-600 flex items-center px-8">
+                        <h1 class="text-3xl font-black text-white tracking-tight">Guia Prático da Estrutura Perfeita
+                        </h1>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+                            A estrutura é o esqueleto da sua nota 1000. Siga este mapa mental interativo para garantir
+                            que cada parágrafo cumpra seu papel estratégico.
+                        </p>
+                    </div>
+                </div>
+                <!-- Interactive Infographic Area -->
+                <div class="relative">
+                    <div class="absolute left-8 top-0 bottom-0 w-px bg-slate-200 dark:border-slate-800 z-0"></div>
+                    <div class="space-y-12">
+                        <!-- Step 1: Introdução -->
+                        <div class="relative z-10 flex gap-6 group">
+                            <div
+                                class="size-16 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shrink-0 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-3xl">lightbulb</span>
+                            </div>
+                            <div
+                                class="flex-1 bg-white dark:bg-background-dark p-6 rounded-xl border-l-4 border-primary shadow-sm hover:shadow-md transition-shadow">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Introdução</h3>
+                                        <p class="text-sm font-medium text-primary">Contextualização + Tese</p>
+                                    </div>
+                                    <span
+                                        class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full">DICA
+                                        DE OURO</span>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div
+                                        class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-sm mb-2 flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-sm">history_edu</span>
+                                            Repertório Sociocultural
+                                        </h4>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-normal">Comece com
+                                            um filme, livro ou dado histórico que se conecte ao tema. Isso legitima seu
+                                            texto logo de cara.</p>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800">
+                                        <h4 class="font-bold text-sm mb-2 flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-sm">psychology</span> Tese Dual
+                                        </h4>
+                                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-normal">Apresente
+                                            dois problemas principais que você vai detalhar nos parágrafos de
+                                            desenvolvimento.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap gap-2">
+                                    <span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Gatilho:
+                                        Autoridade</span>
+                                    <span class="text-xs bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Conectivo:
+                                        "Nesse contexto..."</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Step 2: Desenvolvimento -->
+                        <div class="relative z-10 flex gap-6 group">
+                            <div
+                                class="size-16 rounded-full bg-slate-900 dark:bg-white dark:text-slate-900 text-white flex items-center justify-center shadow-lg shrink-0 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-3xl">analytics</span>
+                            </div>
+                            <div
+                                class="flex-1 bg-white dark:bg-background-dark p-6 rounded-xl border-l-4 border-slate-900 dark:border-white shadow-sm hover:shadow-md transition-shadow">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Desenvolvimento I e
+                                            II</h3>
+                                        <p class="text-sm font-medium text-slate-500">Argumento + Prova</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div
+                                        class="p-4 border border-dashed border-slate-300 dark:border-slate-700 rounded-lg">
+                                        <p class="text-sm italic text-slate-600 dark:text-slate-400">"Um parágrafo de
+                                            desenvolvimento deve conter: Tópico Frasal + Repertório + Conclusão do
+                                            parágrafo."</p>
+                                    </div>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="p-4 bg-primary/5 rounded-lg border border-primary/10">
+                                            <h4 class="font-bold text-primary text-sm mb-2">Conectivos de Ligação</h4>
+                                            <ul class="text-xs space-y-1 text-slate-600 dark:text-slate-400">
+                                                <li>• Além disso,</li>
+                                                <li>• Em contrapartida,</li>
+                                                <li>• Sob essa ótica,</li>
+                                            </ul>
+                                        </div>
+                                        <div
+                                            class="p-4 bg-amber-50 dark:bg-amber-900/10 rounded-lg border border-amber-200 dark:border-amber-900/30">
+                                            <h4 class="font-bold text-amber-700 dark:text-amber-500 text-sm mb-2">
+                                                Gatilho Mental: Lógica</h4>
+                                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-normal">Use
+                                                dados e fatos para tornar seu argumento irrefutável para o corretor.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Step 3: Conclusão -->
+                        <div class="relative z-10 flex gap-6 group">
+                            <div
+                                class="size-16 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shrink-0 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-3xl">auto_fix_high</span>
+                            </div>
+                            <div
+                                class="flex-1 bg-white dark:bg-background-dark p-6 rounded-xl border-l-4 border-primary shadow-sm hover:shadow-md transition-shadow">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Conclusão</h3>
+                                        <p class="text-sm font-medium text-primary">Proposta de Intervenção (GOMIFP)</p>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">A nota 1000 exige que você
+                                    resolva os problemas citados anteriormente. Você precisa de 5 elementos:</p>
+                                <div class="flex flex-wrap gap-3">
+                                    <div
+                                        class="flex-1 min-w-[120px] p-3 text-center bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-800">
+                                        <p class="text-xs font-black text-primary">AGENTE</p>
+                                        <p class="text-[10px] text-slate-500 uppercase mt-1">Quem faz?</p>
+                                    </div>
+                                    <div
+                                        class="flex-1 min-w-[120px] p-3 text-center bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-800">
+                                        <p class="text-xs font-black text-primary">AÇÃO</p>
+                                        <p class="text-[10px] text-slate-500 uppercase mt-1">O que faz?</p>
+                                    </div>
+                                    <div
+                                        class="flex-1 min-w-[120px] p-3 text-center bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-800">
+                                        <p class="text-xs font-black text-primary">MEIO/MODO</p>
+                                        <p class="text-[10px] text-slate-500 uppercase mt-1">Como faz?</p>
+                                    </div>
+                                    <div
+                                        class="flex-1 min-w-[120px] p-3 text-center bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-800">
+                                        <p class="text-xs font-black text-primary">EFEITO</p>
+                                        <p class="text-[10px] text-slate-500 uppercase mt-1">Para quê?</p>
+                                    </div>
+                                    <div
+                                        class="flex-1 min-w-[120px] p-3 text-center bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-100 dark:border-slate-800">
+                                        <p class="text-xs font-black text-primary">DETALHE</p>
+                                        <p class="text-[10px] text-slate-500 uppercase mt-1">Explicação extra</p>
+                                    </div>
+                                </div>
+                                <button
+                                    class="mt-6 w-full py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                    Ver Exemplo Nota 1000 Completo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Summary / Cheat Sheet Footer -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-indigo-900 text-white p-6 rounded-xl shadow-lg">
+                        <h4 class="text-lg font-bold mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-indigo-300">key</span> Gatilhos Mentais de
+                            Redação
+                        </h4>
+                        <ul class="space-y-3 text-sm text-indigo-100">
+                            <li class="flex gap-2">
+                                <span class="font-bold text-white">Escassez:</span>
+                                <span>"A falta de debate sobre [tema] agrava..."</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="font-bold text-white">Autoridade:</span>
+                                <span>"Segundo Zygmunt Bauman, a liquidez..."</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="font-bold text-white">Razão:</span>
+                                <span>"Isso ocorre porque a negligência estatal..."</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-emerald-600 text-white p-6 rounded-xl shadow-lg">
+                        <h4 class="text-lg font-bold mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-200">link</span> Conectivos de Valor
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-white/20 rounded-full text-xs font-medium">Por conseguinte</span>
+                            <span class="px-3 py-1 bg-white/20 rounded-full text-xs font-medium">Ademais</span>
+                            <span class="px-3 py-1 bg-white/20 rounded-full text-xs font-medium">Outrossim</span>
+                            <span class="px-3 py-1 bg-white/20 rounded-full text-xs font-medium">Em suma</span>
+                            <span class="px-3 py-1 bg-white/20 rounded-full text-xs font-medium">Contudo</span>
+                            <span class="px-3 py-1 bg-white/20 rounded-full text-xs font-medium">Sob esse viés</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="mt-12 border-t border-slate-200 dark:border-slate-800 py-8 bg-white dark:bg-background-dark">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm text-slate-500 dark:text-slate-400">© 2024 Plataforma ENEM 1000. Todos os direitos
+                reservados para o seu sucesso.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

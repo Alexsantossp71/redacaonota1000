@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Biblioteca de Redações Nota 1000</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="../../../redacaonota1000/index_original.html"
+                    class="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
+                    <span class="material-symbols-outlined text-3xl font-bold">menu_book</span>
+                    <h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Nota 1000</h1>
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center gap-6">
+                <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                    href="../../../redacaonota1000/index_original.html">Início</a>
+                <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                    href="../aulas/aulas.html">Aulas</a>
+                <a class="text-sm font-medium text-primary border-b-2 border-primary pb-1"
+                    href="biblioteca.html">Biblioteca</a>
+                <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                    href="../pratica/pratica.html">Prática</a>
+            </nav>
+            <div class="flex items-center gap-4 flex-1 justify-end max-w-xl">
+                <div class="relative w-full max-w-xs group">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+                    <input
+                        class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/50 placeholder:text-slate-500"
+                        placeholder="Buscar tema ou ano..." type="text" />
+                </div>
+                <button
+                    class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 relative">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span
+                        class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+                </button>
+                <div
+                    class="h-8 w-8 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden">
+                    <img alt="Avatar do usuário" class="w-full h-full object-cover"
+                        data-alt="Avatar circular de um estudante sorrindo"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-gO-j6Jylz_vmq4KhrH2fM6cUB14l5ZDAdsrBaPfFh2sKtdQQtZbvfoYrkAlVWmU8Mx0deZRxTfBMkzZEK6_8LKh3vsxPJD3UV4ZkM6qOaKweHMVjZUueJOthlii2KNsNjPpaJfN64EzL8xB2rVmuWMYudWn_MecGAH7_XBKAWBb5oyk5lpC1vDmQ48LgLmp6oKGze5TOd7uX-N5yo4uO_HzsvrkG1p_KI0kaWozSFZbk5dyYDOq-TDYq9QTqJUlq4pMTq00q29u0" />
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-[1440px] mx-auto px-6 py-8 flex gap-8">
+        <!-- Sidebar Filters -->
+        <aside class="w-64 shrink-0 hidden lg:block">
+            <div class="sticky top-24 space-y-8">
+                <!-- Competências Section -->
+                <section>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Competências (Foco)</h3>
+                    <div class="flex flex-col gap-2">
+                        <label
+                            class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
+                            <input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox" />
+                            <span class="text-sm font-medium group-hover:text-primary">C1: Gramática</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
+                            <input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox" />
+                            <span class="text-sm font-medium group-hover:text-primary">C2: Estrutura</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
+                            <input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox" />
+                            <span class="text-sm font-medium group-hover:text-primary">C3: Argumentação</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
+                            <input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox" />
+                            <span class="text-sm font-medium group-hover:text-primary">C4: Coesão</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
+                            <input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox" />
+                            <span class="text-sm font-medium group-hover:text-primary">C5: Proposta</span>
+                        </label>
+                    </div>
+                </section>
+                <!-- Eixos Temáticos Section -->
+                <section>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Eixos Temáticos</h3>
+                    <div class="flex flex-col gap-1">
+                        <button
+                            class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white text-sm font-medium transition-all shadow-md shadow-primary/20">
+                            <span class="material-symbols-outlined text-lg">apps</span>
+                            Todos os temas
+                        </button>
+                        <button
+                            class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-all">
+                            <span class="material-symbols-outlined text-lg">medical_services</span>
+                            Saúde
+                        </button>
+                        <button
+                            class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-all">
+                            <span class="material-symbols-outlined text-lg">school</span>
+                            Educação
+                        </button>
+                        <button
+                            class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-all">
+                            <span class="material-symbols-outlined text-lg">memory</span>
+                            Tecnologia
+                        </button>
+                        <button
+                            class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-all">
+                            <span class="material-symbols-outlined text-lg">eco</span>
+                            Meio Ambiente
+                        </button>
+                        <button
+                            class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-all">
+                            <span class="material-symbols-outlined text-lg">theater_comedy</span>
+                            Cultura
+                        </button>
+                    </div>
+                </section>
+                <!-- Stats card -->
+                <div
+                    class="p-4 rounded-xl bg-gradient-to-br from-primary to-blue-700 text-white shadow-xl shadow-primary/20">
+                    <p class="text-xs font-medium opacity-80 uppercase">Progresso de Leitura</p>
+                    <p class="text-2xl font-bold mt-1">12 / 50</p>
+                    <div class="w-full bg-white/20 h-1.5 rounded-full mt-3">
+                        <div class="bg-white h-full rounded-full w-[24%]"></div>
+                    </div>
+                    <p class="text-[10px] mt-2 opacity-70">Leia mais 5 redações para subir de nível.</p>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content Area -->
+        <div class="flex-1">
+            <!-- Hero Section -->
+            <div
+                class="mb-8 p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden">
+                <div class="relative z-10 max-w-2xl">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-3">Galeria de Redações Nota
+                        1000</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg mb-6 leading-relaxed">
+                        Aprenda com os melhores. Explore nossa curadoria de redações exemplares que atingiram a
+                        pontuação máxima no ENEM e entenda os padrões de excelência.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button
+                            class="bg-primary hover:bg-blue-600 text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all flex items-center gap-2">
+                            <span class="material-symbols-outlined text-lg">upload</span>
+                            Enviar minha redação
+                        </button>
+                        <button
+                            class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all">
+                            Como analisar?
+                        </button>
+                    </div>
+                </div>
+                <!-- Abstract background decoration -->
+                <div class="absolute -right-20 -top-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+                <div class="absolute right-10 bottom-0 opacity-10 hidden md:block">
+                    <span class="material-symbols-outlined text-[160px]">history_edu</span>
+                </div>
+            </div>
+            <!-- Grid Header -->
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center gap-2">
+                    <h3 class="text-lg font-bold">Redações em Destaque</h3>
+                    <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full">124
+                        resultados</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <label class="text-xs font-bold text-slate-400 uppercase">Ordenar por:</label>
+                    <select
+                        class="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-xs font-bold rounded-lg focus:ring-primary focus:border-primary py-1.5 pl-3 pr-8">
+                        <option>Mais recentes</option>
+                        <option>Mais lidas</option>
+                        <option>Por Ano</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Essay Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <article
+                    class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all group flex flex-col h-full">
+                    <div class="p-5 flex-1">
+                        <div class="flex justify-between items-start mb-3">
+                            <span
+                                class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider italic">Nota
+                                1000</span>
+                            <span class="text-slate-400 text-xs font-bold">ENEM 2019</span>
+                        </div>
+                        <h4
+                            class="text-base font-bold text-slate-900 dark:text-white leading-tight mb-3 group-hover:text-primary transition-colors">
+                            Democratização do acesso ao cinema no Brasil
+                        </h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 leading-relaxed">
+                            "Aristóteles, em sua obra 'Ética a Nicômaco', afirma que a finalidade da política é a
+                            felicidade dos cidadãos..."
+                        </p>
+                    </div>
+                    <div
+                        class="px-5 py-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/30 rounded-b-xl">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-blue-100 flex items-center justify-center text-[10px] font-bold text-blue-700">
+                                C1</div>
+                            <div
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-purple-100 flex items-center justify-center text-[10px] font-bold text-purple-700">
+                                C2</div>
+                            <div
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-orange-100 flex items-center justify-center text-[10px] font-bold text-orange-700">
+                                C5</div>
+                        </div>
+                        <button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
+                            Ler redação
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </article>
+                <!-- Card 2 -->
+                <article
+                    class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all group flex flex-col h-full">
+                    <div class="p-5 flex-1">
+                        <div class="flex justify-between items-start mb-3">
+                            <span
+                                class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider italic">Nota
+                                1000</span>
+                            <span class="text-slate-400 text-xs font-bold">ENEM 2021</span>
+                        </div>
+                        <h4
+                            class="text-base font-bold text-slate-900 dark:text-white leading-tight mb-3 group-hover:text-primary transition-colors">
+                            Invisibilidade e registro civil: garantia de acesso à cidadania
+                        </h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 leading-relaxed">
+                            "A obra 'Vidas Secas', de Graciliano Ramos, retrata a precariedade da vida de sertanejos
+                            que, desprovidos de documentos..."
+                        </p>
+                    </div>
+                    <div
+                        class="px-5 py-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/30 rounded-b-xl">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-red-100 flex items-center justify-center text-[10px] font-bold text-red-700">
+                                C3</div>
+                            <div
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-blue-100 flex items-center justify-center text-[10px] font-bold text-blue-700">
+                                C1</div>
+                        </div>
+                        <button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
+                            Ler redação
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </article>
+                <!-- Card 3 -->
+                <article
+                    class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all group flex flex-col h-full">
+                    <div class="p-5 flex-1">
+                        <div class="flex justify-between items-start mb-3">
+                            <span
+                                class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider italic">Nota
+                                1000</span>
+                            <span class="text-slate-400 text-xs font-bold">ENEM 2018</span>
+                        </div>
+                        <h4
+                            class="text-base font-bold text-slate-900 dark:text-white leading-tight mb-3 group-hover:text-primary transition-colors">
+                            Manipulação do comportamento do usuário pelo controle de dados
+                        </h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 leading-relaxed">
+                            "O advento da tecnologia informacional trouxe consigo a ilusão de liberdade plena. No
+                            entanto, o algoritmo..."
+                        </p>
+                    </div>
+                    <div
+                        class="px-5 py-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/30 rounded-b-xl">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-purple-100 flex items-center justify-center text-[10px] font-bold text-purple-700">
+                                C2</div>
+                            <div
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-green-100 flex items-center justify-center text-[10px] font-bold text-green-700">
+                                C4</div>
+                        </div>
+                        <button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
+                            Ler redação
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </article>
+                <!-- Card 4 -->
+                <article
+                    class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all group flex flex-col h-full">
+                    <div class="p-5 flex-1">
+                        <div class="flex justify-between items-start mb-3">
+                            <span
+                                class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider italic">Nota
+                                1000</span>
+                            <span class="text-slate-400 text-xs font-bold">ENEM 2022</span>
+                        </div>
+                        <h4
+                            class="text-base font-bold text-slate-900 dark:text-white leading-tight mb-3 group-hover:text-primary transition-colors">
+                            Desafios para a valorização de comunidades e povos tradicionais
+                        </h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 leading-relaxed">
+                            "A Constituição Federal de 1988 assegura o direito à preservação da cultura e do território.
+                            Todavia, a prática..."
+                        </p>
+                    </div>
+                    <div
+                        class="px-5 py-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/30 rounded-b-xl">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-blue-100 flex items-center justify-center text-[10px] font-bold text-blue-700">
+                                C1</div>
+                            <div
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-orange-100 flex items-center justify-center text-[10px] font-bold text-orange-700">
+                                C5</div>
+                        </div>
+                        <button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
+                            Ler redação
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </article>
+                <!-- Card 5 -->
+                <article
+                    class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all group flex flex-col h-full">
+                    <div class="p-5 flex-1">
+                        <div class="flex justify-between items-start mb-3">
+                            <span
+                                class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider italic">Nota
+                                1000</span>
+                            <span class="text-slate-400 text-xs font-bold">ENEM 2020</span>
+                        </div>
+                        <h4
+                            class="text-base font-bold text-slate-900 dark:text-white leading-tight mb-3 group-hover:text-primary transition-colors">
+                            O estigma associado às doenças mentais na sociedade brasileira
+                        </h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 leading-relaxed">
+                            "No filme 'Coringa', o protagonista Arthur Fleck sofre com a negligência estatal e o
+                            preconceito social devido ao seu transtorno..."
+                        </p>
+                    </div>
+                    <div
+                        class="px-5 py-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/30 rounded-b-xl">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-red-100 flex items-center justify-center text-[10px] font-bold text-red-700">
+                                C3</div>
+                            <div
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-green-100 flex items-center justify-center text-[10px] font-bold text-green-700">
+                                C4</div>
+                        </div>
+                        <button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
+                            Ler redação
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </article>
+                <!-- Card 6 -->
+                <article
+                    class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all group flex flex-col h-full">
+                    <div class="p-5 flex-1">
+                        <div class="flex justify-between items-start mb-3">
+                            <span
+                                class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider italic">Nota
+                                1000</span>
+                            <span class="text-slate-400 text-xs font-bold">ENEM 2017</span>
+                        </div>
+                        <h4
+                            class="text-base font-bold text-slate-900 dark:text-white leading-tight mb-3 group-hover:text-primary transition-colors">
+                            Desafios para a formação educacional de surdos no Brasil
+                        </h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 leading-relaxed">
+                            "Sob a ótica de Immanuel Kant, 'o homem é aquilo que a educação faz dele'. No contexto
+                            brasileiro, entretanto..."
+                        </p>
+                    </div>
+                    <div
+                        class="px-5 py-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/30 rounded-b-xl">
+                        <div class="flex -space-x-2">
+                            <div
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-blue-100 flex items-center justify-center text-[10px] font-bold text-blue-700">
+                                C1</div>
+                            <div
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-purple-100 flex items-center justify-center text-[10px] font-bold text-purple-700">
+                                C2</div>
+                            <div
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-orange-100 flex items-center justify-center text-[10px] font-bold text-orange-700">
+                                C5</div>
+                        </div>
+                        <button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
+                            Ler redação
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </article>
+            </div>
+            <!-- Pagination -->
+            <div class="mt-12 flex flex-col items-center gap-6">
+                <button
+                    class="flex items-center gap-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-8 py-3 rounded-xl font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                    Carregar mais redações
+                    <span class="material-symbols-outlined">expand_more</span>
+                </button>
+                <div class="flex items-center gap-2">
+                    <button
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-primary font-bold">1</button>
+                    <button
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-transparent hover:border-slate-200 dark:hover:border-slate-800 font-bold">2</button>
+                    <button
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-transparent hover:border-slate-200 dark:hover:border-slate-800 font-bold">3</button>
+                    <span class="px-2">...</span>
+                    <button
+                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-transparent hover:border-slate-200 dark:hover:border-slate-800 font-bold">12</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="mt-20 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-12">
+        <div class="max-w-[1440px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center gap-2 text-primary mb-4">
+                    <span class="material-symbols-outlined text-3xl font-bold">menu_book</span>
+                    <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Nota 1000</h2>
+                </div>
+                <p class="text-slate-500 dark:text-slate-400 max-w-sm mb-6">
+                    A maior plataforma de estudos focada na competência escrita do ENEM. Transformando alunos em
+                    redatores nota máxima através de repertório e prática.
+                </p>
+                <div class="flex gap-4">
+                    <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
+                            class="material-symbols-outlined">brand_awareness</span></a>
+                    <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
+                            class="material-symbols-outlined">public</span></a>
+                    <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
+                            class="material-symbols-outlined">mail</span></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-slate-900 dark:text-white mb-4">Recursos</h4>
+                <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+                    <li><a class="hover:text-primary transition-colors" href="#">Galeria de Temas</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Banco de Repertórios</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Guia das Competências</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Blog Educacional</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-slate-900 dark:text-white mb-4">Suporte</h4>
+                <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+                    <li><a class="hover:text-primary transition-colors" href="#">Dúvidas Frequentes</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Fale Conosco</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Termos de Uso</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Privacidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="max-w-[1440px] mx-auto px-6 pt-12 mt-12 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-400">
+            © 2024 Nota 1000 - Todos os direitos reservados.
+        </div>
+    </footer>
+</body>
+
+</html>

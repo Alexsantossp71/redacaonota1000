@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Feedback Detalhado - Plataforma ENEM 1000</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "success": "#10b981",
+                        "warning": "#f59e0b",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+    <!-- Top Navigation -->
+    <header class="sticky top-0 z-50 w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="../../../redacaonota1000/index_original.html"
+                    class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                    <div class="bg-primary p-1.5 rounded-lg text-white">
+                        <span class="material-symbols-outlined text-2xl">edit_note</span>
+                    </div>
+                    <h2 class="text-lg font-bold tracking-tight">ENEM 1000</h2>
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-medium hover:text-primary transition-colors"
+                    href="../../../redacaonota1000/index_original.html">Início</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="../aulas/aulas.html">Aulas</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors"
+                    href="../biblioteca/biblioteca.html">Biblioteca</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors"
+                    href="../pratica/pratica.html">Prática</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition-colors">
+                    <span class="material-symbols-outlined text-xl">notifications</span>
+                </button>
+                <div class="flex items-center gap-3 border-l border-slate-200 dark:border-slate-800 pl-4">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-xs font-bold">Gabriel Santos</p>
+                        <p class="text-[10px] text-slate-500 uppercase">Plano Pro</p>
+                    </div>
+                    <div
+                        class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden ring-2 ring-primary/20">
+                        <img alt="Avatar do usuário" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDQQsJ15nuJX__pHEi2536DvB2PShcLn_SF8GbW-yp57QsoDmRIpx36u_nmFSu2O5QMAeDo0RDWaDLM7_H2gSGor0YtpCztREJUV3Bkx6_XEj0KFDKvBbv7jzu5dAWtyNItv1zoVOiLPGIhqToRgqJKZVYecbzlKWPhBoUe6tAFGvyojfQIcydzqa77hvDJ93xxZnCHbmgnzPLqWJxp5c05deaQGLgZuT6ecyRDuURC1pcFQefDGp4BWtWhFIXeLC1CgzKBeIHzC-k" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-[1440px] mx-auto p-6 flex flex-col gap-6">
+        <!-- Page Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+                <div class="flex items-center gap-2 text-slate-500 text-sm mb-1">
+                    <a class="hover:underline" href="#">Redações</a>
+                    <span class="material-symbols-outlined text-sm">chevron_right</span>
+                    <span>O Impacto da Tecnologia na Educação</span>
+                </div>
+                <h1 class="text-3xl font-extrabold tracking-tight">Análise Detalhada</h1>
+                <p class="text-slate-500">Corrigido por Dra. Helena M. em 18 de Outubro, 2023</p>
+            </div>
+            <div class="flex gap-3">
+                <button
+                    class="flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-800 rounded-lg font-bold text-sm hover:bg-white transition-all">
+                    <span class="material-symbols-outlined text-lg">download</span>
+                    PDF
+                </button>
+                <button
+                    class="flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-800 rounded-lg font-bold text-sm hover:bg-white transition-all">
+                    <span class="material-symbols-outlined text-lg">share</span>
+                    Compartilhar
+                </button>
+            </div>
+        </div>
+        <!-- Feedback Dashboard Container -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 h-full min-h-[800px]">
+            <!-- Left Panel: Essay Text -->
+            <div
+                class="lg:col-span-7 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 flex flex-col overflow-hidden">
+                <div class="p-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Texto Original</span>
+                    <div class="flex gap-2">
+                        <span
+                            class="flex items-center gap-1 text-[10px] font-bold px-2 py-1 bg-primary/10 text-primary rounded">COESÃO</span>
+                        <span
+                            class="flex items-center gap-1 text-[10px] font-bold px-2 py-1 bg-warning/10 text-warning rounded">GRAMÁTICA</span>
+                        <span
+                            class="flex items-center gap-1 text-[10px] font-bold px-2 py-1 bg-success/10 text-success rounded">ARGUMENTAÇÃO</span>
+                    </div>
+                </div>
+                <div
+                    class="p-8 md:p-12 overflow-y-auto leading-relaxed text-lg text-slate-700 dark:text-slate-300 font-light space-y-6">
+                    <p>
+                        Historicamente, a tecnologia sempre atuou como um vetor de transformação social. No contexto da
+                        educação contemporânea, tal influência torna-se ainda mais evidente, <span
+                            class="bg-warning/20 border-b-2 border-warning cursor-pointer relative group">uma vez que
+                            <span
+                                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 font-normal">
+                                <b class="block mb-1 text-warning">Dica de Gramática:</b>
+                                Considere substituir o conectivo para evitar repetição ao longo do parágrafo.
+                            </span>
+                        </span> a conectividade digital permite o acesso democrático ao conhecimento. Entretanto,
+                        persistem desafios significativos que impedem a plena inclusão pedagógica nas redes públicas.
+                    </p>
+                    <p>
+                        Em primeira análise, é fundamental destacar que a infraestrutura precária de muitas escolas
+                        brasileiras limita o uso de ferramentas digitais. <span
+                            class="bg-primary/20 border-b-2 border-primary cursor-pointer relative group">Segundo o
+                            filósofo Pierre Lévy,
+                            <span
+                                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 font-normal">
+                                <b class="block mb-1 text-primary">Ótimo repertório!</b>
+                                Você utilizou bem a citação para fundamentar seu argumento sobre o ciberespaço.
+                            </span>
+                        </span> toda tecnologia cria um novo ambiente para o pensamento. Quando o Estado falha em prover
+                        esse ambiente, a desigualdade social se aprofunda, criando um abismo entre o ensino público e o
+                        privado.
+                    </p>
+                    <p>
+                        Ademais, a falta de treinamento docente para lidar com as novas mídias constitui outro entrave.
+                        Não basta apenas fornecer tablets ou notebooks; é preciso que o corpo pedagógico esteja apto a
+                        integrar esses recursos ao plano de aula de forma estratégica. <span
+                            class="bg-warning/20 border-b-2 border-warning cursor-pointer relative group">Nesse sentido,
+                            a educação não deve ser apenas digital, mas sim humanizada.
+                            <span
+                                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 font-normal">
+                                <b class="block mb-1 text-warning">Atenção à Coerência:</b>
+                                Este trecho ficou um pouco vago. Tente especificar como essa "humanização" ocorreria na
+                                prática.
+                            </span>
+                        </span>
+                    </p>
+                    <p>
+                        Portanto, medidas são necessárias para mitigar esses impasses. Cabe ao Ministério da Educação
+                        investir na modernização das escolas e na formação continuada de professores, por meio de verbas
+                        federais direcionadas. <span
+                            class="bg-success/20 border-b-2 border-success cursor-pointer relative group">Somente assim,
+                            o Brasil poderá efetivar o direito constitucional à educação de qualidade para todos.
+                            <span
+                                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 font-normal">
+                                <b class="block mb-1 text-success">Conclusão Nota 1000:</b>
+                                Sua proposta de intervenção está completa: Agente, Ação, Meio/Modo, Efeito e
+                                Detalhamento. Excelente!
+                            </span>
+                        </span>
+                    </p>
+                </div>
+                <div
+                    class="p-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 text-center">
+                    <p class="text-xs text-slate-500 italic">Clique nas marcações coloridas para ler os comentários
+                        detalhados.</p>
+                </div>
+            </div>
+            <!-- Right Panel: Scores and Competencies -->
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                <!-- Main Score Card -->
+                <div class="bg-primary rounded-xl p-8 text-white shadow-lg shadow-primary/20 relative overflow-hidden">
+                    <div class="relative z-10">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <p class="text-primary-100/80 text-sm font-medium uppercase tracking-widest">Nota Final
+                                </p>
+                                <h3 class="text-6xl font-black">940<span
+                                        class="text-2xl font-normal opacity-60">/1000</span></h3>
+                            </div>
+                            <div class="bg-white/20 backdrop-blur-md rounded-lg p-2">
+                                <span class="material-symbols-outlined text-3xl">workspace_premium</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-success"></span>
+                            <p class="text-sm font-medium">Parabéns! Você está acima de 92% dos alunos.</p>
+                        </div>
+                    </div>
+                    <!-- Abstract Background Pattern -->
+                    <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-white/10 rounded-full blur-3xl"
+                        data-alt="Abstrato gradiente azul suave"></div>
+                    <div class="absolute bottom-0 left-0 -ml-12 -mb-12 w-48 h-48 bg-black/10 rounded-full blur-2xl"
+                        data-alt="Abstrato gradiente escuro suave"></div>
+                </div>
+                <!-- Competencies Breakdown -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 flex flex-col overflow-hidden">
+                    <div class="p-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                        <h4 class="font-bold text-sm">Detalhamento por Competência</h4>
+                        <span class="material-symbols-outlined text-slate-400 text-xl">info</span>
+                    </div>
+                    <div class="p-4 flex flex-col gap-4">
+                        <!-- C1 -->
+                        <div
+                            class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 transition-all hover:border-primary/30">
+                            <div class="flex justify-between items-center mb-3">
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="w-7 h-7 flex items-center justify-center rounded bg-primary text-white text-xs font-bold">C1</span>
+                                    <span class="text-xs font-bold text-slate-600 dark:text-slate-400">Domínio da Norma
+                                        Culta</span>
+                                </div>
+                                <span class="text-sm font-black text-primary">160/200</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden mb-3">
+                                <div class="bg-primary h-full rounded-full" style="width: 80%"></div>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed">Pequenos desvios gramaticais e pontuação.
+                                Fique atento ao uso de vírgulas em orações subordinadas.</p>
+                        </div>
+                        <!-- C2 -->
+                        <div
+                            class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 transition-all hover:border-primary/30">
+                            <div class="flex justify-between items-center mb-3">
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="w-7 h-7 flex items-center justify-center rounded bg-primary text-white text-xs font-bold">C2</span>
+                                    <span class="text-xs font-bold text-slate-600 dark:text-slate-400">Compreensão do
+                                        Tema</span>
+                                </div>
+                                <span class="text-sm font-black text-primary">200/200</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden mb-3">
+                                <div class="bg-success h-full rounded-full" style="width: 100%"></div>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed">Excelente compreensão. Você não tangenciou
+                                o tema e aplicou repertório sociocultural de forma produtiva.</p>
+                        </div>
+                        <!-- C3 -->
+                        <div
+                            class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 transition-all hover:border-primary/30">
+                            <div class="flex justify-between items-center mb-3">
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="w-7 h-7 flex items-center justify-center rounded bg-primary text-white text-xs font-bold">C3</span>
+                                    <span class="text-xs font-bold text-slate-600 dark:text-slate-400">Organização e
+                                        Defesa</span>
+                                </div>
+                                <span class="text-sm font-black text-primary">180/200</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden mb-3">
+                                <div class="bg-primary h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed">Projeto de texto bem definido. Alguns
+                                argumentos poderiam ser mais aprofundados no desenvolvimento.</p>
+                        </div>
+                        <!-- C4 -->
+                        <div
+                            class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 transition-all hover:border-primary/30">
+                            <div class="flex justify-between items-center mb-3">
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="w-7 h-7 flex items-center justify-center rounded bg-primary text-white text-xs font-bold">C4</span>
+                                    <span class="text-xs font-bold text-slate-600 dark:text-slate-400">Coesão e
+                                        Coerência</span>
+                                </div>
+                                <span class="text-sm font-black text-primary">200/200</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden mb-3">
+                                <div class="bg-success h-full rounded-full" style="width: 100%"></div>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed">Domínio pleno de conectivos intra e
+                                interparágrafos. O texto flui de maneira lógica e agradável.</p>
+                        </div>
+                        <!-- C5 -->
+                        <div
+                            class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 transition-all hover:border-primary/30">
+                            <div class="flex justify-between items-center mb-3">
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="w-7 h-7 flex items-center justify-center rounded bg-primary text-white text-xs font-bold">C5</span>
+                                    <span class="text-xs font-bold text-slate-600 dark:text-slate-400">Proposta de
+                                        Intervenção</span>
+                                </div>
+                                <span class="text-sm font-black text-primary">200/200</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden mb-3">
+                                <div class="bg-success h-full rounded-full" style="width: 100%"></div>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed">Todos os 5 elementos presentes e bem
+                                detalhados. Respeito aos direitos humanos garantido.</p>
+                        </div>
+                    </div>
+                    <!-- Action Buttons Footer -->
+                    <div
+                        class="p-6 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-3">
+                        <button
+                            class="w-full py-3 px-4 bg-primary text-white rounded-lg font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/10 hover:brightness-110 transition-all">
+                            <span class="material-symbols-outlined text-xl">auto_stories</span>
+                            Ver Sugestões de Estudo
+                        </button>
+                        <button
+                            class="w-full py-3 px-4 bg-transparent text-primary border border-primary/20 hover:bg-primary/5 rounded-lg font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                            <span class="material-symbols-outlined text-xl">chat_bubble</span>
+                            Falar com o Corretor
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mentorship / Next Steps Section -->
+        <section
+            class="mt-8 bg-white dark:bg-slate-900 rounded-xl p-6 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center gap-6">
+            <div class="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-4xl text-primary">lightbulb</span>
+            </div>
+            <div class="flex-1 text-center md:text-left">
+                <h4 class="text-xl font-bold mb-1">Próximo passo sugerido</h4>
+                <p class="text-slate-600 dark:text-slate-400">Para atingir 1000, recomendamos o módulo de <b>"Pontuação
+                        e Regência"</b> para ajustar sua competência 1. Você está quase lá!</p>
+            </div>
+            <button
+                class="px-6 py-3 bg-slate-900 text-white dark:bg-white dark:text-slate-900 rounded-lg font-bold text-sm whitespace-nowrap hover:opacity-90 transition-opacity">
+                Iniciar Módulo
+            </button>
+        </section>
+    </main>
+    <footer class="max-w-[1440px] mx-auto px-6 py-12 text-center text-slate-400 text-xs">
+        <p>© 2023 ENEM 1000 - Tecnologia Educacional Ltda. Todos os direitos reservados.</p>
+        <div class="mt-4 flex justify-center gap-4">
+            <a class="hover:text-primary underline" href="#">Termos de Uso</a>
+            <a class="hover:text-primary underline" href="#">Privacidade</a>
+            <a class="hover:text-primary underline" href="#">Suporte</a>
+        </div>
+    </footer>
+</body>
+
+</html>
