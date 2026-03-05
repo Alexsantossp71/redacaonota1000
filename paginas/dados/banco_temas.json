@@ -22,17 +22,17 @@
     },
     {
         "id": "tema-004",
-        "titulo": "Desafios para a valorização de comunidades e povos tradicionais no Brasil",
-        "eixo_tematico": "Meio Ambiente",
-        "ano_aplicacao": 2022,
-        "descricao": "A importância de indígenas, quilombolas e ribeirinhos para a proteção ambiental e a luta por reconhecimento identitário."
+        "titulo": "A persistência da violência contra a mulher na sociedade brasileira",
+        "eixo_tematico": "Sociedade",
+        "ano_aplicacao": 2015,
+        "descricao": "Aborda as raízes históricas do machismo e a falha de políticas públicas em proteger as mulheres de agressões e feminicídios."
     },
     {
         "id": "tema-005",
-        "titulo": "O estigma associado às doenças mentais na sociedade brasileira",
-        "eixo_tematico": "Saúde",
-        "ano_aplicacao": 2020,
-        "descricao": "O preconceito, a falta de informação e as deficiências no sistema público que dificultam o tratamento psiquiátrico no país."
+        "titulo": "Caminhos para combater a intolerância religiosa no Brasil",
+        "eixo_tematico": "Sociedade",
+        "ano_aplicacao": 2016,
+        "descricao": "Discute o preconceito persistente contra religiões de matriz africana, mesmo em um Estado Laico, e a necessidade de educação para o respeito."
     },
     {
         "id": "tema-006",
@@ -40,5 +40,19 @@
         "eixo_tematico": "Educação",
         "ano_aplicacao": 2017,
         "descricao": "A inclusão de PcD (Pessoas com Deficiência) no ambiente escolar, a falta de intérpretes de LIBRAS e o capacitismo estrutural."
+    },
+    {
+        "id": "tema-007",
+        "titulo": "Desafios para a valorização de comunidades e povos tradicionais no Brasil",
+        "eixo_tematico": "Sociedade",
+        "ano_aplicacao": 2022,
+        "descricao": "A importância de indígenas, quilombolas e ribeirinhos para a proteção ambiental e a luta por reconhecimento identitário freante à exploração de suas terras."
+    },
+    {
+        "id": "tema-008",
+        "titulo": "O estigma associado às doenças mentais na sociedade brasileira",
+        "eixo_tematico": "Saúde",
+        "ano_aplicacao": 2020,
+        "descricao": "O preconceito, a falta de informação e as deficiências no sistema público que dificultam o tratamento psiquiátrico no país."
     }
 ]
