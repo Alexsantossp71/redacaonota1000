@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Conclusão: Proposta de Intervenção | ENEM 1000</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+    <!-- Top Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 w-full bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
+                    <a href="../../index_original.html"
+                        class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                        <div class="bg-primary p-1.5 rounded-lg text-white">
+                            <span class="material-symbols-outlined block">auto_stories</span>
+                        </div>
+                        <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">ENEM 1000</h2>
+                    </a>
+                </div>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary"
+                        href="../../index_original.html">Início</a>
+                    <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary border-b-2 border-primary py-5"
+                        href="aulas.html">Aulas</a>
+                    <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary"
+                        href="../biblioteca/biblioteca.html">Biblioteca</a>
+                    <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary"
+                        href="../pratica/pratica.html">Prática</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <div
+                        class="h-10 w-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden">
+                        <img alt="Avatar do usuário" class="h-full w-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuCGONrBPRp5Ofp77JWqLofKSVcFZoWPcAgWGrVGbJgQBuSyqxJvGONaegXn3boD7-taqksEebLDGjaSAIE91t7WzZseIiZBf-ShN3zTuZ-mUW2k4wHORMeDBuhd5U_goOvy-01oxBREPC3mjePihfHuxqwR2blSQNuFYb-SxyzhW2_4CZZ7A__LGzZPWGrgPH6KYgF7f9lCoVE0zu9u7uSgvbWVNk9R5Iao20UNj0WwRO5ngmfknkof9WzYJ8eb2RIOPkWxjPt6mX" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left Sidebar -->
+            <aside class="lg:col-span-3 space-y-6">
+                <nav class="space-y-1">
+                    <a href="aulas.html"
+                        class="p-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg flex items-center gap-3 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined">view_quilt</span>
+                        <span>Visão Geral</span>
+                    </a>
+                    <a href="introducao.html"
+                        class="p-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg flex items-center gap-3 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined">edit_note</span>
+                        <span>Introdução</span>
+                    </a>
+                    <a href="desenvolvimento.html"
+                        class="p-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg flex items-center gap-3 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined">history_edu</span>
+                        <span>Desenvolvimento</span>
+                    </a>
+                    <a href="conclusao.html"
+                        class="p-3 bg-primary/10 text-primary rounded-lg flex items-center gap-3 font-semibold transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined">task_alt</span>
+                        <span>Conclusão</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <section class="lg:col-span-9 space-y-8">
+                <div
+                    class="bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+                    <div class="h-32 bg-gradient-to-r from-emerald-600 to-primary flex items-center px-8">
+                        <h1 class="text-3xl font-black text-white tracking-tight">O Fim que é o Começo: Conclusão</h1>
+                    </div>
+                    <div class="p-8 space-y-10">
+                        <div class="prose prose-slate dark:prose-invert max-w-none">
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Garantindo os 200 Pontos na
+                                Competência 5</h2>
+                            <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                                A Proposta de Intervenção é a parte mais técnica da redação. Você não precisa ser
+                                genial, precisa ser completo.
+                            </p>
+                        </div>
+
+                        <!-- GOMIFP Grid -->
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-bold">Os 5 Elementos Obrigatórios</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                                <div
+                                    class="p-4 bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-200 dark:border-emerald-900/30 rounded-xl text-center">
+                                    <span
+                                        class="text-emerald-600 dark:text-emerald-400 font-black text-xs block mb-2">QUEM?</span>
+                                    <h4 class="font-bold text-slate-900 dark:text-white">Agente</h4>
+                                    <p class="text-[10px] mt-1 text-slate-500">MEC, Mídia, Família...</p>
+                                </div>
+                                <div
+                                    class="p-4 bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-200 dark:border-emerald-900/30 rounded-xl text-center">
+                                    <span class="text-emerald-600 dark:text-emerald-400 font-black text-xs block mb-2">O
+                                        QUÊ?</span>
+                                    <h4 class="font-bold text-slate-900 dark:text-white">Ação</h4>
+                                    <p class="text-[10px] mt-1 text-slate-500">Campanhas, Leis...</p>
+                                </div>
+                                <div
+                                    class="p-4 bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-200 dark:border-emerald-900/30 rounded-xl text-center">
+                                    <span
+                                        class="text-emerald-600 dark:text-emerald-400 font-black text-xs block mb-2">COMO?</span>
+                                    <h4 class="font-bold text-slate-900 dark:text-white">Meio/Modo</h4>
+                                    <p class="text-[10px] mt-1 text-slate-500">Por meio de verbas...</p>
+                                </div>
+                                <div
+                                    class="p-4 bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-200 dark:border-emerald-900/30 rounded-xl text-center">
+                                    <span
+                                        class="text-emerald-600 dark:text-emerald-400 font-black text-xs block mb-2">PARA
+                                        QUÊ?</span>
+                                    <h4 class="font-bold text-slate-900 dark:text-white">Efeito</h4>
+                                    <p class="text-[10px] mt-1 text-slate-500">A fim de mitigar...</p>
+                                </div>
+                                <div
+                                    class="p-4 bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-200 dark:border-emerald-900/30 rounded-xl text-center">
+                                    <span
+                                        class="text-emerald-600 dark:text-emerald-400 font-black text-xs block mb-2">EXTRA?</span>
+                                    <h4 class="font-bold text-slate-900 dark:text-white">Detalhamento</h4>
+                                    <p class="text-[10px] mt-1 text-slate-500">Explicar o agente/ação.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900 text-white p-8 rounded-2xl shadow-2xl relative overflow-hidden">
+                            <div class="relative z-10">
+                                <h3 class="text-xl font-bold mb-4">Checklist da Vitória</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex gap-3 items-start">
+                                        <span class="material-symbols-outlined text-emerald-400">check_circle</span>
+                                        <p class="text-sm"><b>Cuidado com os Direitos Humanos:</b> Nunca sugira punições
+                                            violentas ou intolerantes.</p>
+                                    </li>
+                                    <li class="flex gap-3 items-start">
+                                        <span class="material-symbols-outlined text-emerald-400">check_circle</span>
+                                        <p class="text-sm"><b>Conecte à Tese:</b> Resolva EXATAMENTE os dois problemas
+                                            que você citou no início.</p>
+                                    </li>
+                                    <li class="flex gap-3 items-start">
+                                        <span class="material-symbols-outlined text-emerald-400">check_circle</span>
+                                        <p class="text-sm"><b>Fechamento Cíclico:</b> No final da conclusão, cite
+                                            novamente o seu repertório da introdução para "fechar o círculo" do texto.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div
+                                class="absolute -right-16 -bottom-16 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="mt-12 border-t border-slate-200 dark:border-slate-800 py-8 bg-white dark:bg-background-dark">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm text-slate-500 dark:text-slate-400">© 2024 Plataforma ENEM 1000. Todos os direitos
+                reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
