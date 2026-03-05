@@ -324,6 +324,65 @@
             </div>
         </div>
     </div>
+    <script>
+        async function loadTema() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const temaId = urlParams.get('temaId');
+
+            if (!temaId) return;
+
+            try {
+                const response = await fetch('../dados/banco_temas.json');
+                const temas = await response.json();
+                const tema = temas.find(t => t.id === temaId);
+
+                if (tema) {
+                    // Atualizar título
+                    document.querySelector('h2.text-xl.font-bold').textContent = tema.titulo;
+
+                    // Atualizar Eixo/Ano
+                    const tags = document.querySelectorAll('nav.flex.gap-2.mb-4 span');
+                    tags[0].textContent = tema.eixo_tematico.toUpperCase();
+                    tags[1].textContent = tema.ano_aplicacao || "PROVÁVEL";
+
+                    // Atualizar Textos Motivadores
+                    const container = document.querySelector('.flex-1.overflow-y-auto.custom-scrollbar.p-6.space-y-6 > .space-y-4');
+
+                    // Se o tema tiver descrição longa, usamos como Texto I ou comando
+                    const desc = tema.descricao;
+
+                    // Mockando textos base a partir da descrição para temas que não tem coletânea completa no JSON
+                    container.innerHTML = `
+                        <div class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Texto I: Diretrizes</span>
+                            <p class="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                                A partir da leitura dos textos motivadores e com base nos conhecimentos construídos ao longo de sua formação, redija um texto dissertativo-argumentativo em modalidade escrita formal da língua portuguesa sobre o tema: <strong>"${tema.titulo}"</strong>.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Texto II: Contextualização</span>
+                            <p class="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                                ${desc}
+                            </p>
+                            <p class="mt-2 text-[10px] italic text-slate-400">Fonte: Adaptado do Banco de Redações UOL/ENEM.</p>
+                        </div>
+                        <div class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Texto III: Coletânea Visual</span>
+                            <div class="mt-3 w-full aspect-video bg-gradient-to-br from-primary/20 to-primary/40 rounded-lg flex flex-col items-center justify-center p-4">
+                                <span class="material-symbols-outlined text-4xl text-primary mb-2">analytics</span>
+                                <p class="text-xs font-bold text-slate-600 uppercase">Gráfico de Impacto Social</p>
+                                <p class="text-[10px] text-slate-500 mt-1">Eixo: ${tema.eixo_tematico}</p>
+                            </div>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error("Erro ao carregar tema:", error);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', loadTema);
+    </script>
 </body>
 
 </html>

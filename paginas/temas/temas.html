@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Galeria de Temas - Redação Nota 1000</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "success": "#10b981",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .theme-card:hover .theme-overlay {
+            opacity: 1;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+    <!-- Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-8">
+                    <a href="../../index_original.html" class="flex items-center gap-2 text-primary">
+                        <span class="material-symbols-outlined text-3xl font-bold">menu_book</span>
+                        <h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Redação<span
+                                class="text-primary">1000</span></h1>
+                    </a>
+                    <nav class="hidden md:flex items-center gap-6">
+                        <a class="text-sm font-medium hover:text-primary transition-colors"
+                            href="../../index_original.html">Início</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors"
+                            href="../aulas/aulas.html">Aulas</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors"
+                            href="../biblioteca/biblioteca.html">Biblioteca</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors"
+                            href="../pratica/pratica.html">Prática</a>
+                        <a class="text-sm font-bold text-primary border-b-2 border-primary" href="#">Temas</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+        <!-- Hero Section -->
+        <section class="bg-primary/5 rounded-3xl p-8 lg:p-12 border border-primary/10 relative overflow-hidden">
+            <div class="relative z-10 max-w-2xl">
+                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 dark:text-white mb-4">Galeria de Temas</h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">Explore temas oficiais do ENEM e propostas
+                    inéditas. Prepare-se com textos motivadores e comandos reais.</p>
+                <div class="flex flex-wrap gap-3">
+                    <span
+                        class="px-4 py-2 bg-white dark:bg-slate-800 rounded-full text-sm font-bold border border-slate-200 dark:border-slate-700 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">verified</span> 100+ Temas Reais
+                    </span>
+                    <span
+                        class="px-4 py-2 bg-white dark:bg-slate-800 rounded-full text-sm font-bold border border-slate-200 dark:border-slate-700 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-orange-500">local_fire_department</span> Temas
+                        Prováveis
+                    </span>
+                </div>
+            </div>
+            <span
+                class="material-symbols-outlined absolute -right-8 -bottom-8 text-[200px] text-primary/5 select-none pointer-events-none">auto_stories</span>
+        </section>
+
+        <!-- Filters & Search -->
+        <section class="flex flex-col md:flex-row gap-4 justify-between items-center">
+            <div class="flex flex-wrap gap-2" id="filter-container">
+                <button
+                    class="filter-btn active px-4 py-2 rounded-lg bg-primary text-white text-sm font-bold transition-all"
+                    data-filter="all">Todos</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:bg-primary/10 transition-all border border-slate-200 dark:border-slate-700"
+                    data-filter="Educação">Educação</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:bg-primary/10 transition-all border border-slate-200 dark:border-slate-700"
+                    data-filter="Saúde">Saúde</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:bg-primary/10 transition-all border border-slate-200 dark:border-slate-700"
+                    data-filter="Cidadania">Cidadania</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:bg-primary/10 transition-all border border-slate-200 dark:border-slate-700"
+                    data-filter="Tecnologia">Tecnologia</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:bg-primary/10 transition-all border border-slate-200 dark:border-slate-700"
+                    data-filter="Meio Ambiente">Meio Ambiente</button>
+                <button
+                    class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:bg-primary/10 transition-all border border-slate-200 dark:border-slate-700"
+                    data-filter="Provável">Prováveis</button>
+            </div>
+            <div class="relative w-full md:w-80">
+                <span
+                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                <input type="text" id="search-input" placeholder="Buscar por tema ou ano..."
+                    class="w-full pl-10 pr-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">
+            </div>
+        </section>
+
+        <!-- Themes Grid -->
+        <section id="themes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Temas serão carregados aqui -->
+            <div class="col-span-full py-20 flex flex-col items-center justify-center text-slate-400">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mb-4"></div>
+                <p>Carregando temas exemplares...</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let themes = [];
+        const grid = document.getElementById('themes-grid');
+        const searchInput = document.getElementById('search-input');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        async function init() {
+            try {
+                const response = await fetch('../dados/banco_temas.json');
+                themes = await response.json();
+
+                // Adicionar campos extras para "prováveis" se não existirem
+                themes = themes.map(t => ({
+                    ...t,
+                    isProvavel: t.id.includes('ext') && Math.random() > 0.7 // Mock para temas prováveis
+                }));
+
+                renderThemes(themes);
+            } catch (error) {
+                grid.innerHTML = `<div class="col-span-full py-10 text-center text-red-500">Erro ao carregar os temas. Por favor, recarregue a página.</div>`;
+            }
+        }
+
+        function renderThemes(data) {
+            grid.innerHTML = '';
+
+            if (data.length === 0) {
+                grid.innerHTML = `<div class="col-span-full py-20 text-center text-slate-500">Nenhum tema encontrado para essa busca.</div>`;
+                return;
+            }
+
+            data.forEach(tema => {
+                const card = document.createElement('div');
+                card.className = "theme-card bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden";
+
+                const isEnemOficial = !tema.id.includes('ext');
+
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="px-2 py-1 rounded-md bg-primary/10 text-primary text-[10px] font-black uppercase tracking-wider">
+                            ${tema.eixo_tematico}
+                        </span>
+                        <span class="text-xs font-bold text-slate-400">
+                            ${tema.ano_aplicacao || '2024'}
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold leading-tight mb-3 line-clamp-3 group-hover:text-primary transition-colors">
+                        ${tema.titulo}
+                    </h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-3 mb-6">
+                        ${tema.descricao}
+                    </p>
+                    <div class="flex gap-2">
+                        <a href="../pratica/pratica.html?temaId=${tema.id}" class="flex-1 text-center py-2 bg-primary text-white rounded-lg text-xs font-bold hover:bg-blue-700 transition-colors">
+                            Escrever Agora
+                        </a>
+                        <button onclick="verDetalhes('${tema.id}')" class="px-3 py-2 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                            <span class="material-symbols-outlined text-sm block">visibility</span>
+                        </button>
+                    </div>
+                `;
+
+                if (tema.isProvavel) {
+                    const tag = document.createElement('div');
+                    tag.className = "absolute top-0 right-0 bg-orange-500 text-white text-[9px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-tighter";
+                    tag.innerHTML = "Tema Provável";
+                    card.appendChild(tag);
+                } else if (isEnemOficial) {
+                    const tag = document.createElement('div');
+                    tag.className = "absolute top-0 right-0 bg-slate-800 text-white text-[9px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-tighter";
+                    tag.innerHTML = "ENEM Oficial";
+                    card.appendChild(tag);
+                }
+
+                grid.appendChild(card);
+            });
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = themes.filter(t =>
+                t.titulo.toLowerCase().includes(term) ||
+                String(t.ano_aplicacao).includes(term)
+            );
+            renderThemes(filtered);
+        });
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.className = "filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:bg-primary/10 transition-all border border-slate-200 dark:border-slate-700");
+                btn.className = "filter-btn active px-4 py-2 rounded-lg bg-primary text-white text-sm font-bold transition-all border border-primary";
+
+                const filter = btn.dataset.filter;
+                if (filter === 'all') {
+                    renderThemes(themes);
+                } else if (filter === 'Provável') {
+                    renderThemes(themes.filter(t => t.isProvavel));
+                } else {
+                    renderThemes(themes.filter(t => t.eixo_tematico === filter));
+                }
+            });
+        });
+
+        function verDetalhes(id) {
+            alert("Apresentando Textos Base e Comandos para o tema selecionado. Redirecionando para o ambiente de prática...");
+            window.location.href = `../pratica/pratica.html?temaId=${id}`;
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
