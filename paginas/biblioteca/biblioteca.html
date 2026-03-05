@@ -317,8 +317,8 @@
         let todasRedacoes = [];
         let filtroAtual = 'Todos';
 
-        // Buscar dados
-        fetch('../dados/banco_redacoes.json')
+        // Buscar dados (com cache-buster)
+        fetch('../dados/banco_redacoes.json?v=' + Date.now())
             .then(res => res.json())
             .then(data => {
                 todasRedacoes = data;
@@ -328,6 +328,9 @@
                 grid.innerHTML = '<p class="text-red-500">Erro ao carregar o banco de redações.</p>';
                 console.error("Erro no fetch: ", err);
             });
+
+        // Função para normalizar strings (remover acentos e lowercase)
+        const normalizar = (str) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 
         // Lógica de Renderização Baseada nos Dados
         function renderizarGrid(dados) {
@@ -390,7 +393,7 @@
                 if (filtroAtual === 'Todos') {
                     renderizarGrid(todasRedacoes);
                 } else {
-                    const filtradas = todasRedacoes.filter(r => r.eixo_tematico === filtroAtual);
+                    const filtradas = todasRedacoes.filter(r => normalizar(r.eixo_tematico) === normalizar(filtroAtual));
                     renderizarGrid(filtradas);
                 }
             });
