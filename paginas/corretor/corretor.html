@@ -291,7 +291,10 @@
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
             lucide.createIcons();
-            
+            iniciarAnalise();
+        });
+
+        async function iniciarAnalise() {
             const rawData = localStorage.getItem('redacao_para_corrigir');
             if (!rawData) {
                 alert("Nenhuma redação encontrada para correção. Voltando para a prática.");
@@ -301,11 +304,38 @@
 
             const payload = JSON.parse(rawData);
             
-            // Mostrar estado de carregamento (opcional, aqui já vamos direto para a análise)
+            // Mostrar estado de carregamento no container de texto
+            const textContainer = document.getElementById('text-container');
+            textContainer.innerHTML = '<div class="flex flex-col items-center justify-center py-20 gap-4"><div class="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div><p class="font-bold text-slate-400">A IA da Groq está analisando seu texto...</p></div>';
+
             const analise = await IA_CORRETOR.analisarRedacao(payload);
             
+            if (analise.status === "error") {
+                if (analise.message === "API_KEY_MISSING") {
+                    document.getElementById('api-key-modal').classList.remove('hidden');
+                    document.getElementById('api-key-modal').classList.add('flex');
+                    textContainer.innerHTML = '<p class="text-center text-slate-400 py-20">Aguardando chave de API para continuar...</p>';
+                } else {
+                    alert("Erro na análise: " + analise.message);
+                    textContainer.innerHTML = `<p class="text-center text-red-400 py-20">Erro: ${analise.message}</p>`;
+                }
+                return;
+            }
+            
             renderizarAnalise(analise, payload.texto);
-        });
+        }
+
+        function saveApiKey() {
+            const key = document.getElementById('api-key-input').value.trim();
+            if (!key) {
+                alert("Por favor, insira uma chave válida.");
+                return;
+            }
+            localStorage.setItem('groq_api_key', key);
+            document.getElementById('api-key-modal').classList.add('hidden');
+            document.getElementById('api-key-modal').classList.remove('flex');
+            iniciarAnalise();
+        }
 
         function renderizarAnalise(analise, textoOriginal) {
             // Atualiza Título e Tema
