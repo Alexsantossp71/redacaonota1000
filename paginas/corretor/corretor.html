@@ -313,9 +313,9 @@
             document.querySelector('p.text-slate-500').textContent = `Analisado por IA Nota 1000 em ${analise.data}`;
             document.getElementById('breadcrumb_theme').textContent = analise.tema;
 
-            // Atualiza Texto Original (com suporte futuro a highlights)
+            // Atualiza Texto Original com Highlights
             const textContainer = document.getElementById('text-container');
-            textContainer.innerHTML = textoOriginal.split('\n').map(p => p.trim() ? `<p>${p}</p>` : '').join('');
+            textContainer.innerHTML = aplicarHighlights(textoOriginal, analise.competencias);
 
             // Atualiza Notas
             document.getElementById('nota_final_display').textContent = analise.nota_final;
@@ -334,6 +334,48 @@
 
             // Sugestões
             document.getElementById('sugestao_texto').innerHTML = `Para atingir 1000, recomendamos o módulo de <b>"${analise.proximo_modulo}"</b>. ${analise.sugestao_estudo}`;
+        }
+
+        function aplicarHighlights(texto, competencias) {
+            let textoProcessado = texto;
+            const allHighlights = [];
+            
+            competencias.forEach(comp => {
+                if (comp.highlights) {
+                    comp.highlights.forEach(h => {
+                        allHighlights.push({ ...h, compNome: comp.nome });
+                    });
+                }
+            });
+
+            // Ordena highlights do fim para o começo para não quebrar os índices (offsets)
+            allHighlights.sort((a, b) => b.offset - a.offset);
+
+            allHighlights.forEach(h => {
+                const prefix = textoProcessado.substring(0, h.offset);
+                const target = textoProcessado.substring(h.offset, h.offset + h.length);
+                const suffix = textoProcessado.substring(h.offset + h.length);
+
+                const colorClass = h.tipo === 'gramatica' ? 'bg-warning/20 border-warning' : 
+                                 h.tipo === 'argumentacao' ? 'bg-primary/20 border-primary' : 'bg-success/20 border-success';
+                
+                const label = h.tipo === 'gramatica' ? 'Dica de Gramática' : 
+                             h.tipo === 'argumentacao' ? 'Ótimo ponto!' : 'Dica de Estrutura';
+
+                const replacement = `
+                    <span class="${colorClass} border-b-2 cursor-pointer relative group">
+                        ${target}
+                        <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 font-normal">
+                            <b class="block mb-1 text-warning">${label}:</b>
+                            ${h.dica}
+                        </span>
+                    </span>`;
+                
+                textoProcessado = prefix + replacement + suffix;
+            });
+
+            // Converte quebras de linha em parágrafos
+            return textoProcessado.split('\n').map(p => p.trim() ? `<p>${p}</p>` : '').join('');
         }
     </script>
 </body>
