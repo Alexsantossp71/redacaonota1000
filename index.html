@@ -92,6 +92,20 @@
             border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
 
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
         /* Hero Canvas Alignment */
         #hero-canvas {
             position: absolute;
@@ -154,17 +168,32 @@
 
 
             <div class="flex items-center gap-4">
-                <a href="#newsletter"
-                    class="hidden lg:flex items-center gap-2 text-slate-500 hover:text-primary font-bold text-sm transition-all cursor-pointer">
-                    <i data-lucide="search" class="w-5 h-5"></i>
-                    Entrar
-                </a>
                 <a href="paginas/pratica/pratica.html"
-                    class="bg-primary hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm transition-all shadow-md shadow-blue-500/20 active:scale-95 cursor-pointer">
+                    class="hidden sm:block bg-primary hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm transition-all shadow-md shadow-blue-500/20 active:scale-95 cursor-pointer">
                     Começar Agora
                 </a>
+                
+                <button id="menu-toggle" class="md:hidden p-2 text-slate-600 hover:text-primary transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
             </div>
         </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="md:hidden fixed top-24 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-slate-100 p-8 z-[90]">
+            <ul class="flex flex-col gap-6 text-lg font-bold text-slate-800">
+                <li><a href="paginas/aulas/aulas.html" class="flex items-center gap-3 hover:text-primary transition-colors"><i data-lucide="monitor-play" class="w-5 h-5"></i> Aulas</a></li>
+                <li><a href="paginas/biblioteca/biblioteca.html" class="flex items-center gap-3 hover:text-primary transition-colors"><i data-lucide="library" class="w-5 h-5"></i> Biblioteca</a></li>
+                <li><a href="paginas/temas/temas.html" class="flex items-center gap-3 hover:text-primary transition-colors"><i data-lucide="flame" class="w-5 h-5"></i> Temas</a></li>
+                <li><a href="paginas/repertorio/repertorio.html" class="flex items-center gap-3 text-primary"><i data-lucide="database" class="w-5 h-5"></i> Repertório</a></li>
+                <li><a href="paginas/pratica/pratica.html" class="flex items-center gap-3 hover:text-primary transition-colors"><i data-lucide="pencil" class="w-5 h-5"></i> Prática</a></li>
+                <li class="pt-4 border-t border-slate-100">
+                    <a href="paginas/pratica/pratica.html" class="w-full bg-primary text-white py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+                        Começar Agora <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </header>
 
     <!-- Hero Section with Algorithmic Art (Philosophy: Knowledge Synthesis) -->
@@ -178,9 +207,9 @@
                     Metodologia Redação Imbatível
                 </div>
 
-                <h1 class="text-6xl md:text-8xl font-black leading-[0.95] text-deep tracking-tighter text-balanced">
+                <h1 class="text-4xl md:text-6xl lg:text-8xl font-black leading-[1.1] md:leading-[0.95] text-deep tracking-tighter text-balanced">
                     Sua jornada rumo à <span
-                        class="text-primary underline decoration-accent/40 decoration-[20px] underline-offset-[-10px]">Nota
+                        class="text-primary underline decoration-accent/40 decoration-[10px] md:decoration-[20px] underline-offset-[-5px] md:underline-offset-[-10px]">Nota
                         1000</span> começa aqui.
                 </h1>
 
@@ -189,9 +218,9 @@
                     inteligência analítica focada nos critérios do INEP.
                 </p>
 
-                <div class="flex flex-wrap gap-5 pt-4">
+                <div class="flex flex-col sm:flex-row gap-5 pt-4">
                     <a href="paginas/pratica/pratica.html"
-                        class="bg-primary text-white px-10 py-5 rounded-2xl font-black text-xl shadow-2xl shadow-primary/40 hover:scale-105 transition-transform cursor-pointer group flex items-center gap-3">
+                        class="bg-primary text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg md:text-xl shadow-2xl shadow-primary/40 hover:scale-105 transition-transform cursor-pointer group flex items-center justify-center gap-3">
                         Quero ser nota 1000
                         <i data-lucide="chevron-right"
                             class="w-6 h-6 group-hover:translate-x-1 transition-transform"></i>
@@ -459,6 +488,28 @@
 
         // Initialize Icons
         lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        });
+
+        // Close menu on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.remove('active');
+            }
+        });
 
         // Dynamic Random Essays
         function renderRandomEssays() {

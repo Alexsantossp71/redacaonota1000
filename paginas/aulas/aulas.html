@@ -6,6 +6,8 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Guia Prático da Estrutura Perfeita | ENEM 1000</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet" />
@@ -45,6 +47,20 @@
         .active-step {
             @apply border-primary bg-primary/10;
         }
+
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
     </style>
 </head>
 
@@ -77,21 +93,28 @@
                 </nav>
 
                 <div class="flex items-center gap-4">
-                    <div class="relative hidden sm:block">
-                        <span
-                            class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400 text-sm">search</span>
-                        <input
-                            class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary w-64"
-                            placeholder="Buscar material..." type="text" />
-                    </div>
+                    <button id="menu-toggle" class="md:hidden p-2 text-slate-600 hover:text-primary transition-colors">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
                     <div
-                        class="h-10 w-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden">
+                        class="hidden sm:flex h-10 w-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden">
                         <img alt="Avatar do usuário" class="h-full w-full object-cover"
-                            data-alt="Avatar circular de um estudante sorridente"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuCGONrBPRp5Ofp77JWqLofKSVcFZoWPcAgWGrVGbJgQBuSyqxJvGONaegXn3boD7-taqksEebLDGjaSAIE91t7WzZseIiZBf-ShN3zTuZ-mUW2k4wHORMeDBuhd5U_goOvy-01oxBREPC3mjePihfHuxqwR2blSQNuFYb-SxyzhW2_4CZZ7A__LGzZPWGrgPH6KYgF7f9lCoVE0zu9u7uSgvbWVNk9R5Iao20UNj0WwRO5ngmfknkof9WzYJ8eb2RIOPkWxjPt6mX" />
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="md:hidden fixed top-16 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-slate-100 p-8 z-[90]">
+            <ul class="flex flex-col gap-6 text-lg font-bold text-slate-800">
+                <li><a href="../../index.html" class="flex items-center gap-3 hover:text-primary transition-colors"><i data-lucide="home" class="w-5 h-5"></i> Início</a></li>
+                <li><a href="aulas.html" class="flex items-center gap-3 text-primary"><i data-lucide="monitor-play" class="w-5 h-5"></i> Aulas</a></li>
+                <li><a href="../temas/temas.html" class="flex items-center gap-3 hover:text-primary transition-colors"><i data-lucide="flame" class="w-5 h-5"></i> Temas</a></li>
+                <li><a href="../biblioteca/biblioteca.html" class="flex items-center gap-3 hover:text-primary transition-colors"><i data-lucide="library" class="w-5 h-5"></i> Biblioteca</a></li>
+                <li><a href="../repertorio/repertorio.html" class="flex items-center gap-3 hover:text-primary transition-colors"><i data-lucide="database" class="w-5 h-5"></i> Repertório</a></li>
+                <li><a href="../pratica/pratica.html" class="flex items-center gap-3 hover:text-primary transition-colors"><i data-lucide="pencil" class="w-5 h-5"></i> Prática</a></li>
+            </ul>
         </div>
     </header>
     <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
@@ -342,6 +365,32 @@
                 reservados para o seu sucesso.</p>
         </div>
     </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        });
+
+        // Close menu on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 
 </html>
