@@ -1,262 +1,345 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Galeria de Temas - Redação Nota 1000</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
-    <script src="../dados/banco_temas.js"></script>
-    <script id="tailwind-config">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temas de Redação | Portal Redação Nota 1000</title>
+
+    <!-- Global Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
         tailwind.config = {
-            darkMode: "class",
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#135bec",
-                        "success": "#10b981",
-                        "background-light": "#f6f6f8",
-                        "background-dark": "#101622",
+                        primary: '#1E40AF',
+                        accent: '#10B981',
+                        canvas: '#F8FAFC',
+                        deep: '#0F172A',
                     },
                     fontFamily: {
-                        "display": ["Lexend", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
         }
     </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Local Data -->
+    <script src="../dados/banco_temas.js"></script>
+    <script src="../dados/banco_redacoes.js"></script>
+    <script src="../dados/banco_repertorios.js"></script>
+
     <style>
         body {
-            font-family: 'Lexend', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
-        .theme-card:hover .theme-overlay {
-            opacity: 1;
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-display {
+            font-family: 'Outfit', sans-serif;
         }
 
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
     </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
-    <!-- Navigation Bar -->
-    <header
-        class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-8">
-                    <a href="../../index_original.html" class="flex items-center gap-2 text-primary">
-                        <span class="material-symbols-outlined text-3xl font-bold">menu_book</span>
-                        <h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Redação<span
-                                class="text-primary">1000</span></h1>
-                    </a>
-                    <nav class="hidden md:flex items-center gap-6">
-                        <a class="text-sm font-medium hover:text-primary transition-colors"
-                            href="../../index_original.html">Início</a>
-                        <a class="text-sm font-medium hover:text-primary transition-colors"
-                            href="../aulas/aulas.html">Aulas</a>
-                        <a class="text-sm font-medium hover:text-primary transition-colors"
-                            href="../biblioteca/biblioteca.html">Biblioteca</a>
-                        <a class="text-sm font-medium hover:text-primary transition-colors"
-                            href="../pratica/pratica.html">Prática</a>
-                        <a class="text-sm font-bold text-primary border-b-2 border-primary" href="#">Temas</a>
-                    </nav>
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-[100] px-4 py-3 glass-nav">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="../../index_original.html" class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-inner">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight text-deep">Redação<span
+                            class="text-primary font-black italic">1000</span></span>
+                </a>
+            </div>
+
+            <ul class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <li><a href="../../index_original.html" class="hover:text-primary transition-colors">Início</a></li>
+                <li><a href="../aulas/aulas.html" class="hover:text-primary transition-colors">Aulas</a></li>
+                <li><a href="temas.html" class="text-primary font-bold">Temas</a></li>
+                <li><a href="../biblioteca/biblioteca.html" class="hover:text-primary transition-colors">Biblioteca</a>
+                </li>
+                <li><a href="../repertorio/repertorio.html" class="hover:text-primary transition-colors">Repertório</a>
+                </li>
+                <li><a href="../pratica/pratica.html" class="hover:text-primary transition-colors">Prática</a></li>
+            </ul>
+
+            <div class="flex items-center gap-4">
+                <div class="relative hidden sm:block">
+                    <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input id="search-input" type="text" placeholder="Buscar tema..."
+                        class="bg-slate-100 border-none rounded-xl pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20 w-48 lg:w-64 transition-all">
+                </div>
+                <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border border-slate-300">
+                    <img src="https://i.pravatar.cc/100?u=me" alt="User">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12 flex flex-col lg:flex-row gap-12">
+
+        <!-- Sidebar Filters -->
+        <aside class="w-full lg:w-72 space-y-10">
+            <section class="space-y-6">
+                <h3 class="text-xs font-black uppercase tracking-widest text-slate-400">Eixos Temáticos</h3>
+                <div class="flex flex-col gap-2" id="filtro-eixos">
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl bg-primary text-white font-bold text-sm shadow-lg shadow-primary/20 transition-all"
+                        data-eixo="Todos">
+                        <i data-lucide="layout-grid" class="w-5 h-5"></i> Todos os Temas
+                    </button>
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all"
+                        data-eixo="Sociedade">
+                        <i data-lucide="users" class="w-5 h-5"></i> Sociedade
+                    </button>
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all"
+                        data-eixo="Educação">
+                        <i data-lucide="graduation-cap" class="w-5 h-5"></i> Educação
+                    </button>
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all"
+                        data-eixo="Cidadania">
+                        <i data-lucide="scale" class="w-5 h-5"></i> Cidadania
+                    </button>
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all"
+                        data-eixo="Tecnologia">
+                        <i data-lucide="cpu" class="w-5 h-5"></i> Tecnologia
+                    </button>
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all"
+                        data-eixo="Cultura">
+                        <i data-lucide="palette" class="w-5 h-5"></i> Cultura
+                    </button>
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all"
+                        data-eixo="Saúde">
+                        <i data-lucide="activity" class="w-5 h-5"></i> Saúde
+                    </button>
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all"
+                        data-eixo="Meio Ambiente">
+                        <i data-lucide="leaf" class="w-5 h-5"></i> Meio Ambiente
+                    </button>
+                </div>
+            </section>
+        </aside>
+
+        <!-- Gallery -->
+        <div class="flex-1 space-y-8">
+            <div class="flex items-end justify-between">
+                <div>
+                    <h2 class="text-4xl font-black text-deep">Acervo de Temas</h2>
+                    <p class="text-slate-500 font-medium mt-2" id="contador-resultados">Carregando temas...</p>
+                </div>
+            </div>
+
+            <div id="temas-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Loading State -->
+                <div class="col-span-full py-20 flex flex-col items-center justify-center text-slate-400">
+                    <div class="w-16 h-16 border-4 border-slate-200 border-t-primary rounded-full animate-spin mb-4">
+                    </div>
+                    <p class="font-bold">Sincronizando temas...</p>
                 </div>
             </div>
         </div>
-    </header>
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-        <!-- Hero Section -->
-        <section class="bg-primary/5 rounded-3xl p-8 lg:p-12 border border-primary/10 relative overflow-hidden">
-            <div class="relative z-10 max-w-2xl">
-                <h2 class="text-3xl lg:text-4xl font-black text-slate-900 dark:text-white mb-4">Galeria de Temas</h2>
-                <p class="text-lg text-slate-600 dark:text-slate-400 mb-6">Explore temas oficiais do ENEM e propostas
-                    inéditas. Prepare-se com textos motivadores e comandos reais.</p>
-                <div class="flex flex-wrap gap-3">
-                    <span
-                        class="px-4 py-2 bg-white dark:bg-slate-800 rounded-full text-sm font-bold border border-slate-200 dark:border-slate-700 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-primary">verified</span> 100+ Temas Reais
-                    </span>
-                    <span
-                        class="px-4 py-2 bg-white dark:bg-slate-800 rounded-full text-sm font-bold border border-slate-200 dark:border-slate-700 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-orange-500">local_fire_department</span> Temas
-                        Prováveis
-                    </span>
-                </div>
-            </div>
-            <span
-                class="material-symbols-outlined absolute -right-8 -bottom-8 text-[200px] text-primary/5 select-none pointer-events-none">auto_stories</span>
-        </section>
-
-        <!-- Filters & Search -->
-        <section class="flex flex-col md:flex-row gap-4 justify-between items-center">
-            <div class="flex flex-wrap gap-2" id="filter-container">
-                <button
-                    class="filter-btn active px-4 py-2 rounded-lg bg-primary text-white text-sm font-bold transition-all"
-                    data-filter="all">Todos</button>
-                <button
-                    class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:bg-primary/10 transition-all border border-slate-200 dark:border-slate-700"
-                    data-filter="Educação">Educação</button>
-                <button
-                    class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:bg-primary/10 transition-all border border-slate-200 dark:border-slate-700"
-                    data-filter="Saúde">Saúde</button>
-                <button
-                    class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:bg-primary/10 transition-all border border-slate-200 dark:border-slate-700"
-                    data-filter="Cidadania">Cidadania</button>
-                <button
-                    class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:bg-primary/10 transition-all border border-slate-200 dark:border-slate-700"
-                    data-filter="Tecnologia">Tecnologia</button>
-                <button
-                    class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:bg-primary/10 transition-all border border-slate-200 dark:border-slate-700"
-                    data-filter="Meio Ambiente">Meio Ambiente</button>
-                <button
-                    class="filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:bg-primary/10 transition-all border border-slate-200 dark:border-slate-700"
-                    data-filter="Provável">Prováveis</button>
-            </div>
-            <div class="relative w-full md:w-80">
-                <span
-                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
-                <input type="text" id="search-input" placeholder="Buscar por tema ou ano..."
-                    class="w-full pl-10 pr-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">
-            </div>
-        </section>
-
-        <!-- Themes Grid -->
-        <section id="themes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Temas serão carregados aqui -->
-            <div class="col-span-full py-20 flex flex-col items-center justify-center text-slate-400">
-                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mb-4"></div>
-                <p>Carregando temas exemplares...</p>
-            </div>
-        </section>
     </main>
 
+    <footer class="bg-white border-t border-slate-100 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-4">
+            <p class="text-sm font-black text-slate-400 uppercase tracking-widest">© 2024 Portal Redação Nota 1000</p>
+        </div>
+    </footer>
+
     <script>
-        let themes = [];
-        const grid = document.getElementById('themes-grid');
-        const searchInput = document.getElementById('search-input');
-        const filterBtns = document.querySelectorAll('.filter-btn');
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('temas-grid');
+            const contador = document.getElementById('contador-resultados');
+            const botoesEixo = document.querySelectorAll('.eixo-btn');
+            const searchInput = document.getElementById('search-input');
 
-        async function init() {
-            try {
-                if (window.BANCO_TEMAS) {
-                    themes = window.BANCO_TEMAS;
-                } else {
-                    const response = await fetch('../dados/banco_temas.json');
-                    themes = await response.json();
-                }
+            let todosTemas = [];
+            let filtroAtual = 'Todos';
 
-                // Adicionar campos extras para "prováveis" se não existirem
-                themes = themes.map(t => ({
-                    ...t,
-                    isProvavel: t.id.includes('ext') && Math.random() > 0.7 // Mock para temas prováveis
-                }));
+            const normalizar = (str) => {
+                if (!str) return "";
+                return str.normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                    .replace(/ç/g, "c")
+                    .toLowerCase()
+                    .trim();
+            };
 
-                renderThemes(themes);
-            } catch (error) {
-                grid.innerHTML = `<div class="col-span-full py-10 text-center text-red-500">Erro crítico ao carregar os temas. Por favor, recarregue a página.</div>`;
+            function aplicarFiltros() {
+                const termoBusca = normalizar(searchInput.value);
+
+                const filtrados = todosTemas.filter(t => {
+                    const matchEixo = filtroAtual === 'Todos' || normalizar(t.eixo_tematico) === normalizar(filtroAtual);
+                    const matchBusca = !termoBusca ||
+                        normalizar(t.titulo).includes(termoBusca) ||
+                        (t.ano_aplicacao && t.ano_aplicacao.toString().includes(termoBusca));
+
+                    return matchEixo && matchBusca;
+                });
+
+                renderizarGrid(filtrados);
             }
-        }
 
-        function renderThemes(data) {
-            grid.innerHTML = '';
+            function renderizarGrid(dados) {
+                grid.innerHTML = '';
+                contador.textContent = `${dados.length} temas encontrados`;
 
-            if (data.length === 0) {
-                grid.innerHTML = `<div class="col-span-full py-20 text-center text-slate-500">Nenhum tema encontrado para essa busca.</div>`;
-                return;
+                if (dados.length === 0) {
+                    grid.innerHTML = `
+                        <div class="col-span-full py-20 text-center">
+                            <i data-lucide="search-x" class="w-12 h-12 text-slate-300 mx-auto mb-4"></i>
+                            <p class="text-slate-500 font-bold">Nenhum tema encontrado para os filtros selecionados.</p>
+                        </div>
+                    `;
+                    lucide.createIcons();
+                    return;
+                }
+
+                dados.forEach(tema => {
+                    const redaRelacionada = window.BANCO_REDACOES ? window.BANCO_REDACOES.find(r => {
+                        const tituloTema = normalizar(tema.titulo);
+                        const tituloReda = normalizar(r.titulo);
+
+                        // Strict match or overlap
+                        if (tituloTema === tituloReda || tituloTema.includes(tituloReda) || tituloReda.includes(tituloTema)) {
+                            return true;
+                        }
+
+                        // Match by year and thematic axis for ENEM themes
+                        if (tema.ano_aplicacao && tema.ano_aplicacao === r.ano_enem) {
+                            return normalizar(tema.eixo_tematico) === normalizar(r.eixo_tematico);
+                        }
+
+                        return false;
+                    }) : null;
+                    const repsRelacionados = window.BANCO_REPERTORIOS ? window.BANCO_REPERTORIOS.filter(rep => rep.eixos.includes(tema.eixo_tematico)) : [];
+
+                    const card = document.createElement('div');
+                    card.className = "group bg-white rounded-3xl p-8 border border-slate-200 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all flex flex-col justify-between";
+
+                    const badge = tema.ano_aplicacao ?
+                        `<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-black rounded-full uppercase tracking-widest">ENEM ${tema.ano_aplicacao}</span>` :
+                        `<span class="px-3 py-1 bg-emerald-50 text-emerald-600 border border-emerald-100 text-[10px] font-black rounded-full uppercase tracking-widest flex items-center gap-1"><i data-lucide="star" class="w-3 h-3 fill-emerald-600"></i> Tema Possível</span>`;
+
+                    card.innerHTML = `
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                ${badge}
+                                <span class="text-slate-400 text-[10px] font-black uppercase tracking-widest">${tema.eixo_tematico}</span>
+                            </div>
+                            <h4 class="text-xl font-black text-deep leading-snug group-hover:text-primary transition-colors">${tema.titulo}</h3>
+                            <div class="space-y-4">
+                                <h5 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-6">Contexto / Texto Motivador:</h5>
+                                <p class="text-sm text-slate-600 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-4 mb-4">
+                                    "${tema.descricao || "Descrição não disponível."}"
+                                </p>
+                            </div>
+
+                            ${repsRelacionados.length > 0 ? `
+                            <div class="bg-slate-50 rounded-2xl p-4 border border-slate-100">
+                                <h5 class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2 flex items-center gap-2">
+                                    <i data-lucide="scroll" class="w-3 h-3"></i> Repertório Útil (${repsRelacionados.length})
+                                </h5>
+                                <p class="text-[11px] font-bold text-slate-500 truncate">${repsRelacionados[0].titulo} - ${repsRelacionados[0].autor}</p>
+                            </div>
+                            ` : ''}
+                        </div>
+
+                        <div class="mt-8 space-y-3">
+                            <div class="flex gap-2">
+                                ${redaRelacionada ? `
+                                    <a href="../biblioteca/ler-redacao.html?id=${redaRelacionada.id}" class="flex-1 bg-accent/10 text-accent border border-accent/20 px-4 py-3 rounded-xl font-bold text-xs hover:bg-accent hover:text-white transition-all flex items-center justify-center gap-2">
+                                        <i data-lucide="eye" class="w-4 h-4"></i> Redação
+                                    </a>
+                                ` : ''}
+                                ${repsRelacionados.length > 0 ? `
+                                    <a href="../repertorio/repertorio.html?eixo=${tema.eixo_tematico}" class="flex-1 bg-indigo-50 text-indigo-500 border border-indigo-100 px-4 py-3 rounded-xl font-bold text-xs hover:bg-indigo-500 hover:text-white transition-all flex items-center justify-center gap-2">
+                                        <i data-lucide="book-marked" class="w-4 h-4"></i> Repertório
+                                    </a>
+                                ` : ''}
+                            </div>
+                            <div class="flex items-center justify-between gap-3">
+                                <a href="../pratica/pratica.html?tema=${tema.id}" class="flex-1 bg-primary text-white px-6 py-3 rounded-xl font-bold text-xs shadow-lg shadow-primary/20 hover:scale-105 transition-transform flex items-center justify-center gap-2">
+                                    <i data-lucide="pen-tool" class="w-4 h-4"></i> Praticar este tema
+                                </a>
+                                <button class="p-3 text-slate-400 hover:text-primary hover:bg-slate-50 rounded-xl transition-all">
+                                    <i data-lucide="bookmark" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+
+                lucide.createIcons();
             }
 
-            data.forEach(tema => {
-                const card = document.createElement('div');
-                card.className = "theme-card bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden";
+            // Load logic
+            if (window.BANCO_TEMAS) {
+                todosTemas = window.BANCO_TEMAS;
+                aplicarFiltros();
+            } else {
+                fetch('../dados/banco_temas.json')
+                    .then(res => res.json())
+                    .then(data => {
+                        todosTemas = data;
+                        aplicarFiltros();
+                    })
+                    .catch(err => {
+                        grid.innerHTML = '<p class="text-red-500 font-bold col-span-full text-center">Erro ao carregar banco de temas.</p>';
+                    });
+            }
 
-                const isEnemOficial = !tema.id.includes('ext');
-
-                card.innerHTML = `
-                    <div class="flex justify-between items-start mb-4">
-                        <span class="px-2 py-1 rounded-md bg-primary/10 text-primary text-[10px] font-black uppercase tracking-wider">
-                            ${tema.eixo_tematico}
-                        </span>
-                        <span class="text-xs font-bold text-slate-400">
-                            ${tema.ano_aplicacao || '2024'}
-                        </span>
-                    </div>
-                    <h3 class="text-lg font-bold leading-tight mb-3 line-clamp-3 group-hover:text-primary transition-colors">
-                        ${tema.titulo}
-                    </h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-3 mb-6">
-                        ${tema.descricao}
-                    </p>
-                    <div class="flex gap-2">
-                        <a href="../pratica/pratica.html?temaId=${tema.id}" class="flex-1 text-center py-2 bg-primary text-white rounded-lg text-xs font-bold hover:bg-blue-700 transition-colors">
-                            Escrever Agora
-                        </a>
-                        <button onclick="verDetalhes('${tema.id}')" class="px-3 py-2 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
-                            <span class="material-symbols-outlined text-sm block">visibility</span>
-                        </button>
-                    </div>
-                `;
-
-                if (tema.isProvavel) {
-                    const tag = document.createElement('div');
-                    tag.className = "absolute top-0 right-0 bg-orange-500 text-white text-[9px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-tighter";
-                    tag.innerHTML = "Tema Provável";
-                    card.appendChild(tag);
-                } else if (isEnemOficial) {
-                    const tag = document.createElement('div');
-                    tag.className = "absolute top-0 right-0 bg-slate-800 text-white text-[9px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-tighter";
-                    tag.innerHTML = "ENEM Oficial";
-                    card.appendChild(tag);
-                }
-
-                grid.appendChild(card);
+            botoesEixo.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    botoesEixo.forEach(b => {
+                        b.className = "eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all";
+                    });
+                    btn.className = "eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl bg-primary text-white font-bold text-sm shadow-lg shadow-primary/20 transition-all";
+                    filtroAtual = btn.dataset.eixo;
+                    aplicarFiltros();
+                });
             });
-        }
 
-        searchInput.addEventListener('input', (e) => {
-            const term = e.target.value.toLowerCase();
-            const filtered = themes.filter(t =>
-                t.titulo.toLowerCase().includes(term) ||
-                String(t.ano_aplicacao).includes(term)
-            );
-            renderThemes(filtered);
+            searchInput.addEventListener('input', aplicarFiltros);
+
+            lucide.createIcons();
         });
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.className = "filter-btn px-4 py-2 rounded-lg bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-sm font-bold hover:bg-primary/10 transition-all border border-slate-200 dark:border-slate-700");
-                btn.className = "filter-btn active px-4 py-2 rounded-lg bg-primary text-white text-sm font-bold transition-all border border-primary";
-
-                const filter = btn.dataset.filter;
-                if (filter === 'all') {
-                    renderThemes(themes);
-                } else if (filter === 'Provável') {
-                    renderThemes(themes.filter(t => t.isProvavel));
-                } else {
-                    renderThemes(themes.filter(t => t.eixo_tematico === filter));
-                }
-            });
-        });
-
-        function verDetalhes(id) {
-            alert("Apresentando Textos Base e Comandos para o tema selecionado. Redirecionando para o ambiente de prática...");
-            window.location.href = `../pratica/pratica.html?temaId=${id}`;
-        }
-
-        init();
     </script>
 </body>
 

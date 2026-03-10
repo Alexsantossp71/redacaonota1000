@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Repertório | Portal Redação Nota 1000</title>
+
+    <!-- Global Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#1E40AF', accent: '#10B981', deep: '#0F172A' },
+                    fontFamily: { display: ['Outfit', 'sans-serif'], body: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Local Data -->
+    <script src="../dados/banco_repertorios.js"></script>
+    <script src="../dados/banco_redacoes.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .quote-card {
+            border-left: 6px solid #1E40AF;
+            background: #EEF2FF;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen pb-20">
+
+    <header class="sticky top-0 z-[100] px-4 py-3 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <nav class="max-w-5xl mx-auto flex items-center justify-between">
+            <a href="repertorio.html"
+                class="flex items-center gap-2 text-slate-500 hover:text-primary font-bold text-sm transition-all group">
+                <i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition-transform"></i>
+                Voltar
+            </a>
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
+                    <i data-lucide="book-open" class="w-5 h-5"></i>
+                </div>
+                <span class="text-lg font-black text-deep">Redação<span class="text-primary italic">1000</span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12" id="detail-content">
+        <!-- Loader -->
+        <div class="flex flex-col items-center justify-center py-20 text-slate-400">
+            <div class="w-12 h-12 border-4 border-slate-200 border-t-primary rounded-full animate-spin mb-4"></div>
+            <p class="font-bold">Carregando repertório...</p>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            const content = document.getElementById('detail-content');
+
+            if (!id) {
+                window.location.href = 'repertorio.html';
+                return;
+            }
+
+            const rep = BANCO_REPERTORIOS.find(r => r.id === id);
+
+            if (!rep) {
+                content.innerHTML = `<div class="text-center py-20"><h2 class="text-2xl font-black">Repertório não encontrado.</h2></div>`;
+                return;
+            }
+
+            // Encontrar redações que citam o autor ou o título
+            const redaRelacionadas = window.BANCO_REDACOES.filter(reda => {
+                const texto = reda.texto_completo.join(' ').toLowerCase();
+                return texto.includes(rep.autor.toLowerCase()) || texto.includes(rep.titulo.toLowerCase());
+            });
+
+            const citacoesHtml = rep.citacoes.map(cit => `
+                <div class="quote-card p-8 rounded-3xl mb-6 relative overflow-hidden group">
+                    <i data-lucide="quote" class="absolute -right-4 -top-4 w-24 h-24 text-primary/5 -rotate-12 transition-transform group-hover:scale-110"></i>
+                    <p class="text-xl font-bold text-primary leading-relaxed italic relative z-10">"${cit}"</p>
+                </div>
+            `).join('');
+
+            const redaHtml = redaRelacionadas.map(reda => `
+                <a href="../biblioteca/ler-redacao.html?id=${reda.id}" class="block bg-white p-6 rounded-2xl border border-slate-200 hover:border-primary/50 hover:shadow-lg transition-all">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-black rounded-full uppercase tracking-widest">Enem ${reda.ano_enem}</span>
+                        <i data-lucide="external-link" class="w-4 h-4 text-slate-300"></i>
+                    </div>
+                    <h4 class="font-black text-deep leading-snug">${reda.titulo}</h4>
+                    <p class="text-xs text-slate-500 mt-2 line-clamp-2">${reda.resumo}</p>
+                </a>
+            `).join('');
+
+            content.innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+                    <div class="lg:col-span-2 space-y-12">
+                        <header>
+                            <span class="px-4 py-1.5 bg-indigo-50 text-indigo-500 text-[10px] font-black rounded-full uppercase tracking-widest border border-indigo-100">${rep.categoria}</span>
+                            <h1 class="text-4xl md:text-5xl font-black text-deep mt-4 mb-2">${rep.titulo}</h1>
+                            <p class="text-xl font-bold text-primary italic">${rep.autor}</p>
+                            <p class="text-sm font-semibold text-slate-400 mt-1">Obra: ${rep.obra}</p>
+                        </header>
+
+                        <div>
+                            <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-6 flex items-center gap-2">
+                                <i data-lucide="message-square" class="w-4 h-4"></i> Citações Principais
+                            </h3>
+                            ${citacoesHtml}
+                        </div>
+
+                        <div class="bg-white rounded-[2.5rem] p-10 border border-slate-200 shadow-sm border-t-8 border-t-accent">
+                            <h3 class="text-xl font-black text-deep mb-4 flex items-center gap-2">
+                                <i data-lucide="pen-tool" class="text-accent"></i> Como aplicar na redação?
+                            </h3>
+                            <p class="text-lg text-slate-600 leading-relaxed font-medium">${rep.como_usar}</p>
+                        </div>
+                    </div>
+
+                    <aside class="space-y-8 sticky top-24">
+                        <div class="bg-deep rounded-[2rem] p-8 text-white shadow-xl">
+                            <h3 class="text-sm font-black uppercase tracking-widest mb-6 flex items-center gap-2 text-accent">
+                                <i data-lucide="file-check" class="w-5 h-5"></i> Redações que usam este repertório
+                            </h3>
+                            <div class="space-y-4">
+                                ${redaHtml || '<p class="text-sm text-slate-400">Nenhuma redação encontrada com esta citação.</p>'}
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-50 rounded-[2rem] p-8 border border-indigo-100">
+                            <h3 class="text-sm font-black uppercase tracking-widest mb-4 text-indigo-900 border-b border-indigo-200 pb-2">Eixos Relacionados</h3>
+                            <div class="flex flex-wrap gap-2">
+                                ${rep.eixos.map(e => `<span class="px-3 py-1 bg-white text-indigo-600 text-[10px] font-black rounded-lg uppercase shadow-sm">#${e}</span>`).join('')}
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            `;
+            lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>

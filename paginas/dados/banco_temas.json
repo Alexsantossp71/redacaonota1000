@@ -1,5 +1,33 @@
 [
     {
+        "id": "tema-pos-001",
+        "titulo": "O desafio do combate ao analfabetismo funcional no Brasil",
+        "eixo_tematico": "Educação",
+        "ano_aplicacao": null,
+        "descricao": "Apesar do aumento da escolarização, muitos brasileiros não conseguem interpretar textos simples ou realizar operações matemáticas básicas, o que limita sua cidadania e inserção no mercado de trabalho."
+    },
+    {
+        "id": "tema-pos-002",
+        "titulo": "Impactos da inteligência artificial na educação e no mercado de trabalho",
+        "eixo_tematico": "Tecnologia",
+        "ano_aplicacao": null,
+        "descricao": "A rápida evolução das IAs generativas traz desafios éticos, de produtividade e a necessidade de requalificação profissional constante em um mundo automatizado."
+    },
+    {
+        "id": "tema-pos-003",
+        "titulo": "Caminhos para garantir a segurança alimentar na sociedade brasileira",
+        "eixo_tematico": "Saúde",
+        "ano_aplicacao": null,
+        "descricao": "Discussão sobre o retorno do Brasil ao mapa da fome e a importância de políticas públicas que garantam o acesso a alimentos de qualidade para todos."
+    },
+    {
+        "id": "tema-pos-004",
+        "titulo": "A importância da preservação da saúde mental na era da hiperconectividade",
+        "eixo_tematico": "Saúde",
+        "ano_aplicacao": null,
+        "descricao": "O esgotamento emocional (burnout), a ansiedade e a depressão potencializados pelo uso excessivo de redes sociais e pela cobrança por produtividade ininterrupta."
+    },
+    {
         "id": "tema-001",
         "titulo": "Democratização do acesso ao cinema no Brasil",
         "eixo_tematico": "Cultura",

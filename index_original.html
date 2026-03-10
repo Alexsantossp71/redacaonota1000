@@ -60,6 +60,9 @@
     <!-- Lucide Icons (Professional SVG) -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Local Data -->
+    <script src="paginas/dados/banco_redacoes.js"></script>
+
     <style>
         /* Modern Design System Tokens */
         :root {
@@ -140,20 +143,26 @@
                         class="hover:text-primary transition-colors cursor-pointer">Aulas</a></li>
                 <li><a href="paginas/biblioteca/biblioteca.html"
                         class="hover:text-primary transition-colors cursor-pointer">Biblioteca</a></li>
+                <li><a href="paginas/temas/temas.html"
+                        class="hover:text-primary transition-colors cursor-pointer">Temas</a></li>
+                <li><a href="paginas/repertorio/repertorio.html"
+                        class="hover:text-primary transition-colors cursor-pointer text-primary font-bold">Repertório</a>
+                </li>
                 <li><a href="paginas/pratica/pratica.html"
                         class="hover:text-primary transition-colors cursor-pointer">Prática</a></li>
             </ul>
 
+
             <div class="flex items-center gap-4">
-                <button
+                <a href="#newsletter"
                     class="hidden lg:flex items-center gap-2 text-slate-500 hover:text-primary font-bold text-sm transition-all cursor-pointer">
                     <i data-lucide="search" class="w-5 h-5"></i>
                     Entrar
-                </button>
-                <button
+                </a>
+                <a href="paginas/pratica/pratica.html"
                     class="bg-primary hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm transition-all shadow-md shadow-blue-500/20 active:scale-95 cursor-pointer">
                     Começar Agora
-                </button>
+                </a>
             </div>
         </nav>
     </header>
@@ -181,34 +190,14 @@
                 </p>
 
                 <div class="flex flex-wrap gap-5 pt-4">
-                    <button
+                    <a href="paginas/pratica/pratica.html"
                         class="bg-primary text-white px-10 py-5 rounded-2xl font-black text-xl shadow-2xl shadow-primary/40 hover:scale-105 transition-transform cursor-pointer group flex items-center gap-3">
                         Quero ser nota 1000
                         <i data-lucide="chevron-right"
                             class="w-6 h-6 group-hover:translate-x-1 transition-transform"></i>
-                    </button>
-                    <button
-                        class="flex items-center gap-3 text-slate-700 px-8 py-5 rounded-2xl font-bold text-lg hover:bg-white transition-all cursor-pointer shadow-sm hover:shadow-md">
-                        <i data-lucide="play-circle" class="w-6 h-6 text-primary"></i>
-                        Ver demonstração
-                    </button>
+                    </a>
                 </div>
 
-                <!-- Trust Badges (UX: Social Proof) -->
-                <div class="flex items-center gap-6 pt-10 border-t border-slate-200/50">
-                    <div class="flex -space-x-3">
-                        <img src="https://i.pravatar.cc/100?u=1"
-                            class="w-10 h-10 rounded-full border-2 border-white shadow-sm" alt="Student">
-                        <img src="https://i.pravatar.cc/100?u=2"
-                            class="w-10 h-10 rounded-full border-2 border-white shadow-sm" alt="Student">
-                        <img src="https://i.pravatar.cc/100?u=3"
-                            class="w-10 h-10 rounded-full border-2 border-white shadow-sm" alt="Student">
-                    </div>
-                    <div>
-                        <p class="text-sm font-bold text-deep">+15k Estudantes</p>
-                        <p class="text-xs text-slate-500 font-medium">Aprovados nas melhores universidades</p>
-                    </div>
-                </div>
             </div>
 
             <div class="hidden lg:block relative">
@@ -257,9 +246,9 @@
                 ao mestre da escrita.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+        <div id="servicos" class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
             <!-- Card 1: Main Focus (Asymmetric Span) -->
-            <div
+            <a href="paginas/biblioteca/biblioteca.html"
                 class="md:col-span-2 md:row-span-1 bento-card bg-primary p-10 rounded-[2.5rem] flex flex-col justify-between overflow-hidden relative group cursor-pointer">
                 <div class="z-10 relative space-y-4">
                     <div
@@ -274,14 +263,13 @@
                     class="absolute -bottom-10 -right-10 opacity-10 group-hover:scale-110 transition-transform duration-700">
                     <i data-lucide="library" class="w-64 h-64 text-white"></i>
                 </div>
-                <button
-                    class="z-10 mt-6 w-fit flex items-center gap-2 text-white font-black hover:gap-4 transition-all">
+                <div class="z-10 mt-6 w-fit flex items-center gap-2 text-white font-black hover:gap-4 transition-all">
                     Ver exemplos <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </button>
-            </div>
+                </div>
+            </a>
 
             <!-- Card 2: Vertical Secondary -->
-            <div
+            <a href="paginas/temas/temas.html"
                 class="md:col-span-1 md:row-span-2 bento-card bg-white p-10 rounded-[2.5rem] flex flex-col justify-between border border-slate-100 shadow-sm cursor-pointer hover:border-primary/30">
                 <div class="space-y-6">
                     <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
@@ -302,28 +290,29 @@
                         </li>
                     </ul>
                 </div>
-                <button class="mt-6 font-black text-primary hover:text-blue-800 transition-colors">Ver todos os
-                    temas</button>
-            </div>
+                <div class="mt-6 font-black text-primary hover:text-blue-800 transition-colors">Ver todos os
+                    temas</div>
+            </a>
 
             <!-- Card 3: Small Square -->
-            <div
+            <a href="paginas/aulas/aulas.html"
                 class="md:col-span-1 bento-card bg-slate-900 p-10 rounded-[2.5rem] flex flex-col justify-center gap-4 cursor-pointer">
                 <i data-lucide="monitor-play" class="w-10 h-10 text-primary"></i>
                 <h3 class="text-xl font-black text-white">Aulas de Repertório</h3>
                 <p class="text-sm text-slate-400 font-medium">Filosofia, sociologia e história aplicada à sua redação.
                 </p>
-            </div>
+            </a>
 
             <!-- Card 4: Small Square -->
-            <div
+            <a href="paginas/pratica/pratica.html"
                 class="md:col-span-1 bento-card bg-white border border-slate-100 p-10 rounded-[2.5rem] flex flex-col justify-center gap-4 cursor-pointer hover:border-accent/30 shadow-sm">
                 <i data-lucide="pencil-line" class="w-10 h-10 text-accent"></i>
                 <h3 class="text-xl font-black text-deep">Prática Imediata</h3>
                 <p class="text-sm text-slate-500 font-medium">Escreva agora e receba o feedback detalhado em até 24h.
                 </p>
-            </div>
+            </a>
         </div>
+
     </section>
 
     <!-- Essay Cards (High-Craft: Mobile-Design Touch-First) -->
@@ -336,132 +325,17 @@
                     <p class="text-slate-400 max-w-lg font-medium">Analise a estrutura de quem já chegou lá. Cada
                         redação conta com comentários de especialistas sobre os repertórios utilizados.</p>
                 </div>
-                <button
+                <a href="paginas/biblioteca/biblioteca.html"
                     class="px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 text-white rounded-2xl font-black transition-all flex items-center gap-3 cursor-pointer">
                     Ver todas as redações
                     <i data-lucide="move-right" class="w-5 h-5"></i>
-                </button>
+                </a>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Essay Card (Template for loop-style creation) -->
-                <div
-                    class="group bg-slate-800/50 rounded-[2.5rem] p-8 space-y-8 border border-white/5 hover:border-primary/50 transition-all cursor-pointer relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-6">
-                        <div
-                            class="px-4 py-1.5 bg-accent text-white text-[10px] font-black rounded-full uppercase tracking-widest shadow-lg shadow-accent/20">
-                            Nota 1000</div>
-                    </div>
-
-                    <div
-                        class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-12">
-                        <i data-lucide="file-text" class="w-9 h-9"></i>
-                    </div>
-
-                    <div class="space-y-4">
-                        <h4
-                            class="text-xl font-black text-white leading-tight group-hover:text-primary transition-colors">
-                            Impactos da I.A. na Educação Moderna</h4>
-                        <div class="flex items-center gap-3 text-slate-500 text-sm font-bold">
-                            <img src="https://i.pravatar.cc/100?u=a" class="w-6 h-6 rounded-full grayscale opacity-50"
-                                alt="Author">
-                            <span>Marina Silva</span>
-                        </div>
-                    </div>
-
-                    <div
-                        class="pt-6 flex justify-between items-center text-xs font-black tracking-widest text-slate-600">
-                        <span>ENEM 2024</span>
-                        <i data-lucide="external-link"
-                            class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </div>
-                </div>
-
-                <div
-                    class="group bg-slate-800/50 rounded-[2.5rem] p-8 space-y-8 border border-white/5 hover:border-primary/50 transition-all cursor-pointer relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-6">
-                        <div
-                            class="px-4 py-1.5 bg-accent text-white text-[10px] font-black rounded-full uppercase tracking-widest shadow-lg shadow-accent/20">
-                            Nota 1000</div>
-                    </div>
-                    <div
-                        class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-12">
-                        <i data-lucide="file-text" class="w-9 h-9"></i>
-                    </div>
-                    <div class="space-y-4">
-                        <h4
-                            class="text-xl font-black text-white leading-tight group-hover:text-primary transition-colors">
-                            O estigma das doenças mentais</h4>
-                        <div class="flex items-center gap-3 text-slate-500 text-sm font-bold">
-                            <img src="https://i.pravatar.cc/100?u=b" class="w-6 h-6 rounded-full grayscale opacity-50"
-                                alt="Author">
-                            <span>João Pereira</span>
-                        </div>
-                    </div>
-                    <div
-                        class="pt-6 flex justify-between items-center text-xs font-black tracking-widest text-slate-600">
-                        <span>ENEM 2023</span>
-                        <i data-lucide="external-link"
-                            class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </div>
-                </div>
-
-                <div
-                    class="group bg-slate-800/50 rounded-[2.5rem] p-8 space-y-8 border border-white/5 hover:border-primary/50 transition-all cursor-pointer relative overflow-hidden text-balanced">
-                    <div class="absolute top-0 right-0 p-6">
-                        <div
-                            class="px-4 py-1.5 bg-accent text-white text-[10px] font-black rounded-full uppercase tracking-widest shadow-lg shadow-accent/20">
-                            Nota 1000</div>
-                    </div>
-                    <div
-                        class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-12">
-                        <i data-lucide="file-text" class="w-9 h-9"></i>
-                    </div>
-                    <div class="space-y-4">
-                        <h4
-                            class="text-xl font-black text-white leading-tight group-hover:text-primary transition-colors">
-                            A invisibilidade e o registro civil</h4>
-                        <div class="flex items-center gap-3 text-slate-500 text-sm font-bold">
-                            <img src="https://i.pravatar.cc/100?u=c" class="w-6 h-6 rounded-full grayscale opacity-50"
-                                alt="Author">
-                            <span>Ricardo Gomes</span>
-                        </div>
-                    </div>
-                    <div
-                        class="pt-6 flex justify-between items-center text-xs font-black tracking-widest text-slate-600">
-                        <span>ENEM 2022</span>
-                        <i data-lucide="external-link"
-                            class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </div>
-                </div>
-
-                <div
-                    class="group bg-slate-800/50 rounded-[2.5rem] p-8 space-y-8 border border-white/5 hover:border-primary/50 transition-all cursor-pointer relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-6">
-                        <div
-                            class="px-4 py-1.5 bg-accent text-white text-[10px] font-black rounded-full uppercase tracking-widest shadow-lg shadow-accent/20">
-                            Nota 1000</div>
-                    </div>
-                    <div
-                        class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-12">
-                        <i data-lucide="file-text" class="w-9 h-9"></i>
-                    </div>
-                    <div class="space-y-4">
-                        <h4
-                            class="text-xl font-black text-white leading-tight group-hover:text-primary transition-colors">
-                            Democratização do Cinema</h4>
-                        <div class="flex items-center gap-3 text-slate-500 text-sm font-bold">
-                            <img src="https://i.pravatar.cc/100?u=d" class="w-6 h-6 rounded-full grayscale opacity-50"
-                                alt="Author">
-                            <span>Beatriz Lima</span>
-                        </div>
-                    </div>
-                    <div
-                        class="pt-6 flex justify-between items-center text-xs font-black tracking-widest text-slate-600">
-                        <span>ENEM 2021</span>
-                        <i data-lucide="external-link"
-                            class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </div>
+            <div id="redacoes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Dynamic cards will be injected here -->
+                <div class="col-span-full py-20 text-center text-slate-500 font-bold animate-pulse">
+                    Carregando inspirações...
                 </div>
             </div>
         </div>
@@ -479,54 +353,21 @@
                             class="text-primary italic">1000</span></span>
                 </div>
                 <p class="text-sm text-slate-500 font-medium leading-relaxed">
-                    Elevando o padrão da educação preparatória no Brasil através da interseção entre pedagogia e
-                    tecnologia.
+                    Excelência e metodologia na preparação para a nota máxima no ENEM.
                 </p>
-                <div class="flex gap-4">
-                    <a href="#"
-                        class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:text-primary transition-all shadow-sm"><i
-                            data-lucide="instagram" class="w-5 h-5"></i></a>
-                    <a href="#"
-                        class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:text-primary transition-all shadow-sm"><i
-                            data-lucide="twitter" class="w-5 h-5"></i></a>
-                    <a href="#"
-                        class="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:text-primary transition-all shadow-sm"><i
-                            data-lucide="youtube" class="w-5 h-5"></i></a>
-                </div>
             </div>
 
-            <div class="space-y-6">
-                <h5 class="text-sm font-black text-deep uppercase tracking-widest">Plataforma</h5>
+            <div class="md:col-span-2"></div>
+
+            <div class="space-y-6 text-right">
+                <h5 class="text-sm font-black text-deep uppercase tracking-widest">Institucional</h5>
                 <ul class="space-y-3 text-sm font-bold text-slate-500">
-                    <li><a href="#" class="hover:text-primary transition-colors">Correção Imediata</a></li>
-                    <li><a href="#" class="hover:text-primary transition-colors">Videoaulas Premium</a></li>
-                    <li><a href="#" class="hover:text-primary transition-colors">Banco de Temas</a></li>
-                    <li><a href="#" class="hover:text-primary transition-colors">Guia de Repertório</a></li>
+                    <li><a href="paginas/institucional/termos.html" class="hover:text-primary transition-colors">Termos
+                            de Uso</a></li>
                 </ul>
             </div>
+        </div>
 
-            <div class="space-y-6">
-                <h5 class="text-sm font-black text-deep uppercase tracking-widest">Suporte</h5>
-                <ul class="space-y-3 text-sm font-bold text-slate-500">
-                    <li><a href="#" class="hover:text-primary transition-colors">Central de Ajuda</a></li>
-                    <li><a href="#" class="hover:text-primary transition-colors">Planos e Preços</a></li>
-                    <li><a href="#" class="hover:text-primary transition-colors">Termos de Uso</a></li>
-                    <li><a href="#" class="hover:text-primary transition-colors">Privacidade</a></li>
-                </ul>
-            </div>
-
-            <div class="space-y-6 bg-slate-50 p-8 rounded-3xl border border-slate-100">
-                <h5 class="text-sm font-black text-deep uppercase tracking-widest">Novidades no E-mail</h5>
-                <p class="text-xs text-slate-500 font-bold">Receba temas inéditos toda semana.</p>
-                <div class="relative">
-                    <input type="email" placeholder="seu@email.com"
-                        class="w-full bg-white border border-slate-200 px-4 py-3 rounded-xl text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">
-                    <button
-                        class="absolute right-2 top-2 bottom-2 bg-deep text-white px-3 rounded-lg flex items-center justify-center hover:bg-black transition-colors">
-                        <i data-lucide="send" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
         </div>
         <div
             class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-black text-slate-400 uppercase tracking-widest">
@@ -618,6 +459,52 @@
 
         // Initialize Icons
         lucide.createIcons();
+
+        // Dynamic Random Essays
+        function renderRandomEssays() {
+            const grid = document.getElementById('redacoes-grid');
+            if (!window.BANCO_REDACOES || !grid) return;
+
+            // Shuffle and pick 4
+            const sorted = [...window.BANCO_REDACOES].sort(() => 0.5 - Math.random());
+            const selection = sorted.slice(0, 4);
+
+            grid.innerHTML = '';
+            selection.forEach(redacao => {
+                const card = document.createElement('a');
+                card.href = `paginas/biblioteca/ler-redacao.html?id=${redacao.id}`;
+                card.className = "group bg-slate-800/50 rounded-[2.5rem] p-8 space-y-8 border border-white/5 hover:border-primary/50 transition-all cursor-pointer relative overflow-hidden";
+
+                card.innerHTML = `
+                    <div class="absolute top-0 right-0 p-6">
+                        <div class="px-4 py-1.5 bg-accent text-white text-[10px] font-black rounded-full uppercase tracking-widest shadow-lg shadow-accent/20">
+                            Nota ${redacao.nota_final || 1000}
+                        </div>
+                    </div>
+
+                    <div class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-12">
+                        <i data-lucide="file-text" class="w-9 h-9"></i>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-xl font-black text-white leading-tight group-hover:text-primary transition-colors">
+                            ${redacao.titulo}
+                        </h4>
+                    </div>
+
+
+                    <div class="pt-6 flex justify-between items-center text-xs font-black tracking-widest text-slate-600">
+                        <span>ENEM ${redacao.ano_enem}</span>
+                        <i data-lucide="external-link" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            lucide.createIcons();
+        }
+
+        renderRandomEssays();
     </script>
 </body>
 

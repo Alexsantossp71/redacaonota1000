@@ -1,444 +1,349 @@
 <!DOCTYPE html>
-
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Biblioteca de Redações Nota 1000</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap"
-        rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca | Portal Redação Nota 1000</title>
+
+    <!-- Global Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script src="../dados/banco_redacoes.js"></script>
-    <script id="tailwind-config">
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
         tailwind.config = {
-            darkMode: "class",
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#135bec",
-                        "background-light": "#f6f6f8",
-                        "background-dark": "#101622",
+                        primary: '#1E40AF',
+                        accent: '#10B981',
+                        canvas: '#F8FAFC',
+                        deep: '#0F172A',
                     },
                     fontFamily: {
-                        "display": ["Lexend", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
+                        display: ['Outfit', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
         }
     </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Local Data (Fallback for CORS) -->
+    <script src="../dados/banco_redacoes.js"></script>
+
     <style>
         body {
-            font-family: 'Lexend', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
     </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
-    <!-- Top Navigation Bar -->
-    <header class="sticky top-0 z-50 w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-        <div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-[100] px-4 py-3 glass-nav">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <a href="../../index_original.html"
-                    class="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity">
-                    <span class="material-symbols-outlined text-3xl font-bold">menu_book</span>
-                    <h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Nota 1000</h1>
+                <a href="../../index_original.html" class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-inner">
+                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight text-deep">Redação<span
+                            class="text-primary font-black italic">1000</span></span>
                 </a>
             </div>
-            <nav class="hidden md:flex items-center gap-6">
-                <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
-                    href="../../index_original.html">Início</a>
-                <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
-                    href="../aulas/aulas.html">Aulas</a>
-                <a class="text-sm font-medium text-primary border-b-2 border-primary pb-1"
-                    href="biblioteca.html">Biblioteca</a>
-                <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
-                    href="../pratica/pratica.html">Prática</a>
-            </nav>
-            <div class="flex items-center gap-4 flex-1 justify-end max-w-xl">
-                <div class="relative w-full max-w-xs group">
-                    <span
-                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
-                    <input id="search-input"
-                        class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/50 placeholder:text-slate-500"
-                        placeholder="Buscar tema ou ano..." type="text" />
+
+            <ul class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <li><a href="../../index_original.html" class="hover:text-primary transition-colors">Início</a></li>
+                <li><a href="../aulas/aulas.html" class="hover:text-primary transition-colors">Aulas</a></li>
+                <li><a href="../temas/temas.html" class="hover:text-primary transition-colors">Temas</a></li>
+                <li><a href="biblioteca.html" class="text-primary font-bold">Biblioteca</a></li>
+                <li><a href="../repertorio/repertorio.html" class="hover:text-primary transition-colors">Repertório</a>
+                </li>
+                <li><a href="../pratica/pratica.html" class="hover:text-primary transition-colors">Prática</a></li>
+            </ul>
+
+
+            <div class="flex items-center gap-4">
+                <div class="relative hidden sm:block">
+                    <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input id="search-input" type="text" placeholder="Buscar redação..."
+                        class="bg-slate-100 border-none rounded-xl pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20 w-48 lg:w-64 transition-all">
                 </div>
-                <button
-                    class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 relative">
-                    <span class="material-symbols-outlined">notifications</span>
-                    <span
-                        class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
-                </button>
-                <div
-                    class="h-8 w-8 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden">
-                    <img alt="Avatar do usuário" class="w-full h-full object-cover"
-                        data-alt="Avatar circular de um estudante sorrindo"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-gO-j6Jylz_vmq4KhrH2fM6cUB14l5ZDAdsrBaPfFh2sKtdQQtZbvfoYrkAlVWmU8Mx0deZRxTfBMkzZEK6_8LKh3vsxPJD3UV4ZkM6qOaKweHMVjZUueJOthlii2KNsNjPpaJfN64EzL8xB2rVmuWMYudWn_MecGAH7_XBKAWBb5oyk5lpC1vDmQ48LgLmp6oKGze5TOd7uX-N5yo4uO_HzsvrkG1p_KI0kaWozSFZbk5dyYDOq-TDYq9QTqJUlq4pMTq00q29u0" />
+                <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border border-slate-300">
+                    <img src="https://i.pravatar.cc/100?u=me" alt="User">
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
-    <main class="max-w-[1440px] mx-auto px-6 py-8 flex gap-8">
+
+    <main class="max-w-7xl mx-auto px-6 py-12 flex flex-col lg:flex-row gap-12">
+
         <!-- Sidebar Filters -->
-        <aside class="w-64 shrink-0 hidden lg:block">
-            <div class="sticky top-24 space-y-8">
-                <!-- Competências Section -->
-                <section>
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Competências (Foco)</h3>
-                    <div class="flex flex-col gap-2">
-                        <label
-                            class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
-                            <input id="comp-c1"
-                                class="comp-check rounded border-slate-300 text-primary focus:ring-primary"
-                                type="checkbox" />
-                            <span class="text-sm font-medium group-hover:text-primary">C1: Gramática</span>
-                        </label>
-                        <label
-                            class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
-                            <input id="comp-c2"
-                                class="comp-check rounded border-slate-300 text-primary focus:ring-primary"
-                                type="checkbox" />
-                            <span class="text-sm font-medium group-hover:text-primary">C2: Estrutura</span>
-                        </label>
-                        <label
-                            class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
-                            <input id="comp-c3"
-                                class="comp-check rounded border-slate-300 text-primary focus:ring-primary"
-                                type="checkbox" />
-                            <span class="text-sm font-medium group-hover:text-primary">C3: Argumentação</span>
-                        </label>
-                        <label
-                            class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
-                            <input id="comp-c4"
-                                class="comp-check rounded border-slate-300 text-primary focus:ring-primary"
-                                type="checkbox" />
-                            <span class="text-sm font-medium group-hover:text-primary">C4: Coesão</span>
-                        </label>
-                        <label
-                            class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer transition-colors group">
-                            <input id="comp-c5"
-                                class="comp-check rounded border-slate-300 text-primary focus:ring-primary"
-                                type="checkbox" />
-                            <span class="text-sm font-medium group-hover:text-primary">C5: Proposta</span>
-                        </label>
-                    </div>
-                </section>
-                <!-- Eixos Temáticos Section -->
-                <section>
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Eixos Temáticos</h3>
-                    <div class="flex flex-col gap-1" id="filtro-eixos">
-                        <button
-                            class="eixo-btn active flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white text-sm font-medium transition-all shadow-md shadow-primary/20"
-                            data-eixo="Todos">
-                            <span class="material-symbols-outlined text-lg">apps</span>
-                            Todos os temas
-                        </button>
-                        <button
-                            class="eixo-btn flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-all"
-                            data-eixo="Saúde">
-                            <span class="material-symbols-outlined text-lg">medical_services</span>
-                            Saúde
-                        </button>
-                        <button
-                            class="eixo-btn flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-all"
-                            data-eixo="Educação">
-                            <span class="material-symbols-outlined text-lg">school</span>
-                            Educação
-                        </button>
-                        <button
-                            class="eixo-btn flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-all"
-                            data-eixo="Tecnologia">
-                            <span class="material-symbols-outlined text-lg">memory</span>
-                            Tecnologia
-                        </button>
-                        <button
-                            class="eixo-btn flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-all"
-                            data-eixo="Cultura">
-                            <span class="material-symbols-outlined text-lg">theater_comedy</span>
-                            Cultura
-                        </button>
-                        <button
-                            class="eixo-btn flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm font-medium transition-all"
-                            data-eixo="Cidadania">
-                            <span class="material-symbols-outlined text-lg">public</span>
-                            Cidadania
-                        </button>
-                    </div>
-                </section>
-                <!-- Stats card -->
-                <div
-                    class="p-4 rounded-xl bg-gradient-to-br from-primary to-blue-700 text-white shadow-xl shadow-primary/20">
-                    <p class="text-xs font-medium opacity-80 uppercase">Progresso de Leitura</p>
-                    <p class="text-2xl font-bold mt-1">12 / 50</p>
-                    <div class="w-full bg-white/20 h-1.5 rounded-full mt-3">
-                        <div class="bg-white h-full rounded-full w-[24%]"></div>
-                    </div>
-                    <p class="text-[10px] mt-2 opacity-70">Leia mais 5 redações para subir de nível.</p>
+        <aside class="w-full lg:w-72 space-y-10">
+            <!-- Eixos Section -->
+            <section class="space-y-6">
+                <h3 class="text-xs font-black uppercase tracking-widest text-slate-400">Eixos Temáticos</h3>
+                <div class="flex flex-col gap-2" id="filtro-eixos">
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl bg-primary text-white font-bold text-sm shadow-lg shadow-primary/20 transition-all"
+                        data-eixo="Todos">
+                        <i data-lucide="layout-grid" class="w-5 h-5"></i> Todos os Temas
+                    </button>
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all"
+                        data-eixo="Sociedade">
+                        <i data-lucide="users" class="w-5 h-5"></i> Sociedade
+                    </button>
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all"
+                        data-eixo="Educação">
+                        <i data-lucide="graduation-cap" class="w-5 h-5"></i> Educação
+                    </button>
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all"
+                        data-eixo="Saúde">
+                        <i data-lucide="activity" class="w-5 h-5"></i> Saúde
+                    </button>
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all"
+                        data-eixo="Tecnologia">
+                        <i data-lucide="cpu" class="w-5 h-5"></i> Tecnologia
+                    </button>
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all"
+                        data-eixo="Cultura">
+                        <i data-lucide="palette" class="w-5 h-5"></i> Cultura
+                    </button>
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all"
+                        data-eixo="Cidadania">
+                        <i data-lucide="scale" class="w-5 h-5"></i> Cidadania
+                    </button>
+                    <button
+                        class="eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all"
+                        data-eixo="Meio Ambiente">
+                        <i data-lucide="leaf" class="w-5 h-5"></i> Meio Ambiente
+                    </button>
                 </div>
-            </div>
+            </section>
+
+            <!-- Competencias Section -->
+            <section class="space-y-6">
+                <h3 class="text-xs font-black uppercase tracking-widest text-slate-400">Competências em Destaque</h3>
+                <div class="grid grid-cols-1 gap-2">
+                    <label
+                        class="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 bg-white cursor-pointer hover:border-primary/30 transition-all group">
+                        <input id="comp-c1" type="checkbox"
+                            class="comp-check w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary/20">
+                        <span class="text-sm font-bold text-slate-700 group-hover:text-primary">C1: Gramática</span>
+                    </label>
+                    <label
+                        class="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 bg-white cursor-pointer hover:border-primary/30 transition-all group">
+                        <input id="comp-c2" type="checkbox"
+                            class="comp-check w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary/20">
+                        <span class="text-sm font-bold text-slate-700 group-hover:text-primary">C2: Estrutura</span>
+                    </label>
+                    <label
+                        class="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 bg-white cursor-pointer hover:border-primary/30 transition-all group">
+                        <input id="comp-c3" type="checkbox"
+                            class="comp-check w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary/20">
+                        <span class="text-sm font-bold text-slate-700 group-hover:text-primary">C3: Argumentação</span>
+                    </label>
+                    <label
+                        class="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 bg-white cursor-pointer hover:border-primary/30 transition-all group">
+                        <input id="comp-c4" type="checkbox"
+                            class="comp-check w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary/20">
+                        <span class="text-sm font-bold text-slate-700 group-hover:text-primary">C4: Coesão</span>
+                    </label>
+                    <label
+                        class="flex items-center gap-3 p-3 rounded-2xl border border-slate-200 bg-white cursor-pointer hover:border-primary/30 transition-all group">
+                        <input id="comp-c5" type="checkbox"
+                            class="comp-check w-5 h-5 rounded border-slate-300 text-primary focus:ring-primary/20">
+                        <span class="text-sm font-bold text-slate-700 group-hover:text-primary">C5: Proposta</span>
+                    </label>
+                </div>
+            </section>
         </aside>
-        <!-- Main Content Area -->
-        <div class="flex-1">
-            <!-- Hero Section -->
-            <div
-                class="mb-8 p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden">
-                <div class="relative z-10 max-w-2xl">
-                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-3">Galeria de Redações Nota
-                        1000</h2>
-                    <p class="text-slate-600 dark:text-slate-400 text-lg mb-6 leading-relaxed">
-                        Aprenda com os melhores. Explore nossa curadoria de redações exemplares que atingiram a
-                        pontuação máxima no ENEM e entenda os padrões de excelência.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <button
-                            class="bg-primary hover:bg-blue-600 text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all flex items-center gap-2">
-                            <span class="material-symbols-outlined text-lg">upload</span>
-                            Enviar minha redação
-                        </button>
-                        <button
-                            class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all">
-                            Como analisar?
-                        </button>
-                    </div>
-                </div>
-                <!-- Abstract background decoration -->
-                <div class="absolute -right-20 -top-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
-                <div class="absolute right-10 bottom-0 opacity-10 hidden md:block">
-                    <span class="material-symbols-outlined text-[160px]">history_edu</span>
+
+        <!-- Gallery -->
+        <div class="flex-1 space-y-8">
+            <div class="flex items-end justify-between">
+                <div>
+                    <h2 class="text-4xl font-black text-deep">Galeria de Redações</h2>
+                    <p class="text-slate-500 font-medium mt-2" id="contador-resultados">Carregando redações...</p>
                 </div>
             </div>
-            <!-- Grid Header -->
-            <div class="flex items-center justify-between mb-6">
-                <div class="flex items-center gap-2">
-                    <h3 class="text-lg font-bold">Redações em Destaque</h3>
-                    <span id="contador-resultados"
-                        class="bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full">0
-                        resultados</span>
-                </div>
-                <div class="flex items-center gap-3">
-                    <label class="text-xs font-bold text-slate-400 uppercase">Ordenar por:</label>
-                    <select
-                        class="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-xs font-bold rounded-lg focus:ring-primary focus:border-primary py-1.5 pl-3 pr-8">
-                        <option>Mais recentes</option>
-                        <option>Mais lidas</option>
-                        <option>Por Ano</option>
-                    </select>
-                </div>
-            </div>
-            <!-- Essay Grid -->
+
             <div id="redacoes-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                <!-- Redações serão injetadas dinamicamente aqui -->
-            </div>
-            <!-- Pagination -->
-            <div class="mt-12 flex flex-col items-center gap-6">
-                <button
-                    class="flex items-center gap-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-8 py-3 rounded-xl font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
-                    Carregar mais redações
-                    <span class="material-symbols-outlined">expand_more</span>
-                </button>
-                <div class="flex items-center gap-2">
-                    <button
-                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-primary font-bold">1</button>
-                    <button
-                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-transparent hover:border-slate-200 dark:hover:border-slate-800 font-bold">2</button>
-                    <button
-                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-transparent hover:border-slate-200 dark:hover:border-slate-800 font-bold">3</button>
-                    <span class="px-2">...</span>
-                    <button
-                        class="w-10 h-10 rounded-lg flex items-center justify-center border border-transparent hover:border-slate-200 dark:hover:border-slate-800 font-bold">12</button>
+                <!-- Loading State -->
+                <div class="col-span-full py-20 flex flex-col items-center justify-center text-slate-400">
+                    <div class="w-16 h-16 border-4 border-slate-200 border-t-primary rounded-full animate-spin mb-4">
+                    </div>
+                    <p class="font-bold">Sincronizando banco de dados...</p>
                 </div>
             </div>
         </div>
     </main>
-    <!-- Footer -->
-    <footer class="mt-20 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-12">
-        <div class="max-w-[1440px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
-            <div class="col-span-1 md:col-span-2">
-                <div class="flex items-center gap-2 text-primary mb-4">
-                    <span class="material-symbols-outlined text-3xl font-bold">menu_book</span>
-                    <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Nota 1000</h2>
-                </div>
-                <p class="text-slate-500 dark:text-slate-400 max-w-sm mb-6">
-                    A maior plataforma de estudos focada na competência escrita do ENEM. Transformando alunos em
-                    redatores nota máxima através de repertório e prática.
-                </p>
-                <div class="flex gap-4">
-                    <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
-                            class="material-symbols-outlined">brand_awareness</span></a>
-                    <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
-                            class="material-symbols-outlined">public</span></a>
-                    <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
-                            class="material-symbols-outlined">mail</span></a>
-                </div>
-            </div>
-            <div>
-                <h4 class="font-bold text-slate-900 dark:text-white mb-4">Recursos</h4>
-                <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-                    <li><a class="hover:text-primary transition-colors" href="#">Galeria de Temas</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="#">Banco de Repertórios</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="#">Guia das Competências</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="#">Blog Educacional</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-slate-900 dark:text-white mb-4">Suporte</h4>
-                <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
-                    <li><a class="hover:text-primary transition-colors" href="#">Dúvidas Frequentes</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="#">Fale Conosco</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="#">Termos de Uso</a></li>
-                    <li><a class="hover:text-primary transition-colors" href="#">Privacidade</a></li>
-                </ul>
-            </div>
-        </div>
-        <div
-            class="max-w-[1440px] mx-auto px-6 pt-12 mt-12 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-400">
-            © 2024 Nota 1000 - Todos os direitos reservados.
+
+    <footer class="bg-white border-t border-slate-100 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-4">
+            <p class="text-sm font-black text-slate-400 uppercase tracking-widest">© 2024 Portal Redação Nota 1000</p>
         </div>
     </footer>
-</body>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const grid = document.getElementById('redacoes-grid');
-        const contador = document.getElementById('contador-resultados');
-        const botoesEixo = document.querySelectorAll('.eixo-btn');
-        const coresComp = {
-            'C1': 'bg-blue-100 text-blue-700',
-            'C2': 'bg-purple-100 text-purple-700',
-            'C3': 'bg-red-100 text-red-700',
-            'C4': 'bg-green-100 text-green-700',
-            'C5': 'bg-orange-100 text-orange-700'
-        };
 
-        let todasRedacoes = [];
-        let filtroAtual = 'Todos';
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('redacoes-grid');
+            const contador = document.getElementById('contador-resultados');
+            const botoesEixo = document.querySelectorAll('.eixo-btn');
+            const searchInput = document.getElementById('search-input');
+            const checkboxesComp = document.querySelectorAll('.comp-check');
 
-        const searchInput = document.getElementById('search-input');
-        const checkboxesComp = document.querySelectorAll('.comp-check');
+            let todasRedacoes = [];
+            let filtroAtual = 'Todos';
 
-        // Carregamento via Variável Global (Evita Erro de CORS no file://)
-        if (window.BANCO_REDACOES) {
-            todasRedacoes = window.BANCO_REDACOES;
-            aplicarFiltros();
-        } else {
-            console.error("Banco de redações não encontrado. Tentando fetch como fallback...");
-            fetch('../dados/banco_redacoes.json')
-                .then(res => res.json())
-                .then(data => {
-                    todasRedacoes = data;
-                    aplicarFiltros();
-                })
-                .catch(err => {
-                    grid.innerHTML = '<p class="text-red-500">Erro crítico ao carregar o banco de redações.</p>';
-                    console.error("Erro no fetch: ", err);
+            const coresComp = {
+                'C1': 'bg-blue-100 text-blue-700',
+                'C2': 'bg-purple-100 text-purple-700',
+                'C3': 'bg-red-100 text-red-700',
+                'C4': 'bg-green-100 text-green-700',
+                'C5': 'bg-orange-100 text-orange-700'
+            };
+
+            const normalizar = (str) => {
+                if (!str) return "";
+                return str.normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                    .replace(/ç/g, "c")
+                    .toLowerCase()
+                    .trim();
+            };
+
+            function aplicarFiltros() {
+                const termoBusca = normalizar(searchInput.value);
+                const compsSelecionadas = Array.from(checkboxesComp)
+                    .filter(cb => cb.checked)
+                    .map(cb => cb.id.replace('comp-', '').toUpperCase());
+
+                const filtradas = todasRedacoes.filter(r => {
+                    const matchEixo = filtroAtual === 'Todos' || normalizar(r.eixo_tematico) === normalizar(filtroAtual);
+                    const matchBusca = !termoBusca ||
+                        normalizar(r.titulo).includes(termoBusca) ||
+                        r.ano_enem.toString().includes(termoBusca);
+                    const matchComp = compsSelecionadas.length === 0 ||
+                        compsSelecionadas.every(c => (r.competencias_destaque || []).includes(c));
+
+                    return matchEixo && matchBusca && matchComp;
                 });
-        }
 
-        // Função para normalizar strings (remover acentos e lowercase)
-        const normalizar = (str) => str ? str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim() : "";
-
-        // Função Central de Filtros
-        function aplicarFiltros() {
-            const termoBusca = normalizar(searchInput.value);
-            const compsSelecionadas = Array.from(checkboxesComp)
-                .filter(cb => cb.checked)
-                .map(cb => cb.id.replace('comp-', '').toUpperCase());
-
-            const filtradas = todasRedacoes.filter(r => {
-                // Filtro de Eixo
-                const matchEixo = filtroAtual === 'Todos' || normalizar(r.eixo_tematico) === normalizar(filtroAtual);
-
-                // Filtro de Busca (Título ou Ano)
-                const matchBusca = !termoBusca ||
-                    normalizar(r.titulo).includes(termoBusca) ||
-                    r.ano_enem.toString().includes(termoBusca);
-
-                // Filtro de Competências (deve ter todas as selecionadas)
-                const matchComp = compsSelecionadas.length === 0 ||
-                    compsSelecionadas.every(c => r.competencias_destaque.includes(c));
-
-                return matchEixo && matchBusca && matchComp;
-            });
-
-            renderizarGrid(filtradas);
-        }
-
-        // Lógica de Renderização Baseada nos Dados
-        function renderizarGrid(dados) {
-            grid.innerHTML = '';
-            contador.textContent = `${dados.length} resultados`;
-
-            if (dados.length === 0) {
-                grid.innerHTML = '<p class="text-slate-500 col-span-3 text-center py-10">Nenhuma redação encontrada para os filtros atuais.</p>';
-                return;
+                renderizarGrid(filtradas);
             }
 
-            dados.forEach(redacao => {
-                const compsHtml = redacao.competencias_destaque.map(comp => `
-                        <div class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 ${coresComp[comp]} flex items-center justify-center text-[10px] font-bold">${comp}</div>
-                    `).join('');
+            function renderizarGrid(dados) {
+                grid.innerHTML = '';
+                contador.textContent = `${dados.length} redações encontradas`;
 
-                const article = document.createElement('article');
-                article.className = 'bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all group flex flex-col h-full';
-                article.innerHTML = `
-                        <div class="p-5 flex-1">
-                            <div class="flex justify-between items-start mb-3">
-                                <span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider italic">Nota 1000</span>
-                                <span class="text-slate-400 text-xs font-bold">ENEM ${redacao.ano_enem}</span>
-                            </div>
-                            <h4 class="text-base font-bold text-slate-900 dark:text-white leading-tight mb-3 group-hover:text-primary transition-colors">
-                                ${redacao.titulo}
-                            </h4>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 leading-relaxed">
-                                "${redacao.resumo}"
-                            </p>
-                        </div>
-                        <div class="px-5 py-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/30 rounded-b-xl">
-                            <div class="flex -space-x-2">
-                                ${compsHtml}
-                            </div>
-                            <a href="ler-redacao.html?id=${redacao.id}" class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
-                                Ler redação
-                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                            </a>
+                if (dados.length === 0) {
+                    grid.innerHTML = `
+                        <div class="col-span-full py-20 text-center">
+                            <i data-lucide="search-x" class="w-12 h-12 text-slate-300 mx-auto mb-4"></i>
+                            <p class="text-slate-500 font-bold">Nenhum resultado para os filtros selecionados.</p>
                         </div>
                     `;
-                grid.appendChild(article);
-            });
-        }
+                    lucide.createIcons();
+                    return;
+                }
 
-        // Event Listeners
-        botoesEixo.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                botoesEixo.forEach(b => {
-                    b.classList.remove('bg-primary', 'text-white', 'shadow-md');
-                    b.classList.add('text-slate-600', 'hover:bg-slate-100');
+                dados.forEach(redacao => {
+                    const card = document.createElement('a');
+                    card.href = `ler-redacao.html?id=${redacao.id}`;
+                    card.className = "group bg-white rounded-3xl p-6 border border-slate-200 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all flex flex-col justify-between cursor-pointer";
+
+                    const compsHtml = (redacao.competencias_destaque || []).map(c => `
+                        <span class="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-black border-2 border-white ${coresComp[c] || 'bg-slate-100'}">${c}</span>
+                    `).join('');
+
+                    card.innerHTML = `
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="px-3 py-1 bg-accent/10 text-accent text-[10px] font-black rounded-full uppercase tracking-widest">Nota 1000</span>
+                                <span class="text-slate-400 text-[10px] font-black uppercase tracking-widest">ENEM ${redacao.ano_enem}</span>
+                            </div>
+                            <h4 class="text-lg font-black text-deep leading-tight group-hover:text-primary transition-colors">${redacao.titulo}</h4>
+                            <p class="text-sm text-slate-500 font-medium line-clamp-3">${redacao.resumo || ""}</p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-slate-50 flex items-center justify-between">
+                            <div class="flex -space-x-2">${compsHtml}</div>
+                            <div class="text-primary font-black text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-3 transition-all">
+                                Ler Redação <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
                 });
 
-                const el = e.currentTarget;
-                el.classList.add('bg-primary', 'text-white', 'shadow-md');
-                el.classList.remove('text-slate-600', 'hover:bg-slate-100');
+                lucide.createIcons();
+            }
 
-                filtroAtual = el.dataset.eixo;
+            // Load logic
+            if (window.BANCO_REDACOES) {
+                todasRedacoes = window.BANCO_REDACOES;
                 aplicarFiltros();
-            });
-        });
+            } else {
+                fetch('../dados/banco_redacoes.json')
+                    .then(res => res.json())
+                    .then(data => {
+                        todasRedacoes = data;
+                        aplicarFiltros();
+                    })
+                    .catch(err => {
+                        grid.innerHTML = '<p class="text-red-500 font-bold col-span-full text-center">Erro ao carregar banco de dados.</p>';
+                    });
+            }
 
-        searchInput.addEventListener('input', aplicarFiltros);
-        checkboxesComp.forEach(cb => cb.addEventListener('change', aplicarFiltros));
-    });
-</script>
+            botoesEixo.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    botoesEixo.forEach(b => {
+                        b.className = "eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all";
+                    });
+                    btn.className = "eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl bg-primary text-white font-bold text-sm shadow-lg shadow-primary/20 transition-all";
+                    filtroAtual = btn.dataset.eixo;
+                    aplicarFiltros();
+                });
+            });
+
+            searchInput.addEventListener('input', aplicarFiltros);
+            checkboxesComp.forEach(cb => cb.addEventListener('change', aplicarFiltros));
+
+            lucide.createIcons();
+        });
+    </script>
+</body>
 
 </html>

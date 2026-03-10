@@ -69,323 +69,568 @@
     </style>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col overflow-hidden">
-    <!-- Header / Navigation Bar -->
-    <header
-        class="flex items-center justify-between px-6 py-3 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 z-10 shadow-sm">
-        <div class="flex items-center gap-6">
-            <a href="../../index_original.html" class="flex items-center gap-4 hover:opacity-80 transition-opacity">
-                <div class="bg-primary p-2 rounded-lg text-white">
-                    <span class="material-symbols-outlined block">edit_note</span>
-                </div>
-                <div>
-                    <h1 class="text-lg font-bold leading-tight">Nota 1000</h1>
-                </div>
-            </a>
-            <nav class="hidden md:flex items-center gap-4 ml-6">
-                <a class="text-xs font-bold text-slate-500 hover:text-primary transition-colors"
-                    href="../../index_original.html">Início</a>
-                <a class="text-xs font-bold text-slate-500 hover:text-primary transition-colors"
-                    href="../aulas/aulas.html">Aulas</a>
-                <a class="text-xs font-bold text-slate-500 hover:text-primary transition-colors"
-                    href="../biblioteca/biblioteca.html">Biblioteca</a>
-                <a class="text-xs font-bold text-primary border-b border-primary" href="pratica.html">Prática</a>
+<body class="bg-[#f8fafc] text-slate-900 antialiased min-h-screen overflow-x-hidden">
+
+    <!-- Preloader / Transitions Overlay -->
+    <div id="state-overlay"
+        class="fixed inset-0 bg-white z-[200] flex items-center justify-center transition-all duration-500 opacity-0 pointer-events-none">
+        <div class="flex flex-col items-center">
+            <div class="w-12 h-12 border-4 border-slate-200 border-t-primary rounded-full animate-spin mb-4"></div>
+            <p class="font-bold text-slate-400">Preparando ambiente...</p>
+        </div>
+    </div>
+
+    <!-- 1. ESTADO: SELEÇÃO -->
+    <section id="state-selection" class="min-h-screen flex flex-col">
+        <header
+            class="p-6 bg-white/80 backdrop-blur-md border-b border-slate-100 flex items-center justify-between sticky top-0 z-50">
+            <div class="flex items-center gap-3">
+                <a href="../../index_original.html" class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                        <i data-lucide="pen-tool" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-black tracking-tight text-slate-800">Prática<span
+                            class="text-primary italic">1000</span></span>
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center gap-6">
+                <a href="../../index_original.html"
+                    class="text-sm font-bold text-slate-400 hover:text-primary transition-colors">Início</a>
+                <a href="../temas/temas.html"
+                    class="text-sm font-bold text-slate-400 hover:text-primary transition-colors">Temas</a>
+                <a href="../biblioteca/biblioteca.html"
+                    class="text-sm font-bold text-slate-400 hover:text-primary transition-colors">Biblioteca</a>
             </nav>
-        </div>
-        <!-- Countdown Timer (Optional, kept for aesthetic but adding spacing) -->
-        <div
-            class="hidden lg:flex items-center gap-3 bg-slate-100 dark:bg-slate-800 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700">
-            <span class="material-symbols-outlined text-primary text-xl">timer</span>
-            <div class="flex gap-1 items-baseline">
-                <span class="text-xl font-bold tracking-tight">05</span>
-                <span class="text-[10px] font-bold uppercase text-slate-400">h</span>
-                <span class="text-xl font-bold tracking-tight">24</span>
-                <span class="text-[10px] font-bold uppercase text-slate-400">m</span>
-            </div>
-        </div>
-        <div class="flex items-center gap-3">
-            <button
-                class="flex items-center gap-2 px-6 h-10 bg-primary hover:bg-blue-700 text-white rounded-lg text-sm font-bold shadow-lg shadow-primary/20 transition-all">
-                Finalizar Redação
-                <span class="material-symbols-outlined text-lg">send</span>
-            </button>
-        </div>
-    </header>
-    <!-- Main Content Layout -->
-    <main class="flex flex-1 overflow-hidden h-full">
-        <!-- Left Panel: Instructions and Texts -->
-        <aside
-            class="w-1/3 min-w-[400px] border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col overflow-hidden">
-            <div class="p-6 border-b border-slate-100 dark:border-slate-800">
-                <nav class="flex gap-2 mb-4">
-                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">PROPOSTA ATUAL</span>
-                    <span class="text-xs font-bold text-slate-400 px-2 py-1">2024.1</span>
-                </nav>
-                <h2 class="text-xl font-bold leading-snug">
-                    Caminhos para combater a intolerância religiosa no Brasil
-                </h2>
-            </div>
-            <div class="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-6">
-                <!-- Instructions Card -->
-                <div
-                    class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-xl border border-blue-100 dark:border-blue-800/50">
-                    <h3 class="flex items-center gap-2 text-primary font-bold text-sm mb-3">
-                        <span class="material-symbols-outlined text-lg">info</span>
-                        INSTRUÇÕES PARA A REDAÇÃO
-                    </h3>
-                    <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-2 list-disc pl-4">
-                        <li>O rascunho da redação deve ser feito no espaço apropriado.</li>
-                        <li>O texto definitivo deve ser escrito em até 30 linhas.</li>
-                        <li>A redação que tiver até 7 linhas será considerada "insuficiente".</li>
-                        <li>Evite cópias dos textos motivadores.</li>
-                    </ul>
-                </div>
-                <!-- Textos Motivadores -->
-                <div class="space-y-4">
-                    <div
-                        class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Texto I</span>
-                        <p class="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                            "A liberdade de consciência e de crença é inviolável, sendo assegurado o livre exercício dos
-                            cultos religiosos e garantida, na forma da lei, a proteção aos locais de culto e a suas
-                            liturgias."
-                        </p>
-                        <p class="mt-2 text-[10px] italic text-slate-400">Fonte: Constituição Federal de 1988, Art. 5º,
-                            VI.</p>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-6 py-12 w-full flex-1">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Lado Esquerdo: Destaque -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="space-y-2">
+                        <span class="text-xs font-black text-primary uppercase tracking-[0.2em]">Recomendação</span>
+                        <h2 class="text-4xl font-black text-slate-900 leading-tight">Escolha seu próximo desafio</h2>
+                        <p class="text-slate-500 font-medium">Pratique com temas oficiais do ENEM ou temas inéditos
+                            selecionados por nossa equipe.</p>
                     </div>
-                    <div
-                        class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Texto II</span>
+
+                    <!-- Card Destaque -->
+                    <div id="featured-theme-card"
+                        class="bg-white rounded-[2.5rem] p-8 pb-10 border border-slate-100 shadow-2xl shadow-primary/5 relative overflow-hidden group">
                         <div
-                            class="mt-3 w-full aspect-video bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center overflow-hidden">
-                            <div
-                                class="w-full h-full bg-gradient-to-br from-blue-400 to-primary flex flex-col items-center justify-center p-4 text-white text-center">
-                                <span class="material-symbols-outlined text-4xl mb-2">bar_chart</span>
-                                <p class="text-xs font-bold uppercase">Casos de Intolerância por Região</p>
-                                <p class="text-[10px] opacity-80 mt-1">Dados do Disque 100 (2023)</p>
-                            </div>
+                            class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[5rem] -mr-8 -mt-8 group-hover:scale-110 transition-transform duration-700">
                         </div>
-                        <p class="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300 italic">
-                            O Brasil registrou um aumento de 45% nas denúncias de intolerância religiosa no último
-                            semestre, com maior incidência contra religiões de matriz africana.
-                        </p>
+                        <div class="relative z-10 space-y-6">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-black rounded-full uppercase tracking-widest"
+                                    id="featured-tag">Tema do Dia</span>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+                                    id="featured-axis">Sociedade</span>
+                            </div>
+                            <h3 class="text-2xl font-black text-slate-900 leading-snug" id="featured-title">Carregando
+                                tema sugerido...</h3>
+                            <p class="text-sm text-slate-500 leading-relaxed italic" id="featured-desc">...</p>
+                            <button onclick="selectTheme(featuredThemeId)"
+                                class="w-full bg-primary text-white py-4 rounded-2xl font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+                                Começar este tema
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div
-                        class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Texto III</span>
-                        <p class="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                            A educação é o pilar fundamental para a construção de uma sociedade pluralista. Respeitar o
-                            sagrado do outro é, antes de tudo, um exercício de cidadania e alteridade que deve ser
-                            cultivado desde o ensino básico.
-                        </p>
+                </div>
+
+                <!-- Lado Direito: Grid de Busca -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="flex items-center gap-4 bg-white p-2 rounded-2xl shadow-sm border border-slate-100">
+                        <div class="flex-1 relative">
+                            <i data-lucide="search"
+                                class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                            <input type="text" id="search-themes" placeholder="Buscar por tema ou palavra-chave..."
+                                class="w-full pl-12 pr-4 py-3 border-none focus:ring-0 text-sm font-medium">
+                        </div>
+                        <div class="flex gap-2 pr-2">
+                            <button
+                                class="p-3 bg-slate-50 text-slate-400 rounded-xl hover:text-primary transition-colors"><i
+                                    data-lucide="sliders-horizontal" class="w-5 h-5"></i></button>
+                        </div>
+                    </div>
+
+                    <div id="themes-selection-grid"
+                        class="grid grid-cols-1 md:grid-cols-2 gap-4 h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+                        <!-- Temas injetados aqui -->
                     </div>
                 </div>
             </div>
-            <!-- Panel Footer -->
-            <div class="p-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800">
-                <button
-                    class="w-full flex items-center justify-center gap-2 py-2 text-xs font-bold text-slate-500 hover:text-primary transition-colors">
-                    <span class="material-symbols-outlined text-lg">lightbulb</span>
-                    Ver Competências Avaliadas
+        </main>
+    </section>
+
+    <!-- 2. ESTADO: PREPARAÇÃO -->
+    <section id="state-preparation" class="hidden min-h-screen bg-slate-900 flex items-center justify-center p-6">
+        <div
+            class="max-w-6xl w-full bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row h-[85vh]">
+            <!-- Coluna Esquerda: Detalhes -->
+            <div class="w-full md:w-1/2 p-12 overflow-y-auto custom-scrollbar border-r border-slate-100">
+                <button onclick="switchState('selection')"
+                    class="flex items-center gap-2 text-slate-400 font-bold text-xs uppercase tracking-widest mb-8 hover:text-primary transition-colors">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i> Voltar à seleção
+                </button>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <span
+                            class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-black rounded-full uppercase tracking-widest"
+                            id="prep-axis">Educação</span>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest" id="prep-year">ENEM
+                            2024</span>
+                    </div>
+                    <h2 class="text-3xl font-black text-slate-900 leading-tight" id="prep-title">...</h2>
+                    <div class="h-px bg-slate-100 w-full"></div>
+                    <div class="space-y-6" id="prep-texts">
+                        <!-- Textos Motivadores -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna Direita: Repertório -->
+            <div class="w-full md:w-1/2 bg-slate-50 p-12 flex flex-col">
+                <div class="flex-1 space-y-8">
+                    <div class="space-y-2 text-center">
+                        <h4 class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Estratégia
+                            Argumentativa</h4>
+                        <p class="text-sm font-medium text-slate-500">Selecione até 3 repertórios para usar como guia
+                            durante sua redação.</p>
+                    </div>
+
+                    <div id="prep-repertoire" class="space-y-4">
+                        <!-- Repertórios injetados aqui -->
+                    </div>
+                </div>
+
+                <div class="pt-8">
+                    <button onclick="startWriting()"
+                        class="w-full bg-primary text-white py-5 rounded-3xl font-black text-lg shadow-2xl shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-4">
+                        <i data-lucide="play" class="w-6 h-6 fill-white"></i>
+                        INICIAR PRODUÇÃO
+                    </button>
+                    <p class="text-center text-[10px] font-bold text-slate-400 mt-4 uppercase tracking-widest">O
+                        cronômetro iniciará ao clicar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ESTADO: AÇÃO (Editor) -->
+    <section id="state-action" class="hidden flex flex-col h-screen overflow-hidden bg-[#f6f6f8]">
+        <!-- Top Bar -->
+        <header class="bg-white border-b border-slate-200 px-6 py-3 flex items-center justify-between z-50">
+            <div class="flex items-center gap-4">
+                <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
+                    <i data-lucide="edit-3" class="w-4 h-4"></i>
+                </div>
+                <h1 class="text-sm font-black text-slate-800 truncate max-w-[300px]" id="action-title">Título da Redação
+                </h1>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <!-- Tempo -->
+                <div class="flex items-center gap-3 bg-slate-50 px-4 py-2 rounded-xl border border-slate-100">
+                    <i data-lucide="clock" class="w-4 h-4 text-primary"></i>
+                    <span class="text-lg font-black tracking-tight" id="timer">00:00:00</span>
+                </div>
+
+                <button onclick="showFinalizeModal()"
+                    class="bg-primary text-white px-8 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-primary/20 hover:scale-105 transition-all flex items-center gap-2">
+                    Finalizar
+                    <i data-lucide="send" class="w-4 h-4"></i>
                 </button>
             </div>
-        </aside>
-        <!-- Right Panel: Writing Editor -->
-        <section
-            class="flex-1 bg-background-light dark:bg-background-dark p-8 overflow-y-auto custom-scrollbar flex flex-col items-center">
-            <!-- Editor Container -->
+        </header>
+
+        <div class="flex-1 flex overflow-hidden">
+            <!-- Central Editor -->
+            <main class="flex-1 overflow-y-auto p-12 flex flex-col items-center custom-scrollbar">
+                <div
+                    class="w-full max-w-[850px] bg-white shadow-2xl rounded-sm min-h-[1200px] border border-slate-200 flex flex-col relative mb-20">
+                    <div class="h-16 border-b border-slate-100 flex items-center px-10 justify-between">
+                        <span class="text-[10px] font-black text-slate-300 tracking-[0.3em] uppercase">Folha de Redação
+                            Definitiva</span>
+                        <div class="flex gap-4 text-slate-300">
+                            <i data-lucide="type" class="w-4 h-4"></i>
+                            <i data-lucide="align-left" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 flex p-4 pt-8">
+                        <!-- Números de linha -->
+                        <div class="w-12 text-right pr-6 text-slate-200 text-[13px] font-bold select-none leading-[2.5rem]"
+                            id="line-numbers">
+                            <!-- Gerado via JS -->
+                        </div>
+                        <!-- Área de Texto -->
+                        <div class="flex-1 writing-sheet">
+                            <textarea id="essay-editor"
+                                class="w-full h-full bg-transparent border-none focus:ring-0 p-0 text-[16px] leading-[2.5rem] resize-none text-slate-700 font-medium placeholder:text-slate-100"
+                                placeholder="Desenvolva sua tese aqui..." oninput="updateStats()"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Sidebar Repertórios Pinados -->
+            <aside
+                class="w-80 bg-white border-l border-slate-200 p-6 flex flex-col gap-6 overflow-y-auto custom-scrollbar">
+                <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                    <i data-lucide="pin" class="w-4 h-4 text-primary"></i> Repertórios do Plano
+                </h3>
+                <div id="pinned-reps-container" class="space-y-4">
+                    <!-- Repertórios pinados aqui -->
+                </div>
+                <div class="mt-auto pt-6 border-t border-slate-100">
+                    <div class="bg-indigo-50 p-4 rounded-2xl border border-indigo-100">
+                        <p class="text-[10px] font-bold text-indigo-500 uppercase mb-1">Dica de Ouro</p>
+                        <p class="text-[11px] text-indigo-700 leading-relaxed">Não esqueça de conectar o seu repertório
+                            ao tema usando conectivos adequados!</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Floating Stats -->
+        <div class="fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-2xl px-6 z-[60]">
             <div
-                class="w-full max-w-[850px] bg-white dark:bg-slate-900 shadow-2xl rounded-lg min-h-[1100px] flex flex-col mb-20 relative border border-slate-200 dark:border-slate-800">
-                <!-- Page Top Margin / Header -->
-                <div
-                    class="h-16 border-b border-slate-100 dark:border-slate-800 flex items-center px-8 justify-between">
-                    <span class="text-[10px] font-black text-slate-300 tracking-[0.3em] uppercase">Folha de Redação
-                        Definitiva</span>
-                    <div class="flex gap-4">
-                        <button class="text-slate-400 hover:text-primary"><span
-                                class="material-symbols-outlined text-lg">format_bold</span></button>
-                        <button class="text-slate-400 hover:text-primary"><span
-                                class="material-symbols-outlined text-lg">format_italic</span></button>
-                        <div class="w-px h-4 bg-slate-200 dark:bg-slate-700 self-center mx-1"></div>
-                        <button class="text-slate-400 hover:text-primary"><span
-                                class="material-symbols-outlined text-lg">undo</span></button>
-                        <button class="text-slate-400 hover:text-primary"><span
-                                class="material-symbols-outlined text-lg">redo</span></button>
+                class="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-4 flex items-center justify-between shadow-2xl border border-white/10 text-white">
+                <div class="flex items-center gap-8 px-4">
+                    <div class="flex flex-col">
+                        <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Linhas</span>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl font-black text-primary" id="stat-lines">0</span>
+                            <span class="text-xs text-slate-500">/ 30</span>
+                        </div>
+                    </div>
+                    <div class="w-px h-8 bg-white/10"></div>
+                    <div class="flex flex-col">
+                        <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Palavras</span>
+                        <span class="text-xl font-black" id="stat-words">0</span>
+                    </div>
+                    <div class="w-px h-8 bg-white/10"></div>
+                    <div class="flex flex-col">
+                        <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Progressão</span>
+                        <span class="text-[10px] font-bold" id="stat-msg">Aguardando início...</span>
                     </div>
                 </div>
-                <!-- The "Paper" -->
-                <div class="flex-1 flex px-2 py-4">
-                    <!-- Line Numbers -->
-                    <div class="w-12 flex flex-col text-right pr-4 text-slate-300 dark:text-slate-600 text-sm select-none"
-                        style="line-height: 2.5rem;">
-                        <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span>
-                        <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
-                        <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
-                    </div>
-                    <!-- Writing Area -->
-                    <div class="flex-1 writing-sheet relative">
-                        <textarea
-                            class="w-full h-full bg-transparent border-none focus:ring-0 p-0 text-base resize-none text-slate-800 dark:text-slate-200 font-medium placeholder:text-slate-300 dark:placeholder:text-slate-700"
-                            placeholder="Comece sua redação aqui..." spellcheck="false"></textarea>
-                    </div>
-                </div>
-                <!-- Watermark -->
-                <div class="absolute bottom-10 right-10 pointer-events-none opacity-5 dark:opacity-10 select-none">
-                    <span class="text-6xl font-black rotate-[-15deg] block">ENEM 2024</span>
-                </div>
+                <button onclick="toggleSidebar()" class="p-3 bg-white/5 rounded-xl hover:bg-white/10 transition-colors">
+                    <i data-lucide="layout-sidebar-right" class="w-5 h-5"></i>
+                </button>
             </div>
-            <!-- Floating Status Bar -->
-            <div class="fixed bottom-6 left-1/3 ml-12 right-12 max-w-[850px] mx-auto z-20">
-                <div
-                    class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-800 rounded-2xl shadow-xl px-6 py-3 flex items-center justify-between">
-                    <div class="flex items-center gap-6">
-                        <div class="flex flex-col">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase">Linhas</span>
-                            <div class="flex items-center gap-2">
-                                <span class="text-xl font-bold text-primary">12</span>
-                                <span class="text-sm font-medium text-slate-400">/ 30</span>
-                            </div>
-                        </div>
-                        <div class="w-px h-8 bg-slate-200 dark:bg-slate-700"></div>
-                        <div class="flex flex-col">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase">Palavras</span>
-                            <span class="text-xl font-bold">148</span>
-                        </div>
-                        <div class="w-px h-8 bg-slate-200 dark:bg-slate-700"></div>
-                        <div class="flex flex-col">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase">Status</span>
-                            <span class="text-xs font-bold text-green-500 flex items-center gap-1">
-                                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                                Salvando automaticamente...
-                            </span>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <div class="text-right mr-3 hidden lg:block">
-                            <p class="text-[10px] font-bold text-slate-400 uppercase">Próximo objetivo</p>
-                            <p class="text-xs font-medium italic">Faltam 8 linhas para o mínimo sugerido</p>
-                        </div>
-                        <button
-                            class="bg-slate-900 dark:bg-primary text-white p-2 rounded-lg hover:opacity-90 transition-all">
-                            <span class="material-symbols-outlined">help</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Right Sidebar: Shortcuts / Quick Tools -->
-        <aside
-            class="w-16 border-l border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col items-center py-6 gap-6">
-            <button class="group relative text-slate-400 hover:text-primary">
-                <span class="material-symbols-outlined">menu_book</span>
-                <span
-                    class="absolute right-full mr-3 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity">Dicionário</span>
-            </button>
-            <button class="group relative text-slate-400 hover:text-primary">
-                <span class="material-symbols-outlined">format_quote</span>
-                <span
-                    class="absolute right-full mr-3 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity">Citações</span>
-            </button>
-            <button class="group relative text-slate-400 hover:text-primary">
-                <span class="material-symbols-outlined">history_edu</span>
-                <span
-                    class="absolute right-full mr-3 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity">Conectivos</span>
-            </button>
-            <div class="w-8 h-px bg-slate-100 dark:bg-slate-800"></div>
-            <button class="group relative text-slate-400 hover:text-primary">
-                <span class="material-symbols-outlined">dark_mode</span>
-                <span
-                    class="absolute right-full mr-3 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity">Tema
-                    Dark</span>
-            </button>
-            <button class="group relative text-slate-400 hover:text-primary">
-                <span class="material-symbols-outlined">settings</span>
-                <span
-                    class="absolute right-full mr-3 bg-slate-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity">Ajustes</span>
-            </button>
-        </aside>
-    </main>
-    <!-- Modal Background Overlay (Hidden by default) -->
-    <div class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center hidden">
+        </div>
+    </section>
+
+    <!-- Modal Finalizar -->
+    <div id="finalize-modal"
+        class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[300] hidden items-center justify-center p-6">
         <div
-            class="bg-white dark:bg-slate-900 rounded-2xl p-8 max-w-md w-full shadow-2xl border border-slate-200 dark:border-slate-800">
-            <h3 class="text-xl font-bold mb-4">Tem certeza que deseja finalizar?</h3>
-            <p class="text-slate-600 dark:text-slate-400 mb-6">Sua redação possui 12 linhas. O recomendado para uma nota
-                excelente é entre 25 e 30 linhas.</p>
-            <div class="flex gap-4">
-                <button
-                    class="flex-1 py-3 border border-slate-200 dark:border-slate-700 rounded-xl font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">Voltar</button>
-                <button
-                    class="flex-1 py-3 bg-primary text-white rounded-xl font-bold hover:bg-blue-700 transition-colors">Finalizar
-                    agora</button>
+            class="bg-white rounded-[2.5rem] p-10 max-w-lg w-full shadow-2xl text-center space-y-8 animate-in fade-in zoom-in duration-300">
+            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
+                <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-2xl font-black text-slate-900">Redação Concluída!</h3>
+                <p class="text-slate-500 font-medium" id="finalize-summary">Carregando estatísticas...</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="closeFinalizeModal()"
+                    class="py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition-colors">Revisar
+                    Texto</button>
+                <button onclick="submitToAI()"
+                    class="py-4 bg-primary text-white rounded-2xl font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition-all">Enviar
+                    p/ IA</button>
             </div>
         </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-        async function loadTema() {
+        // ESTADO GLOBAL
+        let currentTheme = null;
+        let selectedReps = [];
+        let timerInterval = null;
+        let seconds = 0;
+        let featuredThemeId = null;
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', () => {
+            initLucide();
+            setupLineNumbers();
+            loadThemesSelection();
+
+            // Check for theme in URL
             const urlParams = new URLSearchParams(window.location.search);
-            const temaId = urlParams.get('temaId');
+            const themeId = urlParams.get('tema');
+            if (themeId) selectTheme(themeId);
+        });
 
-            if (!temaId) return;
+        function initLucide() {
+            lucide.createIcons();
+        }
 
-            try {
-                let temas = [];
-                if (window.BANCO_TEMAS) {
-                    temas = window.BANCO_TEMAS;
-                } else {
-                    const response = await fetch('../dados/banco_temas.json');
-                    temas = await response.json();
-                }
-                const tema = temas.find(t => t.id === temaId);
-
-                if (tema) {
-                    // Atualizar título
-                    document.querySelector('h2.text-xl.font-bold').textContent = tema.titulo;
-
-                    // Atualizar Eixo/Ano
-                    const tags = document.querySelectorAll('nav.flex.gap-2.mb-4 span');
-                    tags[0].textContent = tema.eixo_tematico.toUpperCase();
-                    tags[1].textContent = tema.ano_aplicacao || "PROVÁVEL";
-
-                    // Atualizar Textos Motivadores
-                    const container = document.querySelector('.flex-1.overflow-y-auto.custom-scrollbar.p-6.space-y-6 > .space-y-4');
-
-                    // Se o tema tiver descrição longa, usamos como Texto I ou comando
-                    const desc = tema.descricao;
-
-                    // Mockando textos base a partir da descrição para temas que não tem coletânea completa no JSON
-                    container.innerHTML = `
-                        <div class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Texto I: Diretrizes</span>
-                            <p class="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                                A partir da leitura dos textos motivadores e com base nos conhecimentos construídos ao longo de sua formação, redija um texto dissertativo-argumentativo em modalidade escrita formal da língua portuguesa sobre o tema: <strong>"${tema.titulo}"</strong>.
-                            </p>
-                        </div>
-                        <div class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Texto II: Contextualização</span>
-                            <p class="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                                ${desc}
-                            </p>
-                            <p class="mt-2 text-[10px] italic text-slate-400">Fonte: Adaptado do Banco de Redações UOL/ENEM.</p>
-                        </div>
-                        <div class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Texto III: Coletânea Visual</span>
-                            <div class="mt-3 w-full aspect-video bg-gradient-to-br from-primary/20 to-primary/40 rounded-lg flex flex-col items-center justify-center p-4">
-                                <span class="material-symbols-outlined text-4xl text-primary mb-2">analytics</span>
-                                <p class="text-xs font-bold text-slate-600 uppercase">Gráfico de Impacto Social</p>
-                                <p class="text-[10px] text-slate-500 mt-1">Eixo: ${tema.eixo_tematico}</p>
-                            </div>
-                        </div>
-                    `;
-                }
-            } catch (error) {
-                console.error("Erro ao carregar tema:", error);
+        function setupLineNumbers() {
+            const container = document.getElementById('line-numbers');
+            container.innerHTML = '';
+            for (let i = 1; i <= 30; i++) {
+                const span = document.createElement('span');
+                span.textContent = i.toString().padStart(2, '0');
+                span.className = 'block';
+                container.appendChild(span);
             }
         }
 
-        window.addEventListener('DOMContentLoaded', loadTema);
+        // --- SISTEMA DE ESTADOS ---
+        function switchState(target) {
+            const overlay = document.getElementById('state-overlay');
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            overlay.classList.add('opacity-100');
+
+            setTimeout(() => {
+                const states = ['selection', 'preparation', 'action'];
+                states.forEach(s => {
+                    document.getElementById(`state-${s}`).classList.add('hidden');
+                });
+                document.getElementById(`state-${target}`).classList.remove('hidden');
+
+                overlay.classList.remove('opacity-100');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+
+                initLucide();
+                window.scrollTo(0, 0);
+            }, 600);
+        }
+
+        // --- LÓGICA DE TEMAS ---
+        function loadThemesSelection() {
+            if (!window.BANCO_TEMAS) return;
+
+            // Define Featured
+            const enems = window.BANCO_TEMAS.filter(t => t.ano_aplicacao);
+            const random = enems[Math.floor(Math.random() * enems.length)];
+            featuredThemeId = random.id;
+
+            document.getElementById('featured-title').textContent = random.titulo;
+            document.getElementById('featured-desc').textContent = `"${random.descricao}"`;
+            document.getElementById('featured-axis').textContent = random.eixo_tematico;
+            document.getElementById('featured-tag').textContent = random.ano_aplicacao ? `ENEM ${random.ano_aplicacao}` : "Sugestão";
+
+            // Fix for featured action button
+            const featBtn = document.getElementById('featured-action');
+            if (featBtn) {
+                featBtn.onclick = () => selectTheme(featuredThemeId);
+            }
+
+            // List themes
+            const grid = document.getElementById('themes-selection-grid');
+            grid.innerHTML = '';
+
+            window.BANCO_TEMAS.forEach(tema => {
+                const card = document.createElement('div');
+                card.className = "bg-white p-4 rounded-2xl border border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all cursor-pointer flex flex-col justify-between gap-3";
+                card.onclick = () => selectTheme(tema.id);
+                card.innerHTML = `
+                    <div class="space-y-1">
+                        <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">${tema.eixo_tematico}</span>
+                        <h4 class="text-sm font-bold text-slate-800 line-clamp-2">${tema.titulo}</h4>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-primary">${tema.ano_aplicacao ? 'OFICIAL' : 'INÉDITO'}</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-300"></i>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            initLucide();
+        }
+
+        // Selecionar Tema e Ir para Preparação
+        function selectTheme(id) {
+            currentTheme = window.BANCO_TEMAS.find(t => t.id === id);
+            if (!currentTheme) return;
+
+            // Fill Preparation Info
+            document.getElementById('prep-title').textContent = currentTheme.titulo;
+            document.getElementById('prep-axis').textContent = currentTheme.eixo_tematico;
+            document.getElementById('prep-year').textContent = currentTheme.ano_aplicacao ? `ENEM ${currentTheme.ano_aplicacao}` : "TEMA POSSÍVEL";
+
+            // Fill Motivation Texts
+            const textsContainer = document.getElementById('prep-texts');
+            textsContainer.innerHTML = `
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 italic text-slate-600 text-sm leading-relaxed">
+                    "${currentTheme.descricao}"
+                </div>
+                <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100 space-y-3">
+                    <p class="text-xs font-black text-blue-500 uppercase">Comando da Questão</p>
+                    <p class="text-[13px] text-slate-700 leading-relaxed font-medium">A partir da leitura dos textos motivadores e com base nos conhecimentos construídos ao longo de sua formação, redija um texto dissertativo-argumentativo em modalidade escrita formal da língua portuguesa sobre o tema: <strong>"${currentTheme.titulo}"</strong> apresentando proposta de intervenção social.</p>
+                </div>
+            `;
+
+            // Suggest Repertoire
+            loadPreparationRepertoire();
+
+            switchState('preparation');
+        }
+
+        function loadPreparationRepertoire() {
+            // Check for both BANCO_REPERTORIOS and window.BANCO_REPERTORIOS
+            const allReps = window.BANCO_REPERTORIOS || BANCO_REPERTORIOS;
+            if (!allReps) {
+                console.error('Banco de repertório não carregado');
+                return;
+            }
+
+            console.log('Filtrando repertório para:', currentTheme.eixo_tematico);
+            const filtered = allReps.filter(r => r.eixos && r.eixos.includes(currentTheme.eixo_tematico));
+            console.log('Encontrados:', filtered.length);
+
+            const reps = filtered.slice(0, 3);
+            const container = document.getElementById('prep-repertoire');
+            container.innerHTML = '';
+            selectedReps = [];
+
+            if (reps.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full p-8 text-center bg-slate-50 rounded-2xl border border-dotted border-slate-200">
+                        <p class="text-slate-400 text-sm font-medium">Nenhum repertório específico encontrado para este eixo temática.</p>
+                    </div>
+                `;
+            }
+
+            reps.forEach(rep => {
+                const card = document.createElement('div');
+                card.id = `prep-rep-${rep.id}`;
+                card.className = "bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-4 transition-all group cursor-pointer";
+                card.onclick = () => toggleRep(rep);
+                card.innerHTML = `
+                    <div class="w-10 h-10 bg-slate-50 rounded-xl flex items-center justify-center text-slate-400 group-hover:bg-primary group-hover:text-white transition-colors rep-icon">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-[10px] font-black uppercase text-indigo-500 mb-1">${rep.categoria}</p>
+                        <h5 class="text-sm font-black text-slate-800">${rep.titulo}</h5>
+                        <p class="text-[11px] text-slate-500 mt-1 line-clamp-2">${rep.descricao}</p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+            initLucide();
+        }
+
+        function toggleRep(rep) {
+            const card = document.getElementById(`prep-rep-${rep.id}`);
+            const idx = selectedReps.findIndex(r => r.id === rep.id);
+            const iconDiv = card.querySelector('.rep-icon');
+
+            if (idx === -1) {
+                if (selectedReps.length >= 3) return;
+                selectedReps.push(rep);
+                card.classList.add('border-primary', 'bg-primary/5');
+                iconDiv.classList.add('bg-primary', 'text-white');
+                iconDiv.innerHTML = '<i data-lucide="check" class="w-5 h-5"></i>';
+            } else {
+                selectedReps.splice(idx, 1);
+                card.classList.remove('border-primary', 'bg-primary/5');
+                iconDiv.classList.remove('bg-primary', 'text-white');
+                iconDiv.innerHTML = '<i data-lucide="plus" class="w-5 h-5"></i>';
+            }
+            initLucide();
+        }
+
+        // --- FASE DE ESCRITA ---
+        function startWriting() {
+            document.getElementById('action-title').textContent = currentTheme.titulo;
+
+            // Fill Pinned Reps in Action Sidebar
+            const container = document.getElementById('pinned-reps-container');
+            container.innerHTML = selectedReps.length ? '' : '<p class="text-[11px] text-slate-400 italic text-center p-4">Nenhum repertório selecionado no plano.</p>';
+
+            selectedReps.forEach(rep => {
+                const div = document.createElement('div');
+                div.className = "bg-slate-50 p-4 rounded-xl border border-slate-100";
+                div.innerHTML = `
+                   <p class="text-[9px] font-black text-primary uppercase mb-1">${rep.categoria}</p>
+                   <h6 class="text-xs font-black text-slate-800 mb-2">${rep.titulo}</h6>
+                   <p class="text-[10px] text-slate-500 leading-relaxed italic border-l-2 border-slate-200 pl-3">"${rep.descricao}"</p>
+                `;
+                container.appendChild(div);
+            });
+
+            startTimer();
+            switchState('action');
+        }
+
+        function startTimer() {
+            seconds = 0;
+            if (timerInterval) clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                seconds++;
+                const h = Math.floor(seconds / 3600).toString().padStart(2, '0');
+                const m = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');
+                const s = (seconds % 60).toString().padStart(2, '0');
+                document.getElementById('timer').textContent = `${h}:${m}:${s}`;
+            }, 1000);
+        }
+
+        function updateStats() {
+            const text = document.getElementById('essay-editor').value;
+            const words = text.trim().split(/\s+/).filter(x => x).length;
+
+            // Mocking lines based on height or approximate chars
+            const linesCount = Math.min(30, Math.ceil(text.length / 80));
+
+            document.getElementById('stat-words').textContent = words;
+            document.getElementById('stat-lines').textContent = linesCount;
+
+            const msg = document.getElementById('stat-msg');
+            if (linesCount < 7) {
+                msg.textContent = "Continue escrevendo...";
+                msg.className = "text-[10px] font-bold text-red-400";
+            } else if (linesCount < 25) {
+                msg.textContent = "Bom ritmo!";
+                msg.className = "text-[10px] font-bold text-yellow-500";
+            } else {
+                msg.textContent = "Tamanho ideal atingido!";
+                msg.className = "text-[10px] font-bold text-green-500";
+            }
+        }
+
+        // --- FINALIZAÇÃO ---
+        function showFinalizeModal() {
+            const text = document.getElementById('essay-editor').value;
+            const words = text.trim().split(/\s+/).filter(x => x).length;
+            const linesCount = document.getElementById('stat-lines').textContent;
+            const time = document.getElementById('timer').textContent;
+
+            document.getElementById('finalize-summary').innerHTML = `
+                Você escreveu <strong>${linesCount} linhas</strong> e <strong>${words} palavras</strong> em <strong>${time}</strong>.
+            `;
+            document.getElementById('finalize-modal').classList.remove('hidden');
+            document.getElementById('finalize-modal').classList.add('flex');
+        }
+
+        function closeFinalizeModal() {
+            document.getElementById('finalize-modal').classList.add('hidden');
+            document.getElementById('finalize-modal').classList.remove('flex');
+        }
+
+        function submitToAI() {
+            alert("Enviando para a IA corrigir... (Integração disponível em breve)");
+            // Aqui redirecionaríamos para corretor.html com os dados via POST ou LocalStorage
+        }
+
+        function toggleSidebar() {
+            const aside = document.querySelector('#state-action aside');
+            aside.classList.toggle('hidden');
+        }
     </script>
 </body>
+
 
 </html>

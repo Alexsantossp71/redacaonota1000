@@ -1,0 +1,534 @@
+window.BANCO_TEMAS = [
+  {
+    "id": "tema-pos-001",
+    "titulo": "O desafio do combate ao analfabetismo funcional no Brasil",
+    "eixo_tematico": "Educação",
+    "ano_aplicacao": null,
+    "descricao": "Apesar do aumento da escolarização, muitos brasileiros não conseguem interpretar textos simples ou realizar operações matemáticas básicas, o que limita sua cidadania e inserção no mercado de trabalho."
+  },
+  {
+    "id": "tema-pos-002",
+    "titulo": "Impactos da inteligência artificial na educação e no mercado de trabalho",
+    "eixo_tematico": "Tecnologia",
+    "ano_aplicacao": null,
+    "descricao": "A rápida evolução das IAs generativas traz desafios éticos, de produtividade e a necessidade de requalificação profissional constante em um mundo automatizado."
+  },
+  {
+    "id": "tema-pos-003",
+    "titulo": "Caminhos para garantir a segurança alimentar na sociedade brasileira",
+    "eixo_tematico": "Saúde",
+    "ano_aplicacao": null,
+    "descricao": "Discussão sobre o retorno do Brasil ao mapa da fome e a importância de políticas públicas que garantam o acesso a alimentos de qualidade para todos."
+  },
+  {
+    "id": "tema-pos-004",
+    "titulo": "A importância da preservação da saúde mental na era da hiperconectividade",
+    "eixo_tematico": "Saúde",
+    "ano_aplicacao": null,
+    "descricao": "O esgotamento emocional (burnout), a ansiedade e a depressão potencializados pelo uso excessivo de redes sociais e pela cobrança por produtividade ininterrupta."
+  },
+  {
+    "id": "tema-001",
+    "titulo": "Democratização do acesso ao cinema no Brasil",
+    "eixo_tematico": "Cultura",
+    "ano_aplicacao": 2019,
+    "descricao": "Neste tema, discute-se o cinema como fator de enriquecimento cultural e os obstáculos - sejam eles geográficos, financeiros ou sociais - que impedem que parte significativa da população frequente as salas de exibição."
+  },
+  {
+    "id": "tema-002",
+    "titulo": "Invisibilidade e registro civil: garantia de acesso à cidadania no Brasil",
+    "eixo_tematico": "Cidadania",
+    "ano_aplicacao": 2021,
+    "descricao": "O sub-registro de nascimento como barreira invisível para a conquista de direitos fundamentais da população mais vulnerável."
+  },
+  {
+    "id": "tema-003",
+    "titulo": "Manipulação do comportamento do usuário pelo controle de dados na internet",
+    "eixo_tematico": "Tecnologia",
+    "ano_aplicacao": 2018,
+    "descricao": "O impacto dos algoritmos na liberdade de escolha e a criação de bolhas sociais no ecossistema das redes."
+  },
+  {
+    "id": "tema-004",
+    "titulo": "A persistência da violência contra a mulher na sociedade brasileira",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2015,
+    "descricao": "Aborda as raízes históricas do machismo e a falha de políticas públicas em proteger as mulheres de agressões e feminicídios."
+  },
+  {
+    "id": "tema-005",
+    "titulo": "Caminhos para combater a intolerância religiosa no Brasil",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2016,
+    "descricao": "Discute o preconceito persistente contra religiões de matriz africana, mesmo em um Estado Laico, e a necessidade de educação para o respeito."
+  },
+  {
+    "id": "tema-006",
+    "titulo": "Desafios para a formação educacional de surdos no Brasil",
+    "eixo_tematico": "Educação",
+    "ano_aplicacao": 2017,
+    "descricao": "A inclusão de PcD (Pessoas com Deficiência) no ambiente escolar, a falta de intérpretes de LIBRAS e o capacitismo estrutural."
+  },
+  {
+    "id": "tema-007",
+    "titulo": "Desafios para a valorização de comunidades e povos tradicionais no Brasil",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2022,
+    "descricao": "A importância de indígenas, quilombolas e ribeirinhos para a proteção ambiental e a luta por reconhecimento identitário freante à exploração de suas terras."
+  },
+  {
+    "id": "tema-008",
+    "titulo": "O estigma associado às doenças mentais na sociedade brasileira",
+    "eixo_tematico": "Saúde",
+    "ano_aplicacao": 2020,
+    "descricao": "O preconceito, a falta de informação e as deficiências no sistema público que dificultam o tratamento psiquiátrico no país."
+  },
+  {
+    "id": "tema-ext-001",
+    "titulo": "Reforma política no Brasil: qual o melhor modelo de votação?",
+    "eixo_tematico": "Cidadania",
+    "ano_aplicacao": 2011,
+    "descricao": "Política é um tema evitado por muitos brasileiros, que se sentem desmotivados a votar devido a uma série de questões: os tantos casos de corrupção, a distância entre políticos e seus eleitores, a imensa quantidade de candidatos a serem avaliados numa eleição. Este ano, tanto os políticos quanto alguns setores da sociedade começaram a se mobilizar numa discussão sobre o modelo eleitoral adotado no Brasil. As principais propostas dessa reforma política são o voto distrital e o voto proporcional misto. Os dois modelos possuem defensores e opositores, com justificativas diversas. Leia algumas delas nos textos de apoio e depois elabore uma dissertação argumentativa avaliando o que deveria ser modificado em nosso sistema de votação e a viabilidade da adoção, no Brasil, de um desses modelos. Diga qual dos dois modelos lhe parece melhor e justifique seu ponto de vista."
+  },
+  {
+    "id": "tema-ext-002",
+    "titulo": "Como se tornar um consumidor consciente? Isso é possível?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2013,
+    "descricao": "Consumir: já faz tempo que, nos mais diferentes espaços do planeta, esse verbo tem sido associado à busca da felicidade. No Brasil não é diferente. A mídia vende sonhos e cria indivíduos consumistas, com um marketing feroz voltado para as mais diferentes idades. Isso se traduz não apenas na propaganda propriamente dita, mas até na estrutura e organização das lojas, estrategicamente planejadas para induzir ao consumo. Ter (principalmente produtos de marcas consagradas) pode criar a sensação de status e de pertencimento a um grupo mais desenvolvido. Juntamente com os produtos, adquire-se a ilusão de felicidade. Para completar, os bancos oferecem crédito a jovens ainda sem uma consciência financeira e o índice de pessoas endividadas cresce cada vez mais. É possível escapar dessas armadilhas da sociedade de consumo? Como romper esse círculo vicioso? Como preparar, especialmente o jovem, para se tornar um consumidor mais consciente?"
+  },
+  {
+    "id": "tema-ext-003",
+    "titulo": "Carta-convite: discutir discriminação na escola",
+    "eixo_tematico": "Educação",
+    "ano_aplicacao": 2016,
+    "descricao": "Em São José dos Campos (SP), no dia 22 de fevereiro de 2016, um estudante de 18 anos foi violentamente agredido com pauladas, socos e pontapés, na saída da escola. Motivo: ele é homossexual. Apesar de abominável, o fato não chega a ser inédito. A propósito, uma pesquisa recente revelou que cerca de 20% dos alunos de vários Estados brasileiros não querem ter colegas homossexuais, travestis, transexuais ou transgêneros . Suponha que, na sua escola, diante de um problema desse tipo, isto é, a presença de um ou mais alunos com opção sexual diferente da maioria, um grupo de alunos resolveu marcar uma discussão sobre o assunto, de modo a propor soluções e estabelecer uma convivência pacífica. Você ficou encarregado de escrever a carta-convite a todos os membros da comunidade escolar a participar dessa reunião. No seu texto, você deve convencer os destinatários da importância da iniciativa. No artigo abaixo, publicado pelo UOL Vestibular , você vai encontrar algumas reflexões acerca de intolerância, tolerância, direitos humanos e alteridade. Você deve usá-los em seu texto, adaptando-os à situação específica de sua carta-convite."
+  },
+  {
+    "id": "tema-ext-004",
+    "titulo": "Caso Geisy: exibicionismo, machismo, intolerância ou má-educação?",
+    "eixo_tematico": "Educação",
+    "ano_aplicacao": 2009,
+    "descricao": "Geisy Arruda, aluna de uma universidade em São Bernardo do Campo (SP), precisou de escolta policial para voltar para casa. Ela teria provocado a hostilidade de cerca de 700 colegas, pelo apertado minivestido pink com que foi à escola. A estudante, xingada e humilhada, admitiu, depois, que errou ao usar essa roupa. Enquanto muitos a defendem, como os estudantes de Brasília, que manifestaram solidariedade, saindo nus em passeata, outros consideram o caso um ato de exibicionismo erótico premeditado. Expulsa da faculdade, depois readmitida, Geisy não voltou às aulas, mas tem ido a programas de TV para falar do episódio. Tornou-se, por enquanto, uma celebridade. Mas, afinal, onde está o centro desta polêmica? No vestuário feminino, no machismo e na intolerância ou na má-educação da sociedade em geral?"
+  },
+  {
+    "id": "tema-ext-005",
+    "titulo": "Escola no Brasil: com partido ou sem partido?",
+    "eixo_tematico": "Educação",
+    "ano_aplicacao": 2016,
+    "descricao": "Se você é um estudante \"antenado\", deve estar acompanhando um debate em curso no país, que opõe defensores de teses diferentes sobre o papel do professor em sala de aula. De um lado, a organização Escola Sem Partido afirma que os professores, extrapolando as suas obrigações, aproveitam de sua situação de mestres para doutrinar ideologicamente seus alunos, favorecendo uma visão de mundo formulada pela chamada esquerda. De outro, estão vários educadores e professores que contestam a existência dessa doutrinação esquerdista e garantem que as disciplinas, especialmente de Humanidades, não podem ser ensinadas de modo neutro, pois há nelas um caráter intrinsecamente ideológico. Acusam ainda a proposta da Escola Sem Partido de ser ela mesma ideológica, vinculada ao pensamento conservador e de direita. Enquanto estudante do ensino médio, como você vê esse debate? Concorda com um dos lados da polêmica? Julga-se vítima de doutrinação ideológica? Ou crê que seus professores o orientam para ter uma visão crítica da realidade? Exponha o seu ponto de vista sobre o assunto, justificando sua opinião. Veja informações sobre o debate na coletânea de textos que integra esta proposta."
+  },
+  {
+    "id": "tema-ext-006",
+    "titulo": "O que você acha do novo Acordo Ortográfico?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2009,
+    "descricao": "Está em vigor o Acordo Ortográfico que unifica a escrita em todos os países que falam português. Ainda causador de dúvidas e polêmicas, o Acordo mudou a grafia de apenas 0,5% das palavras escritas no Brasil. Para muitas pessoas, esse assunto é indiferente. Mas quem usa obrigatoriamente a ortografia oficial, como professores, jornalistas, redatores, editores, escritores e estudantes, tem muito o que decorar. \"Esse Acordo só interessa ao Brasil\", já gritaram certos portugueses. \"É útil e facilitará o intercâmbio cultural entre países lusófonos\", retrucam especialistas. O fato é que até 2012, o país precisa se adequar às novas regras. O que você acha desse Acordo?"
+  },
+  {
+    "id": "tema-ext-007",
+    "titulo": "Toque de recolher protege juventude e sociedade?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2009,
+    "descricao": "O toque de recolher, à noite, para menores de 18 anos tem sido visto por algumas autoridades como o grande trunfo no combate às drogas e às infrações juvenis no país. Já foi implantado em vários municípios de São Paulo e também no Paraná. Os jovens não podem frequentar bares, lanchonetes, lan houses ou bailes após certo horário. Uma parte da sociedade, porém, está chocada com o que chama de preconceito inconstitucional de juízes e incompetência educacional e social do Estado. O que você acha: o toque de recolher realmente protege a juventude e a sociedade?"
+  },
+  {
+    "id": "tema-ext-008",
+    "titulo": "Deve ou não haver maior controle sobre o consumo do álcool?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2012,
+    "descricao": "O consumo excessivo de bebidas alcoólicas é, sem dúvida, um grande causador de problemas sociais, mas é difícil mudar o comportamento dos consumidores, que quase sempre associam o álcool a momentos de festa e descontração. A apologia à bebedeira pode ser encontrada, por exemplo, em diversas canções populares. No Brasil, são várias as iniciativas legais para tentar conter os abusos, como proibição da venda de bebidas alcoólicas em estádios de futebol, maior rigidez na lei que proíbe a venda a menores de idade, projeto para proibir o comércio de bebidas alcoólicas em lojas de conveniência. A polêmica mais recente envolvendo o tema diz respeito à Copa do Mundo de 2014, uma vez que a Fifa opõe-se à restrição determinada pela lei brasileira. Pensando nessa questão, como você se posiciona em relação às medidas públicas para controlar o consumo de bebidas alcoólicas? Deve ou não haver maior controle? Leia os textos da coletânea e elabore uma dissertação argumentativa discutindo o tema."
+  },
+  {
+    "id": "tema-ext-009",
+    "titulo": "Amar pode levar ao crime ou quem ama não mata?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2009,
+    "descricao": "Será realmente o sentimento amoroso que faz alguém perder a cabeça e partir para o assassinato? É bem provável que não, apesar de a resposta a essa pergunta depender muito da perspectiva com que se analisam os fatos. Enfim, por que tantos crimes passionais são cometidos em nome do amor? Em 13 de outubro de 2008, o jovem Lindemberg Alves seqüestrou e, depois de 100 horas de cativeiro, matou Eloá Cristina Pimentel, 15 anos. Ele não se conformava com o fim do namoro entre os dois. Outros casos semelhantes a esse têm ocorrido no Brasil e no mundo. Que tipo de amor é esse? Quem ama não mata? Como se explica essa violência, no seu ponto de vista?"
+  },
+  {
+    "id": "tema-ext-010",
+    "titulo": "Meia-entrada: Você é contra ou a favor? Por quê?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2013,
+    "descricao": "Projeto de lei que tramita no Congresso nacional limita a concessão da meia-entrada para estudantes, jovens de baixa renda, portadores de necessidades especiais e idosos, a 40% do total de ingressos disponíveis para cada evento cultural e esportivo. Há muito tempo, existe uma polêmica em torno da meia-entrada para estudantes no Brasil. Artistas e empresários da área afirmam que têm de aumentar o preço dos ingressos para poder arcar com o custo do benefício e reclamam da ingerência do Estado no mercado. Os estudantes reivindicam seu direito adquirido. Gestores de políticas públicas alegam que o preço é pago por adultos, que têm renda maior, num gesto de solidariedade social necessária ? a qual, portanto, deve ser obrigatória. E você, o que pensa disso tudo? É a favor ou contra a meia-entrada? Por quê? Antes de escrever, leia com atenção os textos abaixo, que podem ajudá-lo a refletir sobre o tema."
+  },
+  {
+    "id": "tema-ext-011",
+    "titulo": "O conflito entre gerações e a convivência social",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2011,
+    "descricao": "A convivência entre diferentes é, quase sempre, um problema. Isso também ocorre quando a diferença envolve faixa etária, uma vez que grupos de variadas gerações podem possuir valores e interesses muito distintos. O jovem, por exemplo, visto muitas vezes como um \"rebelde sem causa\", que age de modo inconsequente e tanto desafia os limites de instituições tradicionais, como a família e a escola, é, por outro lado, o mesmo que tem sido caracterizado historicamente como um revolucionário, aquele que se levanta contra uma situação estabelecida. São também os representantes das novas gerações, mais adaptadas às mudanças tecnológicas, que têm promovido grandes avanços nas relações de trabalho do mundo contemporâneo. Pensando nisso, questionamos: Como se caracteriza o convívio social entre gerações atualmente no Brasil e no mundo? Leia os textos da coletânea e desenvolva o tema proposto em uma dissertação argumentativa em prosa."
+  },
+  {
+    "id": "tema-ext-012",
+    "titulo": "O aborto deve ou não deve ser legalizado? Por quê?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2009,
+    "descricao": "Há muitos anos, as nações discutem questões científicas, éticas, morais e religiosas que envolvem o aborto. Ele é legalizado e feito de forma segura em vários países, mas é ilegal e visto como grave crime em outros. Muitas mulheres (de todas as classe sociais e religiões) já interromperam uma gravidez indesejada, com ou sem ajuda médica, com ou sem respaldo legal. Uma das principais discussões é se a legalização do aborto diminuiria uma gravíssima questão de saúde pública: as complicações pós-aborto, que são a terceira causa de morte entre mulheres em idade fértil. O que você acha? Por razões médicas ou por escolha pessoal da mulher, o aborto deve ou não ser legalizado?"
+  },
+  {
+    "id": "tema-ext-013",
+    "titulo": "Biografias: personagens e autores em confronto",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2013,
+    "descricao": "O debate sobre a publicação de biografias não autorizadas de personagens da vida pública - particularmente de cantores e músicos - teve destaque nos meios de comunicação nos últimos meses. Artistas reunidos no grupo \"Procure Saber\" reivindicaram o direito à privacidade de seus membros e sugeriram que os biógrafos deveriam entrar em acordo com os biografados sobre o que publicar e até dividir com eles seus eventuais lucros, uma vez que o personagem é o grande atrativo das biografias. Os escritores alegam que isso é uma forma de censura, que biografias como essas, \"oficiais\", não teriam interesse nem credibilidade. De resto, consideram que os direitos sobre um texto pertencem a seu autor, que trabalhou para produzi-lo. Leia abaixo algumas informações sobre a questão. Em seguida, desenvolva uma dissertação argumentativa, apresentando sua posição no que se refere à polêmica."
+  },
+  {
+    "id": "tema-ext-014",
+    "titulo": "Lixo: questão de cidadania e responsabilidade social",
+    "eixo_tematico": "Meio Ambiente",
+    "ano_aplicacao": 2013,
+    "descricao": "A excessiva produção de lixo continua sendo um grave problema vivido por nossa sociedade e sua tradição consumista. São toneladas de restos de plásticos, papéis, vidros, detritos orgânicos e uma infinidade de materiais que saem de nossas casas, lojas e fábricas todos os dias. O cidadão que fabrica esse lixo diário e que, muitas vezes, não o separa nem o encaminha para postos de coleta, sabe onde será despejado? Conhece a realidade dos catadores de lixo, pessoas que vivem do desperdício dos outros? Alguns documentários, como Estamira (2004) e Lixo Extraordinário, que concorreu ao Oscar em 2011, revelam, além da miséria em que vivem essas comunidades, sua força e dignidade dos sobreviventes. A questão que se coloca, com urgência, é buscar alternativas para lidar com o lixo e com todo o sistema que se construiu a partir dele. Na sua opinião, qual é a responsabilidade do cidadão diante desse cenário social? Elabore uma dissertação argumentativa considerando as ideias a seguir."
+  },
+  {
+    "id": "tema-ext-015",
+    "titulo": "Horário político obrigatório: bom para quem?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2012,
+    "descricao": "O horário eleitoral gratuito na televisão e no rádio é um recurso obrigatório garantido pela lei brasileira para que todos os candidatos possam ser vistos e ouvidos pelos eleitores. Pesquisa do DataFolha, realizada em São Paulo em agosto passado, mostra que 64% da população do estado acham necessária a manutenção da propagranda gratuita. Por outro lado, essa imposição desagrada muita gente, pois o horário eleitoral entra no ar em rede aberta, impedindo o cidadão de optar se quer ou não assistir a isso. Alguns ainda alegam que a propaganda gratuita não ajuda em nada, pois, além de o tempo ser muito curto para se conhecer o candidato e suas propostas, há partidos que o utilizam sem seriedade, induzindo o público a votar de modo inconsequente. Há também a distribuição desproporcional do tempo entre os candidatos da eleição majoritária e das proporcionais. O que você pensa disso? O que propõe para que esse horário seja mais útil para a população? Leias os textos da coletânea e leve-os em consideração para elaborar uma dissertação argumentativa discutindo a validade do horário político obrigatório."
+  },
+  {
+    "id": "tema-ext-016",
+    "titulo": "Por que o patriotismo brasileiro só se revela em época de Copa do Mundo?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2010,
+    "descricao": "Em ano de Copa do Mundo, o Brasil inteiro se pinta de verde e amarelo. Durante um mês, o país para suas atividades para torcer pela seleção e cantar o orgulho nacional. Todos os outros assuntos, de saúde a política, perdem a importância diante do futebol. Esse patriotismo temporário gera muita polêmica: alguns acreditam ser um momento de fortalecimento da identidade do povo; outros veem nesse campeonato a causa de um delírio nacional, em que o brasileiro deixa de acompanhar os fatos relevantes para a nação. Mas afinal, o que significa ser patriota? O interesse pela Copa do Mundo pode ser visto realmente como sinal de patriotismo? Qual é a importância desse sentimento para a nação? O que seria necessário para o brasileiro agir com patriotismo em outras situações do cotidiano?"
+  },
+  {
+    "id": "tema-ext-017",
+    "titulo": "A tecnologia e a eliminação de empregos",
+    "eixo_tematico": "Tecnologia",
+    "ano_aplicacao": 2016,
+    "descricao": "Ninguém desconhece os benefícios proporcionados pelos avanços da tecnologia. Os malefícios, no entanto, talvez não sejam tão conhecidos, nem tão divulgados. Entre eles, encontra-se certamente o desaparecimento dos postos de trabalho, isto é, dos empregos, num mundo em que a população é crescente. A questão foi discutida no Fórum Econômico Mundial, que ocorreu em janeiro de 2016, na Suíça. Na coletânea de textos que informa esta proposta de redação, há mais informações sobre isso, bem como opiniões de especialistas sobre o assunto. Tomando esses fatos como ponto de partida, produza uma redação sobre como você encara o problema. O que você acha que um panorama como esse significa para sua futura vida profissional? Você acha que está preparado (ou se preparando) para enfrentar a situação? Acredita que o desafio pode lhe trazer oportunidades? Ou vê os fatos com preocupação, perguntando-se se haverá uma solução para o problema? Exponha seu ponto de vista, apresentando argumentos para sustentá-lo."
+  },
+  {
+    "id": "tema-ext-018",
+    "titulo": "O fumo deve ser proibido em todos os lugares?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2008,
+    "descricao": "Convencidos de que o tabaco traz graves prejuízos à saúde, tanto dos fumantes quanto daqueles que são obrigados a conviver com a fumaça do cigarro alheio, vários governos querem proibir o fumo em lugares públicos e até mesmo extinguir os fumódromos. Hoje, os antitabagistas mais radicais chegam a considerar os fumantes como \"cidadãos inferiores, sem amor próprio\". Por outro lado, apesar de ter consciência dos males do cigarro, muitos fumantes consideram tal perseguição autoritária, ou, pior, um modismo de uma sociedade politicamente correta. Sendo fumante ou não, o que você pensa disso? É a favor da proibição do fumo em qualquer ambiente? Ou é contra essa medida que tende a virar lei?"
+  },
+  {
+    "id": "tema-ext-019",
+    "titulo": "O jovem perdeu o interesse pela participação eleitoral? Por quê?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2010,
+    "descricao": "O voto aos 16 anos foi uma conquista do movimento estudantil, incorporada à Constituição de 1988. Entre o fim da década de 1980 e o início da seguinte, estudantes e jovens, de um modo geral, demonstravam interesse na vida política nacional e desejo de se manifestar, por meio do voto, sobre os rumos do país. No entanto, essa vontade de participar tem diminuído. Há cinco anos havia 3,6 milhões de eleitores de 16 e 17 anos no Brasil. Em 2008 o número chegou a 2,9 milhões, redução de 19%. Se números assim permitem constatar o desinteresse do jovem no exercício de um direito seu, é o caso de perguntar as razões desse fato. Por que os jovens parecem ter perdido o interesse pela política? O que explica, na sua opinião, o crescente número de jovens que não faz questão de tirar o título de eleitor e de votar?"
+  },
+  {
+    "id": "tema-ext-020",
+    "titulo": "\"Selinho\" é inocente ou tem significado sexual?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2009,
+    "descricao": "No mês de setembro de 2009, foi preso em Fortaleza um turista italiano, por ter dado um beijo nos lábios da filha de 8 anos. Esse \"caso de polícia\" fez com que se discutisse a atitude cultural do \"selinho\" que, para muitas pessoas, tem forte conotação sexual, principalmente entre pais e filhos. Segundo a esposa brasileira, indignada com a prisão do marido, essa é apenas uma forma inocente que se usa na família deles para demonstrar afeto. De fato, até amigos trocam um \"selinho\", de vez em quando. A questão é: a moda do selinho é inocente? Ou ele deve ser evitado, pois tem apelo sexual? O que você acha?"
+  },
+  {
+    "id": "tema-ext-022",
+    "titulo": "Automedicação: por que a prática é tão comum entre os jovens?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2014,
+    "descricao": "Uma pesquisa do ICTQ (Instituto de Ciência Tecnologia e Qualidade), feita em 12 capitais do país, mostrou que a automedicação é praticada por 76,4% dos brasileiros, a maioria dos quais (90,1%) jovens entre 16 e 24 anos. Além disso a pesquisa apontou ainda que quase um terço (32%) dos brasileiros que se automedicam costuma aumentar a dose do remédio por conta própria, sem orientação do médico ou do farmacêutico. Leia a seguir trechos de dois artigos sobre o tema e, considerando as posições neles apresentadas, redija uma dissertação, expondo sua posição sobre o assunto: você costuma se automedicar? Sim ou não e por quê? Com qual dos dois textos você tende a concordar? A partir de suas considerações pessoais, é possível explicar por que a automedicação é tão comum entre os jovens?"
+  },
+  {
+    "id": "tema-ext-023",
+    "titulo": "O MMA é um esporte como outros ou injustificada glorificação da violência?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2012,
+    "descricao": "The Ultimate Fighter, reality show sobre os lutadores de MMA (sigla para \"mistura de artes marciais\", em inglês), tem levantado muita polêmica. As lutas são muito violentas e o contato frequente com esse tipo de imagem pode acabar reduzindo o nível de sensibilidade do espectador à violência. Ver um indivíduo quebrar a cabeça do outro passaria a ser algo normal e até desejado para o público. Os críticos acreditam que as academias possam despejar nas ruas uma imensidão de brigões, loucos por sangue. Prova disso foi a entrevista recente de um estudante de 16 anos à Folha de S. Paulo , em que ele justificou sua escolha pelo MMA: \"Gosto de bater mesmo, quero ver sangue.\" Evidentemente, há inúmeros defensores que veem a luta apenas como mais um esporte, capaz de trazer várias vantagens a seus praticantes, como diminuir o estresse, desenvolver disciplina, propiciar grande gasto calórico. Assistir a lutas violentas poderia até ser um modo de exorcizar a violência na vida real. O que você acha dessa questão? O MMA deve ser encarado positiva ou negativamente?"
+  },
+  {
+    "id": "tema-ext-024",
+    "titulo": "Juventude e alcoolismo: um problema social",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2010,
+    "descricao": "As bebidas alcoólicas pertencem ao grupo das drogas lícitas mais consumidas no Brasil. O comportamento festivo do brasileiro sempre foi regado a muito álcool: caipirinha na praia, cerveja no futebol, coquetel na balada. O problema é que os jovens estão começando a beber cada vez mais cedo. Uma pesquisa da Unifesp sobre o consumo de bebidas alcoólicas por estudantes de ensino médio reacendeu a discussão sobre o tema. Que razões levam o jovem ao consumo de álcool? Quais os problemas decorrentes disso? Por que a lei que proíbe a venda de bebidas a menores de idade não é cumprida? Qual a responsabilidade da família, da sociedade e do governo diante desse problema? Reflita sobre essas questões e elabore uma dissertação argumentativa com o tema: Juventude e alcoolismo: um problema social."
+  },
+  {
+    "id": "tema-ext-026",
+    "titulo": "É justo proibir o uso do celular na sala de aula?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2010,
+    "descricao": "Em muitos lugares do Brasil e do mundo já vigora a proibição do uso de celulares em sala de aula. Em outros, a ideia está em discussão. Conforme noticiou o UOL Educação , em janeiro de 2010, na rede municipal de ensino de Juiz de Fora (MG) não somente os celulares foram proibidos, como também os bonés. A situação com certeza é polêmica. Trata-se de mais um caso em que a esfera pública (o Estado) resolve invadir assuntos da esfera privada, como na restrição ao fumo em locais fechados? Os legisladores estariam se intrometendo em questões da vida individual do estudante que não lhes dizem respeito? Ou são os jovens que abusam e não conseguem compreender quanto o uso do celular, durante a aula, lhes é prejudicial? O que você pensa da proibição do celular em sala de aula? E do boné?"
+  },
+  {
+    "id": "tema-ext-028",
+    "titulo": "O que você pensa da proibição à prática do castigo físico?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2010,
+    "descricao": "O projeto de lei que proíbe, no Brasil, o uso de qualquer forma de punição física como medida educativa segue uma tendência mundial. Essa é uma tentativa de defender os menores de idade das violências provocadas justamente pelos adultos que os deveriam proteger. Mas isso tem gerado muita discussão: o governo tem direito de intervir na forma como os pais educam os filhos? Isso não irá comprometer a autoridade dos pais e, consequentemente, a formação dessas crianças? A lei é a melhor forma de lidar com os casos de agressão familiar? O governo dispõe de recursos para vistoriar o cumprimento dessa lei? Com base nos textos de apoio e em outras informações de que você disponha, elabore uma dissertação defendendo um ponto de vista sobre o projeto de lei que proíbe a prática do castigo físico."
+  },
+  {
+    "id": "tema-ext-030",
+    "titulo": "Você faz parte da turma do \"eu me acho?\"",
+    "eixo_tematico": "Cultura",
+    "ano_aplicacao": 2016,
+    "descricao": "Sabe o que significa a expressão turma do \"eu me acho\"? Ela se refere a adolescentes e jovens adultos que foram de excessivamente mimados pelos pais, por seus professores e educadores de modo geral. Criados como se tivessem todos os direitos, como se fossem merecedores de constantes elogios e reconhecimento por tudo que fazem, acham-se especiais e têm dificuldade de se adaptar à vida em sociedade, quando deixam a redoma do lar ou da escola. O fenômeno é explicado por especialistas na reportagem que deu origem a essa proposta de redação. Leia com atenção um trecho do artigo, que esclarece os conceitos de \"narcisismo\" e de \"geração eu\" – outras formas de se referir à turma do \"eu me acho\". A seguir, redija uma redação dissertativa, dizendo se você se considera ou não um representante desse tipo de jovem. O texto deve ter caráter argumentativo, ou seja, você precisa apontar as razões pelas quais se julga em relação ao problema."
+  },
+  {
+    "id": "tema-ext-033",
+    "titulo": "Somos todos corruptos?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2016,
+    "descricao": "Uma foto que viralizou nas redes sociais – com mais de 70 mil curtidas e 15 mil compartilhamentos – gerou um debate sobre as pequenas corrupções do dia a dia e o popular \"jeitinho brasileiro\". \"As pessoas defendem o fim da corrupção, mas não se dão conta de que suas próprias atitudes são corruptas\", foi a conclusão a que chegou a autora da foto em questão. Você concorda com ela? De fato, há muita gente que considera a gigantesca corrupção no âmbito político –  que atinge os três poderes da República, bem como governos estaduais e municipais, – como um reflexo de uma atitude comum à maioria dos brasileiros: a malandragem, o \"jeitinho\", a vontade de levar vantagem em tudo. O que você pensa disso? Acredita que há corrupção em todos os níveis da sociedade brasileira? Somos todos corruptos? Ou isso é somente um estereótipo, uma imagem que, de fato, não nos reflete como povo? Afinal, nós, brasileiros, somos honestos ou desonestos? Redija uma dissertação argumentativa, expondo e defendendo seu ponto de vista sobre o assunto."
+  },
+  {
+    "id": "tema-ext-035",
+    "titulo": "Como solucionar o problema do bullying na escola ou na internet?",
+    "eixo_tematico": "Educação",
+    "ano_aplicacao": 2010,
+    "descricao": "Você já ouviu falar de bullying , se é que não travou conhecimento com o problema pessoalmente. De modo geral, bullying é o comportamento agressivo de um ou mais estudantes contra outro(s). O termo se origina de bully , que significa \"valentão\", em inglês. Esse tipo de violência ocorre principalmente nas escolas, tanto no ensino fundamental quanto no médio, mas não tem se limitado ao âmbito escolar: também já chegou à internet, de onde derivou a expressão cyberbullying . Com base nas informações apresentadas na coletânea que segue, faça uma dissertação em que você explique o que é bullying , dê sua opinião sobre o que, a seu ver, motiva aqueles que o praticam - isto é, os agressores - e apresente uma proposta para se lidar com esse grave problema. Como solucionar a questão do bullying?"
+  },
+  {
+    "id": "tema-ext-037",
+    "titulo": "Qual a importância, para o Brasil e para o mundo, da crise financeira dos países da zona do euro?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2012,
+    "descricao": "Faz dez anos que o euro passou a ser usado como moeda única em países que compõem a União Europeia, porém, com as recentes divulgações das fortes crises econômicas enfrentadas por países como a Grécia, a ligação política da chamada zona do euro teve seu prestígio abalado. Especialistas explicam que o descontrole econômico na região deu-se, fundamentalmente, por problemas fiscais, já que, nos últimos anos, alguns países pertencentes ao grupo gastaram mais dinheiro do que puderam arrecadar com impostos. A desconfiança de que os governos da região teriam dificuldade para honrar suas dívidas fez com que os investidores passassem a temer possuir ações, bem como títulos públicos e privados europeus. A crise, além de provocar problemas sociais e políticos na Europa, pode atingir o mundo todo, já que a redução nas importações europeias compromete o comércio internacional. Leia os textos da coletânea e depois elabore uma dissertação argumentativa que discuta a seguinte questão: qual a importância, para o Brasil e para o mundo, da crise financeira dos países da zona do euro?"
+  },
+  {
+    "id": "tema-ext-038",
+    "titulo": "Norma culta X variantes linguísticas: qual deve ser a posição da escola?",
+    "eixo_tematico": "Educação",
+    "ano_aplicacao": 2011,
+    "descricao": "Qualquer um, mesmo sem nunca ter passado pela escola, sabe que não pode falar sempre do mesmo jeito com todas as pessoas, pois, até mesmo entre os familiares, cada relação está marcada por um nível diferente de formalidade. A linguagem que usamos às vezes é mais informal, às vezes é mais séria, impessoal. Nessas situações menos pessoais, a norma culta é a mais adequada para garantir um contato respeitoso e mais claro entre os indivíduos. Por isso, quando o falante consegue variar a linguagem, adequando o nível de formalidade a suas intenções, à situação e à pessoa com quem fala, dizemos que ele possui boa competência linguística. O conhecimento das variedades linguísticas amplia nossas possibilidades de comunicação, mas é a norma culta que garante a manutenção de uma unidade linguística ao país. Com base nos textos da coletânea a seguir, elabore uma dissertação argumentativa sobre o tema: considerando que a norma culta é variante mais valorizada socialmente, qual deve ser a posição da escola em relação às outras variantes linguísticas?"
+  },
+  {
+    "id": "tema-ext-039",
+    "titulo": "Enchentes: o excesso de chuvas é o único responsável pelo desastre?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2011,
+    "descricao": "Um ano após o deslizamento de terras que matou cerca de 50 pessoas em Angra dos Reis, o Estado do Rio de Janeiro voltou a sofrer as consequências das fortes chuvas de verão. Neste ano, foram mais de 700 mortes na região serrana, motivo de comoção nacional. A Austrália também foi tomada por fenômeno semelhante, mas lá a enchente, que deixou mais de 3,5 mil desalojados, matou apenas cerca de 30 pessoas. A comparação entre o que ocorreu nos dois lugares dá o que pensar, principalmente quando se leva em conta que, segundo muitas previsões, há mudanças climáticas em curso e o volume de chuvas pode aumentar gradativamente ao longo do século. A questão é se o homem está totalmente à mercê das forças naturais e nada pode fazer diante da fúria da natureza ou se existem formas de prevenir os desastres e proteger-se deles. Na sua opinião, deve-se culpar somente o excesso de chuvas pelas catástrofes que atingiram diversas cidades brasileiras neste ano?"
+  },
+  {
+    "id": "tema-ext-040",
+    "titulo": "A sociedade brasileira e os conflitos no trânsito",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2011,
+    "descricao": "O trânsito nas grandes cidades tem crescido de modo descontrolado nas últimas décadas, fazendo com que o tempo gasto pelas pessoas dentro do carro torne-se, às vezes, insuportável. Uma das piores consequências disso é o aumento da violência provocada por motoristas: são atitudes de desrespeito ora com o pedestre, ora com os outros condutores. Muitas vezes, o carro é usado como arma nessa luta urbana em que se transformou a difícil convivência entre estressados. São inúmeras as campanhas para incentivar a direção segura, mas, mesmo assim, casos impressionantes de violência no trânsito, incluindo muitas mortes, continuam sendo divulgados pela mídia, todos os dias. Diante dessa realidade, o que pode ser feito para lidar eficientemente com esse problema? Observe os textos da coletânea e elabore uma dissertação argumentativa sobre o tema, respondendo a questão: É possível reduzir o nível de violência no trânsito brasileiro?"
+  },
+  {
+    "id": "tema-ext-041",
+    "titulo": "Combate ao fumo: autoritarismo ou dever do governo?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2009,
+    "descricao": "Foi aprovada, no dia 7 de maio de 2009, pelo governador de São Paulo, uma lei antifumo válida para todo o Estado. A partir de 7 de agosto, está proibido fumar cigarros, cachimbos ou charutos em todos os lugares públicos fechados ou semifechados. Só será possível fumar no próprio carro, dentro de casa ou no meio da rua, desde que não haja tetos, toldos, ou guarda-sóis. Essa lei, aplaudida por muitas entidades e autoridades ligadas à saúde, é também criticada com violência por pessoas que a consideram radical e autoritária, pois tiraria do cidadão boa parte de sua liberdade, que passa a ser vigiada, e o livre-arbítrio para fumar ou não. Como você se posiciona diante dessa questão?"
+  },
+  {
+    "id": "tema-ext-044",
+    "titulo": "Viagem sem volta a Marte: pioneirismo ou alucinação?",
+    "eixo_tematico": "Cultura",
+    "ano_aplicacao": 2013,
+    "descricao": "A colonização de Marte atraiu a atenção do público e dos meios de comunicação em agosto passado, devido ao projeto da empresa Mars One, que abriu inscrições para candidatos a uma viagem sem volta ao planeta vermelho. Abaixo, você encontra informações sobre o assunto, bem como a opinião que o jornal Folha de S. Paulo tem acerca dele. O número de inscritos ultrapassou o patamar de 150 mil e, entre gente de vários países do mundo, há também brasileiros. Levando isso em consideração, como você encara o empreendimento e as pessoas que nele se engajaram? Acha que é algo destinado desde já ao fracasso ou, pelo contrário, que pode dar certo? Um projeto desse tipo lhe parece útil? Por quê? E quanto aos que se candidataram, você os considera malucos ou idealistas? Desenvolva uma dissertação argumentativa sobre essas questões, expondo seu ponto de vista e dando razões que o sustentem."
+  },
+  {
+    "id": "tema-ext-045",
+    "titulo": "Votar em palhaço é uma forma válida de protestar?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2010,
+    "descricao": "O desgosto do brasileiro com os políticos tem gerado protestos inusitados, como a eleição de animais, em décadas passadas, e a candidatura de pessoas sem nenhuma ligação com a política, que chegam a declarar publicamente não entenderem nada sobre o cargo que disputam. O slogan mais comentado deste ano foi \"Vote Tiririca, pior que tá não fica\". O que você pensa disso? Esse tipo de voto de protesto ajuda o Brasil a melhorar? Passado o fervor da campanha eleitoral e concretizado o deboche por meio da eleição desses personagens, como fica o país e qual a contribuição desses novos políticos durante anos? Qual o prazo de validade da piada que se faz ao se votar em palhaços? Com base nos textos de apoio e em outras informações de que você disponha, elabore uma dissertação defendendo um ponto de vista sobre a pergunta: Votar em palhaço é uma forma válida de protestar?"
+  },
+  {
+    "id": "tema-ext-047",
+    "titulo": "O conceito de família pode ou não pode mudar?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2015,
+    "descricao": "A Câmara dos Deputados está promovendo em seu site uma enquete sobre o Estatuto da Família. A iniciativa, bem sucedida, contava, em 28 de abril passado, com a participação de mais de 6 milhões de votantes. A pesquisa questiona quem está a favor ou contra a definição de família estabelecida no Estatuto, que é a seguinte: \"define-se entidade familiar como o núcleo social formado a partir da união entre um homem e uma mulher, por meio de casamento ou união estável, ou ainda por comunidade formada por qualquer dos pais e seus descendentes\". Há quem não veja nenhum problema nessa formulação, que é o conceito tradicional de família. Há também quem acredita que não pode haver definição diferente, pois qualquer variação (como a união entre dois homens ou entre duas mulheres) não constitui uma família. Por outro lado, há quem diga que isso é uma visão equivocada, conservadora e que não acompanha a evolução social, que, cada vez mais, reconhece os direitos de minorias com diferentes opções sexuais. O que você pensa a esse respeito? Você é a favor do conceito tradicional? Ou acredita que outros tipos de união também constituem uma família?"
+  },
+  {
+    "id": "tema-ext-048",
+    "titulo": "Disciplina, ordem e autoridade favorecem a educação?",
+    "eixo_tematico": "Educação",
+    "ano_aplicacao": 2015,
+    "descricao": "Os colégios militares de vários Estados do Brasil se tornaram destaque nos meios de comunicação pelos bons resultados que seus alunos obtiveram no Enem no ano passado. Para muitos pais e educadores, estabelecimentos de ensino regidos pela disciplina militar proporcionam aos alunos aquilo que se espera de uma escola: formar alunos competentes para enfrentar os desafios da educação, entre os quais o Enem e, depois, a vida universitária. Naturalmente, há quem não concorde com isso e por motivos tão razoáveis quanto aqueles dos que pensam diferente. Há quem diga que a rigidez da ordem militar não colabora com a formação de mentes abertas, críticas e criativas. Veja opiniões a favor e contra essas escolas na coletânea de textos que integra esta proposta de redação. Depois disso, redija um texto dissertativo-argumentativo, dizendo se você estuda ou estudaria num colégio militar, e quais são os motivos que o levam a tomar sua posição. Conclua seu texto refletindo se a disciplina, a ordem, o respeito à autoridade são ou não são úteis no processo educacional de um jovem."
+  },
+  {
+    "id": "tema-ext-049",
+    "titulo": "O Supremo Tribunal Federal fez bem em legalizar o aborto de anencéfalos?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2012,
+    "descricao": "A anencefalia é um defeito congênito que se caracteriza pela ausência da maior parte do cérebro. A geração de um anencéfalo é, para a maioria das mulheres, motivo de muita dor física e emocional, por saber que a chance de o feto morrer durante a gravidez é enorme e que, em caso contrário, o bebê sobreviverá por pouquíssimo tempo após o parto. Por outro lado, há quem condene o aborto mesmo nesses casos, por considerar que a prática é um crime contra a vida. A polêmica sobre a legalização do aborto de anencéfalos acabou no Supremo Tribunal Federal, que, recentemente, votou a liberação da prática para esses casos. A decisão, por tratar de um tema tão polêmico que envolve lei e religião, tem sido contestada por vários grupos sociais. Discuta essa questão, com base nos textos da coletânea e em outras informações de seu conhecimento, defendendo um ponto de vista diante da polêmica: o Supremo Tribunal Federal fez bem em legalizar o aborto de anencéfalos?"
+  },
+  {
+    "id": "tema-ext-050",
+    "titulo": "O Brasil e o conflito: defesa do meio ambiente X desenvolvimento econômico",
+    "eixo_tematico": "Meio Ambiente",
+    "ano_aplicacao": 2010,
+    "descricao": "As mudanças climáticas tornaram-se o bicho papão da atualidade. O cinema, por exemplo, já explorou os chamados temas apocalípticos em filmes como \"O dia depois de amanhã\", que trata do aquecimento global. Preocupados com as previsões catastróficas sobre o futuro do planeta, muitos governos têm se envolvido em acordos internacionais, como o Protocolo de Kyoto, que influenciam nos rumos da economia e nas políticas públicas. O problema é que o IPCC, principal órgão mundial responsável pela avaliação (e divulgação) das pesquisas sobre o tema, teve sua credibilidade abalada por denúncias de manipulação de dados e de erros (o principal diz respeito ao derretimento das geleiras do Himalaia). Se não se tem uma dimensão real do problema, é o caso de se perguntar: o Brasil deve continuar seguindo as orientações desses relatórios climáticos ou deve priorizar o crescimento econômico?"
+  },
+  {
+    "id": "tema-ext-051",
+    "titulo": "Estupro: como prevenir esse crime?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2016,
+    "descricao": "No mês de maio passado, a notícia de um estupro coletivo ocorrido no Rio de Janeiro chocou o Brasil e o mundo, provocando as mais diversas manifestações de indignação. Independentemente da forma como ocorre, o estupro não é um problema exclusivamente brasileiro. Um caso coletivo ocorreu na Índia em 2012 e uma especialista norte-americana no tema já chamou esse tipo de violência contra a mulher de \"epidemia social\" nos Estados Unidos, o que talvez corresponda ao que esteja sendo chamado aqui de \"cultura do estupro\". Sobre a existência da violência sexual contra a mulher ser um fato concreto e frequente estão todos de acordo. Já a sobre a maneira de lidar com o crime há bastante controvérsia. Há quem defenda a educação e a mudança da mentalidade machista, além da punição convencional dos culpados: a reclusão por tempo variável (mínimo de seis, máximo de 30 anos). Há quem vá além, propondo soluções mais radicais, como a castração química. Como você encara essa questão? Qual lhe parece o modo certo de lidar com o problema? Por quê? Não deixe de ler os textos da coletânea que podem ajudá-lo a refletir sobre o assunto."
+  },
+  {
+    "id": "tema-ext-055",
+    "titulo": "É válido simplificar a linguagem de um clássico?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2015,
+    "descricao": "Em meados de 2014, uma polêmica agitou os meios literários e educacionais brasileiros: uma escritora decidiu publicar, com o apoio de lei de incentivo do Ministério da Cultura, uma adaptação simplificada do conto \"O alienista\", de Machado de Assis. Para justificar seu projeto, a escritora alegou que a dificuldade da linguagem do texto original afasta os jovens da leitura desse autor - um dos maiores escritores brasileiros. Entre educadores, críticos literários e jornalistas, as opiniões se dividiram: houve quem concordasse com ela e aprovasse a iniciativa; houve quem tachasse o projeto de equivocado e até de criminoso. Nos textos que acompanham a proposta de redação deste mês, apresentamos algumas das opiniões em conflito, para você formar uma ideia do debate. A partir delas e de seus próprios conhecimentos e opiniões, redija uma dissertação expondo o seu ponto de vista sobre esse tipo de adaptação de obras literárias. Você é contra ou a favor? Por quê?"
+  },
+  {
+    "id": "tema-ext-057",
+    "titulo": "Mariana: fatalidade ou negligência?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2015,
+    "descricao": "No dia 5 de novembro passado, o rompimento de uma barragem de rejeitos da mineradora Samarco em Mariana (MG) provocou o que já pode ser considerado o maior desastre ambiental da história do Brasil. Na verdade, as consequências catastróficas do problema não se limitaram à região mineira onde o fato ocorreu, mas se estenderam por centenas de quilômetros, atingindo até o oceano Atlântico, no litoral do Espírito Santo. Contudo, até o momento pouco se sabe sobre as causas do acidente, que ainda não foram esclarecidas. Na coletânea de textos que compõe essa proposta de redação, você encontrará várias informações sobre a tragédia. Com base nesses textos, faça uma reflexão sobre o assunto e redija uma dissertação argumentativa, dizendo se o acontecimento pode ser considerado uma inexorável fatalidade ou ele poderia ter sido evitado, caso não houvesse negligência por parte dos envolvidos na atividade mineradora e na sua fiscalização. Justifique suas opiniões, defendendo seu ponto de vista."
+  },
+  {
+    "id": "tema-ext-059",
+    "titulo": "Como resolver o problema da criminalidade infantil em nossa sociedade?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2011,
+    "descricao": "A ligação entre menores carentes e criminalidade não é algo novo no Brasil. O cinema já retratou isso em várias produções, como os filmes Pixote, Cidade de Deus e a recente adaptação do romance Capitães de Areia, de Jorge Amado. O perfil desses adolescentes quase sempre envolve a vida nas ruas, falta de estrutura familiar, miséria, drogas. Muitas vezes, por serem inimputáveis, os menores são considerados peças de valor em gangues criminosas. Se tiverem entre 12 e 18 anos, ainda podem ser encaminhados, por ordem judicial, para internação em estabelecimento educacional, mas se tiverem menos de 12 anos não podem sequer sofrer qualquer tipo de restrição à liberdade. Assim, amparados pelas proteções legais, esses pequenos infratores agem livremente, sem que ninguém consiga controlá-los. Para analisar as causas e consequências da criminalidade envolvendo crianças e adolescentes, leia os textos da coletânea e elabore uma dissertação em prosa que responda à seguinte questão: Como resolver o problema da criminalidade infantil em nossa sociedade?"
+  },
+  {
+    "id": "tema-ext-060",
+    "titulo": "Forma física, corpo perfeito e consumismo",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2015,
+    "descricao": "Vale tudo para obter um corpo perfeito? Os fatos indicam que não, como se pode ver por relatos publicados na imprensa. Não bastasse isso, os especialistas da área médica alertam constantemente para os perigos de cirurgias desnecessárias, de usar produtos químicos inadvertidamente, de apelar para profissionais (nem sempre da área médica) que fazem o serviço a preços módicos. Mesmo assim, é crescente o número de pessoas que se dispõem a realizar os mais variados procedimentos, em busca do corpo dos seus sonhos - ou daquele que a moda e os meios de comunicação apresentam como perfeito. Só para dar um exemplo, uma pesquisa da Sociedade Brasileira para o Progresso da Ciência mostrou que as cirurgias estéticas em adolescentes aumentaram 141% em quatro anos. Diante desse quadro, é o caso de se perguntar: teria o corpo perfeito se transformado também num objeto de consumo? O consumismo, afinal, chegou à forma física e à anatomia, assim como tem invadido vários outros aspectos da vida contemporânea?"
+  },
+  {
+    "id": "tema-ext-062",
+    "titulo": "O que é ser homem nos dias de hoje?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2010,
+    "descricao": "Há muito tempo, a mulher deixou de se dedicar exclusivamente aos afazeres domésticos para disputar com o homem um lugar na vida pública. Essa mudança do papel feminino, inegavelmente, teve repercussão no papel masculino. A partir daí, nas últimas décadas, os estereótipos da masculinidade sofreram vários questionamentos - e alguns deles, como o machismo, foram veementemente condenados. No entanto, será que se pode mesmo falar em \"crepúsculo do macho\"? Pelo menos em termos majoritários, por exemplo, o homem abriu mão da violência e do comportamento agressivo? Ou por trás de todo cidadão civilizado se esconde uma fera? Quais são os padrões do comportamento masculino hoje em dia? Afinal, o que é ser homem no século 21? Leve em conta, ao desenvolver seu raciocínio, a coletânea de textos abaixo."
+  },
+  {
+    "id": "tema-ext-063",
+    "titulo": "Impeachment: a presidente deve perder o mandato?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2016,
+    "descricao": "A principal discussão política do Brasil, neste mês de abril de 2016, é o impeachment da presidente da República. O processo, na verdade, já foi deflagrado, quando a Câmara dos Deputados acatou o pedido formulado por dois juristas de renome e criou uma comissão especial, notificando a presidente Dilma Rousseff, que agora tem de apresentar sua defesa. Independentemente do andamento do caso, que vai evoluir ao longo do mês ou por mais tempo, é fato que existem dois grupos opostos acerca da questão: os que são favoráveis e os que são contrários ao impeachment. Representantes dos dois grupos apresentam argumentos para defender sua posição, como se pode ver pela coletânea de textos que integra esta proposta de redação. Levando isso em consideração, bem como seus próprios conhecimentos sobre o assunto, como você, enquanto estudante e cidadão, se posiciona diante do problema. É favorável ou contrário ao impeachment? Por quê? Exponha seu modo de ver essa situação numa dissertação argumentativa."
+  },
+  {
+    "id": "tema-ext-064",
+    "titulo": "Violência escolar: expor o problema e sugerir soluções",
+    "eixo_tematico": "Educação",
+    "ano_aplicacao": 2014,
+    "descricao": "A violência na escola não é um problema novo, mas tem se agravado com o passar do tempo. Colabora para aumentá-la e difundi-la o próprio avanço da tecnologia e dos meios de comunicação - como a internet e as redes sociais. Publicar brigas entre alunos no YouTube, por exemplo, tornou-se uma prática corriqueira, como não é difícil conferir. Desse modo, é provável que, em maior ou menor escala, todos os estudantes já tenham presenciado ou ouvido falar de um caso do gênero. Por isso, queremos ouvir a voz do estudante: você já presenciou ou viveu um episódio de violência escolar? Leu algo a respeito ou viu na internet? Exponha o que você viu, leu ou o que lhe aconteceu. Depois, procure explicar as causas do problema, relacionando o caso particular que você relatou com o problema de um modo em geral - veja a opinião dos especialistas na coletânea. Em seguida, apresente uma sugestão: do seu ponto de vista, o que pode ser feito para prevenir o problema da violência na escola?"
+  },
+  {
+    "id": "tema-ext-066",
+    "titulo": "Filantropia: um exemplo a ser seguido?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2016,
+    "descricao": "Nos Estados Unidos, há muito tempo, milionários e bilionários costumam praticar a filantropia, doando parte significativa da sua fortuna para criar ou manter organizações com a finalidade de patrocinar obras sociais, ajudar os necessitados, promover as artes ou a pesquisa científica. Por exemplo, em 2010, dois magnatas norte-americanos, Bill Gates e Warren Buffett, criaram a Giving Pledge (Promessa de Doação), com o intuito de estimular ainda mais a filantropia em seu país. Como você verá ao ler o artigo que acompanha essa proposta de redação, o exemplo do exterior está engajando bilionários brasileiros a fazer o mesmo por aqui. Entre outras ações, o proprietário da maior construtora do país anunciou que pretende doar em vida 60% de seu patrimônio pessoal, orçado em quase quatro bilhões de reais. Como você avalia uma ação desse tipo? Ela é, de fato, uma forma de resolver nossos problemas sociais? Acha que é um exemplo a ser seguido? Acredita que uma cultura de filantropia e investimento social pode criar raízes e frutificar no Brasil? Pensa que os bilionários devem mesmo ter esse papel social? Redija uma dissertação argumentativa apresentando e defendendo seu ponto de vista. Na conclusão, sugira áreas ou atividades em que você acha que seria melhor empregar esse tipo de recursos."
+  },
+  {
+    "id": "tema-ext-068",
+    "titulo": "É possível prevenir massacres como o da escola de Realengo?",
+    "eixo_tematico": "Educação",
+    "ano_aplicacao": 2011,
+    "descricao": "Em abril, o Brasil ganhou destaque internacional devido a um crime semelhante a outros já ocorridos mundo afora. O chamado massacre de Realengo chocou o país, principalmente por vitimar crianças dentro de um espaço de crescimento e proteção. Também provocou discussões sobre as causas da atitude do atirador: genética, religião, doenças mentais, bullying. Não faltaram opiniões sobre medidas preventivas a tomar: proibição do porte de armas no país, instalação de detector de metais nas escolas, criação de programas de saúde pública para casos de distúrbios mentais. Passado o primeiro impacto, no entanto, especialistas começam a atribuir o comportamento do atirador a um conjunto de fatores (e não a apenas um), o que também pediria um conjunto de soluções. Como você avalia esse tipo de crime? Leia a coletânea e elabore uma dissertação argumentativa em prosa, discutindo as causas de chacinas escolares e possíveis medidas preventivas."
+  },
+  {
+    "id": "tema-ext-072",
+    "titulo": "Justiça x Vingança: como não confundir as duas coisas?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2011,
+    "descricao": "Grande comemoração ocorreu nos Estados Unidos, quando o presidente, Barack Obama, anunciou o sucesso da ação militar que resultou na morte de Bin Laden. Esse episódio, porém, gerou críticas pelo mundo: o objetivo da operação era prender ou executar o inimigo? Os americanos buscavam justiça ou vingança? A vingança é uma prática que acompanha a história da humanidade, mas é diferentemente interpretada: alguns a defendem como necessária à constituição da justiça; outros a consideram um ato irracional. Ela pode provocar um círculo vicioso, como provam os atentados terroristas que geraram a caçada a Bin Laden, que já gerou novos ataques terroristas. Vingança e justiça são coisas distintas. A lei brasileira preza a separação desses conceitos, recriminando o ato vingativo. Com base nisso e nos textos da coletânea, exponha seu ponto de vista em uma dissertação argumentativa sobre o tema: o que deve ser feito para a busca por justiça não ser confundida com a prática da vingança?"
+  },
+  {
+    "id": "tema-ext-074",
+    "titulo": "Intolerância religiosa: regra ou exceção no Brasil?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2015,
+    "descricao": "No mês de junho de 2015, no Rio de Janeiro, uma menina de 11 anos, praticante de Candomblé, foi apedrejada na cabeça e insultada por dois homens que portavam Bíblias na mão e que supostamente pertencem a seitas cristãs evangélicas ou neopentecostais. O fato despertou a atenção do público para a intolerância religiosa na sociedade brasileira. Que o problema existe, é inegável. Mas o Brasil não tem um histórico de conflitos armados motivados pela religião, como ocorrem no Oriente Médio ou na Índia, por exemplo, ou como ocorreram historicamente entre católicos e protestantes na Europa. Diante disso, é o caso de perguntar: que dimensões assume a intolerância religiosa no Brasil? É grande ou pequena? É explícita ou camuflada? É regra ou exceção? Por quê? Escreva um texto dissertativo-argumentativo expondo sua visão sobre o tema. Considere na sua argumentação as informações apresentadas na coletânea."
+  },
+  {
+    "id": "tema-ext-075",
+    "titulo": "Qual a relação entre o estudo e uma carreira profissional bem sucedida?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2013,
+    "descricao": "A educação costuma ser apontada como um dos principais direitos sociais, devido aos benefícios que pode proporcionar ao cidadão. Uma recente pesquisa internacional, por exemplo, revelou que quem estuda é mais feliz. Outro argumento muito usado em favor da educação formal são os índices econômicos e trabalhistas, pois quem estuda normalmente ocupa os postos de trabalho mais bem pagos e consegue uma qualidade de vida melhor. Mas há exceções: de Sílvio Santos a Bill Gates, são vários os exemplos de indivíduos que conquistaram sucesso pessoal e profissional sem possuir um diploma universitário, assim como muitos também são os casos de pessoas formadas que não se sentem realizadas. O que você pensa disso? Estudar pode tornar as pessoas mais felizes? Qual a relação entre o estudo e uma carreira profissional bem sucedida? Veja os textos de apoio e discuta essas questões em uma dissertação argumentativa de até 30 linhas."
+  },
+  {
+    "id": "tema-ext-076",
+    "titulo": "\"Cultura do estupro\": a culpa é da vítima?",
+    "eixo_tematico": "Cultura",
+    "ano_aplicacao": 2014,
+    "descricao": "Poucos dias depois da divulgação de atos de assédio sexual no metrô de São Paulo e da revelação da existência de uma página intitulada \"Encoxadores\", no Facebook, o Ipea (Instituto de Pesquisa Econômica Aplicada), órgão vinculado ao Governo Federal, divulgou dados de uma pesquisa sobre o estupro, segundo a qual 65% dos entrevistados (homens e mulheres) concordaram em que mulher que exibe seu corpo, usando roupas curtas e/ou decotadas, \"merece ser atacada\". (Atenção, veja observação no início da proposta!) A partir dos dados, uma socióloga declarou existir no país uma \"cultura do estupro\", que considera a vítima responsável pela violência (sexual) que sofreu. Acerca do estupro, o Ipea apresentou outro estudo, que você pode ver a seguir, juntamente com mais informações afins. A partir disso, exponha sua opinião sobre o tema, numa dissertação argumentativa, procurando explicar as causas desse problema social brasileiro."
+  },
+  {
+    "id": "tema-ext-077",
+    "titulo": "Racismo: como virar de vez essa triste página da história?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2014,
+    "descricao": "Recentemente, a agressão racista sofrida pelo jogador brasileiro Daniel Alves ganhou destaque nos meios de comunicação, devido ao modo bem humorado de o atleta reagir a ele. A Daniel se solidarizou o craque Neymar, que postou uma foto nas redes sociais, e milhares de pessoas, famosas ou anônimas. Manifestações racistas no futebol, infelizmente, não são novidades e não acontecem somente no exterior, mas também aqui no Brasil. Não há dúvida de que o preconceito racial reflete uma mentalidade antiga e supostamente ultrapassada. Remete aos tempos da escravidão, no Brasil ou nos EUA; da segregação no Sul dos Estados Unidos; do extinto Apartheid, na África do Sul; e até mesmo do Nazismo, na Alemanha. Então, por que o racismo continua a se manifestar em pleno século XXI e como combater o problema, de forma a eliminá-lo definitivamente? Considerando os textos que seguem, faça uma dissertação argumentativa expondo suas ideias sobre esse grave problema social."
+  },
+  {
+    "id": "tema-ext-080",
+    "titulo": "A quem cabe a responsabilidade sobre a escolha alimentar da população?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2011,
+    "descricao": "Em 2008, o Ministério da Saúde lançou uma ofensiva para tentar regulamentar a propaganda de alimentos que apresentassem altos teores de açúcar, sal e gordura. Entre as propostas estavam a restrição do horário de veiculação de anúncios desses produtos e a exigência de divulgação de mensagens de alerta sobre os males desses ingredientes como: \"O consumo excessivo de gordura aumenta o risco de desenvolver diabetes e doença do coração'. O ministério alegava tratar-se de um problema de saúde pública, uma vez que as crianças são o alvo principal da propaganda desses produtos. Porém, como não foi criada nenhuma lei específica até o momento, os projetos não entraram em vigor. O índice de obesidade infantil cresce todos os anos e, diante disso, é possível perguntar: o governo deveria criar alguma lei para controlar as propagandas das redes de fast-food? A quem cabe, afinal, a responsabilidade sobre a escolha alimentar da população? Ao governo, à família, à sociedade?"
+  },
+  {
+    "id": "tema-ext-081",
+    "titulo": "O papel do Estado na vida do cidadão e das nações",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2014,
+    "descricao": "\"Você só olha da esquerda para a direita, o Estado te esmaga de cima para baixo\". Pichada no muro de um presídio do Rio de Janeiro, em circunstâncias muito particulares (veja a coletânea), essa frase traduz um conflito existente entre o Estado e o indivíduo, de um modo geral: em teoria, a máquina estatal existe para beneficiar o cidadão; na prática, essa relação muitas vezes se inverte. Há projetos políticos que valorizam o Estado, por entender que ele é o único órgão capaz de reparar as injustiças sociais. Outros consideram que o Estado deve ter seu poder muito restringido, para não ferir a liberdade do cidadão. Há ainda outros que consideram o Estado desnecessário, afirmando que o mercado e as empresas podem organizar a vida social em sua totalidade: a segurança pública, por exemplo, ficaria a cargo das empresas de seguro. Na sua opinião, qual dessas três posições lhe parecem mais sensata? Por quê? Redija uma dissertação, apresentando argumentos para defender o seu ponto de vista."
+  },
+  {
+    "id": "tema-ext-082",
+    "titulo": "O sucesso vem da escola ou do esforço individual?",
+    "eixo_tematico": "Educação",
+    "ano_aplicacao": 2015,
+    "descricao": "De modo geral, não é segredo para ninguém que a realidade da educação brasileira enfrenta há muito tempo uma situação complicada. Não faltam exemplos que evidenciam a baixa qualidade do ensino no país. No Enem do ano passado, por exemplo, enquanto 8,5% dos alunos tiraram zero na prova de redação, a nota máxima foi obtida por apenas 0,004%. Agora, uma pesquisa acaba de revelar que ao menos um de cada cinco estudantes do 3º ano do ensino fundamental da escola pública não atinge níveis mínimos de alfabetização em leitura, escrita e matemática. No entanto, mesmo diante desse panorama, não é difícil encontrar casos de sucesso e superação entre os estudantes brasileiros, como mostram três reportagens publicadas pelo UOL Educação em setembro, integrantes da coletânea de textos que informa esta proposta de redação. Levando em conta esses diferentes fatos, é o caso de se perguntar: o sucesso nos estudos depende mais do esforço individual do que de escola eficientes, capacitadas para produzir os resultados que dela se esperam? Desenvolva uma dissertação argumentativa sobre o tema, expondo e defendendo o seu ponto de vista sobre essa questão."
+  },
+  {
+    "id": "tema-ext-083",
+    "titulo": "A polícia se excede contra os manifestantes ou cumpre seu papel?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2014,
+    "descricao": "Em janeiro deste ano, no eixo Rio-São Paulo, ocorreram manifestações que mobilizaram grandes grupos de diferentes setores da população. Para começar, os \"rolezinhos\", promovidos por jovens da periferia, com intuito declarado de se divertir, de ver e ser visto nos shoppings. A seguir, os \"rolezões populares\", organizados por movimentos sociais, para protestar e fazer reivindicações, também diante dos shoppings. Finalmente, na capital paulista, no aniversário da fundação da cidade, um protesto contra os gastos da Copa, transformou-se numa batalha campal entre Black Blocs e a Polícia Militar, com os atos de vandalismo sendo duramente reprimidos. A polícia já agira nos rolezinhos e rolezões. De acordo com os meios de comunicação, em todos os casos, exagerou na contenção dos manifestantes, atuando de modo violento e inadequado. Qual a sua opinião sobre a ação dos policiais? Eles extrapolaram o exercício de suas funções e se excederam? Ou se viram obrigados a reagir aos vândalos com dureza, recorrendo a violência para manter a ordem pública?"
+  },
+  {
+    "id": "tema-ext-084",
+    "titulo": "O que muda no país após as manifestações populares?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2013,
+    "descricao": "\"O Brasil acordou\". Assim estava escrito em cartazes das manifestações que abalaram a nação e levaram às ruas mais de um milhão de pessoas. Depois disso, outros protestos aconteceram e talvez ainda estejam ocorrendo agora. Vamos, porém, considerar somente o que já houve. A partir de reivindicações contra o aumento das tarifas dos ônibus, a pauta dos manifestantes aumentou e passou a tocar em questões recorrentes: corrupção, malversação de dinheiro público, má qualidade dos serviços à população, em saúde, educação, segurança, etc. Os políticos - tanto do poder Executivo, quanto do Legislativo - foram colocados contra a parede e prometeram mudanças. Diante disso, é o caso de se perguntar se essas promessas serão cumpridas, se a população continuará vigilante e disposta a lutar por seus direitos, se esses protestos históricos terão consequências práticas no futuro próximo do país. Como você encara a questão? Na sua opinião, o Brasil acordou mesmo? O que vai mudar no país após essa grandiosa onda de manifestações?"
+  },
+  {
+    "id": "tema-ext-085",
+    "titulo": "O voto nulo é um ato político válido?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2014,
+    "descricao": "No dia 12 de julho deste ano, o jornal Folha de S. Paulo formulou a seguinte pergunta: \"o voto nulo é um ato político válido\"? e apresentou as respostas, positiva e negativa, do ator e dramaturgo Hugo Possolo e do cientista político Bolívar Lamounier, respectivamente. A questão é muito pertinente devido não apenas à proximidade das eleições, mas também à onda de manifestações que percorre o país desde o ano passado. O voto nulo, historicamente, é considerado uma forma de protesto contra os rumos da política nacional. Leia as reflexões sobre o assunto , apresentadas a seguir, e desenvolva uma dissertação em que você exponha e defenda com argumentos a sua posição sobre o significado das eleições num regime democrático e sobre o uso do voto como forma de protesto. Considere ainda a foto que ilustra o tema e as informações fornecidas em sua legenda."
+  },
+  {
+    "id": "tema-ext-087",
+    "titulo": "O preconceito racial está chegando ao fim?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2009,
+    "descricao": "No mundo todo, implantam-se e vigoram políticas mais efetivas contra a discriminação racial, que, cada vez mais, é punida com rigor. Será o fim do preconceito no mundo? O fato é que alguns negros passam a comandar empresas, outros são juízes, atletas de sucesso, grandes atores ou comunicadores. Em 2008, o salto foi maior: os norte-americanos elegeram Barack Obama para presidente da República. No Brasil, dizem que não existe preconceito, que somos uma sociedade multirracial e unida. Será mesmo? Obama, Lewis Hamilton, Naomi Campbell, Oprah Winfrey, o ministro Joaquim Barbosa, a atriz Taís Araújo revelam um mundo novo sem preconceitos? O que você acha: está acabando o preconceito aqui e no mundo?"
+  },
+  {
+    "id": "tema-ext-089",
+    "titulo": "Por que causas o jovem tem se mobilizado atualmente no Brasil?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2011,
+    "descricao": "As novas tecnologias ampliaram muito a capacidade de comunicação dos grupos sociais, que passaram a ter mais facilidade para se organizar. Os jovens, em especial, têm se destacado em vários lugares do mundo pela forte participação em protestos por causas diversas. No Brasil, o movimento estudantil já teve grande papel na luta por direitos sociais, principalmente durante os anos de ditadura, porém, um episódio recente dividiu a opinião da sociedade sobre os ideais que fundamentam os movimentos estudantis hoje. O fato é que, no dia 8 de novembro, setenta e dois estudantes foram detidos durante a desocupação da reitoria da USP (Universidade de São Paulo). A ocupação, em protesto contra a presença da polícia militar no campus, foi uma reação à detenção de três alunos que fumavam maconha no estacionamento da faculdade. Os manifestantes, no entanto, alegaram que o motivo dos protestos era político. O contexto político mudou, vivemos em um estado democrático e o acesso à universidade tornou-se mais popular. Nesse novo contexto, queremos que você analise qual é o papel dos movimentos estudantis. Leia os textos da coletânea e desenvolva uma dissertação argumentativa que responda a seguinte questão: Por que causas o jovem tem se mobilizado atualmente no Brasil?"
+  },
+  {
+    "id": "tema-ext-093",
+    "titulo": "Como devem ser as relações entre as pessoas e seus animais de estimação?",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": 2012,
+    "descricao": "A ligação entre o ser humano e os animais de estimação é muito antiga. Domesticados, os bichos tornam-se companheiros de seus donos, muitas vezes suprindo-lhes as necessidades de afeto e atenção. Mas essa ligação nem sempre é equilibrada. Na atualidade, vemos dois opostos polemizarem as opiniões públicas: de um lado estão os proprietários que destinam a seus bichinhos cuidados e regalias inimagináveis para uma imensidão de pessoas pobres no mundo; de outro lado estão os indivíduos que maltratam os animais, desrespeitando completamente a integridade desses seres vivos. Em dezembro, dois exemplos disso ganharam destaque na mídia: a notícia de um gato que herdou dez milhões de euros e o vídeo no Youtube de um cão espancado até a morte por uma enfermeira. Leia os textos da coletânea e elabore uma dissertação argumentativa sobre o seguinte tema: Como devem ser as relações entre as pessoas e seus animais de estimação?"
+  },
+  {
+    "id": "tema-ext-094",
+    "titulo": "A Aids não é mais a mesma? Por que diminuiu o medo da doença?",
+    "eixo_tematico": "Saúde",
+    "ano_aplicacao": 2014,
+    "descricao": "Em 1989, quando o cantor Cazuza assumiu estar com Aids, o Brasil ainda não sabia muita coisa sobre a doença. Assustada, a população precisou discutir abertamente assuntos como fidelidade, comportamentos sexuais, drogas, transfusão de sangue, e tomar atitudes de precaução contra o mal que destruía famosos e anônimos por todo o mundo. Com o passar dos anos, as discussões sobre Aids perderam o destaque, em parte pelo surgimento de drogas que prolongam a vida dos doentes, em parte pelo distanciamento temporal entre a juventude atual e as primeiras vítimas fatais. Hoje, o governo declara que a situação está estabilizada, mas a cada ano, cerca de 35 mil brasileiros se infectam. Estima-se que, no país, haja mais de 600 mil infectados, dos quais cerca de 230 mil não sabem, ainda, que são soropositivos. Apesar disso, muitos jovens descuidam-se, principalmente em relação às práticas sexuais desprotegidas, pois declaram não ter medo da Aids. Como entender esse comportamento? O que falta à população para entender os riscos que essa doença ainda representa?"
+  }
+];
