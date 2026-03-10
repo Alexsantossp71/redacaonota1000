@@ -88,7 +88,7 @@
                 <div class="flex items-center gap-2 text-slate-500 text-sm mb-1">
                     <a class="hover:underline" href="#">Redações</a>
                     <span class="material-symbols-outlined text-sm">chevron_right</span>
-                    <span>O Impacto da Tecnologia na Educação</span>
+                    <span id="breadcrumb_theme">Carregando tema...</span>
                 </div>
                 <h1 class="text-3xl font-extrabold tracking-tight">Análise Detalhada</h1>
                 <p class="text-slate-500">Corrigido por Dra. Helena M. em 18 de Outubro, 2023</p>
@@ -122,62 +122,9 @@
                             class="flex items-center gap-1 text-[10px] font-bold px-2 py-1 bg-success/10 text-success rounded">ARGUMENTAÇÃO</span>
                     </div>
                 </div>
-                <div
+                <div id="text-container"
                     class="p-8 md:p-12 overflow-y-auto leading-relaxed text-lg text-slate-700 dark:text-slate-300 font-light space-y-6">
-                    <p>
-                        Historicamente, a tecnologia sempre atuou como um vetor de transformação social. No contexto da
-                        educação contemporânea, tal influência torna-se ainda mais evidente, <span
-                            class="bg-warning/20 border-b-2 border-warning cursor-pointer relative group">uma vez que
-                            <span
-                                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 font-normal">
-                                <b class="block mb-1 text-warning">Dica de Gramática:</b>
-                                Considere substituir o conectivo para evitar repetição ao longo do parágrafo.
-                            </span>
-                        </span> a conectividade digital permite o acesso democrático ao conhecimento. Entretanto,
-                        persistem desafios significativos que impedem a plena inclusão pedagógica nas redes públicas.
-                    </p>
-                    <p>
-                        Em primeira análise, é fundamental destacar que a infraestrutura precária de muitas escolas
-                        brasileiras limita o uso de ferramentas digitais. <span
-                            class="bg-primary/20 border-b-2 border-primary cursor-pointer relative group">Segundo o
-                            filósofo Pierre Lévy,
-                            <span
-                                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 font-normal">
-                                <b class="block mb-1 text-primary">Ótimo repertório!</b>
-                                Você utilizou bem a citação para fundamentar seu argumento sobre o ciberespaço.
-                            </span>
-                        </span> toda tecnologia cria um novo ambiente para o pensamento. Quando o Estado falha em prover
-                        esse ambiente, a desigualdade social se aprofunda, criando um abismo entre o ensino público e o
-                        privado.
-                    </p>
-                    <p>
-                        Ademais, a falta de treinamento docente para lidar com as novas mídias constitui outro entrave.
-                        Não basta apenas fornecer tablets ou notebooks; é preciso que o corpo pedagógico esteja apto a
-                        integrar esses recursos ao plano de aula de forma estratégica. <span
-                            class="bg-warning/20 border-b-2 border-warning cursor-pointer relative group">Nesse sentido,
-                            a educação não deve ser apenas digital, mas sim humanizada.
-                            <span
-                                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 font-normal">
-                                <b class="block mb-1 text-warning">Atenção à Coerência:</b>
-                                Este trecho ficou um pouco vago. Tente especificar como essa "humanização" ocorreria na
-                                prática.
-                            </span>
-                        </span>
-                    </p>
-                    <p>
-                        Portanto, medidas são necessárias para mitigar esses impasses. Cabe ao Ministério da Educação
-                        investir na modernização das escolas e na formação continuada de professores, por meio de verbas
-                        federais direcionadas. <span
-                            class="bg-success/20 border-b-2 border-success cursor-pointer relative group">Somente assim,
-                            o Brasil poderá efetivar o direito constitucional à educação de qualidade para todos.
-                            <span
-                                class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 font-normal">
-                                <b class="block mb-1 text-success">Conclusão Nota 1000:</b>
-                                Sua proposta de intervenção está completa: Agente, Ação, Meio/Modo, Efeito e
-                                Detalhamento. Excelente!
-                            </span>
-                        </span>
-                    </p>
+                    <p>Processando sua redação...</p>
                 </div>
                 <div
                     class="p-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 text-center">
@@ -194,8 +141,7 @@
                             <div>
                                 <p class="text-primary-100/80 text-sm font-medium uppercase tracking-widest">Nota Final
                                 </p>
-                                <h3 class="text-6xl font-black">940<span
-                                        class="text-2xl font-normal opacity-60">/1000</span></h3>
+                                <h3 class="text-6xl font-black" id="nota_final_display">---</h3>
                             </div>
                             <div class="bg-white/20 backdrop-blur-md rounded-lg p-2">
                                 <span class="material-symbols-outlined text-3xl">workspace_premium</span>
@@ -221,7 +167,7 @@
                     </div>
                     <div class="p-4 flex flex-col gap-4">
                         <!-- C1 -->
-                        <div
+                        <div id="comp-1"
                             class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 transition-all hover:border-primary/30">
                             <div class="flex justify-between items-center mb-3">
                                 <div class="flex items-center gap-2">
@@ -230,16 +176,15 @@
                                     <span class="text-xs font-bold text-slate-600 dark:text-slate-400">Domínio da Norma
                                         Culta</span>
                                 </div>
-                                <span class="text-sm font-black text-primary">160/200</span>
+                                <span class="text-sm font-black text-primary nota-comp">---/200</span>
                             </div>
                             <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden mb-3">
-                                <div class="bg-primary h-full rounded-full" style="width: 80%"></div>
+                                <div class="bg-primary h-full rounded-full progress-bar" style="width: 0%"></div>
                             </div>
-                            <p class="text-xs text-slate-500 leading-relaxed">Pequenos desvios gramaticais e pontuação.
-                                Fique atento ao uso de vírgulas em orações subordinadas.</p>
+                            <p class="text-xs text-slate-500 leading-relaxed feedback-comp">Analisando...</p>
                         </div>
                         <!-- C2 -->
-                        <div
+                        <div id="comp-2"
                             class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 transition-all hover:border-primary/30">
                             <div class="flex justify-between items-center mb-3">
                                 <div class="flex items-center gap-2">
@@ -248,16 +193,15 @@
                                     <span class="text-xs font-bold text-slate-600 dark:text-slate-400">Compreensão do
                                         Tema</span>
                                 </div>
-                                <span class="text-sm font-black text-primary">200/200</span>
+                                <span class="text-sm font-black text-primary nota-comp">---/200</span>
                             </div>
                             <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden mb-3">
-                                <div class="bg-success h-full rounded-full" style="width: 100%"></div>
+                                <div class="bg-success h-full rounded-full progress-bar" style="width: 0%"></div>
                             </div>
-                            <p class="text-xs text-slate-500 leading-relaxed">Excelente compreensão. Você não tangenciou
-                                o tema e aplicou repertório sociocultural de forma produtiva.</p>
+                            <p class="text-xs text-slate-500 leading-relaxed feedback-comp">Analisando...</p>
                         </div>
                         <!-- C3 -->
-                        <div
+                        <div id="comp-3"
                             class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 transition-all hover:border-primary/30">
                             <div class="flex justify-between items-center mb-3">
                                 <div class="flex items-center gap-2">
@@ -266,16 +210,15 @@
                                     <span class="text-xs font-bold text-slate-600 dark:text-slate-400">Organização e
                                         Defesa</span>
                                 </div>
-                                <span class="text-sm font-black text-primary">180/200</span>
+                                <span class="text-sm font-black text-primary nota-comp">---/200</span>
                             </div>
                             <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden mb-3">
-                                <div class="bg-primary h-full rounded-full" style="width: 90%"></div>
+                                <div class="bg-primary h-full rounded-full progress-bar" style="width: 0%"></div>
                             </div>
-                            <p class="text-xs text-slate-500 leading-relaxed">Projeto de texto bem definido. Alguns
-                                argumentos poderiam ser mais aprofundados no desenvolvimento.</p>
+                            <p class="text-xs text-slate-500 leading-relaxed feedback-comp">Analisando...</p>
                         </div>
                         <!-- C4 -->
-                        <div
+                        <div id="comp-4"
                             class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 transition-all hover:border-primary/30">
                             <div class="flex justify-between items-center mb-3">
                                 <div class="flex items-center gap-2">
@@ -284,16 +227,15 @@
                                     <span class="text-xs font-bold text-slate-600 dark:text-slate-400">Coesão e
                                         Coerência</span>
                                 </div>
-                                <span class="text-sm font-black text-primary">200/200</span>
+                                <span class="text-sm font-black text-primary nota-comp">---/200</span>
                             </div>
                             <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden mb-3">
-                                <div class="bg-success h-full rounded-full" style="width: 100%"></div>
+                                <div class="bg-success h-full rounded-full progress-bar" style="width: 0%"></div>
                             </div>
-                            <p class="text-xs text-slate-500 leading-relaxed">Domínio pleno de conectivos intra e
-                                interparágrafos. O texto flui de maneira lógica e agradável.</p>
+                            <p class="text-xs text-slate-500 leading-relaxed feedback-comp">Analisando...</p>
                         </div>
                         <!-- C5 -->
-                        <div
+                        <div id="comp-5"
                             class="p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 transition-all hover:border-primary/30">
                             <div class="flex justify-between items-center mb-3">
                                 <div class="flex items-center gap-2">
@@ -302,13 +244,12 @@
                                     <span class="text-xs font-bold text-slate-600 dark:text-slate-400">Proposta de
                                         Intervenção</span>
                                 </div>
-                                <span class="text-sm font-black text-primary">200/200</span>
+                                <span class="text-sm font-black text-primary nota-comp">---/200</span>
                             </div>
                             <div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden mb-3">
-                                <div class="bg-success h-full rounded-full" style="width: 100%"></div>
+                                <div class="bg-success h-full rounded-full progress-bar" style="width: 0%"></div>
                             </div>
-                            <p class="text-xs text-slate-500 leading-relaxed">Todos os 5 elementos presentes e bem
-                                detalhados. Respeito aos direitos humanos garantido.</p>
+                            <p class="text-xs text-slate-500 leading-relaxed feedback-comp">Analisando...</p>
                         </div>
                     </div>
                     <!-- Action Buttons Footer -->
@@ -336,8 +277,7 @@
             </div>
             <div class="flex-1 text-center md:text-left">
                 <h4 class="text-xl font-bold mb-1">Próximo passo sugerido</h4>
-                <p class="text-slate-600 dark:text-slate-400">Para atingir 1000, recomendamos o módulo de <b>"Pontuação
-                        e Regência"</b> para ajustar sua competência 1. Você está quase lá!</p>
+                <p class="text-slate-600 dark:text-slate-400" id="sugestao_texto">Analisando seu desempenho para sugerir o melhor plano de estudos...</p>
             </div>
             <button
                 class="px-6 py-3 bg-slate-900 text-white dark:bg-white dark:text-slate-900 rounded-lg font-bold text-sm whitespace-nowrap hover:opacity-90 transition-opacity">
@@ -345,14 +285,56 @@
             </button>
         </section>
     </main>
-    <footer class="max-w-[1440px] mx-auto px-6 py-12 text-center text-slate-400 text-xs">
-        <p>© 2023 ENEM 1000 - Tecnologia Educacional Ltda. Todos os direitos reservados.</p>
-        <div class="mt-4 flex justify-center gap-4">
-            <a class="hover:text-primary underline" href="#">Termos de Uso</a>
-            <a class="hover:text-primary underline" href="#">Privacidade</a>
-            <a class="hover:text-primary underline" href="#">Suporte</a>
-        </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            lucide.createIcons();
+            
+            const rawData = localStorage.getItem('redacao_para_corrigir');
+            if (!rawData) {
+                alert("Nenhuma redação encontrada para correção. Voltando para a prática.");
+                window.location.href = '../pratica/pratica.html';
+                return;
+            }
+
+            const payload = JSON.parse(rawData);
+            
+            // Mostrar estado de carregamento (opcional, aqui já vamos direto para a análise)
+            const analise = await IA_CORRETOR.analisarRedacao(payload);
+            
+            renderizarAnalise(analise, payload.texto);
+        });
+
+        function renderizarAnalise(analise, textoOriginal) {
+            // Atualiza Título e Tema
+            document.querySelector('h1').textContent = "Análise Detalhada";
+            document.querySelector('p.text-slate-500').textContent = `Analisado por IA Nota 1000 em ${analise.data}`;
+            document.getElementById('breadcrumb_theme').textContent = analise.tema;
+
+            // Atualiza Texto Original (com suporte futuro a highlights)
+            const textContainer = document.getElementById('text-container');
+            textContainer.innerHTML = textoOriginal.split('\n').map(p => p.trim() ? `<p>${p}</p>` : '').join('');
+
+            // Atualiza Notas
+            document.getElementById('nota_final_display').textContent = analise.nota_final;
+            
+            // Itera competências
+            analise.competencias.forEach((comp, index) => {
+                const compId = index + 1;
+                const container = document.getElementById(`comp-${compId}`);
+                if (container) {
+                    container.querySelector('.nota-comp').textContent = `${comp.nota}/200`;
+                    container.querySelector('.feedback-comp').textContent = comp.feedback;
+                    const progress = container.querySelector('.progress-bar');
+                    if (progress) progress.style.width = `${(comp.nota / 200) * 100}%`;
+                }
+            });
+
+            // Sugestões
+            document.getElementById('sugestao_texto').innerHTML = `Para atingir 1000, recomendamos o módulo de <b>"${analise.proximo_modulo}"</b>. ${analise.sugestao_estudo}`;
+        }
+    </script>
 </body>
 
 </html>

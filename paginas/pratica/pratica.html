@@ -669,8 +669,25 @@
         }
 
         function submitToAI() {
-            alert("Enviando para a IA corrigir... (Integração disponível em breve)");
-            // Aqui redirecionaríamos para corretor.html com os dados via POST ou LocalStorage
+            const text = document.getElementById('essay-editor').value;
+            const theme = currentTheme ? currentTheme.titulo : "Tema não identificado";
+            const time = document.getElementById('timer').textContent;
+            
+            if (text.trim().length < 100) {
+                alert("Sua redação está muito curta! Escreva um pouco mais para obter uma correção precisa.");
+                return;
+            }
+
+            const payload = {
+                texto: text,
+                tema: theme,
+                id_tema: currentTheme ? currentTheme.id : null,
+                tempo: time,
+                data: new Date().toISOString()
+            };
+
+            localStorage.setItem('redacao_para_corrigir', JSON.stringify(payload));
+            window.location.href = '../corretor/corretor.html';
         }
 
         function toggleSidebar() {
