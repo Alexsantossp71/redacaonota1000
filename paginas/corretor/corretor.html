@@ -91,7 +91,13 @@
                     <span class="material-symbols-outlined text-sm">chevron_right</span>
                     <span id="breadcrumb_theme">Carregando tema...</span>
                 </div>
-                <h1 class="text-3xl font-extrabold tracking-tight">Análise Detalhada</h1>
+                <div class="flex items-center justify-between gap-4">
+                    <h1 class="text-3xl font-extrabold tracking-tight">Análise Detalhada</h1>
+                    <button onclick="document.getElementById('api-key-modal').classList.remove('hidden'); document.getElementById('api-key-modal').classList.add('flex');" 
+                            class="p-2 text-slate-400 hover:text-primary transition-colors" title="Configurações de IA">
+                        <span class="material-symbols-outlined">settings</span>
+                    </button>
+                </div>
                 <p class="text-slate-500">Corrigido por Dra. Helena M. em 18 de Outubro, 2023</p>
             </div>
             <div class="flex gap-3">
