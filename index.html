@@ -1,107 +1,510 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Redação Nota 1000 | Atualizando...</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500&display=swap"
+    <title>Portal Redação Nota 1000 | Excelência em Produção Textual</title>
+
+    <!-- Meta SEO -->
+    <meta name="description"
+        content="A plataforma definitiva para conquistar sua Nota 1000 no ENEM. Aulas especializadas, correções detalhadas e biblioteca de exemplos nota máxima.">
+    <meta name="keywords" content="redação enem, nota 1000, curso de redação, prática de redação, temas de redação">
+
+    <!-- Global Fonts (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
+
+    <!-- Tailwind CSS v4 CDN (Using 3.4.x as proxy but following v4 principles) -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1E40AF',
-                        deep: '#0F172A',
+                        // Using OKLCH-inspired hex mappings
+                        primary: '#1E40AF', // Deep scholarly blue
+                        accent: '#10B981',  // Success green
+                        canvas: '#F8FAFC',  // High-end background
+                        deep: '#0F172A',    // Text color
                     },
                     fontFamily: {
                         display: ['Outfit', 'sans-serif'],
                         body: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        '3xl': '1.5rem',
+                        '4xl': '2rem',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
                     }
                 }
             }
         }
     </script>
+
+    <!-- p5.js for Algorithmic Art -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+
+    <!-- Lucide Icons (Professional SVG) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Local Data -->
+    <script src="paginas/dados/banco_redacoes.js"></script>
+
     <style>
+        /* Modern Design System Tokens */
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --accent-glow: radial-gradient(circle at 50% 50%, rgba(30, 64, 175, 0.1), rgba(30, 64, 175, 0));
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #F8FAFC;
+            color: #1E293B;
+            overflow-x: hidden;
         }
 
+        h1,
+        h2,
+        h3,
         .font-display {
             font-family: 'Outfit', sans-serif;
         }
 
-        @keyframes progress {
-            from {
-                width: 0%;
-            }
-
-            to {
-                width: 100%;
-            }
+        /* Nav Glassmorphism */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
 
-        .progress-bar-fill {
-            animation: progress 10s linear forwards;
+        /* Hero Canvas Alignment */
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Custom Bento Hover */
+        .bento-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .bento-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* High-Craft Contrast */
+        .text-balanced {
+            text-wrap: balance;
         }
     </style>
 </head>
 
-<body class="min-h-screen flex items-center justify-center p-6 antialiased">
-    <div
-        class="max-w-md w-full bg-white p-12 rounded-[2.5rem] shadow-2xl border border-slate-100 text-center space-y-8">
-        <div class="flex justify-center">
-            <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12a9 9 0 1 1-6.219-8.56" />
-                    <path d="M22 2 11 13" />
-                    <path d="m22 7-5-5-5 5" />
-                </svg>
+<body class="antialiased">
+
+    <!-- Floating Navbar (UI-UX Pro Max: Glassmorphism) -->
+    <header class="fixed top-0 left-0 right-0 z-[100] px-4 py-3">
+        <nav class="max-w-7xl mx-auto glass-nav rounded-2xl px-6 py-3 flex items-center justify-between shadow-lg">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-inner">
+                    <i data-lucide="book-open" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-deep">Redação<span
+                        class="text-primary font-black italic">1000</span></span>
+            </div>
+
+            <ul class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <li><a href="paginas/aulas/aulas.html"
+                        class="hover:text-primary transition-colors cursor-pointer">Aulas</a></li>
+                <li><a href="paginas/biblioteca/biblioteca.html"
+                        class="hover:text-primary transition-colors cursor-pointer">Biblioteca</a></li>
+                <li><a href="paginas/temas/temas.html"
+                        class="hover:text-primary transition-colors cursor-pointer">Temas</a></li>
+                <li><a href="paginas/repertorio/repertorio.html"
+                        class="hover:text-primary transition-colors cursor-pointer text-primary font-bold">Repertório</a>
+                </li>
+                <li><a href="paginas/pratica/pratica.html"
+                        class="hover:text-primary transition-colors cursor-pointer">Prática</a></li>
+            </ul>
+
+
+            <div class="flex items-center gap-4">
+                <a href="#newsletter"
+                    class="hidden lg:flex items-center gap-2 text-slate-500 hover:text-primary font-bold text-sm transition-all cursor-pointer">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                    Entrar
+                </a>
+                <a href="paginas/pratica/pratica.html"
+                    class="bg-primary hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm transition-all shadow-md shadow-blue-500/20 active:scale-95 cursor-pointer">
+                    Começar Agora
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Algorithmic Art (Philosophy: Knowledge Synthesis) -->
+    <section class="relative min-h-[90vh] flex items-center pt-24 overflow-hidden border-b border-slate-100">
+        <div id="hero-canvas"></div>
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center hero-content">
+            <div class="space-y-8 py-12">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest border border-accent/20">
+                    <i data-lucide="award" class="w-4 h-4"></i>
+                    Metodologia Redação Imbatível
+                </div>
+
+                <h1 class="text-6xl md:text-8xl font-black leading-[0.95] text-deep tracking-tighter text-balanced">
+                    Sua jornada rumo à <span
+                        class="text-primary underline decoration-accent/40 decoration-[20px] underline-offset-[-10px]">Nota
+                        1000</span> começa aqui.
+                </h1>
+
+                <p class="text-lg text-slate-600 font-medium max-w-lg leading-relaxed">
+                    Domine a estrutura dissertativo-argumentativa com mentoria especializada, temas inéditos e
+                    inteligência analítica focada nos critérios do INEP.
+                </p>
+
+                <div class="flex flex-wrap gap-5 pt-4">
+                    <a href="paginas/pratica/pratica.html"
+                        class="bg-primary text-white px-10 py-5 rounded-2xl font-black text-xl shadow-2xl shadow-primary/40 hover:scale-105 transition-transform cursor-pointer group flex items-center gap-3">
+                        Quero ser nota 1000
+                        <i data-lucide="chevron-right"
+                            class="w-6 h-6 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hidden lg:block relative">
+                <!-- Floating Card Illustration -->
+                <div class="bg-white p-8 rounded-[2.5rem] shadow-2xl border border-slate-100 animate-float">
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
+                                <i data-lucide="file-check-2" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-deep">Correção Detalhada</h4>
+                                <p class="text-xs text-slate-500">Mentoria Individual</p>
+                            </div>
+                        </div>
+                        <div class="text-3xl font-black text-accent tracking-tighter">980</div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="h-4 bg-slate-100 rounded-full w-full"></div>
+                        <div class="h-4 bg-slate-100 rounded-full w-[85%]"></div>
+                        <div class="h-4 bg-primary/10 rounded-full w-[95%] border border-primary/20"></div>
+                        <div class="h-4 bg-slate-100 rounded-full w-[70%]"></div>
+                    </div>
+                    <div
+                        class="mt-8 pt-8 border-t border-slate-50 flex items-center justify-between text-xs font-bold text-slate-400">
+                        <span>CRITÉRIO: COESÃO</span>
+                        <div class="flex gap-1">
+                            <div class="w-2 h-2 rounded-full bg-accent"></div>
+                            <div class="w-2 h-2 rounded-full bg-accent"></div>
+                            <div class="w-2 h-2 rounded-full bg-accent"></div>
+                            <div class="w-2 h-2 rounded-full bg-accent"></div>
+                            <div class="w-2 h-2 rounded-full bg-slate-200"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Grid Section (Aesthetic: Non-Generic Layout) -->
+    <section class="max-w-7xl mx-auto px-6 py-24 space-y-12">
+        <div class="text-center max-w-2xl mx-auto space-y-4">
+            <h2 class="text-4xl font-black text-deep">Por onde você quer começar?</h2>
+            <p class="text-slate-500 font-medium leading-relaxed">Nossa plataforma se adapta ao seu nível, do iniciante
+                ao mestre da escrita.</p>
+        </div>
+
+        <div id="servicos" class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+            <!-- Card 1: Main Focus (Asymmetric Span) -->
+            <a href="paginas/biblioteca/biblioteca.html"
+                class="md:col-span-2 md:row-span-1 bento-card bg-primary p-10 rounded-[2.5rem] flex flex-col justify-between overflow-hidden relative group cursor-pointer">
+                <div class="z-10 relative space-y-4">
+                    <div
+                        class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-white backdrop-blur-md border border-white/20">
+                        <i data-lucide="book-open-check" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black text-white">Explorar Biblioteca Nota 1000</h3>
+                    <p class="text-blue-100 max-w-md font-medium">Acesse o maior acervo de redações reais que tiraram a
+                        nota máxima e entenda o que os corretores buscam.</p>
+                </div>
+                <div
+                    class="absolute -bottom-10 -right-10 opacity-10 group-hover:scale-110 transition-transform duration-700">
+                    <i data-lucide="library" class="w-64 h-64 text-white"></i>
+                </div>
+                <div class="z-10 mt-6 w-fit flex items-center gap-2 text-white font-black hover:gap-4 transition-all">
+                    Ver exemplos <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </div>
+            </a>
+
+            <!-- Card 2: Vertical Secondary -->
+            <a href="paginas/temas/temas.html"
+                class="md:col-span-1 md:row-span-2 bento-card bg-white p-10 rounded-[2.5rem] flex flex-col justify-between border border-slate-100 shadow-sm cursor-pointer hover:border-primary/30">
+                <div class="space-y-6">
+                    <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
+                        <i data-lucide="flame" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-deep">Temas Quentes do ENEM</h3>
+                    <p class="text-slate-600 font-medium">Temas exclusivos e estruturados conforme os eixos temáticos do
+                        INEP.</p>
+                    <ul class="space-y-3 mt-4">
+                        <li class="flex items-center gap-2 text-sm font-bold text-slate-500 bg-slate-50 p-3 rounded-xl">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accent"></i> Sistema Prisional
+                        </li>
+                        <li class="flex items-center gap-2 text-sm font-bold text-slate-500 bg-slate-50 p-3 rounded-xl">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accent"></i> Saúde Mental
+                        </li>
+                        <li class="flex items-center gap-2 text-sm font-bold text-slate-500 bg-slate-50 p-3 rounded-xl">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accent"></i> Sustentabilidade
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-6 font-black text-primary hover:text-blue-800 transition-colors">Ver todos os
+                    temas</div>
+            </a>
+
+            <!-- Card 3: Small Square -->
+            <a href="paginas/aulas/aulas.html"
+                class="md:col-span-1 bento-card bg-slate-900 p-10 rounded-[2.5rem] flex flex-col justify-center gap-4 cursor-pointer">
+                <i data-lucide="monitor-play" class="w-10 h-10 text-primary"></i>
+                <h3 class="text-xl font-black text-white">Aulas de Repertório</h3>
+                <p class="text-sm text-slate-400 font-medium">Filosofia, sociologia e história aplicada à sua redação.
+                </p>
+            </a>
+
+            <!-- Card 4: Small Square -->
+            <a href="paginas/pratica/pratica.html"
+                class="md:col-span-1 bento-card bg-white border border-slate-100 p-10 rounded-[2.5rem] flex flex-col justify-center gap-4 cursor-pointer hover:border-accent/30 shadow-sm">
+                <i data-lucide="pencil-line" class="w-10 h-10 text-accent"></i>
+                <h3 class="text-xl font-black text-deep">Prática Imediata</h3>
+                <p class="text-sm text-slate-500 font-medium">Escreva agora e receba o feedback detalhado em até 24h.
+                </p>
+            </a>
+        </div>
+
+    </section>
+
+    <!-- Essay Cards (High-Craft: Mobile-Design Touch-First) -->
+    <section class="bg-deep py-24">
+        <div class="max-w-7xl mx-auto px-6 space-y-16">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+                <div class="space-y-4">
+                    <h2 class="text-4xl md:text-5xl font-black text-white leading-tight">Redações que<br><span
+                            class="text-primary italic">Inspiram a Aprovação</span></h2>
+                    <p class="text-slate-400 max-w-lg font-medium">Analise a estrutura de quem já chegou lá. Cada
+                        redação conta com comentários de especialistas sobre os repertórios utilizados.</p>
+                </div>
+                <a href="paginas/biblioteca/biblioteca.html"
+                    class="px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 text-white rounded-2xl font-black transition-all flex items-center gap-3 cursor-pointer">
+                    Ver todas as redações
+                    <i data-lucide="move-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+
+            <div id="redacoes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Dynamic cards will be injected here -->
+                <div class="col-span-full py-20 text-center text-slate-500 font-bold animate-pulse">
+                    Carregando inspirações...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Footer -->
+    <footer class="bg-white border-t border-slate-100 py-16">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="col-span-1 md:col-span-1 space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
+                        <i data-lucide="book-open" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-lg font-black text-deep">Redação<span
+                            class="text-primary italic">1000</span></span>
+                </div>
+                <p class="text-sm text-slate-500 font-medium leading-relaxed">
+                    Excelência e metodologia na preparação para a nota máxima no ENEM.
+                </p>
+            </div>
+
+            <div class="md:col-span-2"></div>
+
+            <div class="space-y-6 text-right">
+                <h5 class="text-sm font-black text-deep uppercase tracking-widest">Institucional</h5>
+                <ul class="space-y-3 text-sm font-bold text-slate-500">
+                    <li><a href="paginas/institucional/termos.html" class="hover:text-primary transition-colors">Termos
+                            de Uso</a></li>
+                </ul>
             </div>
         </div>
 
-        <div class="space-y-4">
-            <h1 class="text-2xl font-black text-deep font-display uppercase tracking-tight">Sincronizando Conteúdo</h1>
-            <p id="update-text" class="text-slate-500 font-bold text-sm tracking-wide"></p>
         </div>
-
-        <div class="space-y-3">
-            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                <div class="bg-primary h-full progress-bar-fill"></div>
-            </div>
-            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Aguarde 10 segundos para o
-                redirecionamento</p>
+        <div
+            class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-black text-slate-400 uppercase tracking-widest">
+            <span>© 2024 Portal Redação Nota 1000. All Rights Reserved.</span>
+            <span>Design by Antigravity Digital Architecture</span>
         </div>
+    </footer>
 
-        <a href="index_original.html"
-            class="inline-block text-primary text-xs font-black border-b-2 border-primary/20 hover:border-primary transition-all">Pular
-            espera</a>
-    </div>
 
+    <!-- p5.js Custom Implementation (Knowledge Synthesis Movement) -->
     <script>
-        // Formatar data e hora atual
-        function updateTime() {
-            const now = new Date();
-            const day = String(now.getDate()).padStart(2, '0');
-            const month = String(now.getMonth() + 1).padStart(2, '0');
-            const year = now.getFullYear();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
+        let particles = [];
+        const PARTICLE_COUNT = 60;
 
-            const formatted = `Atualizados em ${day}/${month}/${year} às ${hours}:${minutes}`;
-            document.getElementById('update-text').innerText = formatted;
+        function setup() {
+            const canvas = createCanvas(windowWidth, windowHeight);
+            canvas.parent('hero-canvas');
+
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+                particles.push(new Particle());
+            }
+
+            noFill();
+            strokeCap(ROUND);
         }
 
-        updateTime();
+        function draw() {
+            clear();
 
-        // Redirecionamento após 10 segundos
-        setTimeout(() => {
-            window.location.href = "index_original.html";
-        }, 10000);
+            // Subtle ambient movement
+            particles.forEach(p => {
+                p.update();
+                p.display();
+                p.connect(particles);
+            });
+        }
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.pos = createVector(random(width), random(height));
+                this.vel = createVector(random(-0.5, 0.5), random(-0.5, 0.5));
+                this.size = random(2, 6);
+                this.color = color(30, 64, 175, random(20, 50)); // Primary blue with variable alpha
+            }
+
+            update() {
+                this.pos.add(this.vel);
+
+                // Mouse interaction (UI-UX Pro Max: Dynamic Feedback)
+                let mouseDist = dist(this.pos.x, this.pos.y, mouseX, mouseY);
+                if (mouseDist < 200) {
+                    let force = createVector(this.pos.x - mouseX, this.pos.y - mouseY);
+                    force.setMag(0.2);
+                    this.pos.add(force);
+                }
+
+                // Warp edges
+                if (this.pos.x < 0) this.pos.x = width;
+                if (this.pos.x > width) this.pos.x = 0;
+                if (this.pos.y < 0) this.pos.y = height;
+                if (this.pos.y > height) this.pos.y = 0;
+            }
+
+            display() {
+                noStroke();
+                fill(this.color);
+                circle(this.pos.x, this.pos.y, this.size);
+            }
+
+            connect(others) {
+                others.forEach(other => {
+                    let d = dist(this.pos.x, this.pos.y, other.pos.x, other.pos.y);
+                    if (d < 150) {
+                        stroke(30, 64, 175, map(d, 0, 150, 40, 0));
+                        strokeWeight(map(d, 0, 150, 1.5, 0.1));
+                        line(this.pos.x, this.pos.y, other.pos.x, other.pos.y);
+                    }
+                });
+            }
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Dynamic Random Essays
+        function renderRandomEssays() {
+            const grid = document.getElementById('redacoes-grid');
+            if (!window.BANCO_REDACOES || !grid) return;
+
+            // Shuffle and pick 4
+            const sorted = [...window.BANCO_REDACOES].sort(() => 0.5 - Math.random());
+            const selection = sorted.slice(0, 4);
+
+            grid.innerHTML = '';
+            selection.forEach(redacao => {
+                const card = document.createElement('a');
+                card.href = `paginas/biblioteca/ler-redacao.html?id=${redacao.id}`;
+                card.className = "group bg-slate-800/50 rounded-[2.5rem] p-8 space-y-8 border border-white/5 hover:border-primary/50 transition-all cursor-pointer relative overflow-hidden";
+
+                card.innerHTML = `
+                    <div class="absolute top-0 right-0 p-6">
+                        <div class="px-4 py-1.5 bg-accent text-white text-[10px] font-black rounded-full uppercase tracking-widest shadow-lg shadow-accent/20">
+                            Nota ${redacao.nota_final || 1000}
+                        </div>
+                    </div>
+
+                    <div class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-12">
+                        <i data-lucide="file-text" class="w-9 h-9"></i>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-xl font-black text-white leading-tight group-hover:text-primary transition-colors">
+                            ${redacao.titulo}
+                        </h4>
+                    </div>
+
+
+                    <div class="pt-6 flex justify-between items-center text-xs font-black tracking-widest text-slate-600">
+                        <span>ENEM ${redacao.ano_enem}</span>
+                        <i data-lucide="external-link" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            lucide.createIcons();
+        }
+
+        renderRandomEssays();
     </script>
 </body>
 
