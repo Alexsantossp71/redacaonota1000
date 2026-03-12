@@ -93,10 +93,6 @@
                 </div>
                 <div class="flex items-center justify-between gap-4">
                     <h1 class="text-3xl font-extrabold tracking-tight">Análise Detalhada</h1>
-                    <button onclick="document.getElementById('api-key-modal').classList.remove('hidden'); document.getElementById('api-key-modal').classList.add('flex');" 
-                            class="p-2 text-slate-400 hover:text-primary transition-colors" title="Configurações de IA">
-                        <span class="material-symbols-outlined">settings</span>
-                    </button>
                 </div>
                 <p class="text-slate-500">Corrigido por Dra. Helena M. em 18 de Outubro, 2023</p>
             </div>
@@ -317,31 +313,14 @@
             const analise = await IA_CORRETOR.analisarRedacao(payload);
             
             if (analise.status === "error") {
-                if (analise.message === "API_KEY_MISSING") {
-                    document.getElementById('api-key-modal').classList.remove('hidden');
-                    document.getElementById('api-key-modal').classList.add('flex');
-                    textContainer.innerHTML = '<p class="text-center text-slate-400 py-20">Aguardando chave de API para continuar...</p>';
-                } else {
-                    alert("Erro na análise: " + analise.message);
-                    textContainer.innerHTML = `<p class="text-center text-red-400 py-20">Erro: ${analise.message}</p>`;
-                }
+                alert("Erro na análise: " + analise.message);
+                textContainer.innerHTML = `<p class="text-center text-red-400 py-20">Erro: ${analise.message}</p>`;
                 return;
             }
             
             renderizarAnalise(analise, payload.texto);
         }
 
-        function saveApiKey() {
-            const key = document.getElementById('api-key-input').value.trim();
-            if (!key) {
-                alert("Por favor, insira uma chave válida.");
-                return;
-            }
-            localStorage.setItem('groq_api_key', key);
-            document.getElementById('api-key-modal').classList.add('hidden');
-            document.getElementById('api-key-modal').classList.remove('flex');
-            iniciarAnalise();
-        }
 
         function renderizarAnalise(analise, textoOriginal) {
             // Atualiza Título e Tema
@@ -414,23 +393,6 @@
             return textoProcessado.split('\n').map(p => p.trim() ? `<p>${p}</p>` : '').join('');
         }
     </script>
-    <!-- Modal API Key -->
-    <div id="api-key-modal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[300] hidden items-center justify-center p-6">
-        <div class="bg-white dark:bg-slate-900 rounded-[2.5rem] p-10 max-w-lg w-full shadow-2xl space-y-8 animate-in fade-in zoom-in duration-300">
-            <div class="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto">
-                <span class="material-symbols-outlined text-4xl">key</span>
-            </div>
-            <div class="space-y-2 text-center">
-                <h3 class="text-2xl font-black">Configuração Necessária</h3>
-                <p class="text-slate-500 font-medium">Para usar a correção por IA, insira sua <b>Groq API Key</b>. Ela será salva apenas no seu navegador.</p>
-            </div>
-            <input type="password" id="api-key-input" placeholder="gsk_..." class="w-full p-4 bg-slate-100 dark:bg-slate-800 border-none rounded-2xl focus:ring-2 focus:ring-primary text-sm font-mono">
-            <div class="flex flex-col gap-3">
-                <button onclick="saveApiKey()" class="w-full py-4 bg-primary text-white rounded-2xl font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition-all">Salvar e Analisar</button>
-                <a href="https://console.groq.com/keys" target="_blank" class="text-xs text-primary font-bold hover:underline text-center">Onde encontro minha chave?</a>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
