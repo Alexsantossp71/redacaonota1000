@@ -165,7 +165,7 @@
 
                     <!-- Card Destaque -->
                     <div id="featured-theme-card"
-                        class="bg-white rounded-[2.5rem] p-8 pb-10 border border-slate-100 shadow-2xl shadow-primary/5 relative overflow-hidden group">
+                        class="bg-white rounded-[2.5rem] p-6 md:p-8 pb-10 border border-slate-100 shadow-2xl shadow-primary/5 relative overflow-hidden group">
                         <div
                             class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[5rem] -mr-8 -mt-8 group-hover:scale-110 transition-transform duration-700">
                         </div>
@@ -215,11 +215,11 @@
     </section>
 
     <!-- 2. ESTADO: PREPARAÇÃO -->
-    <section id="state-preparation" class="hidden min-h-screen bg-slate-900 flex items-center justify-center p-6">
+    <section id="state-preparation" class="hidden min-h-screen bg-slate-900 flex items-center justify-center p-4 md:p-6">
         <div
-            class="max-w-6xl w-full bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row h-[85vh]">
+            class="max-w-6xl w-full bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row h-auto md:h-[85vh]">
             <!-- Coluna Esquerda: Detalhes -->
-            <div class="w-full md:w-1/2 p-12 overflow-y-auto custom-scrollbar border-r border-slate-100">
+            <div class="w-full md:w-1/2 p-6 md:p-12 overflow-y-auto custom-scrollbar border-r border-slate-100">
                 <button onclick="switchState('selection')"
                     class="flex items-center gap-2 text-slate-400 font-bold text-xs uppercase tracking-widest mb-8 hover:text-primary transition-colors">
                     <i data-lucide="chevron-left" class="w-4 h-4"></i> Voltar à seleção
@@ -241,7 +241,7 @@
             </div>
 
             <!-- Coluna Direita: Repertório -->
-            <div class="w-full md:w-1/2 bg-slate-50 p-12 flex flex-col">
+            <div class="w-full md:w-1/2 bg-slate-50 p-6 md:p-12 flex flex-col">
                 <div class="flex-1 space-y-8">
                     <div class="space-y-2 text-center">
                         <h4 class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Estratégia
@@ -276,7 +276,7 @@
                 <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
                     <i data-lucide="edit-3" class="w-4 h-4"></i>
                 </div>
-                <h1 class="text-sm font-black text-slate-800 truncate max-w-[300px]" id="action-title">Título da Redação
+                <h1 class="text-sm font-black text-slate-800 truncate max-w-[150px] md:max-w-[300px]" id="action-title">Título da Redação
                 </h1>
             </div>
 
@@ -297,7 +297,7 @@
 
         <div class="flex-1 flex overflow-hidden">
             <!-- Central Editor -->
-            <main class="flex-1 overflow-y-auto p-12 flex flex-col items-center custom-scrollbar">
+            <main class="flex-1 overflow-y-auto p-4 md:p-12 flex flex-col items-center custom-scrollbar">
                 <div
                     class="w-full max-w-[850px] bg-white shadow-2xl rounded-sm min-h-[1200px] border border-slate-200 flex flex-col relative mb-20">
                     <div class="h-16 border-b border-slate-100 flex items-center px-10 justify-between">
@@ -348,7 +348,7 @@
         <div class="fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-2xl px-6 z-[60]">
             <div
                 class="bg-slate-900/90 backdrop-blur-xl rounded-2xl p-4 flex items-center justify-between shadow-2xl border border-white/10 text-white">
-                <div class="flex items-center gap-8 px-4">
+                <div class="flex items-center gap-4 md:gap-8 px-2 md:px-4">
                     <div class="flex flex-col">
                         <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Linhas</span>
                         <div class="flex items-center gap-2">
