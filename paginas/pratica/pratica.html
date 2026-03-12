@@ -328,9 +328,14 @@
             <!-- Sidebar Repertórios Pinados -->
             <aside
                 class="w-80 bg-white border-l border-slate-200 p-6 flex flex-col gap-6 overflow-y-auto custom-scrollbar">
-                <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                    <i data-lucide="pin" class="w-4 h-4 text-primary"></i> Repertórios do Plano
-                </h3>
+                <div class="flex items-center justify-between md:block">
+                    <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                        <i data-lucide="pin" class="w-4 h-4 text-primary"></i> Repertórios do Plano
+                    </h3>
+                    <button onclick="toggleSidebar()" class="md:hidden p-2 text-slate-400 hover:text-primary transition-colors">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
                 <div id="pinned-reps-container" class="space-y-4">
                     <!-- Repertórios pinados aqui -->
                 </div>
