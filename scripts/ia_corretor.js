@@ -8,7 +8,8 @@ const IA_CORRETOR = {
     API_KEY: atob("Z3NrX2IydkRJSm9vOFAwaUxhOGFJSVQ3V0dyeWIzRllVMU9leXRlVnZnSDBISWxFMFVRY2g3TkU="),
 
     async analisarRedacao(payload) {
-        const apiKey = this.API_KEY;
+        // Tenta pegar a chave do localStorage, se não houver, usa a embutida
+        let apiKey = localStorage.getItem('groq_api_key') || this.API_KEY;
 
         const systemPrompt = `Você é um corretor oficial do ENEM de alto nível.
 Sua missão é corrigir a redação do usuário seguindo rigorosamente as 5 competências do ENEM.
@@ -60,7 +61,16 @@ ESTRUTURA JSON ESPERADA:
                 })
             });
 
-            if (!response.ok) throw new Error('Falha na comunicação com Groq');
+            if (!response.ok) {
+                if (response.status === 401) {
+                    const novaChave = prompt("A chave da API Groq expirou ou é inválida. Por favor, insira uma chave válida para continuar (gs_...):");
+                    if (novaChave) {
+                        localStorage.setItem('groq_api_key', novaChave);
+                        return this.analisarRedacao(payload); // Tenta novamente com a nova chave
+                    }
+                }
+                throw new Error(`Erro na API Groq (${response.status}): ${response.statusText}`);
+            }
 
             const data = await response.json();
             const analiseIA = JSON.parse(data.choices[0].message.content);

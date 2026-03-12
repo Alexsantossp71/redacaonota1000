@@ -515,10 +515,23 @@
 
             // Fill Motivation Texts
             const textsContainer = document.getElementById('prep-texts');
-            textsContainer.innerHTML = `
+            let motivadoresHtml = `
                 <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 italic text-slate-600 text-sm leading-relaxed">
                     "${currentTheme.descricao}"
                 </div>
+            `;
+
+            if (currentTheme.textos_apoio && currentTheme.textos_apoio.length > 0) {
+                motivadoresHtml = currentTheme.textos_apoio.map((texto, idx) => `
+                    <div class="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm space-y-2">
+                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Texto Motivador ${idx + 1}</p>
+                        <p class="text-sm text-slate-600 leading-relaxed font-medium">${texto}</p>
+                    </div>
+                `).join('');
+            }
+
+            textsContainer.innerHTML = `
+                ${motivadoresHtml}
                 <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100 space-y-3">
                     <p class="text-xs font-black text-blue-500 uppercase">Comando da Questão</p>
                     <p class="text-[13px] text-slate-700 leading-relaxed font-medium">A partir da leitura dos textos motivadores e com base nos conhecimentos construídos ao longo de sua formação, redija um texto dissertativo-argumentativo em modalidade escrita formal da língua portuguesa sobre o tema: <strong>"${currentTheme.titulo}"</strong> apresentando proposta de intervenção social.</p>

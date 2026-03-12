@@ -530,5 +530,185 @@ window.BANCO_TEMAS = [
     "eixo_tematico": "Saúde",
     "ano_aplicacao": 2014,
     "descricao": "Em 1989, quando o cantor Cazuza assumiu estar com Aids, o Brasil ainda não sabia muita coisa sobre a doença. Assustada, a população precisou discutir abertamente assuntos como fidelidade, comportamentos sexuais, drogas, transfusão de sangue, e tomar atitudes de precaução contra o mal que destruía famosos e anônimos por todo o mundo. Com o passar dos anos, as discussões sobre Aids perderam o destaque, em parte pelo surgimento de drogas que prolongam a vida dos doentes, em parte pelo distanciamento temporal entre a juventude atual e as primeiras vítimas fatais. Hoje, o governo declara que a situação está estabilizada, mas a cada ano, cerca de 35 mil brasileiros se infectam. Estima-se que, no país, haja mais de 600 mil infectados, dos quais cerca de 230 mil não sabem, ainda, que são soropositivos. Apesar disso, muitos jovens descuidam-se, principalmente em relação às práticas sexuais desprotegidas, pois declaram não ter medo da Aids. Como entender esse comportamento? O que falta à população para entender os riscos que essa doença ainda representa?"
+  },
+  {
+    "id": "tema-pos-005",
+    "titulo": "O impacto do etarismo na sociedade e no mercado de trabalho brasileiro",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": null,
+    "descricao": "A discriminação baseada na idade afeta tanto jovens quanto idosos, criando barreiras para o desenvolvimento profissional e a convivência harmoniosa entre gerações.",
+    "textos_apoio": [
+      "Texto 1: O envelhecimento da população brasileira e os novos desafios sociais.",
+      "Texto 2: Relatos de profissionais que sofrem preconceito por ter mais de 50 anos.",
+      "Texto 3: A lei que protege contra a discriminação etária no ambiente corporativo."
+    ]
+  },
+  {
+    "id": "tema-pos-006",
+    "titulo": "Desafios para combater a precariedade do saneamento básico no Brasil",
+    "eixo_tematico": "Saúde",
+    "ano_aplicacao": null,
+    "descricao": "A falta de tratamento de água e esgoto em diversas regiões do país impacta a saúde pública e a preservação do meio ambiente, além de aprofundar desigualdades sociais.",
+    "textos_apoio": [
+      "Texto 1: Dados do IBGE sobre cobertura de esgoto e água tratada no Brasil.",
+      "Texto 2: O impacto das doenças de veiculação hídrica no sistema de saúde.",
+      "Texto 3: O Marco Legal do Saneamento Básico e as metas para 2033."
+    ]
+  },
+  {
+    "id": "tema-pos-007",
+    "titulo": "Caminhos para a inclusão produtiva de pessoas em situação de rua",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": null,
+    "descricao": "O aumento da população de rua exige políticas que vão além do assistencialismo, focando na reintegração social através do trabalho e da moradia digna.",
+    "textos_apoio": [
+      "Texto 1: O perfil da população em situação de rua nos grandes centros urbanos.",
+      "Texto 2: Projetos de capacitação profissional e empregabilidade para pessoas vulneráveis.",
+      "Texto 3: O papel do Estado e do terceiro setor na garantia de direitos fundamentais."
+    ]
+  },
+  {
+    "id": "tema-pos-008",
+    "titulo": "O papel do esporte como ferramenta de inclusão social em comunidades vulneráveis",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": null,
+    "descricao": "O esporte atua como mecanismo de ascensão social, disciplina e afastamento da criminalidade para jovens em áreas de risco.",
+    "textos_apoio": [
+      "Texto 1: Exemplos de atletas brasileiros que saíram da periferia através do esporte.",
+      "Texto 2: O impacto social das Vilas Olímpicas e projetos comunitários.",
+      "Texto 3: Esporte, educação e formação de caráter: uma tríade essencial."
+    ]
+  },
+  {
+    "id": "tema-pos-009",
+    "titulo": "A importância da educação financeira para a autonomia dos jovens brasileiros",
+    "eixo_tematico": "Educação",
+    "ano_aplicacao": null,
+    "descricao": "A falta de conhecimento sobre finanças leva ao endividamento precoce e à dificuldade de planejamento de vida das novas gerações.",
+    "textos_apoio": [
+      "Texto 1: Pesquisas sobre o nível de endividamento dos jovens no Brasil.",
+      "Texto 2: A inclusão da educação financeira na Base Nacional Comum Curricular (BNCC).",
+      "Texto 3: Como o controle financeiro impacta a saúde mental e a estabilidade familiar."
+    ]
+  },
+  {
+    "id": "tema-pos-010",
+    "titulo": "Desafios para a preservação ambiental no Pantanal e no Cerrado",
+    "eixo_tematico": "Meio Ambiente",
+    "ano_aplicacao": null,
+    "descricao": "O avanço do desmatamento e das queimadas nesses biomas ameaça a biodiversidade e os recursos hídricos fundamentais para o país.",
+    "textos_apoio": [
+      "Texto 1: O impacto do agronegócio extensivo na fauna e flora do Cerrado.",
+      "Texto 2: Relatos sobre as grandes queimadas no Pantanal e a devastação da vida selvagem.",
+      "Texto 3: Estratégias de desenvolvimento sustentável e fiscalização ambiental."
+    ]
+  },
+  {
+    "id": "tema-pos-011",
+    "titulo": "O impacto das bets e dos jogos de azar online na economia das famílias brasileiras",
+    "eixo_tematico": "Economia",
+    "ano_aplicacao": null,
+    "descricao": "A popularização das apostas online cria riscos de vício e comprometimento do orçamento familiar, especialmente entre as classes mais baixas.",
+    "textos_apoio": [
+      "Texto 1: A explosão do mercado de apostas esportivas no Brasil.",
+      "Texto 2: O lado obscuro dos jogos de azar: relatos de endividamento patológico.",
+      "Texto 3: A necessidade de regulamentação e proteção ao consumidor no ambiente digital."
+    ]
+  },
+  {
+    "id": "tema-pos-012",
+    "titulo": "Caminhos para combater a exploração do trabalho análogo à escravidão no século XXI",
+    "eixo_tematico": "Cidadania",
+    "ano_aplicacao": null,
+    "descricao": "A persistência de condições degradantes de trabalho em diversos setores exige fiscalização rigorosa e punição exemplar para os infratores.",
+    "textos_apoio": [
+      "Texto 1: Operações de resgate de trabalhadores em condições de escravidão moderna no Brasil.",
+      "Texto 2: A 'Lista Suja' do trabalho escravo e o papel dos órgãos de fiscalização.",
+      "Texto 3: Raízes históricas e a vulnerabilidade social que alimenta o ciclo da exploração."
+    ]
+  },
+  {
+    "id": "tema-pos-013",
+    "titulo": "A importância da democratização do acesso à saúde mental no SUS",
+    "eixo_tematico": "Saúde",
+    "ano_aplicacao": null,
+    "descricao": "O aumento da demanda por cuidados psicológicos e psiquiátricos desafia a capacidade de atendimento da rede pública de saúde.",
+    "textos_apoio": [
+      "Texto 1: O impacto da pandemia de COVID-19 na saúde mental da população.",
+      "Texto 2: O papel dos CAPS (Centros de Atenção Psicossocial) na reforma psiquiátrica.",
+      "Texto 3: Desafios para a contratação de profissionais e expansão do atendimento no SUS."
+    ]
+  },
+  {
+    "id": "tema-pos-014",
+    "titulo": "Desafios para a integração social de imigrantes e refugiados no Brasil",
+    "eixo_tematico": "Cidadania",
+    "ano_aplicacao": null,
+    "descricao": "O acolhimento de pessoas vindas de crises humanitárias exige políticas de integração que garantam documentação, trabalho e combate à xenofobia.",
+    "textos_apoio": [
+      "Texto 1: O aumento do fluxo migratório de venezuelanos e haitianos para o Brasil.",
+      "Texto 2: A Lei de Migração brasileira e a garantia de direitos humanos.",
+      "Texto 3: Barreiras linguísticas e preconceito no processo de inserção no mercado de trabalho."
+    ]
+  },
+  {
+    "id": "tema-pos-015",
+    "titulo": "O impacto da desinformação e das fake news na saúde pública",
+    "eixo_tematico": "Tecnologia",
+    "ano_aplicacao": null,
+    "descricao": "A disseminação de notícias falsas sobre vacinas e tratamentos médicos coloca em risco a vida da população e a eficácia de campanhas nacionais.",
+    "textos_apoio": [
+      "Texto 1: A queda nos índices de vacinação infantil no Brasil e a influência das fakenews.",
+      "Texto 2: O papel das redes sociais na velocidade da propagação de informações falsas.",
+      "Texto 3: Estratégias de educação mediática para combater a desinformação na saúde."
+    ]
+  },
+  {
+    "id": "tema-pos-016",
+    "titulo": "Caminhos para garantir a mobilidade urbana sustentável nas grandes cidades",
+    "eixo_tematico": "Meio Ambiente",
+    "ano_aplicacao": null,
+    "descricao": "O excesso de carros e a deficiência do transporte público geram engarrafamentos e poluição, exigindo soluções alternativas como ciclovias e modais elétricos.",
+    "textos_apoio": [
+      "Texto 1: O custo social e econômico do tempo perdido nos congestionamentos.",
+      "Texto 2: Experiências internacionais de cidades que privilegiaram o transporte público e bicicletas.",
+      "Texto 3: A importância da integração de diferentes modais na mobilidade urbana moderna."
+    ]
+  },
+  {
+    "id": "tema-pos-017",
+    "titulo": "A importância do incentivo à doação de órgãos e tecidos no Brasil",
+    "eixo_tematico": "Saúde",
+    "ano_aplicacao": null,
+    "descricao": "A falta de informação e as barreiras familiares impedem que o Brasil reduza as extensas filas de espera por transplantes.",
+    "textos_apoio": [
+      "Texto 1: O funcionamento do Sistema Nacional de Transplantes (SNT).",
+      "Texto 2: Fatores que levam à negativa familiar no momento da doação.",
+      "Texto 3: Campanhas de conscientização e a importância de declarar o desejo de ser doador."
+    ]
+  },
+  {
+    "id": "tema-pos-018",
+    "titulo": "Desafios para combater o cyberbullying e a violência no ambiente escolar digital",
+    "eixo_tematico": "Sociedade",
+    "ano_aplicacao": null,
+    "descricao": "O anonimato e a rapidez das redes sociais amplificam formas degressão entre jovens, exigindo intervenção pedagógica e jurídica.",
+    "textos_apoio": [
+      "Texto 1: Consequências psicológicas do cyberbullying para as vítimas adolescentes.",
+      "Texto 2: O papel da escola e da família na mediação de conflitos digitais.",
+      "Texto 3: Legislação brasileira sobre crimes de injúria e difamação na internet."
+    ]
+  },
+  {
+    "id": "tema-pos-019",
+    "titulo": "O papel da cultura periférica na valorização da identidade nacional",
+    "eixo_tematico": "Cultura",
+    "ano_aplicacao": null,
+    "descricao": "O reconhecimento de movimentos como o Slam, o Funk e o Graffiti como expressões artísticas legítimas contribui para uma visão plural e inclusiva da cultura brasileira.",
+    "textos_apoio": [
+      "Texto 1: A força transformadora dos projetos culturais em favelas e periferias.",
+      "Texto 2: Da marginalização ao mainstream: a trajetória da música urbana no Brasil.",
+      "Texto 3: A cultura como ferramenta de resistência e afirmação de direitos."
+    ]
   }
-];
+]

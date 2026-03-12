@@ -193,6 +193,13 @@
                 </div>
             </div>
 
+            <!-- Filtro de Tipo (Oficiais/Possíveis) -->
+            <div class="flex flex-wrap gap-3 mb-8 pb-4 border-b border-slate-100" id="filtro-tipo">
+                <button class="tipo-btn px-6 py-2.5 rounded-full bg-primary text-white font-bold text-sm shadow-lg shadow-primary/20 transition-all" data-tipo="todos">Todos</button>
+                <button class="tipo-btn px-6 py-2.5 rounded-full bg-white text-slate-600 border border-slate-200 font-bold text-sm transition-all hover:bg-slate-50" data-tipo="oficiais">Oficiais (ENEM)</button>
+                <button class="tipo-btn px-6 py-2.5 rounded-full bg-white text-slate-600 border border-slate-200 font-bold text-sm transition-all hover:bg-slate-50" data-tipo="possiveis">Sugestões</button>
+            </div>
+
             <div id="temas-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Loading State -->
                 <div class="col-span-full py-20 flex flex-col items-center justify-center text-slate-400">
@@ -219,6 +226,7 @@
 
             let todosTemas = [];
             let filtroAtual = 'Todos';
+            let tipoAtual = 'todos';
 
             const normalizar = (str) => {
                 if (!str) return "";
@@ -237,8 +245,12 @@
                     const matchBusca = !termoBusca ||
                         normalizar(t.titulo).includes(termoBusca) ||
                         (t.ano_aplicacao && t.ano_aplicacao.toString().includes(termoBusca));
+                    
+                    let matchTipo = true;
+                    if (tipoAtual === 'oficiais') matchTipo = !!t.ano_aplicacao;
+                    if (tipoAtual === 'possiveis') matchTipo = !t.ano_aplicacao;
 
-                    return matchEixo && matchBusca;
+                    return matchEixo && matchBusca && matchTipo;
                 });
 
                 renderizarGrid(filtrados);
@@ -326,9 +338,6 @@
                                 <a href="../pratica/pratica.html?tema=${tema.id}" class="flex-1 bg-primary text-white px-6 py-3 rounded-xl font-bold text-xs shadow-lg shadow-primary/20 hover:scale-105 transition-transform flex items-center justify-center gap-2">
                                     <i data-lucide="pen-tool" class="w-4 h-4"></i> Praticar este tema
                                 </a>
-                                <button class="p-3 text-slate-400 hover:text-primary hover:bg-slate-50 rounded-xl transition-all">
-                                    <i data-lucide="bookmark" class="w-5 h-5"></i>
-                                </button>
                             </div>
                         </div>
                     `;
@@ -357,10 +366,22 @@
             botoesEixo.forEach(btn => {
                 btn.addEventListener('click', () => {
                     botoesEixo.forEach(b => {
-                        b.className = "eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all";
+                        b.className = "eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl text-slate-600 hover:bg-white font-bold text-sm transition-all whitespace-nowrap";
                     });
-                    btn.className = "eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl bg-primary text-white font-bold text-sm shadow-lg shadow-primary/20 transition-all";
+                    btn.className = "eixo-btn flex items-center gap-3 px-4 py-3 rounded-2xl bg-primary text-white font-bold text-sm shadow-lg shadow-primary/20 transition-all whitespace-nowrap";
                     filtroAtual = btn.dataset.eixo;
+                    aplicarFiltros();
+                });
+            });
+
+            const botoesTipo = document.querySelectorAll('.tipo-btn');
+            botoesTipo.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    botoesTipo.forEach(b => {
+                        b.className = "tipo-btn px-6 py-2.5 rounded-full bg-white text-slate-600 border border-slate-200 font-bold text-sm transition-all hover:bg-slate-50";
+                    });
+                    btn.className = "tipo-btn px-6 py-2.5 rounded-full bg-primary text-white font-bold text-sm shadow-lg shadow-primary/20 transition-all";
+                    tipoAtual = btn.dataset.tipo;
                     aplicarFiltros();
                 });
             });
