@@ -4,12 +4,9 @@
  */
 
 const IA_CORRETOR = {
-    // Chave Groq codificada em Base64 para evitar bloqueio do GitHub Secret Scanning
-    API_KEY: atob("Z3NrX2IydkRJSm9vOFAwaUxhOGFJSVQ3V0dyeWIzRllVMU9leXRlVnZnSDBISWxFMFVRY2g3TkU="),
-
     async analisarRedacao(payload) {
-        // Tenta pegar a chave do localStorage, se não houver, usa a embutida
-        let apiKey = localStorage.getItem('groq_api_key') || this.API_KEY;
+        // Tenta pegar a chave do localStorage (caso o usuário tenha inserido uma própria), senão envia null para a Vercel usar o server secret dela
+        let apiKey = localStorage.getItem('groq_api_key') || null;
 
         const systemPrompt = `Você é um corretor oficial do ENEM de alto nível.
 Sua missão é corrigir a redação do usuário seguindo rigorosamente as 5 competências do ENEM.
