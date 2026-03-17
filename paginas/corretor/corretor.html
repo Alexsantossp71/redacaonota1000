@@ -317,6 +317,11 @@
                 textContainer.innerHTML = `<p class="text-center text-red-400 py-20">Erro: ${analise.message}</p>`;
                 return;
             }
+
+            if (analise.status === "unauthorized") {
+                exibirModalChaveAPI(payload);
+                return;
+            }
             
             renderizarAnalise(analise, payload.texto);
         }
@@ -391,6 +396,70 @@
 
             // Converte quebras de linha em parágrafos
             return textoProcessado.split('\n').map(p => p.trim() ? `<p>${p}</p>` : '').join('');
+        }
+
+        function exibirModalChaveAPI(payload) {
+            // Cria um modal usando Tailwind para experiência nativa
+            const modalHtml = `
+                <div id="modal-api-key" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/50 backdrop-blur-sm px-4">
+                    <div class="bg-white dark:bg-slate-900 w-full max-w-md rounded-2xl shadow-xl overflow-hidden border border-slate-200 dark:border-slate-800">
+                        <div class="p-6">
+                            <div class="w-12 h-12 bg-warning/10 rounded-full flex items-center justify-center text-warning mb-4">
+                                <span class="material-symbols-outlined text-2xl">key</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Chave de Acesso Expirou</h3>
+                            <p class="text-sm text-slate-500 mb-6">A sua chave do Groq Cloud é inválida ou estourou o limite de requisições gratuitas. Insira uma nova chave válida (gs_...) para continuar.</p>
+                            
+                            <input type="password" id="input-nova-chave" placeholder="Chave Groq API (gs_...)" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all mb-4 text-sm" />
+                            
+                            <div class="flex gap-3 justify-end">
+                                <button id="btn-cancelar-chave" class="px-4 py-2 text-sm font-bold text-slate-500 hover:text-slate-700 transition-colors">Cancelar</button>
+                                <button id="btn-salvar-chave" class="px-5 py-2 bg-primary text-white text-sm font-bold rounded-lg shadow-lg hover:shadow-primary/30 transition-all">Salvar e Continuar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Adiciona ao DOM
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+            const modal = document.getElementById('modal-api-key');
+            const input = document.getElementById('input-nova-chave');
+            const btnSalvar = document.getElementById('btn-salvar-chave');
+            const btnCancelar = document.getElementById('btn-cancelar-chave');
+
+            // Focar input
+            setTimeout(() => input.focus(), 100);
+
+            // Ações
+            const fecharModal = () => {
+                modal.remove();
+            };
+
+            const salvarERetentar = async () => {
+                const novaChave = input.value.trim();
+                if (!novaChave) {
+                    input.classList.add('border-red-500', 'ring-red-500');
+                    return;
+                }
+                
+                // Atualiza localStorage
+                localStorage.setItem('groq_api_key', novaChave);
+                fecharModal();
+                
+                // Reinicia a análise com a nova tentativa
+                iniciarAnalise();
+            };
+
+            btnCancelar.addEventListener('click', () => {
+                fecharModal();
+                document.getElementById('text-container').innerHTML = `<p class="text-center text-red-400 py-20">Análise cancelada. Sem chave de acesso, a Inteligência Artificial não pode analisar o texto.</p>`;
+            });
+            
+            btnSalvar.addEventListener('click', salvarERetentar);
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') salvarERetentar();
+            });
         }
     </script>
 </body>

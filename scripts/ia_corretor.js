@@ -62,12 +62,9 @@ ESTRUTURA JSON ESPERADA:
             });
 
             if (!response.ok) {
-                if (response.status === 401) {
-                    const novaChave = prompt("A chave da API Groq expirou ou é inválida. Por favor, insira uma chave válida para continuar (gs_...):");
-                    if (novaChave) {
-                        localStorage.setItem('groq_api_key', novaChave);
-                        return this.analisarRedacao(payload); // Tenta novamente com a nova chave
-                    }
+                if (response.status === 401 || response.status === 403) {
+                    // Retorna um status específico para que a UI lidere o pedido da chave de forma amigável
+                    return { status: "unauthorized", message: "A chave da API Groq expirou ou é inválida." };
                 }
                 throw new Error(`Erro na API Groq (${response.status}): ${response.statusText}`);
             }
