@@ -4,14 +4,16 @@ export const config = {
 
 export default async function handler(req) {
   // Configuração básica do CORS para requisições de preflight (OPTIONS)
+  const corsHeaders = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, OPTIONS, PATCH, DELETE, POST, PUT',
+      'Access-Control-Allow-Headers': 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization',
+  };
+
   if (req.method === 'OPTIONS') {
     return new Response(null, {
       status: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'OPTIONS, POST',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      },
+      headers: corsHeaders,
     });
   }
 
@@ -19,7 +21,7 @@ export default async function handler(req) {
   if (req.method !== 'POST') {
     return new Response(JSON.stringify({ error: 'Método não permitido' }), {
       status: 405,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   }
 
@@ -27,8 +29,13 @@ export default async function handler(req) {
     // Tenta receber a API Key do ambiente da Vercel
     const serverKey = process.env.GROQ_API_KEY;
     
-    // Pega o body enviado pelo frontend (tema e redação) e a apiKey passiva (se ainda tiver via frontend config local)
-    const body = await req.json();
+    // Pega o body enviado pelo frontend (tema e redação) e a apiKey passiva
+    let body = {};
+    try {
+        body = await req.json();
+    } catch(e) {
+        console.warn("Nenhum body JSON encontrado ou mal formatado.");
+    }
     
     // Lógica de fallback: Usa a do site, se existir, senão usa a secreta do backend
     const groqKeyToUse = body.apiKey || serverKey;
@@ -107,14 +114,14 @@ ESTRUTURA JSON ESPERADA:
        data: data
     }), {
        status: 200,
-       headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
 
   } catch (error) {
     console.error("Erro interno no Edge Proxy:", error);
     return new Response(JSON.stringify({ status: "error", message: error.message }), {
        status: 500,
-       headers: { 'Content-Type': 'application/json' },
+       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   }
 }
