@@ -61,7 +61,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Local Data -->
-    <script src="paginas/dados/banco_redacoes.js"></script>
+    <script src="paginas/dados/banco_redacoes.js" defer></script>
 
     <style>
         /* Modern Design System Tokens */
@@ -173,7 +173,7 @@
                     Começar Agora
                 </a>
                 
-                <button id="menu-toggle" class="md:hidden p-2 text-slate-600 hover:text-primary transition-colors">
+                <button id="menu-toggle" aria-label="Abrir menu" class="md:hidden p-2 text-slate-600 hover:text-primary transition-colors">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
