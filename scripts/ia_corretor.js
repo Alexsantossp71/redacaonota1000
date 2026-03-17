@@ -44,32 +44,38 @@ ESTRUTURA JSON ESPERADA:
         const userPrompt = `Tema: ${payload.tema}\n\nRedação:\n${payload.texto}`;
 
         try {
-            const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+            // Nova Rota segura: O Frontend não faz mais request no Groq (evita CORS e roubo de chaves). 
+            // Ele pede ao nosso Backend Serverless na Vercel (/api/corrigir-redacao) enviando opcionalmente a chave do localStorage (caso o usuário queira usar chave própria).
+            const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            const apiUrl = isLocal ? 'http://localhost:3000/api/corrigir-redacao' : '/api/corrigir-redacao';
+
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${apiKey}`,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    model: "llama-3.3-70b-versatile",
-                    messages: [
-                        { role: "system", content: systemPrompt },
-                        { role: "user", content: userPrompt }
-                    ],
-                    temperature: 0.3,
-                    response_format: { type: "json_object" }
+                    tema: payload.tema,
+                    texto: payload.texto,
+                    apiKey: apiKey // Passamos a do localStorage como fallback. Se for undefined, a Vercel usa o server secret dela.
                 })
             });
 
             if (!response.ok) {
                 if (response.status === 401 || response.status === 403) {
-                    // Retorna um status específico para que a UI lidere o pedido da chave de forma amigável
-                    return { status: "unauthorized", message: "A chave da API Groq expirou ou é inválida." };
+                    return { status: "unauthorized", message: "A chave de API está inválida ou não foi configurada." };
                 }
-                throw new Error(`Erro na API Groq (${response.status}): ${response.statusText}`);
+                throw new Error(`Erro no Servidor (${response.status}): ${response.statusText}`);
             }
 
-            const data = await response.json();
+            const wrapperData = await response.json();
+            
+            if (wrapperData.status === "error") {
+                throw new Error(wrapperData.message);
+            }
+
+            // O nosso proxy retorna { status: 'success', data: { choices: [...] } }
+            const data = wrapperData.data;
             const analiseIA = JSON.parse(data.choices[0].message.content);
 
             return {
