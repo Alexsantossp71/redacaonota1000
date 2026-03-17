@@ -29,7 +29,7 @@ export default async function handler(req) {
     // Tenta receber a API Key do ambiente da Vercel
     const serverKey = process.env.GROQ_API_KEY;
     
-    // Pega o body enviado pelo frontend (tema e redação) e a apiKey passiva
+    // Pega o body enviado pelo frontend (tema e redação) 
     let body = {};
     try {
         body = await req.json();
@@ -37,8 +37,9 @@ export default async function handler(req) {
         console.warn("Nenhum body JSON encontrado ou mal formatado.");
     }
     
-    // Lógica de fallback: Usa a do site, se existir, senão usa a secreta do backend
-    const groqKeyToUse = body.apiKey || serverKey;
+    // Agora que temos nosso Backend Seguro, VAMOS IGNORAR completamente 
+    // qualquer chave que vier do frontend (pra evitar chaves expiradas em cache local)
+    const groqKeyToUse = serverKey;
 
     if (!groqKeyToUse) {
          return new Response(JSON.stringify({ 
