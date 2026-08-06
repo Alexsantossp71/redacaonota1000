@@ -1,0 +1,39 @@
+# =========================================
+#  redacaonota1000 — .gitignore
+# =========================================
+
+# Ferramenta de agente de IA (lixo gerado, não é código do projeto)
+.agent/
+.sisyphus/
+AGENTS.md
+
+# Python (scripts de coleta de dados)
+__pycache__/
+*.py[cod]
+*.pickle
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Node / Vercel
+node_modules/
+.vercel/
+.next/
+out/
+
+# IDE / editores
+.idea/
+.vscode/
+*.swp
+
+# SO / utilitários
+.DS_Store
+Thumbs.db
+
+# =========================================
+#  IMPORTANTE: NÃO ignore estes arquivos
+#  .nojekyll  → necessário para o GitHub Pages
+#  vercel.json → configuração do deploy
+#  paginas/dados/*.js → dados do site (versionados de propósito)
+# =========================================
