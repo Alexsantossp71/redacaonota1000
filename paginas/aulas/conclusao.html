@@ -15,6 +15,18 @@
     <!-- Tailwind CSS (pre-built) -->
     <link rel="stylesheet" href="../../assets/css/tailwind.min.css">
     <style>
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
         body {
             font-family: 'Outfit', sans-serif;
         }
@@ -58,6 +70,9 @@
                     <a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary"
                         href="../pratica/pratica.html">Prática</a>
                 </nav>
+                <button id="menu-toggle" aria-label="Abrir menu" class="md:hidden p-2 text-slate-600 hover:text-primary transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
 
                 <div class="flex items-center gap-4">
                     <div
@@ -67,6 +82,18 @@
                     </div>
                 </div>
             </div>
+        </div>
+    
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="md:hidden fixed top-20 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-slate-100 p-6 z-[90]">
+            <ul class="flex flex-col gap-4 text-base font-bold text-slate-800">
+                <li><a href="../../index.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="home" class="w-5 h-5"></i> Inicio</a></li>
+                <li><a href="../aulas/aulas.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="monitor-play" class="w-5 h-5"></i> Aulas</a></li>
+                <li><a href="../biblioteca/biblioteca.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="library" class="w-5 h-5"></i> Biblioteca</a></li>
+                <li><a href="../temas/temas.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="flame" class="w-5 h-5"></i> Temas</a></li>
+                <li><a href="../repertorio/repertorio.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="database" class="w-5 h-5"></i> Repertorio</a></li>
+                <li><a href="../pratica/pratica.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="pencil" class="w-5 h-5"></i> Pratica</a></li>
+            </ul>
         </div>
     </header>
 
@@ -196,6 +223,17 @@
                 reservados.</p>
         </div>
     </footer>
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('active');
+    });
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobile-menu a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('active');
+        });
+    });
+</script>
 </body>
 
 </html>

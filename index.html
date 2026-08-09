@@ -20,7 +20,6 @@
     <!-- Tailwind CSS (pre-built) -->
     <link rel="stylesheet" href="assets/css/tailwind.min.css">
 
-    <!-- Tailwind CSS v4 CDN (Using 3.4.x as proxy but following v4 principles) -->
     <!-- Lucide Icons (Professional SVG) -->
     <script src="https://unpkg.com/lucide@0.460.0"></script>
     <style>
@@ -167,7 +166,7 @@
                     Metodologia Redação Imbatível
                 </div>
 
-                <h1 class="text-4xl md:text-6xl lg:text-8xl font-black leading-[1.1] md:leading-[0.95] text-deep tracking-tighter text-balanced">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black leading-[1.1] md:leading-[0.95] text-deep tracking-tighter text-balanced">
                     Sua jornada rumo à <span
                         class="text-primary underline decoration-accent/40 decoration-[10px] md:decoration-[20px] underline-offset-[-5px] md:underline-offset-[-10px]">Nota
                         1000</span> começa aqui.
@@ -235,10 +234,10 @@
                 ao mestre da escrita.</p>
         </div>
 
-        <div id="servicos" class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 h-auto md:h-[600px]">
+        <div id="servicos" class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-6 h-auto lg:h-[600px]">
             <!-- Card 1: Main Focus (Asymmetric Span) -->
             <a href="paginas/biblioteca/biblioteca.html"
-                class="md:col-span-2 md:row-span-1 bento-card bg-primary p-10 rounded-[2.5rem] flex flex-col justify-between overflow-hidden relative group cursor-pointer">
+                class="lg:col-span-2 lg:row-span-1 bento-card bg-primary p-10 rounded-[2.5rem] flex flex-col justify-between overflow-hidden relative group cursor-pointer">
                 <div class="z-10 relative space-y-4">
                     <div
                         class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-white backdrop-blur-md border border-white/20">
@@ -259,7 +258,7 @@
 
             <!-- Card 2: Vertical Secondary -->
             <a href="paginas/temas/temas.html"
-                class="md:col-span-1 md:row-span-2 bento-card bg-white p-10 rounded-[2.5rem] flex flex-col justify-between border border-slate-100 shadow-sm cursor-pointer hover:border-primary/30">
+                class="lg:col-span-1 lg:row-span-2 bento-card bg-white p-10 rounded-[2.5rem] flex flex-col justify-between border border-slate-100 shadow-sm cursor-pointer hover:border-primary/30">
                 <div class="space-y-6">
                     <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
                         <i data-lucide="flame" class="w-8 h-8"></i>
@@ -285,7 +284,7 @@
 
             <!-- Card 3: Small Square -->
             <a href="paginas/aulas/aulas.html"
-                class="md:col-span-1 bento-card bg-slate-900 p-10 rounded-[2.5rem] flex flex-col justify-center gap-4 cursor-pointer">
+                class="lg:col-span-1 bento-card bg-slate-900 p-10 rounded-[2.5rem] flex flex-col justify-center gap-4 cursor-pointer">
                 <i data-lucide="monitor-play" class="w-10 h-10 text-primary"></i>
                 <h3 class="text-xl font-black text-white">Aulas de Repertório</h3>
                 <p class="text-sm text-slate-400 font-medium">Filosofia, sociologia e história aplicada à sua redação.
@@ -294,7 +293,7 @@
 
             <!-- Card 4: Small Square -->
             <a href="paginas/pratica/pratica.html"
-                class="md:col-span-1 bento-card bg-white border border-slate-100 p-10 rounded-[2.5rem] flex flex-col justify-center gap-4 cursor-pointer hover:border-accent/30 shadow-sm">
+                class="lg:col-span-1 bento-card bg-white border border-slate-100 p-10 rounded-[2.5rem] flex flex-col justify-center gap-4 cursor-pointer hover:border-accent/30 shadow-sm">
                 <i data-lucide="pencil-line" class="w-10 h-10 text-accent"></i>
                 <h3 class="text-xl font-black text-deep">Prática Imediata</h3>
                 <p class="text-sm text-slate-500 font-medium">Escreva agora e receba o feedback detalhado em até 24h.
@@ -315,17 +314,15 @@
                         redação conta com comentários de especialistas sobre os repertórios utilizados.</p>
                 </div>
                 <a href="paginas/biblioteca/biblioteca.html"
-                    class="px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 text-white rounded-2xl font-black transition-all flex items-center gap-3 cursor-pointer">
+                    class="px-8 py-4 sm:py-4 bg-white/5 border border-white/10 hover:bg-white/10 text-white rounded-2xl font-black transition-all flex items-center justify-center sm:justify-start gap-3 cursor-pointer w-full sm:w-auto">
                     Ver todas as redações
                     <i data-lucide="move-right" class="w-5 h-5"></i>
                 </a>
             </div>
 
-            <div id="redacoes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div id="redacoes-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
                 <!-- Dynamic cards will be injected here -->
-                <div class="col-span-full py-20 text-center text-slate-500 font-bold animate-pulse">
-                    Carregando inspirações...
-                </div>
+                <div class="col-span-full py-12 text-center text-slate-500 font-medium"><p class="text-sm">As redacoes serao exibidas quando os dados carregarem.</p></div>
             </div>
         </div>
     </section>
@@ -356,10 +353,8 @@
                 </ul>
             </div>
         </div>
-
-        </div>
         <div
-            class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-black text-slate-400 uppercase tracking-widest">
+            class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-slate-500 uppercase tracking-widest">
             <span>© 2024 Portal Redação Nota 1000. All Rights Reserved.</span>
             <span>Design by Antigravity Digital Architecture</span>
         </div>
