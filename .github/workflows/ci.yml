@@ -12,5 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verificar site (JSON, referencias e paginas)
+      - name: Verificar site (JSON, referências e páginas)
         run: python3 scripts/verify_site.py
