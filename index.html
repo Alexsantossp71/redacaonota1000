@@ -17,52 +17,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
+    <!-- Tailwind CSS (pre-built) -->
+    <link rel="stylesheet" href="assets/css/tailwind.min.css">
 
     <!-- Tailwind CSS v4 CDN (Using 3.4.x as proxy but following v4 principles) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        // Using OKLCH-inspired hex mappings
-                        primary: '#1E40AF', // Deep scholarly blue
-                        accent: '#10B981',  // Success green
-                        canvas: '#F8FAFC',  // High-end background
-                        deep: '#0F172A',    // Text color
-                    },
-                    fontFamily: {
-                        display: ['Outfit', 'sans-serif'],
-                        body: ['Inter', 'sans-serif'],
-                    },
-                    borderRadius: {
-                        '3xl': '1.5rem',
-                        '4xl': '2rem',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- p5.js for Algorithmic Art -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
-
     <!-- Lucide Icons (Professional SVG) -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Local Data -->
-    <script src="paginas/dados/banco_redacoes.js" defer></script>
-
+    <script src="https://unpkg.com/lucide@0.460.0"></script>
     <style>
         /* Modern Design System Tokens */
         :root {
@@ -105,18 +65,6 @@
             opacity: 1;
             pointer-events: auto;
         }
-
-        /* Hero Canvas Alignment */
-        #hero-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            opacity: 0.6;
-        }
-
         .hero-content {
             position: relative;
             z-index: 10;
@@ -135,6 +83,19 @@
         /* High-Craft Contrast */
         .text-balanced {
             text-wrap: balance;
+        }
+    </style>
+
+    <style>
+        /* Animated gradient hero background (animated gradient) */
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .hero-animated-bg {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, rgba(16, 185, 129, 0.03) 50%, rgba(30, 64, 175, 0.05) 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
         }
     </style>
 </head>
@@ -198,7 +159,6 @@
 
     <!-- Hero Section with Algorithmic Art (Philosophy: Knowledge Synthesis) -->
     <section class="relative min-h-[90vh] flex items-center pt-24 overflow-hidden border-b border-slate-100">
-        <div id="hero-canvas"></div>
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center hero-content">
             <div class="space-y-8 py-12">
                 <div
@@ -404,159 +364,6 @@
             <span>Design by Antigravity Digital Architecture</span>
         </div>
     </footer>
-
-
-    <!-- p5.js Custom Implementation (Knowledge Synthesis Movement) -->
-    <script>
-        let particles = [];
-        const PARTICLE_COUNT = 60;
-
-        function setup() {
-            const canvas = createCanvas(windowWidth, windowHeight);
-            canvas.parent('hero-canvas');
-
-            for (let i = 0; i < PARTICLE_COUNT; i++) {
-                particles.push(new Particle());
-            }
-
-            noFill();
-            strokeCap(ROUND);
-        }
-
-        function draw() {
-            clear();
-
-            // Subtle ambient movement
-            particles.forEach(p => {
-                p.update();
-                p.display();
-                p.connect(particles);
-            });
-        }
-
-        class Particle {
-            constructor() {
-                this.reset();
-            }
-
-            reset() {
-                this.pos = createVector(random(width), random(height));
-                this.vel = createVector(random(-0.5, 0.5), random(-0.5, 0.5));
-                this.size = random(2, 6);
-                this.color = color(30, 64, 175, random(20, 50)); // Primary blue with variable alpha
-            }
-
-            update() {
-                this.pos.add(this.vel);
-
-                // Mouse interaction (UI-UX Pro Max: Dynamic Feedback)
-                let mouseDist = dist(this.pos.x, this.pos.y, mouseX, mouseY);
-                if (mouseDist < 200) {
-                    let force = createVector(this.pos.x - mouseX, this.pos.y - mouseY);
-                    force.setMag(0.2);
-                    this.pos.add(force);
-                }
-
-                // Warp edges
-                if (this.pos.x < 0) this.pos.x = width;
-                if (this.pos.x > width) this.pos.x = 0;
-                if (this.pos.y < 0) this.pos.y = height;
-                if (this.pos.y > height) this.pos.y = 0;
-            }
-
-            display() {
-                noStroke();
-                fill(this.color);
-                circle(this.pos.x, this.pos.y, this.size);
-            }
-
-            connect(others) {
-                others.forEach(other => {
-                    let d = dist(this.pos.x, this.pos.y, other.pos.x, other.pos.y);
-                    if (d < 150) {
-                        stroke(30, 64, 175, map(d, 0, 150, 40, 0));
-                        strokeWeight(map(d, 0, 150, 1.5, 0.1));
-                        line(this.pos.x, this.pos.y, other.pos.x, other.pos.y);
-                    }
-                });
-            }
-        }
-
-        function windowResized() {
-            resizeCanvas(windowWidth, windowHeight);
-        }
-
-        // Initialize Icons
-        lucide.createIcons();
-
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            const icon = menuToggle.querySelector('i');
-            if (mobileMenu.classList.contains('active')) {
-                icon.setAttribute('data-lucide', 'x');
-            } else {
-                icon.setAttribute('data-lucide', 'menu');
-            }
-            lucide.createIcons();
-        });
-
-        // Close menu on resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) {
-                mobileMenu.classList.remove('active');
-            }
-        });
-
-        // Dynamic Random Essays
-        function renderRandomEssays() {
-            const grid = document.getElementById('redacoes-grid');
-            if (!window.BANCO_REDACOES || !grid) return;
-
-            // Shuffle and pick 4
-            const sorted = [...window.BANCO_REDACOES].sort(() => 0.5 - Math.random());
-            const selection = sorted.slice(0, 4);
-
-            grid.innerHTML = '';
-            selection.forEach(redacao => {
-                const card = document.createElement('a');
-                card.href = `paginas/biblioteca/ler-redacao.html?id=${redacao.id}`;
-                card.className = "group bg-slate-800/50 rounded-[2.5rem] p-8 space-y-8 border border-white/5 hover:border-primary/50 transition-all cursor-pointer relative overflow-hidden";
-
-                card.innerHTML = `
-                    <div class="absolute top-0 right-0 p-6">
-                        <div class="px-4 py-1.5 bg-accent text-white text-[10px] font-black rounded-full uppercase tracking-widest shadow-lg shadow-accent/20">
-                            Nota ${redacao.nota_final || 1000}
-                        </div>
-                    </div>
-
-                    <div class="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-12">
-                        <i data-lucide="file-text" class="w-9 h-9"></i>
-                    </div>
-
-                    <div class="space-y-4">
-                        <h4 class="text-xl font-black text-white leading-tight group-hover:text-primary transition-colors">
-                            ${redacao.titulo}
-                        </h4>
-                    </div>
-
-
-                    <div class="pt-6 flex justify-between items-center text-xs font-black tracking-widest text-slate-600">
-                        <span>ENEM ${redacao.ano_enem}</span>
-                        <i data-lucide="external-link" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-
-            lucide.createIcons();
-        }
-
-        renderRandomEssays();
-    </script>
 </body>
 
 </html>
