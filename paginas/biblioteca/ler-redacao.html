@@ -15,7 +15,6 @@
     <!-- Tailwind CSS (pre-built) -->
     <link rel="stylesheet" href="../../assets/css/tailwind.min.css">
 
-    <!-- Tailwind CSS -->
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0"></script>
 
@@ -25,6 +24,18 @@
     <script src="../dados/banco_repertorios.js"></script>
 
     <style>
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -70,6 +81,18 @@
                         class="text-primary font-black italic">1000</span></span>
             </div>
         </nav>
+    
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="md:hidden fixed top-20 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-slate-100 p-6 z-[90]">
+            <ul class="flex flex-col gap-4 text-base font-bold text-slate-800">
+                <li><a href="../../index.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="home" class="w-5 h-5"></i> Inicio</a></li>
+                <li><a href="../aulas/aulas.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="monitor-play" class="w-5 h-5"></i> Aulas</a></li>
+                <li><a href="../biblioteca/biblioteca.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="library" class="w-5 h-5"></i> Biblioteca</a></li>
+                <li><a href="../temas/temas.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="flame" class="w-5 h-5"></i> Temas</a></li>
+                <li><a href="../repertorio/repertorio.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="database" class="w-5 h-5"></i> Repertorio</a></li>
+                <li><a href="../pratica/pratica.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="pencil" class="w-5 h-5"></i> Pratica</a></li>
+            </ul>
+        </div>
     </header>
 
     <main class="max-w-4xl mx-auto px-6 py-12" id="main-content">

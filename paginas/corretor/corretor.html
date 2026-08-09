@@ -21,6 +21,18 @@
     <script src="../../scripts/ia_corretor.js?v=2"></script>
 
     <style>
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
         /* Design System Fonts */
         body { font-family: 'Inter', sans-serif !important; }
         h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Outfit', sans-serif !important; }
@@ -30,7 +42,7 @@
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
     <!-- Top Navigation -->
     <header class="sticky top-0 z-50 w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-        <div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <a href="../../index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
                     <div class="bg-primary p-1.5 rounded-lg text-white">
@@ -48,6 +60,9 @@
                 <a class="text-sm font-medium hover:text-primary transition-colors"
                     href="../pratica/pratica.html">Prática</a>
             </nav>
+                <button id="menu-toggle" aria-label="Abrir menu" class="md:hidden p-2 text-slate-600 hover:text-primary transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
             <div class="flex items-center gap-4">
                 <button class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition-colors">
                     <span class="material-symbols-outlined text-xl">notifications</span>
@@ -65,8 +80,20 @@
                 </div>
             </div>
         </div>
+    
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="md:hidden fixed top-20 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-slate-100 p-6 z-[90]">
+            <ul class="flex flex-col gap-4 text-base font-bold text-slate-800">
+                <li><a href="../../index.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="home" class="w-5 h-5"></i> Inicio</a></li>
+                <li><a href="../aulas/aulas.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="monitor-play" class="w-5 h-5"></i> Aulas</a></li>
+                <li><a href="../biblioteca/biblioteca.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="library" class="w-5 h-5"></i> Biblioteca</a></li>
+                <li><a href="../temas/temas.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="flame" class="w-5 h-5"></i> Temas</a></li>
+                <li><a href="../repertorio/repertorio.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="database" class="w-5 h-5"></i> Repertorio</a></li>
+                <li><a href="../pratica/pratica.html" class="flex items-center gap-3 hover:text-primary transition-colors py-2"><i data-lucide="pencil" class="w-5 h-5"></i> Pratica</a></li>
+            </ul>
+        </div>
     </header>
-    <main class="max-w-[1440px] mx-auto p-6 flex flex-col gap-6">
+    <main class="max-w-6xl mx-auto p-6 flex flex-col gap-6">
         <!-- Page Header -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
